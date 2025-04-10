@@ -122,7 +122,7 @@ class RepoFilesCommand(BaseHuggingfaceCLICommand):
         repo_files_parser.add_argument(
             "--token",
             type=str,
-            help="A User Access Token generated from https://huggingface.co/settings/tokens",
+            help="A User Access Token generated from https://mirror-hf.co/settings/tokens",
         )
 
         repo_files_parser.set_defaults(func=RepoFilesCommand)

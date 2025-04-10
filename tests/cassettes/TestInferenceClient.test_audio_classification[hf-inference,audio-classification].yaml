@@ -11,13 +11,13 @@ interactions:
       X-Amzn-Trace-Id:
       - 5e782f01-139a-4594-acbf-5cb55cccdb4e
     method: GET
-    uri: https://huggingface.co/api/models/alefiury/wav2vec2-large-xlsr-53-gender-recognition-librispeech
+    uri: https://mirror-hf.co/api/models/alefiury/wav2vec2-large-xlsr-53-gender-recognition-librispeech
   response:
     body:
       string: '{"_id":"6445ebf30f2fc80feb30926d","id":"alefiury/wav2vec2-large-xlsr-53-gender-recognition-librispeech","private":false,"pipeline_tag":"audio-classification","library_name":"transformers","tags":["transformers","pytorch","safetensors","wav2vec2","audio-classification","generated_from_trainer","dataset:librispeech_asr","base_model:facebook/wav2vec2-xls-r-300m","base_model:finetune:facebook/wav2vec2-xls-r-300m","license:apache-2.0","endpoints_compatible","region:us"],"downloads":222588,"likes":42,"modelId":"alefiury/wav2vec2-large-xlsr-53-gender-recognition-librispeech","author":"alefiury","sha":"7a28165f33e1dbb37adbce09c0a9afcd6095dd4d","lastModified":"2024-03-23T20:43:05.000Z","gated":false,"disabled":false,"model-index":[{"name":"weights","results":[]}],"config":{"architectures":["Wav2Vec2ForSequenceClassification"],"model_type":"wav2vec2"},"cardData":{"license":"apache-2.0","tags":["generated_from_trainer"],"datasets":["librispeech_asr"],"metrics":["f1"],"base_model":"facebook/wav2vec2-xls-r-300m","model-index":[{"name":"weights","results":[]}]},"transformersInfo":{"auto_model":"AutoModelForAudioClassification","pipeline_tag":"audio-classification","processor":"AutoProcessor"},"siblings":[{"rfilename":".gitattributes"},{"rfilename":".gitignore"},{"rfilename":"README.md"},{"rfilename":"config.json"},{"rfilename":"model.safetensors"},{"rfilename":"preprocessor_config.json"},{"rfilename":"pytorch_model.bin"},{"rfilename":"training_args.bin"}],"spaces":["deepufrk/gender_detection1","Salman11223/gender_detection","xmen9654/gender_detection1","bestofaiml/audio-classification","captain-dz/alefiury-wav2vec2-large-xlsr-53-gender-recognition-librispeech","prashant-garg/gender-detection","danielwm994/t1"],"createdAt":"2023-04-24T02:39:47.000Z","safetensors":{"parameters":{"F32":315701634},"total":315701634},"inference":"warm","usedStorage":3789219986}'
     headers:
       Access-Control-Allow-Origin:
-      - https://huggingface.co
+      - https://mirror-hf.co
       Access-Control-Expose-Headers:
       - X-Repo-Commit,X-Request-Id,X-Error-Code,X-Error-Message,X-Total-Count,ETag,Link,Accept-Ranges,Content-Range,X-Xet-Access-Token,X-Xet-Token-Expiration,X-Xet-Refresh-Route,X-Xet-Cas-Url,X-Xet-Hash
       Connection:
@@ -1720,7 +1720,7 @@ interactions:
       X-Amzn-Trace-Id:
       - 3501afcd-2f70-46a1-9341-86a0f4a958f5
     method: POST
-    uri: https://router.huggingface.co/hf-inference/models/alefiury/wav2vec2-large-xlsr-53-gender-recognition-librispeech
+    uri: https://router.mirror-hf.co/hf-inference/models/alefiury/wav2vec2-large-xlsr-53-gender-recognition-librispeech
   response:
     body:
       string: '[{"score":0.9987353682518005,"label":"male"},{"score":0.0012646110262721777,"label":"female"}]'

@@ -14,7 +14,7 @@ DTYPE_T = Literal["F64", "F32", "F16", "BF16", "I64", "I32", "I16", "I8", "U8", 
 class TensorInfo:
     """Information about a tensor.
 
-    For more details regarding the safetensors format, check out https://huggingface.co/docs/safetensors/index#format.
+    For more details regarding the safetensors format, check out https://mirror-hf.co/docs/safetensors/index#format.
 
     Attributes:
         dtype (`str`):
@@ -46,7 +46,7 @@ class SafetensorsFileMetadata:
 
     This class is returned by [`parse_safetensors_file_metadata`].
 
-    For more details regarding the safetensors format, check out https://huggingface.co/docs/safetensors/index#format.
+    For more details regarding the safetensors format, check out https://mirror-hf.co/docs/safetensors/index#format.
 
     Attributes:
         metadata (`Dict`):
@@ -79,7 +79,7 @@ class SafetensorsRepoMetadata:
 
     This class is returned by [`get_safetensors_metadata`].
 
-    For more details regarding the safetensors format, check out https://huggingface.co/docs/safetensors/index#format.
+    For more details regarding the safetensors format, check out https://mirror-hf.co/docs/safetensors/index#format.
 
     Attributes:
         metadata (`Dict`, *optional*):

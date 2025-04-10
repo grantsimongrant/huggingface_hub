@@ -4,7 +4,7 @@
 # 互动讨论与拉取请求（Pull Request）
 
 huggingface_hub 库提供了一个 Python 接口，用于与 Hub 上的拉取请求（Pull Request）和讨论互动。
-访问 [相关的文档页面](https://huggingface.co/docs/hub/repositories-pull-requests-discussions)
+访问 [相关的文档页面](https://mirror-hf.co/docs/hub/repositories-pull-requests-discussions)
 ，了解有关 Hub 上讨论和拉取请求（Pull Request）的更深入的介绍及其工作原理。
 
 ## 从 Hub 获取讨论和拉取请求（Pull Request）
@@ -81,7 +81,7 @@ DiscussionWithDetails(
 ## 以编程方式创建和编辑讨论或拉取请求
 
 [`HfApi`] 类还提供了创建和编辑讨论及拉取请求（Pull Request）的方法。
-您需要一个 [访问令牌](https://huggingface.co/docs/hub/security-tokens) 来创建和编辑讨论或拉取请求（Pull Request）。
+您需要一个 [访问令牌](https://mirror-hf.co/docs/hub/security-tokens) 来创建和编辑讨论或拉取请求（Pull Request）。
 
 在 Hub 上对 repo 提出修改建议的最简单方法是使用 [`create_commit`] API：只需将 `create_pr` 参数设置为 `True` 。此参数也适用于其他封装了 [`create_commit`] 的方法：
 

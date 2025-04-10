@@ -16,7 +16,7 @@ if is_gradio_available():
     from huggingface_hub import WebhookPayload, WebhooksServer
 
 
-# Taken from https://huggingface.co/docs/hub/webhooks#event
+# Taken from https://mirror-hf.co/docs/hub/webhooks#event
 WEBHOOK_PAYLOAD_CREATE_DISCUSSION = {
     "event": {"action": "create", "scope": "discussion"},
     "repo": {
@@ -24,15 +24,15 @@ WEBHOOK_PAYLOAD_CREATE_DISCUSSION = {
         "name": "gpt2",
         "id": "621ffdc036468d709f17434d",
         "private": False,
-        "url": {"web": "https://huggingface.co/gpt2", "api": "https://huggingface.co/api/models/gpt2"},
+        "url": {"web": "https://mirror-hf.co/gpt2", "api": "https://mirror-hf.co/api/models/gpt2"},
         "owner": {"id": "628b753283ef59b5be89e937"},
     },
     "discussion": {
         "id": "6399f58518721fdd27fc9ca9",
         "title": "Update co2 emissions",
         "url": {
-            "web": "https://huggingface.co/gpt2/discussions/19",
-            "api": "https://huggingface.co/api/models/gpt2/discussions/19",
+            "web": "https://mirror-hf.co/gpt2/discussions/19",
+            "api": "https://mirror-hf.co/api/models/gpt2/discussions/19",
         },
         "status": "open",
         "author": {"id": "61d2f90c3c2083e1c08af22d"},
@@ -45,7 +45,7 @@ WEBHOOK_PAYLOAD_CREATE_DISCUSSION = {
         "author": {"id": "61d2f90c3c2083e1c08af22d"},
         "content": "Add co2 emissions information to the model card",
         "hidden": False,
-        "url": {"web": "https://huggingface.co/gpt2/discussions/19#6399f58518721fdd27fc9caa"},
+        "url": {"web": "https://mirror-hf.co/gpt2/discussions/19#6399f58518721fdd27fc9caa"},
     },
     "webhook": {"id": "6390e855e30d9209411de93b", "version": 3},
 }
@@ -58,8 +58,8 @@ WEBHOOK_PAYLOAD_UPDATE_DISCUSSION = {  # valid payload but doesn't have a "comme
         "id": "656896965808298301ed7ccf",
         "private": False,
         "url": {
-            "web": "https://huggingface.co/spaces/Wauplin/leaderboard",
-            "api": "https://huggingface.co/api/spaces/Wauplin/leaderboard",
+            "web": "https://mirror-hf.co/spaces/Wauplin/leaderboard",
+            "api": "https://mirror-hf.co/api/spaces/Wauplin/leaderboard",
         },
         "owner": {"id": "6273f303f6d63a28483fde12"},
     },
@@ -67,8 +67,8 @@ WEBHOOK_PAYLOAD_UPDATE_DISCUSSION = {  # valid payload but doesn't have a "comme
         "id": "656a0dfcadba74cd5ef4545b",
         "title": "Update space_ci/webhook.py",
         "url": {
-            "web": "https://huggingface.co/spaces/Wauplin/leaderboard/discussions/4",
-            "api": "https://huggingface.co/api/spaces/Wauplin/leaderboard/discussions/4",
+            "web": "https://mirror-hf.co/spaces/Wauplin/leaderboard/discussions/4",
+            "api": "https://mirror-hf.co/api/spaces/Wauplin/leaderboard/discussions/4",
         },
         "status": "closed",
         "author": {"id": "6273f303f6d63a28483fde12"},
@@ -88,8 +88,8 @@ WEBHOOK_PAYLOAD_WITH_UPDATED_REFS = {
         "private": False,
         "subdomain": "wauplin-gradio-user-history",
         "url": {
-            "web": "https://huggingface.co/spaces/Wauplin/gradio-user-history",
-            "api": "https://huggingface.co/api/spaces/Wauplin/gradio-user-history",
+            "web": "https://mirror-hf.co/spaces/Wauplin/gradio-user-history",
+            "api": "https://mirror-hf.co/api/spaces/Wauplin/gradio-user-history",
         },
         "headSha": "5e7f29fffcc579cb52539fddb14a1a4f85f39e44",
         "owner": {

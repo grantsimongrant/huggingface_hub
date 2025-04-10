@@ -121,7 +121,7 @@ class TestBasicTaskProviderHelper:
 
         # Test HF token routing
         url = helper._prepare_url("hf_test_token", "test-model")
-        assert url == "https://router.huggingface.co/provider-name/v1/test-route"
+        assert url == "https://router.mirror-hf.co/provider-name/v1/test-route"
         helper._prepare_route.assert_called_once_with("test-model", "hf_test_token")
 
         # Test direct API call
@@ -154,7 +154,7 @@ class TestBlackForestLabsProvider:
         helper = BlackForestLabsTextToImageTask()
         assert (
             helper._prepare_url("hf_test_token", "username/repo_name")
-            == "https://router.huggingface.co/black-forest-labs/v1/username/repo_name"
+            == "https://router.mirror-hf.co/black-forest-labs/v1/username/repo_name"
         )
 
     def test_prepare_payload_as_dict(self):
@@ -235,7 +235,7 @@ class TestFalAIProvider:
 
     def test_prepare_url(self):
         url = FalAITextToImageTask()._prepare_url("hf_token", "username/repo_name")
-        assert url == "https://router.huggingface.co/fal-ai/username/repo_name"
+        assert url == "https://router.mirror-hf.co/fal-ai/username/repo_name"
 
     def test_automatic_speech_recognition_payload(self):
         helper = FalAIAutomaticSpeechRecognitionTask()
@@ -321,11 +321,11 @@ class TestFalAIProvider:
         mock_session.return_value.get.assert_has_calls(
             [
                 mocker.call(
-                    "https://router.huggingface.co/fal-ai/username_provider/repo_name_provider/requests/test_request_id/status?_subdomain=queue",
+                    "https://router.mirror-hf.co/fal-ai/username_provider/repo_name_provider/requests/test_request_id/status?_subdomain=queue",
                     headers=request_params.headers,
                 ),
                 mocker.call(
-                    "https://router.huggingface.co/fal-ai/username_provider/repo_name_provider/requests/test_request_id?_subdomain=queue",
+                    "https://router.mirror-hf.co/fal-ai/username_provider/repo_name_provider/requests/test_request_id?_subdomain=queue",
                     headers=request_params.headers,
                 ),
                 mocker.call("video_url"),
@@ -375,7 +375,7 @@ class TestHFInferenceProvider:
         helper = HFInferenceTask("text-classification")
         assert (
             helper._prepare_url("hf_test_token", "username/repo_name")
-            == "https://router.huggingface.co/hf-inference/models/username/repo_name"
+            == "https://router.mirror-hf.co/hf-inference/models/username/repo_name"
         )
 
         assert helper._prepare_url("hf_test_token", "https://any-url.com") == "https://any-url.com"
@@ -421,7 +421,7 @@ class TestHFInferenceProvider:
         helper = HFInferenceConversational()
         helper._prepare_url(
             "hf_test_token", "username/repo_name"
-        ) == "https://router.huggingface.co/hf-inference/models/username/repo_name/v1/chat/completions"
+        ) == "https://router.mirror-hf.co/hf-inference/models/username/repo_name/v1/chat/completions"
         helper._prepare_url("hf_test_token", "https://any-url.com") == "https://any-url.com/v1/chat/completions"
         helper._prepare_url("hf_test_token", "https://any-url.com/v1") == "https://any-url.com/v1/chat/completions"
 
@@ -443,7 +443,7 @@ class TestHFInferenceProvider:
             api_key="hf_test_token",
         )
 
-        assert request.url == "https://router.huggingface.co/hf-inference/models/username/repo_name"
+        assert request.url == "https://router.mirror-hf.co/hf-inference/models/username/repo_name"
         assert request.task == "text-classification"
         assert request.model == "username/repo_name"
         assert request.headers["authorization"] == "Bearer hf_test_token"
@@ -468,7 +468,7 @@ class TestHFInferenceProvider:
         )
 
         assert (
-            request.url == "https://router.huggingface.co/hf-inference/models/username/repo_name/v1/chat/completions"
+            request.url == "https://router.mirror-hf.co/hf-inference/models/username/repo_name/v1/chat/completions"
         )
         assert request.task == "conversational"
         assert request.model == "username/repo_name"

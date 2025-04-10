@@ -4,7 +4,7 @@ rendered properly in your Markdown viewer.
 
 # Démarrage rapide
 
-Le [Hugging Face Hub](https://huggingface.co/) est le meilleur endroit pour partager des
+Le [Hugging Face Hub](https://mirror-hf.co/) est le meilleur endroit pour partager des
 modèles de machine learning, des démos, des datasets et des métriques. La librairie
 `huggingface_hub` vous aide à intéragir avec le Hub sans sortir de votre environnement de
 développement. Vous pouvez: créer et gérer des dépôts facilement, télécharger et upload des
@@ -30,7 +30,7 @@ depuis votre cache de façon à ce que vous n'ayez pas besoin de le retéléchar
 
 Vous aurez besoin de l'id du dépôt et du nom du fichier que vous voulez télécharger.
 Par exemple, pour télécharger le fichier de configuration du
-modèle [Pegasus](https://huggingface.co/google/pegasus-xsum):
+modèle [Pegasus](https://mirror-hf.co/google/pegasus-xsum):
 
 ```py
 >>> from huggingface_hub import hf_hub_download
@@ -57,9 +57,9 @@ Pour plus de détails et d'options, consultez la réference de l'API pour [`hf_h
 Dans la plupart des cas, vous devez être connectés avec un compte Hugging Face pour interagir
 avec le Hub: pour télécharger des dépôts privés, upload des fichiers, créer des pull
 requests...
-[Créez un compte](https://huggingface.co/join) si vous n'en avez pas déjà un et connectez
-vous pour obtenir votre [token d'authentification](https://huggingface.co/docs/hub/security-tokens)
-depuis vos [paramètres](https://huggingface.co/settings/tokens). Le token
+[Créez un compte](https://mirror-hf.co/join) si vous n'en avez pas déjà un et connectez
+vous pour obtenir votre [token d'authentification](https://mirror-hf.co/docs/hub/security-tokens)
+depuis vos [paramètres](https://mirror-hf.co/settings/tokens). Le token
 est utilisé pour authentifier votre identité au Hub.
 
 Une fois que vous avez votre token d'authentification, lancez la commande suivante
@@ -123,7 +123,7 @@ Les dépôts privés ne seront visible que par vous.
 
 Pour créer un dépôt ou push du contenu sur le Hub, vous devez fournir un token
 d'authentification qui a les permissions `write`. Vous pouvez choisir la permission
-lorsque vous générez le token dans vos [paramètres](https://huggingface.co/settings/tokens).
+lorsque vous générez le token dans vos [paramètres](https://mirror-hf.co/settings/tokens).
 
 </Tip>
 

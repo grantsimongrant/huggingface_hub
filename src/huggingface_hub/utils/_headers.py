@@ -160,7 +160,7 @@ def get_token_to_send(token: Optional[Union[bool, str]]) -> Optional[str]:
                 "Token is required (`token=True`), but no token found. You"
                 " need to provide a token or be logged in to Hugging Face with"
                 " `huggingface-cli login` or `huggingface_hub.login`. See"
-                " https://huggingface.co/settings/tokens."
+                " https://mirror-hf.co/settings/tokens."
             )
         return cached_token
 

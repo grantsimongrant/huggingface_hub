@@ -52,7 +52,7 @@ hf://[<repo_type_prefix>]<repo_id>[@<revision>]/<path/in/repo>
 ```
 
 <div class="flex justify-center">
-<img src="https://huggingface.co/datasets/huggingface/documentation-images/resolve/main/huggingface_hub/hf_urls.png"/>
+<img src="https://mirror-hf.co/datasets/huggingface/documentation-images/resolve/main/huggingface_hub/hf_urls.png"/>
 </div>
 
 对于数据集，`repo_type_prefix` 为 `datasets/`，对于Space，`repo_type_prefix`为 `spaces/`，模型不需要在 URL 中使用这样的前缀。

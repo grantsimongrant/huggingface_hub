@@ -147,7 +147,7 @@ class TestTextGenerationClientVCR(unittest.TestCase):
         assert text == "I am at work"
 
     def test_generate_with_grammar(self):
-        # Example taken from https://huggingface.co/docs/text-generation-inference/conceptual/guidance#the-grammar-parameter
+        # Example taken from https://mirror-hf.co/docs/text-generation-inference/conceptual/guidance#the-grammar-parameter
         response = self.client.text_generation(
             prompt="I saw a puppy a cat and a raccoon during my bike ride in the park",
             max_new_tokens=100,

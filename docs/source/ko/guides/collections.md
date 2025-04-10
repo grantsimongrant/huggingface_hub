@@ -3,7 +3,7 @@ rendered properly in your Markdown viewer.
 -->
 # Collections[[collections]]
 
-Collection은 Hub(모델, 데이터셋, Spaces, 논문)에 있는 관련 항목들의 그룹으로, 같은 페이지에 함께 구성되어 있습니다. Collections는 자신만의 포트폴리오를 만들거나, 카테고리별로 콘텐츠를 북마크 하거나, 공유하고 싶은 item들의 큐레이팅 된 목록을 제시하는 데 유용합니다. 여기 [가이드](https://huggingface.co/docs/hub/collections)를 확인하여 Collections가 무엇이고 Hub에서 어떻게 보이는지 자세히 알아보세요.
+Collection은 Hub(모델, 데이터셋, Spaces, 논문)에 있는 관련 항목들의 그룹으로, 같은 페이지에 함께 구성되어 있습니다. Collections는 자신만의 포트폴리오를 만들거나, 카테고리별로 콘텐츠를 북마크 하거나, 공유하고 싶은 item들의 큐레이팅 된 목록을 제시하는 데 유용합니다. 여기 [가이드](https://mirror-hf.co/docs/hub/collections)를 확인하여 Collections가 무엇이고 Hub에서 어떻게 보이는지 자세히 알아보세요.
 
 브라우저에서 직접 Collections를 관리할 수 있지만, 이 가이드에서는 프로그래밍 방식으로 Collection을 관리하는 방법에 초점을 맞추겠습니다.
 
@@ -12,7 +12,7 @@ Collection은 Hub(모델, 데이터셋, Spaces, 논문)에 있는 관련 항목�
 [`get_collection`]을 사용하여 자신의 Collections나 공개된 Collection을 가져올 수 있습니다. Collection을 가져오려면 Collection의 *slug*가 필요합니다. Slug는 제목과 고유한 ID를 기반으로 한 Collection의 식별자입니다. Collection 페이지의 URL에서 slug를 찾을 수 있습니다.
 
 <div class="flex justify-center">
-    <img src="https://huggingface.co/datasets/huggingface/documentation-images/resolve/main/hfh_collection_slug.png"/>
+    <img src="https://mirror-hf.co/datasets/huggingface/documentation-images/resolve/main/hfh_collection_slug.png"/>
 </div>
 
 `"TheBloke/recent-models-64f9a55bb3115b4f513ec026"` Collection을 가져와 봅시다:
@@ -59,7 +59,7 @@ CollectionItem(
 
 ## Collections 나열하기[[fetch-a-collection]]
 
-[`list_collections`]를 사용하여 Collections를 나열할 수도 있습니다. Collections는 몇 가지 매개변수를 사용하여 필터링할 수 있습니다. 사용자 [`teknium`](https://huggingface.co/teknium)의 모든 Collections를 나열해 봅시다.
+[`list_collections`]를 사용하여 Collections를 나열할 수도 있습니다. Collections는 몇 가지 매개변수를 사용하여 필터링할 수 있습니다. 사용자 [`teknium`](https://mirror-hf.co/teknium)의 모든 Collections를 나열해 봅시다.
 
 ```py
 >>> from huggingface_hub import list_collections
@@ -82,7 +82,7 @@ Collections를 나열할 때, 각 Collection의 항목 목록은 최대 4개 항
 
 </Tip>
 
-고급 필터링을 수행할 수 있습니다. 예를 들어 모델 [TheBloke/OpenHermes-2.5-Mistral-7B-GGUF](https://huggingface.co/TheBloke/OpenHermes-2.5-Mistral-7B-GGUF)를 포함하는 트렌딩 순으로 정렬된 Collections를 5개까지만 가져올 수 있습니다.
+고급 필터링을 수행할 수 있습니다. 예를 들어 모델 [TheBloke/OpenHermes-2.5-Mistral-7B-GGUF](https://mirror-hf.co/TheBloke/OpenHermes-2.5-Mistral-7B-GGUF)를 포함하는 트렌딩 순으로 정렬된 Collections를 5개까지만 가져올 수 있습니다.
 
 ```py
 >>> collections = list_collections(item="models/TheBloke/OpenHermes-2.5-Mistral-7B-GGUF", sort="trending", limit=5):
@@ -126,7 +126,7 @@ Crataco/favorite-7b-models-651944072b4fffcb41f8b568
 >>> collection.owner
 "username"
 >>> collection.url
-'https://huggingface.co/collections/owner/iccv-2023-15e23b46cb98efca45'
+'https://mirror-hf.co/collections/owner/iccv-2023-15e23b46cb98efca45'
 ```
 
 ## Collection의 item 관리[[manage-items-in-a-collection]]

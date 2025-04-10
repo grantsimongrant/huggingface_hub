@@ -6,7 +6,7 @@ rendered properly in your Markdown viewer.
 
 Webhooks are a foundation for MLOps-related features. They allow you to listen for new changes on specific repos or to
 all repos belonging to particular users/organizations you're interested in following. To learn
-more about webhooks on the Huggingface Hub, you can read the Webhooks [guide](https://huggingface.co/docs/hub/webhooks).
+more about webhooks on the Huggingface Hub, you can read the Webhooks [guide](https://mirror-hf.co/docs/hub/webhooks).
 
 <Tip>
 
@@ -43,7 +43,7 @@ by redirecting the Webhooks to your machine (using a Gradio tunnel) before deplo
 a `pydantic` class which makes it very easy to use with FastAPI. If you pass it as a parameter to a webhook endpoint, it
 will be automatically validated and parsed as a Python object.
 
-For more information about webhooks payload, you can refer to the Webhooks Payload [guide](https://huggingface.co/docs/hub/webhooks#webhook-payloads).
+For more information about webhooks payload, you can refer to the Webhooks Payload [guide](https://mirror-hf.co/docs/hub/webhooks#webhook-payloads).
 
 [[autodoc]] huggingface_hub.WebhookPayload
 

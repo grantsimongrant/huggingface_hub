@@ -246,7 +246,7 @@ def from_pretrained_keras(*args, **kwargs) -> "KerasModelHubMixin":
         pretrained_model_name_or_path (`str` or `os.PathLike`):
             Can be either:
                 - A string, the `model id` of a pretrained model hosted inside a
-                  model repo on huggingface.co. Valid model ids can be located
+                  model repo on mirror-hf.co. Valid model ids can be located
                   at the root-level, like `bert-base-uncased`, or namespaced
                   under a user or organization name, like
                   `dbmdz/bert-base-german-cased`.
@@ -254,7 +254,7 @@ def from_pretrained_keras(*args, **kwargs) -> "KerasModelHubMixin":
                   simply like this: `dbmdz/bert-base-german-cased@main` Revision
                   is the specific model version to use. It can be a branch name,
                   a tag name, or a commit id, since we use a git-based system
-                  for storing models and other artifacts on huggingface.co, so
+                  for storing models and other artifacts on mirror-hf.co, so
                   `revision` can be any identifier allowed by git.
                 - A path to a `directory` containing model weights saved using
                   [`~transformers.PreTrainedModel.save_pretrained`], e.g.,

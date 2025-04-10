@@ -4,7 +4,7 @@ rendered properly in your Markdown viewer.
 
 # Quickstart
 
-The [Hugging Face Hub](https://huggingface.co/) is the go-to place for sharing machine learning
+The [Hugging Face Hub](https://mirror-hf.co/) is the go-to place for sharing machine learning
 models, demos, datasets, and metrics. `huggingface_hub` library helps you interact with
 the Hub without leaving your development environment. You can create and manage
 repositories easily, download and upload files, and get useful model and dataset
@@ -28,7 +28,7 @@ This function will download and cache a file on your local disk. The next time y
 that file, it will load from your cache, so you don't need to re-download it.
 
 You will need the repository id and the filename of the file you want to download. For
-example, to download the [Pegasus](https://huggingface.co/google/pegasus-xsum) model
+example, to download the [Pegasus](https://mirror-hf.co/google/pegasus-xsum) model
 configuration file:
 
 ```py
@@ -57,9 +57,9 @@ For more details and options, see the API reference for [`hf_hub_download`].
 
 In a lot of cases, you must be authenticated with a Hugging Face account to interact with
 the Hub: download private repos, upload files, create PRs,...
-[Create an account](https://huggingface.co/join) if you don't already have one, and then sign in
-to get your [User Access Token](https://huggingface.co/docs/hub/security-tokens) from
-your [Settings page](https://huggingface.co/settings/tokens). The User Access Token is
+[Create an account](https://mirror-hf.co/join) if you don't already have one, and then sign in
+to get your [User Access Token](https://mirror-hf.co/docs/hub/security-tokens) from
+your [Settings page](https://mirror-hf.co/settings/tokens). The User Access Token is
 used to authenticate your identity to the Hub.
 
 <Tip>
@@ -108,7 +108,7 @@ You can list all available access tokens on your machine with `huggingface-cli a
 
 ### Environment variable
 
-The environment variable `HF_TOKEN` can also be used to authenticate yourself. This is especially useful in a Space where you can set `HF_TOKEN` as a [Space secret](https://huggingface.co/docs/hub/spaces-overview#managing-secrets).
+The environment variable `HF_TOKEN` can also be used to authenticate yourself. This is especially useful in a Space where you can set `HF_TOKEN` as a [Space secret](https://mirror-hf.co/docs/hub/spaces-overview#managing-secrets).
 
 <Tip>
 
@@ -161,7 +161,7 @@ Private repositories will not be visible to anyone except yourself.
 
 To create a repository or to push content to the Hub, you must provide a User Access
 Token that has the `write` permission. You can choose the permission when creating the
-token in your [Settings page](https://huggingface.co/settings/tokens).
+token in your [Settings page](https://mirror-hf.co/settings/tokens).
 
 </Tip>
 

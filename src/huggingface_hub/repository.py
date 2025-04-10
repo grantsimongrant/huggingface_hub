@@ -427,16 +427,16 @@ class Repository:
     """
     Helper class to wrap the git and git-lfs commands.
 
-    The aim is to facilitate interacting with huggingface.co hosted model or
+    The aim is to facilitate interacting with mirror-hf.co hosted model or
     dataset repos, though not a lot here (if any) is actually specific to
-    huggingface.co.
+    mirror-hf.co.
 
     <Tip warning={true}>
 
     [`Repository`] is deprecated in favor of the http-based alternatives implemented in
     [`HfApi`]. Given its large adoption in legacy code, the complete removal of
     [`Repository`] will only happen in release `v1.0`. For more details, please read
-    https://huggingface.co/docs/huggingface_hub/concepts/git_vs_http.
+    https://mirror-hf.co/docs/huggingface_hub/concepts/git_vs_http.
 
     </Tip>
     """
@@ -449,7 +449,7 @@ class Repository:
         message=(
             "Please prefer the http-based alternatives instead. Given its large adoption in legacy code, the complete"
             " removal is only planned on next major release.\nFor more details, please read"
-            " https://huggingface.co/docs/huggingface_hub/concepts/git_vs_http."
+            " https://mirror-hf.co/docs/huggingface_hub/concepts/git_vs_http."
         ),
     )
     def __init__(
@@ -481,12 +481,12 @@ class Repository:
             clone_from (`str`, *optional*):
                 Either a repository url or `repo_id`.
                 Example:
-                - `"https://huggingface.co/philschmid/playground-tests"`
+                - `"https://mirror-hf.co/philschmid/playground-tests"`
                 - `"philschmid/playground-tests"`
             repo_type (`str`, *optional*):
                 To set when cloning a repo from a repo_id. Default is model.
             token (`bool` or `str`, *optional*):
-                A valid authentication token (see https://huggingface.co/settings/token).
+                A valid authentication token (see https://mirror-hf.co/settings/token).
                 If `None` or `True` and machine is logged in (through `huggingface-cli login`
                 or [`~huggingface_hub.login`]), token will be retrieved from the cache.
                 If `False`, token is not sent in the request header.

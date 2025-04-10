@@ -96,7 +96,7 @@ class InferenceApi:
         message=(
             "`InferenceApi` client is deprecated in favor of the more feature-complete `InferenceClient`. Check out"
             " this guide to learn how to convert your script to use it:"
-            " https://huggingface.co/docs/huggingface_hub/guides/inference#legacy-inferenceapi-client."
+            " https://mirror-hf.co/docs/huggingface_hub/guides/inference#legacy-inferenceapi-client."
         ),
     )
     def __init__(
@@ -117,7 +117,7 @@ class InferenceApi:
             token (`str`, `optional`):
                 The API token to use as HTTP bearer authorization. This is not
                 the authentication token. You can find the token in
-                https://huggingface.co/settings/token. Alternatively, you can
+                https://mirror-hf.co/settings/token. Alternatively, you can
                 find both your organizations and personal API tokens using
                 `HfApi().whoami(token)`.
             gpu (`bool`, `optional`, defaults `False`):
@@ -133,7 +133,7 @@ class InferenceApi:
             raise ValueError(
                 "Task not specified in the repository. Please add it to the model card"
                 " using pipeline_tag"
-                " (https://huggingface.co/docs#how-is-a-models-type-of-inference-api-and-widget-determined)"
+                " (https://mirror-hf.co/docs#how-is-a-models-type-of-inference-api-and-widget-determined)"
             )
 
         if task and task != model_info.pipeline_tag:

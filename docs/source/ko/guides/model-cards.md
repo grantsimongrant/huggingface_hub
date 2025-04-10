@@ -4,16 +4,16 @@ rendered properly in your Markdown viewer.
 
 # 모델 카드 생성 및 공유[[create-and-share-model-cards]]
 
-`huggingface_hub` 라이브러리는 모델 카드를 생성, 공유, 업데이트할 수 있는 파이썬 인터페이스를 제공합니다. Hub의 모델 카드가 무엇인지, 그리고 실제로 어떻게 작동하는지에 대한 자세한 내용을 확인하려면 [전용 설명 페이지](https://huggingface.co/docs/hub/models-cards)를 방문하세요.
+`huggingface_hub` 라이브러리는 모델 카드를 생성, 공유, 업데이트할 수 있는 파이썬 인터페이스를 제공합니다. Hub의 모델 카드가 무엇인지, 그리고 실제로 어떻게 작동하는지에 대한 자세한 내용을 확인하려면 [전용 설명 페이지](https://mirror-hf.co/docs/hub/models-cards)를 방문하세요.
 
 <Tip>
-[신규 (베타)! 우리의 실험적인 모델 카드 크리에이터 앱을 사용해 보세요](https://huggingface.co/spaces/huggingface/Model_Cards_Writing_Tool)
+[신규 (베타)! 우리의 실험적인 모델 카드 크리에이터 앱을 사용해 보세요](https://mirror-hf.co/spaces/huggingface/Model_Cards_Writing_Tool)
 
 </Tip>
 
 ## Hub에서 모델 카드 불러오기[[load-a-model-card-from-the-hub]]
 
-Hub에서 기존 카드를 불러오려면 [`ModelCard.load`] 기능을 사용하면 됩니다. 이 문서에서는 [`nateraw/vit-base-beans`](https://huggingface.co/nateraw/vit-base-beans)에서 카드를 불러오겠습니다.
+Hub에서 기존 카드를 불러오려면 [`ModelCard.load`] 기능을 사용하면 됩니다. 이 문서에서는 [`nateraw/vit-base-beans`](https://mirror-hf.co/nateraw/vit-base-beans)에서 카드를 불러오겠습니다.
 
 
 ```python
@@ -219,7 +219,7 @@ card = ModelCard.from_template(
 card.push_to_hub(repo_id)
 ```
 
-결과 카드는 [여기](https://huggingface.co/nateraw/hf-hub-modelcards-pr-test/blob/main/README.md)에서 확인할 수 있습니다.
+결과 카드는 [여기](https://mirror-hf.co/nateraw/hf-hub-modelcards-pr-test/blob/main/README.md)에서 확인할 수 있습니다.
 
 PR로 카드를 푸시하고 싶다면 `push_to_hub`를 호출할 때 `create_pr=True`라고 지정하면 됩니다.
 
@@ -227,13 +227,13 @@ PR로 카드를 푸시하고 싶다면 `push_to_hub`를 호출할 때 `create_pr
 card.push_to_hub(repo_id, create_pr=True)
 ```
 
-이 명령으로 생성된 결과 PR은 [여기](https://huggingface.co/nateraw/hf-hub-modelcards-pr-test/discussions/3)에서 볼 수 있습니다.
+이 명령으로 생성된 결과 PR은 [여기](https://mirror-hf.co/nateraw/hf-hub-modelcards-pr-test/discussions/3)에서 볼 수 있습니다.
 
 ## 메타데이터 업데이트[[update-metadata]]
 
 이 섹션에서는 레포 카드에 있는 메타데이터와 업데이트 방법을 확인합니다.
 
-`메타데이터`는 모델, 데이터 세트, Spaces에 대한 높은 수준의 정보를 제공하는 해시맵(또는 키 값) 컨텍스트를 말합니다. 모델의 `pipeline type`, `model_id` 또는 `model_desc` 설명 등의 정보가 포함될 수 있습니다. 자세한 내용은 [모델 카드](https://huggingface.co/docs/hub/model-cards#model-card-metadata), [데이터 세트 카드](https://huggingface.co/docs/hub/datasets-cards#dataset-card-metadata) 및 [�Spaces 설정](https://huggingface.co/docs/hub/spaces-settings#spaces-settings) 을 참조하세요. 이제 메타데이터를 업데이트하는 방법에 대한 몇 가지 예를 살펴보겠습니다.
+`메타데이터`는 모델, 데이터 세트, Spaces에 대한 높은 수준의 정보를 제공하는 해시맵(또는 키 값) 컨텍스트를 말합니다. 모델의 `pipeline type`, `model_id` 또는 `model_desc` 설명 등의 정보가 포함될 수 있습니다. 자세한 내용은 [모델 카드](https://mirror-hf.co/docs/hub/model-cards#model-card-metadata), [데이터 세트 카드](https://mirror-hf.co/docs/hub/datasets-cards#dataset-card-metadata) 및 [�Spaces 설정](https://mirror-hf.co/docs/hub/spaces-settings#spaces-settings) 을 참조하세요. 이제 메타데이터를 업데이트하는 방법에 대한 몇 가지 예를 살펴보겠습니다.
 
 
 첫 번째 예부터 살펴보겠습니다:
@@ -261,7 +261,7 @@ card.push_to_hub(repo_id, create_pr=True)
 
 ## 평가 결과 포함하기[[include-evaluation-results]]
 
-메타데이터 `모델-인덱스`에 평가 결과를 포함하려면 관련 평가 결과와 함께 [EvalResult] 또는 `EvalResult` 목록을 전달하면 됩니다. 내부적으론 `card.data.to _dict()`를 호출하면 `모델-인덱스`가 생성됩니다. 자세한 내용은 [Hub 문서의 이 섹션](https://huggingface.co/docs/hub/models-cards#evaluation-results)을 참조하십시오.
+메타데이터 `모델-인덱스`에 평가 결과를 포함하려면 관련 평가 결과와 함께 [EvalResult] 또는 `EvalResult` 목록을 전달하면 됩니다. 내부적으론 `card.data.to _dict()`를 호출하면 `모델-인덱스`가 생성됩니다. 자세한 내용은 [Hub 문서의 이 섹션](https://mirror-hf.co/docs/hub/models-cards#evaluation-results)을 참조하십시오.
 
 <Tip>
 

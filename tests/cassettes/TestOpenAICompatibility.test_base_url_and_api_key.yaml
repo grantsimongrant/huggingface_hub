@@ -17,7 +17,7 @@ interactions:
       X-Amzn-Trace-Id:
       - c5b6a35f-3239-4016-82e2-a26ec93e563a
     method: POST
-    uri: https://api-inference.huggingface.co/models/meta-llama/Meta-Llama-3-8B-Instruct/v1/chat/completions
+    uri: https://api-inference.mirror-hf.co/models/meta-llama/Meta-Llama-3-8B-Instruct/v1/chat/completions
   response:
     body:
       string: '{"object":"chat.completion","id":"","created":1738150356,"model":"meta-llama/Meta-Llama-3-8B-Instruct","system_fingerprint":"3.0.1-sha-bb9095a","choices":[{"index":0,"message":{"role":"assistant","content":"1,
@@ -52,7 +52,7 @@ interactions:
       x-prompt-tokens:
       - '25'
       x-proxied-host:
-      - internal.api-inference.huggingface.co
+      - internal.api-inference.mirror-hf.co
       x-proxied-path:
       - /v1/chat/completions
       x-queue-time:

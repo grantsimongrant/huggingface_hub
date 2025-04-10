@@ -386,7 +386,7 @@ async def test_close_connection_on_post_error(mock_close: Mock, mock_post: Mock)
 @with_production_testing
 async def test_openai_compatibility_base_url_and_api_key():
     client = AsyncInferenceClient(
-        base_url="https://api-inference.huggingface.co/models/meta-llama/Meta-Llama-3-8B-Instruct",
+        base_url="https://api-inference.mirror-hf.co/models/meta-llama/Meta-Llama-3-8B-Instruct",
         api_key="my-api-key",
     )
     output = await client.chat.completions.create(

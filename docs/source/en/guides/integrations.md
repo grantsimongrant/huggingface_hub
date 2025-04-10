@@ -5,13 +5,13 @@ rendered properly in your Markdown viewer.
 # Integrate any ML framework with the Hub
 
 The Hugging Face Hub makes hosting and sharing models with the community easy. It supports
-[dozens of libraries](https://huggingface.co/docs/hub/models-libraries) in the Open Source ecosystem. We are always
+[dozens of libraries](https://mirror-hf.co/docs/hub/models-libraries) in the Open Source ecosystem. We are always
 working on expanding this support to push collaborative Machine Learning forward. The `huggingface_hub` library plays a
 key role in this process, allowing any Python script to easily push and load files.
 
 There are four main ways to integrate a library with the Hub:
 1. **Push to Hub:** implement a method to upload a model to the Hub. This includes the model weights, as well as
-   [the model card](https://huggingface.co/docs/huggingface_hub/how-to-model-cards) and any other relevant information
+   [the model card](https://mirror-hf.co/docs/huggingface_hub/how-to-model-cards) and any other relevant information
    or data necessary to run the model (for example, training logs). This method is often called `push_to_hub()`.
 2. **Download from Hub:** implement a method to load a model from the Hub. The method should download the model
    configuration/weights and load the model. This method is often called `from_pretrained` or `load_from_hub()`.
@@ -23,9 +23,9 @@ In this guide, we will focus on the first two topics. We will present the two ma
 a library, with their advantages and drawbacks. Everything is summarized at the end of the guide to help you choose
 between the two. Please keep in mind that these are only guidelines that you are free to adapt to you requirements.
 
-If you are interested in Inference and Widgets, you can follow [this guide](https://huggingface.co/docs/hub/models-adding-libraries#set-up-the-inference-api).
+If you are interested in Inference and Widgets, you can follow [this guide](https://mirror-hf.co/docs/hub/models-adding-libraries#set-up-the-inference-api).
 In both cases, you can reach out to us if you are integrating a library with the Hub and want to be listed
-[in our docs](https://huggingface.co/docs/hub/models-libraries).
+[in our docs](https://mirror-hf.co/docs/hub/models-libraries).
 
 ## A flexible approach: helpers
 
@@ -137,7 +137,7 @@ your library, you should:
     - [`~ModelHubMixin._save_pretrained`]: method taking as input a path to a directory and saving the model to it.
     You must write all the logic to dump your model in this method: model card, model weights, configuration files,
     training logs, and figures. Any relevant information for this model must be handled by this method.
-    [Model Cards](https://huggingface.co/docs/hub/model-cards) are particularly important to describe your model. Check
+    [Model Cards](https://mirror-hf.co/docs/hub/model-cards) are particularly important to describe your model. Check
     out [our implementation guide](./model-cards) for more details.
     - [`~ModelHubMixin._from_pretrained`]: **class method** taking as input a `model_id` and returning an instantiated
     model. The method must download the relevant files and load them.
@@ -282,7 +282,7 @@ In the section above, we quickly discussed how the [`ModelHubMixin`] works. In t
 
 #### Model card
 
-[`ModelHubMixin`] generates the model card for you. Model cards are files that accompany the models and provide important information about them. Under the hood, model cards are simple Markdown files with additional metadata. Model cards are essential for discoverability, reproducibility, and sharing! Check out the [Model Cards guide](https://huggingface.co/docs/hub/model-cards) for more details.
+[`ModelHubMixin`] generates the model card for you. Model cards are files that accompany the models and provide important information about them. Under the hood, model cards are simple Markdown files with additional metadata. Model cards are essential for discoverability, reproducibility, and sharing! Check out the [Model Cards guide](https://mirror-hf.co/docs/hub/model-cards) for more details.
 
 Generating model cards semi-automatically is a good way to ensure that all models pushed with your library will share common metadata: `library_name`, `tags`, `license`, `pipeline_tag`, etc. This makes all models backed by your library easily searchable on the Hub and provides some resource links for users landing on the Hub. You can define the metadata directly when inheriting from [`ModelHubMixin`]:
 
@@ -300,7 +300,7 @@ class UniDepthV1(
    ...
 ```
 
-By default, a generic model card will be generated with the info you've provided (example: [pyp1/VoiceCraft_giga830M](https://huggingface.co/pyp1/VoiceCraft_giga830M)). But you can define your own model card template as well!
+By default, a generic model card will be generated with the info you've provided (example: [pyp1/VoiceCraft_giga830M](https://mirror-hf.co/pyp1/VoiceCraft_giga830M)). But you can define your own model card template as well!
 
 In this example, all models pushed with the `VoiceCraft` class will automatically include a citation section and license details. For more details on how to define a model card template, please check the [Model Cards guide](./model-cards).
 
@@ -308,7 +308,7 @@ In this example, all models pushed with the `VoiceCraft` class will automaticall
 MODEL_CARD_TEMPLATE = """
 ---
 # For reference on model card metadata, see the spec: https://github.com/huggingface/hub-docs/blob/main/modelcard.md?plain=1
-# Doc / guide: https://huggingface.co/docs/hub/model-cards
+# Doc / guide: https://mirror-hf.co/docs/hub/model-cards
 {{ card_data }}
 ---
 

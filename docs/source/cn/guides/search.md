@@ -54,5 +54,5 @@ models = hf_api.list_models(
 
 
 
-如果您想要在Hub上探索可用的过滤器, 请在浏览器中访问 [models](https://huggingface.co/models) 和 [datasets](https://huggingface.co/datasets) 页面
+如果您想要在Hub上探索可用的过滤器, 请在浏览器中访问 [models](https://mirror-hf.co/models) 和 [datasets](https://mirror-hf.co/datasets) 页面
 ，尝试不同的参数并查看URL中的值。

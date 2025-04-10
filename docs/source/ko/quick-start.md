@@ -4,7 +4,7 @@ rendered properly in your Markdown viewer.
 
 # 둘러보기 [[quickstart]]
 
-[Hugging Face Hub](https://huggingface.co/)는 머신러닝 모델, 데모, 데이터 세트 및 메트릭을 공유할 수 있는 곳입니다. `huggingface_hub` 라이브러리는 개발 환경을 벗어나지 않고도 Hub와 상호작용할 수 있도록 도와줍니다. 리포지토리를 쉽게 만들고 관리하거나, 파일을 다운로드 및 업로드하고, 유용한 모델과 데이터 세트의 메타데이터도 구할 수 있습니다.
+[Hugging Face Hub](https://mirror-hf.co/)는 머신러닝 모델, 데모, 데이터 세트 및 메트릭을 공유할 수 있는 곳입니다. `huggingface_hub` 라이브러리는 개발 환경을 벗어나지 않고도 Hub와 상호작용할 수 있도록 도와줍니다. 리포지토리를 쉽게 만들고 관리하거나, 파일을 다운로드 및 업로드하고, 유용한 모델과 데이터 세트의 메타데이터도 구할 수 있습니다.
 
 ## 설치 [[installation]]
 
@@ -21,7 +21,7 @@ pip install --upgrade huggingface_hub
 Hub의 리포지토리는 git으로 버전 관리되며, 사용자는 단일 파일 또는 전체 리포지토리를 다운로드할 수 있습니다. 파일을 다운로드하려면 [`hf_hub_download`] 함수를 사용하면 됩니다.
 사용하면 파일을 다운로드하여 로컬 디스크에 캐시하기 때문에, 다음에 해당 파일이 필요하면 캐시에서 가져오므로 다시 다운로드할 필요가 없습니다.
 
-다운로드하려면 리포지토리 ID와 파일명이 필요합니다. 예를 들어, [Pegasus](https://huggingface.co/google/pegasus-xsum) 모델 구성 파일을 다운로드하려면:
+다운로드하려면 리포지토리 ID와 파일명이 필요합니다. 예를 들어, [Pegasus](https://mirror-hf.co/google/pegasus-xsum) 모델 구성 파일을 다운로드하려면:
 
 ```py
 >>> from huggingface_hub import hf_hub_download
@@ -44,7 +44,7 @@ Hub의 리포지토리는 git으로 버전 관리되며, 사용자는 단일 파
 ## 로그인 [[login]]
 
 비공개 리포지토리 다운로드, 파일 업로드, PR 생성 등 Hub와 상호 작용하려면 Hugging Face 계정으로 로그인해야 하는 경우가 많습니다.
-아직 계정이 없다면 [계정 만들기](https://huggingface.co/join)를 클릭한 다음, 로그인하여 [설정 페이지](https://huggingface.co/settings/tokens)에서 [사용자 액세스 토큰](https://huggingface.co/docs/hub/security-tokens)을 받으세요. 사용자 액세스 토큰은 Hub에 인증하는 데 사용됩니다.
+아직 계정이 없다면 [계정 만들기](https://mirror-hf.co/join)를 클릭한 다음, 로그인하여 [설정 페이지](https://mirror-hf.co/settings/tokens)에서 [사용자 액세스 토큰](https://mirror-hf.co/docs/hub/security-tokens)을 받으세요. 사용자 액세스 토큰은 Hub에 인증하는 데 사용됩니다.
 
 사용자 액세스 토큰을 받으면 터미널에서 다음 명령을 실행하세요:
 
@@ -94,7 +94,7 @@ huggingface-cli login --token $HUGGINGFACE_TOKEN
 
 <Tip>
 
-리포지토리를 생성하거나 Hub에 콘텐츠를 푸시하려면 `write` (쓰기) 권한이 있는 사용자 액세스 토큰을 제공해야 합니다. 토큰을 생성할 때 [설정 페이지](https://huggingface.co/settings/tokens)에서 권한을 선택할 수 있습니다.
+리포지토리를 생성하거나 Hub에 콘텐츠를 푸시하려면 `write` (쓰기) 권한이 있는 사용자 액세스 토큰을 제공해야 합니다. 토큰을 생성할 때 [설정 페이지](https://mirror-hf.co/settings/tokens)에서 권한을 선택할 수 있습니다.
 
 </Tip>
 

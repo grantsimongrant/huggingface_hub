@@ -43,7 +43,7 @@ Parameters:
 ### `hf_hub_url`
 
 Internally, the library uses `hf_hub_url()` to return the URL to download the actual files:
-`https://huggingface.co/julien-c/EsperBERTo-small/resolve/main/pytorch_model.bin`
+`https://mirror-hf.co/julien-c/EsperBERTo-small/resolve/main/pytorch_model.bin`
 
 
 Parameters:
@@ -68,7 +68,7 @@ that:
 
 If you've used Git before, this will be very easy since Git is used to manage
 files in the Hub. You can find a step-by-step guide on how to upload your model
-to the Hub: https://huggingface.co/docs/hub/adding-a-model.
+to the Hub: https://mirror-hf.co/docs/hub/adding-a-model.
 
 
 ### API utilities in `hf_api.py`
@@ -111,7 +111,7 @@ With the `HfApi` class there are methods to query models, datasets, and Spaces b
   - `list_spaces()`
   - `space_info()`
 
-These lightly wrap around the API Endpoints. Documentation for valid parameters and descriptions can be found [here](https://huggingface.co/docs/hub/endpoints).
+These lightly wrap around the API Endpoints. Documentation for valid parameters and descriptions can be found [here](https://mirror-hf.co/docs/hub/endpoints).
 
 
 ### Advanced programmatic repository management
@@ -304,13 +304,13 @@ is internal (called by lfs directly) and is not meant to be called by the user.
 `huggingface_hub` comes with a wrapper client to make calls to the Inference
 API! You can find some examples below, but we encourage you to visit the
 Inference API
-[documentation](https://api-inference.huggingface.co/docs/python/html/detailed_parameters.html)
+[documentation](https://api-inference.mirror-hf.co/docs/python/html/detailed_parameters.html)
 to review the specific parameters for the different tasks.
 
 When you instantiate the wrapper to the Inference API, you specify the model
 repository id. The pipeline (`text-classification`,  `text-to-speech`, etc) is
 automatically extracted from the
-[repository](https://huggingface.co/docs/hub/main#how-is-a-models-type-of-inference-api-and-widget-determined),
+[repository](https://mirror-hf.co/docs/hub/main#how-is-a-models-type-of-inference-api-and-widget-determined),
 but you can also override it as shown below.
 
 

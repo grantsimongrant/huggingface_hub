@@ -3,7 +3,7 @@
 
 # 集合（Collections）
 
-集合（collection）是 Hub 上将一组相关项目（模型、数据集、Spaces、论文）组织在同一页面上的一种方式。利用集合，你可以创建自己的作品集、为特定类别的内容添加书签，或呈现你想要分享的精选条目。要了解更多关于集合的概念及其在 Hub 上的呈现方式，请查看这篇 [指南](https://huggingface.co/docs/hub/collections) 
+集合（collection）是 Hub 上将一组相关项目（模型、数据集、Spaces、论文）组织在同一页面上的一种方式。利用集合，你可以创建自己的作品集、为特定类别的内容添加书签，或呈现你想要分享的精选条目。要了解更多关于集合的概念及其在 Hub 上的呈现方式，请查看这篇 [指南](https://mirror-hf.co/docs/hub/collections) 
 
 你可以直接在浏览器中管理集合，但本指南将重点介绍如何以编程方式进行管理。
 
@@ -12,7 +12,7 @@
 使用 [`get_collection`] 来获取你的集合或任意公共集合。 你需要提供集合的 *slug* 才能检索到该集合。 slug 是基于集合标题和唯一 ID 的标识符。你可以在集合页面的 URL 中找到它。
 
 <div class="flex justify-center">
-    <img src="https://huggingface.co/datasets/huggingface/documentation-images/resolve/main/hfh_collection_slug.png"/>
+    <img src="https://mirror-hf.co/datasets/huggingface/documentation-images/resolve/main/hfh_collection_slug.png"/>
 </div>
 
 让我们获取`"TheBloke/recent-models-64f9a55bb3115b4f513ec026"`这个集合:
@@ -59,7 +59,7 @@ CollectionItem(
 
 ## 列出集合
 
-我们也可以使用 [`list_collections`]来检索集合，并通过一些参数进行过滤。让我们列出用户[`teknium`](https://huggingface.co/teknium)的所有集合：
+我们也可以使用 [`list_collections`]来检索集合，并通过一些参数进行过滤。让我们列出用户[`teknium`](https://mirror-hf.co/teknium)的所有集合：
 ```py
 >>> from huggingface_hub import list_collections
 
@@ -81,7 +81,7 @@ Number of upvotes: 5
 
 </Tip>
 
-我们可以进行更高级的过滤。例如，让我们获取所有包含模型 [TheBloke/OpenHermes-2.5-Mistral-7B-GGUF](https://huggingface.co/TheBloke/OpenHermes-2.5-Mistral-7B-GGUF) 的集合，并按照趋势（trending）进行排序，同时将结果限制为 5 个。
+我们可以进行更高级的过滤。例如，让我们获取所有包含模型 [TheBloke/OpenHermes-2.5-Mistral-7B-GGUF](https://mirror-hf.co/TheBloke/OpenHermes-2.5-Mistral-7B-GGUF) 的集合，并按照趋势（trending）进行排序，同时将结果限制为 5 个。
 ```py
 >>> collections = list_collections(item="models/TheBloke/OpenHermes-2.5-Mistral-7B-GGUF", sort="trending", limit=5):
 >>> for collection in collections:
@@ -124,7 +124,7 @@ Crataco/favorite-7b-models-651944072b4fffcb41f8b568
 >>> collection.owner
 "username"
 >>> collection.url
-'https://huggingface.co/collections/owner/iccv-2023-15e23b46cb98efca45'
+'https://mirror-hf.co/collections/owner/iccv-2023-15e23b46cb98efca45'
 ```
 
 ## 管理集合中的条目

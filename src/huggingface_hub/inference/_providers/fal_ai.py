@@ -125,7 +125,7 @@ class FalAITextToVideoTask(FalAITask):
         # extract the base url and query params
         parsed_url = urlparse(request_params.url)
         # a bit hacky way to concatenate the provider name without parsing `parsed_url.path`
-        base_url = f"{parsed_url.scheme}://{parsed_url.netloc}{'/fal-ai' if parsed_url.netloc == 'router.huggingface.co' else ''}"
+        base_url = f"{parsed_url.scheme}://{parsed_url.netloc}{'/fal-ai' if parsed_url.netloc == 'router.mirror-hf.co' else ''}"
         query_param = f"?{parsed_url.query}" if parsed_url.query else ""
 
         # extracting the provider model id for status and result urls

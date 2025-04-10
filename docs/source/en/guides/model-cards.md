@@ -5,12 +5,12 @@ rendered properly in your Markdown viewer.
 # Create and share Model Cards
 
 The `huggingface_hub` library provides a Python interface to create, share, and update Model Cards.
-Visit [the dedicated documentation page](https://huggingface.co/docs/hub/models-cards)
+Visit [the dedicated documentation page](https://mirror-hf.co/docs/hub/models-cards)
 for a deeper view of what Model Cards on the Hub are, and how they work under the hood.
 
 ## Load a Model Card from the Hub
 
-To load an existing card from the Hub, you can use the [`ModelCard.load`] function. Here, we'll load the card from [`nateraw/vit-base-beans`](https://huggingface.co/nateraw/vit-base-beans).
+To load an existing card from the Hub, you can use the [`ModelCard.load`] function. Here, we'll load the card from [`nateraw/vit-base-beans`](https://mirror-hf.co/nateraw/vit-base-beans).
 
 ```python
 from huggingface_hub import ModelCard
@@ -214,7 +214,7 @@ Finally, we'll push that up to the hub
 card.push_to_hub(repo_id)
 ```
 
-You can check out the resulting card [here](https://huggingface.co/nateraw/hf-hub-modelcards-pr-test/blob/main/README.md).
+You can check out the resulting card [here](https://mirror-hf.co/nateraw/hf-hub-modelcards-pr-test/blob/main/README.md).
 
 If you instead wanted to push a card as a pull request, you can just say `create_pr=True` when calling `push_to_hub`:
 
@@ -222,13 +222,13 @@ If you instead wanted to push a card as a pull request, you can just say `create
 card.push_to_hub(repo_id, create_pr=True)
 ```
 
-A resulting PR created from this command can be seen [here](https://huggingface.co/nateraw/hf-hub-modelcards-pr-test/discussions/3).
+A resulting PR created from this command can be seen [here](https://mirror-hf.co/nateraw/hf-hub-modelcards-pr-test/discussions/3).
 
 ## Update metadata
 
 In this section we will see what metadata are in repo cards and how to update them.
 
-`metadata` refers to a hash map (or key value) context that provides some high-level information about a model, dataset or Space. That information can include details such as the model's `pipeline type`, `model_id` or `model_description`. For more detail you can take a look to these guides: [Model Card](https://huggingface.co/docs/hub/model-cards#model-card-metadata), [Dataset Card](https://huggingface.co/docs/hub/datasets-cards#dataset-card-metadata) and [Spaces Settings](https://huggingface.co/docs/hub/spaces-settings#spaces-settings).
+`metadata` refers to a hash map (or key value) context that provides some high-level information about a model, dataset or Space. That information can include details such as the model's `pipeline type`, `model_id` or `model_description`. For more detail you can take a look to these guides: [Model Card](https://mirror-hf.co/docs/hub/model-cards#model-card-metadata), [Dataset Card](https://mirror-hf.co/docs/hub/datasets-cards#dataset-card-metadata) and [Spaces Settings](https://mirror-hf.co/docs/hub/spaces-settings#spaces-settings).
 Now lets see some examples on how to update those metadata.
 
 
@@ -261,7 +261,7 @@ review and merge your suggestions.
 
 ## Include Evaluation Results
 
-To include evaluation results in the metadata `model-index`, you can pass an [`EvalResult`] or a list of `EvalResult` with your associated evaluation results. Under the hood it'll create the `model-index` when you call `card.data.to_dict()`. For more information on how this works, you can check out [this section of the Hub docs](https://huggingface.co/docs/hub/models-cards#evaluation-results).
+To include evaluation results in the metadata `model-index`, you can pass an [`EvalResult`] or a list of `EvalResult` with your associated evaluation results. Under the hood it'll create the `model-index` when you call `card.data.to_dict()`. For more information on how this works, you can check out [this section of the Hub docs](https://mirror-hf.co/docs/hub/models-cards#evaluation-results).
 
 <Tip>
 

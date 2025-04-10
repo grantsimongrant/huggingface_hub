@@ -4,11 +4,11 @@ rendered properly in your Markdown viewer.
 
 # Integrieren Sie jedes ML-Framework mit dem Hub
 
-Der Hugging Face Hub erleichtert das Hosten und Teilen von Modellen mit der Community. Er unterstützt [Dutzende von Bibliotheken](https://huggingface.co/docs/hub/models-libraries) im Open Source-Ökosystem. Wir arbeiten ständig daran, diese Unterstützung zu erweitern, um kollaboratives Machine Learning voranzutreiben. Die `huggingface_hub`-Bibliothek spielt eine Schlüsselrolle in diesem Prozess und ermöglicht es jedem Python-Skript, Dateien einfach hochzuladen und zu laden.
+Der Hugging Face Hub erleichtert das Hosten und Teilen von Modellen mit der Community. Er unterstützt [Dutzende von Bibliotheken](https://mirror-hf.co/docs/hub/models-libraries) im Open Source-Ökosystem. Wir arbeiten ständig daran, diese Unterstützung zu erweitern, um kollaboratives Machine Learning voranzutreiben. Die `huggingface_hub`-Bibliothek spielt eine Schlüsselrolle in diesem Prozess und ermöglicht es jedem Python-Skript, Dateien einfach hochzuladen und zu laden.
 
 Es gibt vier Hauptwege, eine Bibliothek mit dem Hub zu integrieren:
 1. **Push to Hub**: Implementieren Sie eine Methode, um ein Modell auf den Hub hochzuladen.
-   Dies beinhaltet das Modellgewicht sowie [die Modellkarte](https://huggingface.co/docs/huggingface_hub/how-to-model-cards) und alle anderen relevanten Informationen oder Daten, die für den Betrieb des Modells erforderlich sind (zum Beispiel Trainingsprotokolle). Diese Methode wird oft `push_to_hub()` genannt.
+   Dies beinhaltet das Modellgewicht sowie [die Modellkarte](https://mirror-hf.co/docs/huggingface_hub/how-to-model-cards) und alle anderen relevanten Informationen oder Daten, die für den Betrieb des Modells erforderlich sind (zum Beispiel Trainingsprotokolle). Diese Methode wird oft `push_to_hub()` genannt.
 2. **Download from Hub**: Implementieren Sie eine Methode, um ein Modell vom Hub zu laden.
    Die Methode sollte die Modellkonfiguration/-gewichte herunterladen und das Modell laden. Diese Methode wird oft `from_pretrained` oder `load_from_hub()` genannt.
 3. **Inference API**: Nutzen Sie unsere Server, um Inferenz auf von Ihrer Bibliothek unterstützten Modellen kostenlos auszuführen.
@@ -17,7 +17,7 @@ Es gibt vier Hauptwege, eine Bibliothek mit dem Hub zu integrieren:
 
 In diesem Leitfaden konzentrieren wir uns auf die ersten beiden Themen. Wir werden die beiden Hauptansätze vorstellen, die Sie zur Integration einer Bibliothek verwenden können, mit ihren Vor- und Nachteilen. Am Ende des Leitfadens ist alles zusammengefasst, um Ihnen bei der Auswahl zwischen den beiden zu helfen. Bitte beachten Sie, dass dies nur Richtlinien sind, die Sie an Ihre Anforderungen anpassen können.
 
-Wenn Sie sich für Inferenz und Widgets interessieren, können Sie [diesem Leitfaden](https://huggingface.co/docs/hub/models-adding-libraries#set-up-the-inference-api) folgen. In beiden Fällen können Sie sich an uns wenden, wenn Sie eine Bibliothek mit dem Hub integrieren und [in unserer Dokumentation](https://huggingface.co/docs/hub/models-libraries) aufgeführt haben möchten.
+Wenn Sie sich für Inferenz und Widgets interessieren, können Sie [diesem Leitfaden](https://mirror-hf.co/docs/hub/models-adding-libraries#set-up-the-inference-api) folgen. In beiden Fällen können Sie sich an uns wenden, wenn Sie eine Bibliothek mit dem Hub integrieren und [in unserer Dokumentation](https://mirror-hf.co/docs/hub/models-libraries) aufgeführt haben möchten.
 
 ## Ein flexibler Ansatz: Helfer
 
@@ -112,7 +112,7 @@ Die Klasse [ModelHubMixin] implementiert 3 *öffentliche* Methoden (`push_to_hub
 1. Lassen Sie Ihre Modell-Klasse von [`ModelHubMixin`] erben.
 2. Implementieren Sie die privaten Methoden:
    - [`~ModelHubMixin._save_pretrained`]: Methode, die als Eingabe einen Pfad zu einem Verzeichnis nimmt und das Modell dort speichert. Sie müssen die gesamte Logik zum Speichern Ihres Modells in dieser Methode schreiben: Modellkarte, Modellgewichte, Konfigurationsdateien, Trainingsprotokolle und Diagramme. Alle relevanten Informationen für dieses Modell müssen von dieser Methode behandelt werden.
-   [Model Cards](https://huggingface.co/docs/hub/model-cards) sind besonders wichtig, um Ihr Modell zu beschreiben. Weitere Details finden Sie in [unserem Implementierungsleitfaden](./model-cards).
+   [Model Cards](https://mirror-hf.co/docs/hub/model-cards) sind besonders wichtig, um Ihr Modell zu beschreiben. Weitere Details finden Sie in [unserem Implementierungsleitfaden](./model-cards).
    - [~ModelHubMixin._from_pretrained]: **Klassenmethode**, die als Eingabe eine `model_id` nimmt und ein instanziiertes Modell zurückgibt. Die Methode muss die relevanten Dateien herunterladen und laden.
 3. Sie sind fertig!
 

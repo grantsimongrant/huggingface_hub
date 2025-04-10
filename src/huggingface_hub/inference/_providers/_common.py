@@ -10,7 +10,7 @@ logger = logging.get_logger(__name__)
 
 
 # Dev purposes only.
-# If you want to try to run inference for a new model locally before it's registered on huggingface.co
+# If you want to try to run inference for a new model locally before it's registered on mirror-hf.co
 # for a given Inference Provider, you can add it to the following dictionary.
 HARDCODED_MODEL_ID_MAPPING: Dict[str, Dict[str, str]] = {
     # "HF model ID" => "Model ID on Inference Provider's side"

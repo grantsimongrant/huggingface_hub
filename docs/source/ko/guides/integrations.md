@@ -3,18 +3,18 @@ rendered properly in your Markdown viewer.
 -->
 
 # Hub와 어떤 머신 러닝 프레임워크든 통합[[integrate-any-ml-framework-with-the-hub]]
-Hugging Face Hub는 커뮤니티와 모델을 공유하는 것을 쉽게 만들어줍니다. 이는 오픈소스 생태계의 [수십 가지 라이브러리](https://huggingface.co/docs/hub/models-libraries)를 지원합니다. 저희는 항상 협업적인 머신 러닝을 발전시키기 위해 이 라이브러리를 확대하고자 노력하고 있습니다. `huggingface_hub` 라이브러리는 어떤 Python 스크립트든지 쉽게 파일을 업로드하고 가져올 수 있는 중요한 역할을 합니다.
+Hugging Face Hub는 커뮤니티와 모델을 공유하는 것을 쉽게 만들어줍니다. 이는 오픈소스 생태계의 [수십 가지 라이브러리](https://mirror-hf.co/docs/hub/models-libraries)를 지원합니다. 저희는 항상 협업적인 머신 러닝을 발전시키기 위해 이 라이브러리를 확대하고자 노력하고 있습니다. `huggingface_hub` 라이브러리는 어떤 Python 스크립트든지 쉽게 파일을 업로드하고 가져올 수 있는 중요한 역할을 합니다.
 
 라이브러리를 Hub와 통합하는 네 가지 주요 방법이 있습니다:
 
-1. **Hub에 업로드하기**: 모델을 Hub에 업로드하는 메소드를 구현합니다. 이에는 모델 가중치뿐만 아니라 [모델 카드](https://huggingface.co/docs/huggingface_hub/how-to-model-cards) 및 모델 실행에 필요한 다른 관련 정보나 데이터(예: 훈련 로그)가 포함됩니다. 이 메소드는 일반적으로 `push_to_hub()`라고 합니다.
+1. **Hub에 업로드하기**: 모델을 Hub에 업로드하는 메소드를 구현합니다. 이에는 모델 가중치뿐만 아니라 [모델 카드](https://mirror-hf.co/docs/huggingface_hub/how-to-model-cards) 및 모델 실행에 필요한 다른 관련 정보나 데이터(예: 훈련 로그)가 포함됩니다. 이 메소드는 일반적으로 `push_to_hub()`라고 합니다.
 2. **Hub에서 다운로드하기**: Hub에서 모델을 가져오는 메소드를 구현합니다. 이 메소드는 모델 구성/가중치를 다운로드하고 모델을 가져와야 합니다. 이 메소드는 일반적으로 `from_pretrained` 또는 `load_from_hub()`라고 합니다.
 3. **추론 API**: 라이브러리에서 지원하는 모델에 대해 무료로 추론을 실행할 수 있도록 당사 서버를 사용합니다.
 4. **위젯**: Hub의 모델 랜딩 페이지에 위젯을 표시합니다. 이를 통해 사용자들은 브라우저에서 빠르게 모델을 시도할 수 있습니다.
 
 이 가이드에서는 앞의 두 가지 주제에 중점을 둘 것입니다. 우리는 라이브러리를 통합하는 데 사용할 수 있는 두 가지 주요 방법을 소개하고 각각의 장단점을 설명할 것입니다. 두 가지 중 어떤 것을 선택할지에 대한 도움이 되도록 끝 부분에 내용이 요약되어 있습니다. 이는 단지 가이드라는 것을 명심하고 상황에 맞게 적응시킬 수 있는 가이드라는 점을 유념하십시오.
 
-추론 및 위젯에 관심이 있는 경우 [이 가이드](https://huggingface.co/docs/hub/models-adding-libraries#set-up-the-inference-api)를 참조할 수 있습니다. 양쪽 모두에서 라이브러리를 Hub와 통합하고 [문서](https://huggingface.co/docs/hub/models-libraries)에 목록에 게시하고자 하는 경우에는 언제든지 연락하실 수 있습니다.
+추론 및 위젯에 관심이 있는 경우 [이 가이드](https://mirror-hf.co/docs/hub/models-adding-libraries#set-up-the-inference-api)를 참조할 수 있습니다. 양쪽 모두에서 라이브러리를 Hub와 통합하고 [문서](https://mirror-hf.co/docs/hub/models-libraries)에 목록에 게시하고자 하는 경우에는 언제든지 연락하실 수 있습니다.
 
 ## 유연한 접근 방식: 도우미(helper)[[a-flexible-approach-helpers]]
 
@@ -105,7 +105,7 @@ def push_to_hub(model: MyModelClass, repo_name: str) -> None:
 
 1. 모델 클래스를 [`ModelHubMixin`]에서 상속합니다.
 2. 비공개 메소드를 구현합니다:
-   - [`~ModelHubMixin._save_pretrained`]: 디렉터리 경로를 입력으로 받아 모델을 해당 디렉터리에 저장하는 메소드입니다. 이 메소드에는 모델 카드, 모델 가중치, 구성 파일, 훈련 로그 및 그림 등 해당 모델에 대한 모든 관련 정보를 저장하기 위한 로직을 작성해야 합니다. [모델 카드](https://huggingface.co/docs/hub/model-cards)는 모델을 설명하는 데 특히 중요합니다. 더 자세한 내용은 [구현 가이드](./model-cards)를 확인하세요.
+   - [`~ModelHubMixin._save_pretrained`]: 디렉터리 경로를 입력으로 받아 모델을 해당 디렉터리에 저장하는 메소드입니다. 이 메소드에는 모델 카드, 모델 가중치, 구성 파일, 훈련 로그 및 그림 등 해당 모델에 대한 모든 관련 정보를 저장하기 위한 로직을 작성해야 합니다. [모델 카드](https://mirror-hf.co/docs/hub/model-cards)는 모델을 설명하는 데 특히 중요합니다. 더 자세한 내용은 [구현 가이드](./model-cards)를 확인하세요.
    - [`~ModelHubMixin._from_pretrained`]: `model_id`를 입력으로 받아 인스턴스화된 모델을 반환하는 **클래스 메소드**입니다. 이 메소드는 관련 파일을 다운로드하고 가져와야 합니다.
 3. 완료했습니다!
 
@@ -248,7 +248,7 @@ class PyTorchModelHubMixin(ModelHubMixin):
 
 #### 모델 카드[[model-card]]
 
-[`ModelHubMixin`]은 모델 카드를 자동으로 생성합니다. 모델 카드는 모델과 함께 제공되는 중요한 정보를 제공하는 파일입니다. 모델 카드는 추가 메타데이터가 포함된 간단한 Markdown 파일입니다. 모델 카드는 발견 가능성, 재현성 및 공유를 위해 중요합니다! 더 자세한 내용은 [모델 카드 가이드](https://huggingface.co/docs/hub/model-cards)를 확인하세요.
+[`ModelHubMixin`]은 모델 카드를 자동으로 생성합니다. 모델 카드는 모델과 함께 제공되는 중요한 정보를 제공하는 파일입니다. 모델 카드는 추가 메타데이터가 포함된 간단한 Markdown 파일입니다. 모델 카드는 발견 가능성, 재현성 및 공유를 위해 중요합니다! 더 자세한 내용은 [모델 카드 가이드](https://mirror-hf.co/docs/hub/model-cards)를 확인하세요.
 
 모델 카드를 반자동으로 생성하는 것은 라이브러리로 푸시된 모든 모델이 `library_name`, `tags`, `license`, `pipeline_tag` 등과 같은 공통 메타데이터를 공유하도록 하는 좋은 방법입니다. 이를 통해 모든 모델이 Hub에서 쉽게 검색 가능하게 되고, Hub에 접속한 사용자에게 일부 리소스 링크를 제공합니다. [`ModelHubMixin`]을 상속할 때 메타데이터를 직접 정의할 수 있습니다:
 
@@ -266,7 +266,7 @@ class UniDepthV1(
    ...
 ```
 
-기본적으로는 제공된 정보로 일반적인 모델 카드가 생성됩니다(예: [pyp1/VoiceCraft_giga830M](https://huggingface.co/pyp1/VoiceCraft_giga830M)). 그러나 사용자 정의 모델 카드 템플릿을 정의할 수도 있습니다!
+기본적으로는 제공된 정보로 일반적인 모델 카드가 생성됩니다(예: [pyp1/VoiceCraft_giga830M](https://mirror-hf.co/pyp1/VoiceCraft_giga830M)). 그러나 사용자 정의 모델 카드 템플릿을 정의할 수도 있습니다!
 
 이 예에서는 `VoiceCraft` 클래스로 푸시된 모든 모델에 자동으로 인용 부분과 라이선스 세부 정보가 포함됩니다. 모델 카드 템플릿을 정의하는 방법에 대한 자세한 내용은 [모델 카드 가이드](./model-cards)를 참조하세요.
 
@@ -274,7 +274,7 @@ class UniDepthV1(
 MODEL_CARD_TEMPLATE = """
 ---
 # For reference on model card metadata, see the spec: https://github.com/huggingface/hub-docs/blob/main/modelcard.md?plain=1
-# Doc / guide: https://huggingface.co/docs/hub/model-cards
+# Doc / guide: https://mirror-hf.co/docs/hub/model-cards
 {{ card_data }}
 ---
 

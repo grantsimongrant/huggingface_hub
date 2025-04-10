@@ -39,7 +39,7 @@ jobs:
         run: |
           cd ${{ matrix.target-repo }}
           git config user.name "Hugging Face Bot (RC Testing)"
-          git config user.email "bot@huggingface.co"
+          git config user.email "bot@mirror-hf.co"
 
       - name: Wait for prerelease to be out on PyPI
         run: |

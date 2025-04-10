@@ -4,7 +4,7 @@ rendered properly in your Markdown viewer.
 
 # Interaktion mit Diskussionen und Pull-Requests
 
-Die `huggingface_hub`-Bibliothek bietet eine Python-Schnittstelle, um mit Pull-Requests und Diskussionen auf dem Hub zu interagieren. Besuchen Sie [die spezielle Dokumentationsseite](https://huggingface.co/docs/hub/repositories-pull-requests-discussions), um einen tieferen Einblick in Diskussionen und Pull-Requests auf dem Hub zu erhalten und zu erfahren, wie sie im Hintergrund funktionieren.
+Die `huggingface_hub`-Bibliothek bietet eine Python-Schnittstelle, um mit Pull-Requests und Diskussionen auf dem Hub zu interagieren. Besuchen Sie [die spezielle Dokumentationsseite](https://mirror-hf.co/docs/hub/repositories-pull-requests-discussions), um einen tieferen Einblick in Diskussionen und Pull-Requests auf dem Hub zu erhalten und zu erfahren, wie sie im Hintergrund funktionieren.
 
 ## Diskussionen und Pull-Requests vom Hub abrufen
 
@@ -63,7 +63,7 @@ Im Fall eines Pull-Requests können Sie mit [`DiskussionMitDetails.diff`] den ro
 
 ## Diskussion oder Pull-Request programmatisch erstellen und bearbeiten
 
-Die [`HfApi`]-Klasse bietet auch Möglichkeiten, Diskussionen und Pull-Requests zu erstellen und zu bearbeiten. Sie benötigen ein [Access Token](https://huggingface.co/docs/hub/security-tokens), um Diskussionen oder Pull-Requests zu erstellen und zu bearbeiten.
+Die [`HfApi`]-Klasse bietet auch Möglichkeiten, Diskussionen und Pull-Requests zu erstellen und zu bearbeiten. Sie benötigen ein [Access Token](https://mirror-hf.co/docs/hub/security-tokens), um Diskussionen oder Pull-Requests zu erstellen und zu bearbeiten.
 
 Die einfachste Möglichkeit, Änderungen an einem Repo auf dem Hub vorzuschlagen, ist über die [`create_commit`]-API: Setzen Sie einfach das `create_pr`-Parameter auf `True`. Dieser Parameter ist auch bei anderen Methoden verfügbar, die [`create_commit`] umfassen:
 

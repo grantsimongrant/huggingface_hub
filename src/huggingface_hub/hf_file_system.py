@@ -71,10 +71,10 @@ class HfFileSystem(fsspec.AbstractFileSystem):
         token (`str` or `bool`, *optional*):
             A valid user access token (string). Defaults to the locally saved
             token, which is the recommended method for authentication (see
-            https://huggingface.co/docs/huggingface_hub/quick-start#authentication).
+            https://mirror-hf.co/docs/huggingface_hub/quick-start#authentication).
             To disable authentication, pass `False`.
         endpoint (`str`, *optional*):
-            Endpoint of the Hub. Defaults to <https://huggingface.co>.
+            Endpoint of the Hub. Defaults to <https://mirror-hf.co>.
     Usage:
 
     ```python

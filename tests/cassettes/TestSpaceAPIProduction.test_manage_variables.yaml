@@ -16,13 +16,13 @@ interactions:
       X-Amzn-Trace-Id:
       - 47a4cc5f-9a1b-44b2-9cef-901111fd2498
     method: POST
-    uri: https://huggingface.co/api/repos/create
+    uri: https://mirror-hf.co/api/repos/create
   response:
     body:
-      string: '{"url":"https://huggingface.co/spaces/user/tmp_test_space","name":"user/tmp_test_space","id":"67cae56f9b4f4ee4713c83e7"}'
+      string: '{"url":"https://mirror-hf.co/spaces/user/tmp_test_space","name":"user/tmp_test_space","id":"67cae56f9b4f4ee4713c83e7"}'
     headers:
       Access-Control-Allow-Origin:
-      - https://huggingface.co
+      - https://mirror-hf.co
       Access-Control-Expose-Headers:
       - X-Repo-Commit,X-Request-Id,X-Error-Code,X-Error-Message,X-Total-Count,ETag,Link,Accept-Ranges,Content-Range,X-Xet-Access-Token,X-Xet-Token-Expiration,X-Xet-Refresh-Route,X-Xet-Cas-Url,X-Xet-Hash
       Connection:
@@ -73,13 +73,13 @@ interactions:
       X-Amzn-Trace-Id:
       - a674d7b9-a3ce-4402-a8f4-ae05e73a8578
     method: POST
-    uri: https://huggingface.co/api/spaces/user/tmp_test_space/preupload/main
+    uri: https://mirror-hf.co/api/spaces/user/tmp_test_space/preupload/main
   response:
     body:
       string: '{"files":[{"path":"app.py","uploadMode":"regular","shouldIgnore":false}],"commitOid":"c28c3378a2354b5aa3b65c9652ed8ed8941ba3d5"}'
     headers:
       Access-Control-Allow-Origin:
-      - https://huggingface.co
+      - https://mirror-hf.co
       Access-Control-Expose-Headers:
       - X-Repo-Commit,X-Request-Id,X-Error-Code,X-Error-Message,X-Total-Count,ETag,Link,Accept-Ranges,Content-Range,X-Xet-Access-Token,X-Xet-Token-Expiration,X-Xet-Refresh-Route,X-Xet-Cas-Url,X-Xet-Hash
       Connection:
@@ -125,13 +125,13 @@ interactions:
       X-Amzn-Trace-Id:
       - 02a4c7dc-c8b8-4b16-8021-83edf7b5ecae
     method: GET
-    uri: https://huggingface.co/api/spaces/user/tmp_test_space/revision/main?expand=xetEnabled
+    uri: https://mirror-hf.co/api/spaces/user/tmp_test_space/revision/main?expand=xetEnabled
   response:
     body:
       string: '{"_id":"67cae56f9b4f4ee4713c83e7","id":"user/tmp_test_space","xetEnabled":false}'
     headers:
       Access-Control-Allow-Origin:
-      - https://huggingface.co
+      - https://mirror-hf.co
       Access-Control-Expose-Headers:
       - X-Repo-Commit,X-Request-Id,X-Error-Code,X-Error-Message,X-Total-Count,ETag,Link,Accept-Ranges,Content-Range,X-Xet-Access-Token,X-Xet-Token-Expiration,X-Xet-Refresh-Route,X-Xet-Cas-Url,X-Xet-Hash
       Connection:
@@ -187,13 +187,13 @@ interactions:
       X-Amzn-Trace-Id:
       - b0f4a049-91f2-4a65-9eec-9f75b5a07872
     method: POST
-    uri: https://huggingface.co/api/spaces/user/tmp_test_space/commit/main
+    uri: https://mirror-hf.co/api/spaces/user/tmp_test_space/commit/main
   response:
     body:
-      string: '{"success":true,"commitOid":"eff8e0eb38c673ede5f5d4c4d106255900fa39e2","commitUrl":"https://huggingface.co/spaces/user/tmp_test_space/commit/eff8e0eb38c673ede5f5d4c4d106255900fa39e2","hookOutput":""}'
+      string: '{"success":true,"commitOid":"eff8e0eb38c673ede5f5d4c4d106255900fa39e2","commitUrl":"https://mirror-hf.co/spaces/user/tmp_test_space/commit/eff8e0eb38c673ede5f5d4c4d106255900fa39e2","hookOutput":""}'
     headers:
       Access-Control-Allow-Origin:
-      - https://huggingface.co
+      - https://mirror-hf.co
       Access-Control-Expose-Headers:
       - X-Repo-Commit,X-Request-Id,X-Error-Code,X-Error-Message,X-Total-Count,ETag,Link,Accept-Ranges,Content-Range,X-Xet-Access-Token,X-Xet-Token-Expiration,X-Xet-Refresh-Route,X-Xet-Cas-Url,X-Xet-Hash
       Connection:
@@ -239,13 +239,13 @@ interactions:
       X-Amzn-Trace-Id:
       - bf9d247f-1b2e-4454-acf7-aa972cd07b55
     method: GET
-    uri: https://huggingface.co/api/spaces/user/tmp_test_space/variables
+    uri: https://mirror-hf.co/api/spaces/user/tmp_test_space/variables
   response:
     body:
       string: '{}'
     headers:
       Access-Control-Allow-Origin:
-      - https://huggingface.co
+      - https://mirror-hf.co
       Access-Control-Expose-Headers:
       - X-Repo-Commit,X-Request-Id,X-Error-Code,X-Error-Message,X-Total-Count,ETag,Link,Accept-Ranges,Content-Range,X-Xet-Access-Token,X-Xet-Token-Expiration,X-Xet-Refresh-Route,X-Xet-Cas-Url,X-Xet-Hash
       Connection:
@@ -295,13 +295,13 @@ interactions:
       X-Amzn-Trace-Id:
       - c08ae5a9-0683-4d1d-ac9c-8ce685520f3d
     method: POST
-    uri: https://huggingface.co/api/spaces/user/tmp_test_space/variables
+    uri: https://mirror-hf.co/api/spaces/user/tmp_test_space/variables
   response:
     body:
       string: '{"foo":{"value":"123","updatedAt":"2025-03-07T12:24:18.657Z"}}'
     headers:
       Access-Control-Allow-Origin:
-      - https://huggingface.co
+      - https://mirror-hf.co
       Access-Control-Expose-Headers:
       - X-Repo-Commit,X-Request-Id,X-Error-Code,X-Error-Message,X-Total-Count,ETag,Link,Accept-Ranges,Content-Range,X-Xet-Access-Token,X-Xet-Token-Expiration,X-Xet-Refresh-Route,X-Xet-Cas-Url,X-Xet-Hash
       Connection:
@@ -351,13 +351,13 @@ interactions:
       X-Amzn-Trace-Id:
       - 6727a16f-2d47-45f3-843b-e54989ad0580
     method: POST
-    uri: https://huggingface.co/api/spaces/user/tmp_test_space/variables
+    uri: https://mirror-hf.co/api/spaces/user/tmp_test_space/variables
   response:
     body:
       string: '{"foo":{"value":"123","updatedAt":"2025-03-07T12:24:18.657Z"},"MODEL_REPO_ID":{"value":"user/repo","updatedAt":"2025-03-07T12:24:19.140Z"}}'
     headers:
       Access-Control-Allow-Origin:
-      - https://huggingface.co
+      - https://mirror-hf.co
       Access-Control-Expose-Headers:
       - X-Repo-Commit,X-Request-Id,X-Error-Code,X-Error-Message,X-Total-Count,ETag,Link,Accept-Ranges,Content-Range,X-Xet-Access-Token,X-Xet-Token-Expiration,X-Xet-Refresh-Route,X-Xet-Cas-Url,X-Xet-Hash
       Connection:
@@ -407,14 +407,14 @@ interactions:
       X-Amzn-Trace-Id:
       - ac16a5ea-5d18-47b7-98c3-dc4129acfcf5
     method: POST
-    uri: https://huggingface.co/api/spaces/user/tmp_test_space/variables
+    uri: https://mirror-hf.co/api/spaces/user/tmp_test_space/variables
   response:
     body:
       string: '{"foo":{"value":"123","updatedAt":"2025-03-07T12:24:18.657Z"},"MODEL_REPO_ID":{"value":"user/repo","updatedAt":"2025-03-07T12:24:19.140Z"},"MODEL_PAPER":{"value":"arXiv","description":"found
         it there","updatedAt":"2025-03-07T12:24:19.337Z"}}'
     headers:
       Access-Control-Allow-Origin:
-      - https://huggingface.co
+      - https://mirror-hf.co
       Access-Control-Expose-Headers:
       - X-Repo-Commit,X-Request-Id,X-Error-Code,X-Error-Message,X-Total-Count,ETag,Link,Accept-Ranges,Content-Range,X-Xet-Access-Token,X-Xet-Token-Expiration,X-Xet-Refresh-Route,X-Xet-Cas-Url,X-Xet-Hash
       Connection:
@@ -464,14 +464,14 @@ interactions:
       X-Amzn-Trace-Id:
       - 699803d2-ae72-49ae-9712-e576db0751ea
     method: POST
-    uri: https://huggingface.co/api/spaces/user/tmp_test_space/variables
+    uri: https://mirror-hf.co/api/spaces/user/tmp_test_space/variables
   response:
     body:
       string: '{"foo":{"value":"456","updatedAt":"2025-03-07T12:24:19.651Z"},"MODEL_REPO_ID":{"value":"user/repo","updatedAt":"2025-03-07T12:24:19.140Z"},"MODEL_PAPER":{"value":"arXiv","description":"found
         it there","updatedAt":"2025-03-07T12:24:19.337Z"}}'
     headers:
       Access-Control-Allow-Origin:
-      - https://huggingface.co
+      - https://mirror-hf.co
       Access-Control-Expose-Headers:
       - X-Repo-Commit,X-Request-Id,X-Error-Code,X-Error-Message,X-Total-Count,ETag,Link,Accept-Ranges,Content-Range,X-Xet-Access-Token,X-Xet-Token-Expiration,X-Xet-Refresh-Route,X-Xet-Cas-Url,X-Xet-Hash
       Connection:
@@ -521,14 +521,14 @@ interactions:
       X-Amzn-Trace-Id:
       - a934728a-ddd4-4369-a0e4-6cdffa21758c
     method: POST
-    uri: https://huggingface.co/api/spaces/user/tmp_test_space/variables
+    uri: https://mirror-hf.co/api/spaces/user/tmp_test_space/variables
   response:
     body:
       string: '{"foo":{"value":"456","description":"updated description","updatedAt":"2025-03-07T12:24:19.875Z"},"MODEL_REPO_ID":{"value":"user/repo","updatedAt":"2025-03-07T12:24:19.140Z"},"MODEL_PAPER":{"value":"arXiv","description":"found
         it there","updatedAt":"2025-03-07T12:24:19.337Z"}}'
     headers:
       Access-Control-Allow-Origin:
-      - https://huggingface.co
+      - https://mirror-hf.co
       Access-Control-Expose-Headers:
       - X-Repo-Commit,X-Request-Id,X-Error-Code,X-Error-Message,X-Total-Count,ETag,Link,Accept-Ranges,Content-Range,X-Xet-Access-Token,X-Xet-Token-Expiration,X-Xet-Refresh-Route,X-Xet-Cas-Url,X-Xet-Hash
       Connection:
@@ -578,14 +578,14 @@ interactions:
       X-Amzn-Trace-Id:
       - 41cc0e9b-386c-4960-9b0c-fefffe97ea62
     method: DELETE
-    uri: https://huggingface.co/api/spaces/user/tmp_test_space/variables
+    uri: https://mirror-hf.co/api/spaces/user/tmp_test_space/variables
   response:
     body:
       string: '{"foo":{"value":"456","description":"updated description","updatedAt":"2025-03-07T12:24:19.875Z"},"MODEL_REPO_ID":{"value":"user/repo","updatedAt":"2025-03-07T12:24:19.140Z"},"MODEL_PAPER":{"value":"arXiv","description":"found
         it there","updatedAt":"2025-03-07T12:24:19.337Z"}}'
     headers:
       Access-Control-Allow-Origin:
-      - https://huggingface.co
+      - https://mirror-hf.co
       Access-Control-Expose-Headers:
       - X-Repo-Commit,X-Request-Id,X-Error-Code,X-Error-Message,X-Total-Count,ETag,Link,Accept-Ranges,Content-Range,X-Xet-Access-Token,X-Xet-Token-Expiration,X-Xet-Refresh-Route,X-Xet-Cas-Url,X-Xet-Hash
       Connection:
@@ -635,14 +635,14 @@ interactions:
       X-Amzn-Trace-Id:
       - ec63b32a-6bcc-4a86-8a9c-6f7beda90418
     method: DELETE
-    uri: https://huggingface.co/api/spaces/user/tmp_test_space/variables
+    uri: https://mirror-hf.co/api/spaces/user/tmp_test_space/variables
   response:
     body:
       string: '{"foo":{"value":"456","description":"updated description","updatedAt":"2025-03-07T12:24:19.875Z"},"MODEL_REPO_ID":{"value":"user/repo","updatedAt":"2025-03-07T12:24:19.140Z"},"MODEL_PAPER":{"value":"arXiv","description":"found
         it there","updatedAt":"2025-03-07T12:24:19.337Z"}}'
     headers:
       Access-Control-Allow-Origin:
-      - https://huggingface.co
+      - https://mirror-hf.co
       Access-Control-Expose-Headers:
       - X-Repo-Commit,X-Request-Id,X-Error-Code,X-Error-Message,X-Total-Count,ETag,Link,Accept-Ranges,Content-Range,X-Xet-Access-Token,X-Xet-Token-Expiration,X-Xet-Refresh-Route,X-Xet-Cas-Url,X-Xet-Hash
       Connection:
@@ -688,14 +688,14 @@ interactions:
       X-Amzn-Trace-Id:
       - 1b8a4629-6629-48df-a512-dcff8d947cb4
     method: GET
-    uri: https://huggingface.co/api/spaces/user/tmp_test_space/variables
+    uri: https://mirror-hf.co/api/spaces/user/tmp_test_space/variables
   response:
     body:
       string: '{"foo":{"value":"456","description":"updated description","updatedAt":"2025-03-07T12:24:19.875Z"},"MODEL_REPO_ID":{"value":"user/repo","updatedAt":"2025-03-07T12:24:19.140Z"},"MODEL_PAPER":{"value":"arXiv","description":"found
         it there","updatedAt":"2025-03-07T12:24:19.337Z"}}'
     headers:
       Access-Control-Allow-Origin:
-      - https://huggingface.co
+      - https://mirror-hf.co
       Access-Control-Expose-Headers:
       - X-Repo-Commit,X-Request-Id,X-Error-Code,X-Error-Message,X-Total-Count,ETag,Link,Accept-Ranges,Content-Range,X-Xet-Access-Token,X-Xet-Token-Expiration,X-Xet-Refresh-Route,X-Xet-Cas-Url,X-Xet-Hash
       Connection:
@@ -745,13 +745,13 @@ interactions:
       X-Amzn-Trace-Id:
       - 09422d1d-6beb-47cd-96e9-334e1d23e667
     method: DELETE
-    uri: https://huggingface.co/api/repos/delete
+    uri: https://mirror-hf.co/api/repos/delete
   response:
     body:
       string: OK
     headers:
       Access-Control-Allow-Origin:
-      - https://huggingface.co
+      - https://mirror-hf.co
       Access-Control-Expose-Headers:
       - X-Repo-Commit,X-Request-Id,X-Error-Code,X-Error-Message,X-Total-Count,ETag,Link,Accept-Ranges,Content-Range,X-Xet-Access-Token,X-Xet-Token-Expiration,X-Xet-Refresh-Route,X-Xet-Cas-Url,X-Xet-Hash
       Connection:

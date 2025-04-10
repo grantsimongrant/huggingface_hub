@@ -131,7 +131,7 @@ def are_symlinks_supported(cache_dir: Union[str, Path, None] = None) -> bool:
                         " your disk. This warning can be disabled by setting the"
                         " `HF_HUB_DISABLE_SYMLINKS_WARNING` environment variable. For"
                         " more details, see"
-                        " https://huggingface.co/docs/huggingface_hub/how-to-cache#limitations."
+                        " https://mirror-hf.co/docs/huggingface_hub/how-to-cache#limitations."
                     )
                     if os.name == "nt":
                         message += (
@@ -185,7 +185,7 @@ def hf_hub_url(
 ) -> str:
     """Construct the URL of a file from the given information.
 
-    The resolved address can either be a huggingface.co-hosted url, or a link to
+    The resolved address can either be a mirror-hf.co-hosted url, or a link to
     Cloudfront (a Content Delivery Network, or CDN) for large files which are
     more than a few MBs.
 
@@ -212,7 +212,7 @@ def hf_hub_url(
     >>> hf_hub_url(
     ...     repo_id="julien-c/EsperBERTo-small", filename="pytorch_model.bin"
     ... )
-    'https://huggingface.co/julien-c/EsperBERTo-small/resolve/main/pytorch_model.bin'
+    'https://mirror-hf.co/julien-c/EsperBERTo-small/resolve/main/pytorch_model.bin'
     ```
 
     <Tip>
@@ -224,7 +224,7 @@ def hf_hub_url(
 
         Cloudfront aggressively caches files by default (default TTL is 24
         hours), however this is not an issue here because we implement a
-        git-based versioning system on huggingface.co, which means that we store
+        git-based versioning system on mirror-hf.co, which means that we store
         the files on S3/Cloudfront in a content-addressable way (i.e., the file
         name is its hash). Using content-addressable filenames means cache can't
         ever be stale.
@@ -938,7 +938,7 @@ def hf_hub_download(
                 "The process to download files to a local folder has been updated and do "
                 "not rely on symlinks anymore. You only need to pass a destination folder "
                 "as`local_dir`.\n"
-                "For more details, check out https://huggingface.co/docs/huggingface_hub/main/en/guides/download#download-files-to-local-folder."
+                "For more details, check out https://mirror-hf.co/docs/huggingface_hub/main/en/guides/download#download-files-to-local-folder."
             )
 
         return _hf_hub_download_to_local_dir(
@@ -1275,7 +1275,7 @@ def try_to_load_from_cache(
         cache_dir (`str` or `os.PathLike`):
             The folder where the cached files lie.
         repo_id (`str`):
-            The ID of the repo on huggingface.co.
+            The ID of the repo on mirror-hf.co.
         filename (`str`):
             The filename to look for inside `repo_id`.
         revision (`str`, *optional*):
@@ -1507,8 +1507,8 @@ def _get_metadata_or_catch_error(
             commit_hash = metadata.commit_hash
             if commit_hash is None:
                 raise FileMetadataError(
-                    "Distant resource does not seem to be on huggingface.co. It is possible that a configuration issue"
-                    " prevents you from downloading resources from https://huggingface.co. Please check your firewall"
+                    "Distant resource does not seem to be on mirror-hf.co. It is possible that a configuration issue"
+                    " prevents you from downloading resources from https://mirror-hf.co. Please check your firewall"
                     " and proxy settings and make sure your SSL certificates are updated."
                 )
 

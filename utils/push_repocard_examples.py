@@ -44,7 +44,7 @@ def push_model_card_example(overwrite: bool) -> None:
     """Generate an empty model card from template for documentation purposes.
 
     Do not push if content has not changed. Script is triggered in CI on main branch.
-    Card is pushed to https://huggingface.co/templates/model-card-example.
+    Card is pushed to https://mirror-hf.co/templates/model-card-example.
     """
     # Not using ModelCard directly to preserve comments in metadata part
     template = jinja2.Template(ModelCard.default_template_path.read_text())
@@ -74,7 +74,7 @@ def push_dataset_card_example(overwrite: bool) -> None:
     """Generate an empty dataset card from template for documentation purposes.
 
     Do not push if content has not changed. Script is triggered in CI on main branch.
-    Card is pushed to https://huggingface.co/datasets/templates/dataset-card-example.
+    Card is pushed to https://mirror-hf.co/datasets/templates/dataset-card-example.
     """
     # Not using DatasetCard directly to preserve comments in metadata part
     template = jinja2.Template(DatasetCard.default_template_path.read_text())

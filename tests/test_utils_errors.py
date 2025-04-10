@@ -41,7 +41,7 @@ class TestErrorUtils(unittest.TestCase):
         response.headers = {X_REQUEST_ID: 123}
         response.status_code = 401
         response.request = PreparedRequest()
-        response.request.url = "https://huggingface.co/api/models/username/reponame"
+        response.request.url = "https://mirror-hf.co/api/models/username/reponame"
         with self.assertRaisesRegex(RepositoryNotFoundError, "Repository Not Found") as context:
             hf_raise_for_status(response)
 
@@ -53,7 +53,7 @@ class TestErrorUtils(unittest.TestCase):
         response.headers = {X_REQUEST_ID: 123, "X-Error-Message": "Invalid credentials in Authorization header"}
         response.status_code = 401
         response.request = PreparedRequest()
-        response.request.url = "https://huggingface.co/api/models/username/reponame"
+        response.request.url = "https://mirror-hf.co/api/models/username/reponame"
         with self.assertRaisesRegex(HfHubHTTPError, "Invalid credentials in Authorization header") as context:
             hf_raise_for_status(response)
 
@@ -65,7 +65,7 @@ class TestErrorUtils(unittest.TestCase):
         response.headers = {X_REQUEST_ID: 123, "X-Error-Message": "specific error message"}
         response.status_code = 403
         response.request = PreparedRequest()
-        response.request.url = "https://huggingface.co/api/repos/create"
+        response.request.url = "https://mirror-hf.co/api/repos/create"
         expected_message_part = "403 Forbidden: specific error message"
         with self.assertRaisesRegex(HfHubHTTPError, expected_message_part) as context:
             hf_raise_for_status(response)
@@ -78,7 +78,7 @@ class TestErrorUtils(unittest.TestCase):
         response.headers = {X_REQUEST_ID: 123}
         response.status_code = 401
         response.request = PreparedRequest()
-        response.request.url = "https://huggingface.co/api/collections"
+        response.request.url = "https://mirror-hf.co/api/collections"
         with self.assertRaises(HfHubHTTPError) as context:
             hf_raise_for_status(response)
 
@@ -288,33 +288,33 @@ class TestHfHubHTTPError(unittest.TestCase):
     ("url", "should_match"),
     [
         # Listing endpoints => False
-        ("https://huggingface.co/api/models", False),
-        ("https://huggingface.co/api/datasets", False),
-        ("https://huggingface.co/api/spaces", False),
+        ("https://mirror-hf.co/api/models", False),
+        ("https://mirror-hf.co/api/datasets", False),
+        ("https://mirror-hf.co/api/spaces", False),
         # Create repo endpoint => False
-        ("https://huggingface.co/api/repos/create", False),
+        ("https://mirror-hf.co/api/repos/create", False),
         # Collection endpoints => False
-        ("https://huggingface.co/api/collections", False),
-        ("https://huggingface.co/api/collections/foo/bar", False),
+        ("https://mirror-hf.co/api/collections", False),
+        ("https://mirror-hf.co/api/collections/foo/bar", False),
         # Repo endpoints => True
-        ("https://huggingface.co/api/models/repo_id", True),
-        ("https://huggingface.co/api/datasets/repo_id", True),
-        ("https://huggingface.co/api/spaces/repo_id", True),
-        ("https://huggingface.co/api/models/username/repo_name/refs/main", True),
-        ("https://huggingface.co/api/datasets/username/repo_name/refs/main", True),
-        ("https://huggingface.co/api/spaces/username/repo_name/refs/main", True),
+        ("https://mirror-hf.co/api/models/repo_id", True),
+        ("https://mirror-hf.co/api/datasets/repo_id", True),
+        ("https://mirror-hf.co/api/spaces/repo_id", True),
+        ("https://mirror-hf.co/api/models/username/repo_name/refs/main", True),
+        ("https://mirror-hf.co/api/datasets/username/repo_name/refs/main", True),
+        ("https://mirror-hf.co/api/spaces/username/repo_name/refs/main", True),
         # Inference Endpoint => False
         ("https://api.endpoints.huggingface.cloud/v2/endpoint/namespace", False),
         # Staging Endpoint => True
-        ("https://hub-ci.huggingface.co/api/models/repo_id", True),
-        ("https://hub-ci.huggingface.co/api/datasets/repo_id", True),
-        ("https://hub-ci.huggingface.co/api/spaces/repo_id", True),
+        ("https://hub-ci.mirror-hf.co/api/models/repo_id", True),
+        ("https://hub-ci.mirror-hf.co/api/datasets/repo_id", True),
+        ("https://hub-ci.mirror-hf.co/api/spaces/repo_id", True),
         # /resolve Endpoint => True
-        ("https://huggingface.co/gpt2/resolve/main/README.md", True),
-        ("https://huggingface.co/datasets/google/fleurs/resolve/revision/README.md", True),
+        ("https://mirror-hf.co/gpt2/resolve/main/README.md", True),
+        ("https://mirror-hf.co/datasets/google/fleurs/resolve/revision/README.md", True),
         # Regression tests
-        ("https://huggingface.co/bert-base/resolve/main/pytorch_model.bin", True),
-        ("https://hub-ci.huggingface.co/__DUMMY_USER__/repo-1470b5/resolve/main/file.txt", True),
+        ("https://mirror-hf.co/bert-base/resolve/main/pytorch_model.bin", True),
+        ("https://hub-ci.mirror-hf.co/__DUMMY_USER__/repo-1470b5/resolve/main/file.txt", True),
     ],
 )
 def test_repo_api_regex(url: str, should_match: bool) -> None:

@@ -11,13 +11,13 @@ interactions:
       X-Amzn-Trace-Id:
       - 83f472d9-bd14-43a5-956a-a435b1cbd0a2
     method: GET
-    uri: https://huggingface.co/api/models/meta-llama/Llama-3.1-8B-Instruct?expand=inferenceProviderMapping
+    uri: https://mirror-hf.co/api/models/meta-llama/Llama-3.1-8B-Instruct?expand=inferenceProviderMapping
   response:
     body:
       string: '{"_id":"6698d8a0653e4babe21e1e7d","id":"meta-llama/Llama-3.1-8B-Instruct","inferenceProviderMapping":{"fireworks-ai":{"status":"staging","providerId":"accounts/fireworks/models/llama-v3p1-8b-instruct","task":"conversational"},"sambanova":{"status":"live","providerId":"Meta-Llama-3.1-8B-Instruct","task":"conversational"},"hf-inference":{"status":"live","providerId":"meta-llama/Llama-3.1-8B-Instruct","task":"conversational"},"nebius":{"status":"staging","providerId":"meta-llama/Meta-Llama-3.1-8B-Instruct-fast","task":"conversational"},"novita":{"status":"staging","providerId":"meta-llama/llama-3.1-8b-instruct","task":"conversational"}}}'
     headers:
       Access-Control-Allow-Origin:
-      - https://huggingface.co
+      - https://mirror-hf.co
       Access-Control-Expose-Headers:
       - X-Repo-Commit,X-Request-Id,X-Error-Code,X-Error-Message,X-Total-Count,ETag,Link,Accept-Ranges,Content-Range,X-Xet-Access-Token,X-Xet-Token-Expiration,X-Xet-Refresh-Route,X-Xet-Cas-Url,X-Xet-Hash
       Connection:
@@ -69,7 +69,7 @@ interactions:
       X-Amzn-Trace-Id:
       - 0e9b879c-7337-437e-a408-8629f5b5e3e9
     method: POST
-    uri: https://router.huggingface.co/sambanova/v1/chat/completions
+    uri: https://router.mirror-hf.co/sambanova/v1/chat/completions
   response:
     body:
       string: 'data: {"choices":[{"delta":{"content":"","role":"assistant"},"finish_reason":null,"index":0,"logprobs":null}],"created":1739457447,"id":"bb808a99-79f9-48ab-8881-bdba2cf9baf6","model":"Meta-Llama-3.1-8B-Instruct","object":"chat.completion.chunk","system_fingerprint":"fastcoe"}

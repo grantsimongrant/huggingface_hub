@@ -11,13 +11,13 @@ interactions:
       X-Amzn-Trace-Id:
       - ba9e1697-ad5a-49bf-a394-5da0467bf6dc
     method: GET
-    uri: https://huggingface.co/api/models/stabilityai/stable-diffusion-xl-base-1.0?expand=inferenceProviderMapping
+    uri: https://mirror-hf.co/api/models/stabilityai/stable-diffusion-xl-base-1.0?expand=inferenceProviderMapping
   response:
     body:
       string: '{"_id":"64bfcd5ff462a99a04fd1ec8","id":"stabilityai/stable-diffusion-xl-base-1.0","inferenceProviderMapping":{"replicate":{"status":"live","providerId":"stability-ai/sdxl:7762fd07cf82c948538e41f63f77d685e02b063e37e496e96eefd46c929f9bdc","task":"text-to-image"},"together":{"status":"live","providerId":"stabilityai/stable-diffusion-xl-base-1.0","task":"text-to-image"},"hf-inference":{"status":"live","providerId":"stabilityai/stable-diffusion-xl-base-1.0","task":"text-to-image"},"nebius":{"status":"staging","providerId":"stability-ai/sdxl","task":"text-to-image"}}}'
     headers:
       Access-Control-Allow-Origin:
-      - https://huggingface.co
+      - https://mirror-hf.co
       Access-Control-Expose-Headers:
       - X-Repo-Commit,X-Request-Id,X-Error-Code,X-Error-Message,X-Total-Count,ETag,Link,Accept-Ranges,Content-Range,X-Xet-Access-Token,X-Xet-Token-Expiration,X-Xet-Refresh-Route,X-Xet-Cas-Url,X-Xet-Hash
       Connection:
@@ -68,7 +68,7 @@ interactions:
       X-Amzn-Trace-Id:
       - 0592b09c-65ee-4b3e-a96c-8af76c1b7f27
     method: POST
-    uri: https://router.huggingface.co/together/v1/images/generations
+    uri: https://router.mirror-hf.co/together/v1/images/generations
   response:
     body:
       string: "{\n  \"id\": \"9115f790ee30b506-IAD\",\n  \"model\": \"stabilityai/stable-diffusion-xl-base-1.0\",\n

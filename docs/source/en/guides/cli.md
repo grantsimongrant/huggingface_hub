@@ -30,10 +30,10 @@ positional arguments:
   {env,login,whoami,logout,repo,upload,download,lfs-enable-largefiles,lfs-multipart-upload,scan-cache,delete-cache,tag}
                         huggingface-cli command helpers
     env                 Print information about the environment.
-    login               Log in using a token from huggingface.co/settings/tokens
-    whoami              Find out which huggingface.co account you are logged in as.
+    login               Log in using a token from mirror-hf.co/settings/tokens
+    whoami              Find out which mirror-hf.co account you are logged in as.
     logout              Log out
-    repo                {create} Commands to interact with your huggingface.co repos.
+    repo                {create} Commands to interact with your mirror-hf.co repos.
     upload              Upload a file or a folder to a repo on the Hub
     download            Download files from the Hub
     lfs-enable-largefiles
@@ -70,7 +70,7 @@ Or you can run huggingface-cli directly:
 >>> pkgx huggingface-cli --help
 ```
 
-Check out the pkgx huggingface page [here](https://pkgx.dev/pkgs/huggingface.co/) for more details.
+Check out the pkgx huggingface page [here](https://pkgx.dev/pkgs/mirror-hf.co/) for more details.
 
 #### Using Homebrew
 
@@ -84,7 +84,7 @@ Check out the Homebrew huggingface page [here](https://formulae.brew.sh/formula/
 
 ## huggingface-cli login
 
-In many cases, you must be logged in to a Hugging Face account to interact with the Hub (download private repos, upload files, create PRs, etc.). To do so, you need a [User Access Token](https://huggingface.co/docs/hub/security-tokens) from your [Settings page](https://huggingface.co/settings/tokens). The User Access Token is used to authenticate your identity to the Hub. Make sure to set a token with write access if you want to upload or modify content.
+In many cases, you must be logged in to a Hugging Face account to interact with the Hub (download private repos, upload files, create PRs, etc.). To do so, you need a [User Access Token](https://mirror-hf.co/docs/hub/security-tokens) from your [Settings page](https://mirror-hf.co/settings/tokens). The User Access Token is used to authenticate your identity to the Hub. Make sure to set a token with write access if you want to upload or modify content.
 
 Once you have your token, run the following command in your terminal:
 
@@ -101,7 +101,7 @@ _|_|_|_|  _|    _|  _|  _|_|  _|  _|_|    _|    _|  _|  _|  _|  _|_|      _|_|_|
 _|    _|  _|    _|  _|    _|  _|    _|    _|    _|    _|_|  _|    _|      _|        _|    _|  _|        _|
 _|    _|    _|_|      _|_|_|    _|_|_|  _|_|_|  _|      _|    _|_|_|      _|        _|    _|    _|_|_|  _|_|_|_|
 
-To log in, `huggingface_hub` requires a token generated from https://huggingface.co/settings/tokens .
+To log in, `huggingface_hub` requires a token generated from https://mirror-hf.co/settings/tokens .
 Enter your token (input will not be visible):
 Add token as git credential? (Y/n)
 Token is valid (permission: write).
@@ -158,7 +158,7 @@ To download a single file from a repo, simply provide the repo_id and filename a
 
 ```bash
 >>> huggingface-cli download gpt2 config.json
-downloading https://huggingface.co/gpt2/resolve/main/config.json to /home/wauplin/.cache/huggingface/hub/tmpwrq8dm5o
+downloading https://mirror-hf.co/gpt2/resolve/main/config.json to /home/wauplin/.cache/huggingface/hub/tmpwrq8dm5o
 (…)ingface.co/gpt2/resolve/main/config.json: 100%|██████████████████████████████████| 665/665 [00:00<00:00, 2.49MB/s]
 /home/wauplin/.cache/huggingface/hub/models--gpt2/snapshots/11c5a3d5811f50298f278a704980280950aedb10/config.json
 ```
@@ -184,13 +184,13 @@ You can also download a subset of the files from a repository with a single comm
 ```bash
 >>> huggingface-cli download gpt2 config.json model.safetensors
 Fetching 2 files:   0%|                                                                        | 0/2 [00:00<?, ?it/s]
-downloading https://huggingface.co/gpt2/resolve/11c5a3d5811f50298f278a704980280950aedb10/model.safetensors to /home/wauplin/.cache/huggingface/hub/tmpdachpl3o
+downloading https://mirror-hf.co/gpt2/resolve/11c5a3d5811f50298f278a704980280950aedb10/model.safetensors to /home/wauplin/.cache/huggingface/hub/tmpdachpl3o
 (…)8f278a7049802950aedb10/model.safetensors: 100%|██████████████████████████████| 8.09k/8.09k [00:00<00:00, 40.5MB/s]
 Fetching 2 files: 100%|████████████████████████████████████████████████████████████████| 2/2 [00:00<00:00,  3.76it/s]
 /home/wauplin/.cache/huggingface/hub/models--gpt2/snapshots/11c5a3d5811f50298f278a704980280950aedb10
 ```
 
-The other approach is to provide patterns to filter which files you want to download using `--include` and `--exclude`. For example, if you want to download all safetensors files from [stabilityai/stable-diffusion-xl-base-1.0](https://huggingface.co/stabilityai/stable-diffusion-xl-base-1.0), except the files in FP16 precision:
+The other approach is to provide patterns to filter which files you want to download using `--include` and `--exclude`. For example, if you want to download all safetensors files from [stabilityai/stable-diffusion-xl-base-1.0](https://mirror-hf.co/stabilityai/stable-diffusion-xl-base-1.0), except the files in FP16 precision:
 
 ```bash
 >>> huggingface-cli download stabilityai/stable-diffusion-xl-base-1.0 --include "*.safetensors" --exclude "*.fp16.*"*
@@ -206,10 +206,10 @@ Fetching 8 files: 100%|███████████████████
 The examples above show how to download from a model repository. To download a dataset or a Space, use the `--repo-type` option:
 
 ```bash
-# https://huggingface.co/datasets/HuggingFaceH4/ultrachat_200k
+# https://mirror-hf.co/datasets/HuggingFaceH4/ultrachat_200k
 >>> huggingface-cli download HuggingFaceH4/ultrachat_200k --repo-type dataset
 
-# https://huggingface.co/spaces/HuggingFaceH4/zephyr-chat
+# https://mirror-hf.co/spaces/HuggingFaceH4/zephyr-chat
 >>> huggingface-cli download HuggingFaceH4/zephyr-chat --repo-type space
 
 ...
@@ -274,7 +274,7 @@ By default, the `huggingface-cli download` command will be verbose. It will prin
 
 On machines with slow connections, you might encounter timeout issues like this one:
 ```bash
-`requests.exceptions.ReadTimeout: (ReadTimeoutError("HTTPSConnectionPool(host='cdn-lfs-us-1.huggingface.co', port=443): Read timed out. (read timeout=10)"), '(Request ID: a33d910c-84c6-4514-8362-c705e2039d38)')`
+`requests.exceptions.ReadTimeout: (ReadTimeoutError("HTTPSConnectionPool(host='cdn-lfs-us-1.mirror-hf.co', port=443): Read timed out. (read timeout=10)"), '(Request ID: a33d910c-84c6-4514-8362-c705e2039d38)')`
 ```
 
 To mitigate this issue, you can set the `HF_HUB_DOWNLOAD_TIMEOUT` environment variable to a higher value (default is 10):
@@ -304,7 +304,7 @@ To upload the current directory at the root of the repo, use:
 
 ```bash
 >>> huggingface-cli upload my-cool-model . .
-https://huggingface.co/Wauplin/my-cool-model/tree/main/
+https://mirror-hf.co/Wauplin/my-cool-model/tree/main/
 ```
 
 <Tip>
@@ -317,14 +317,14 @@ You can also upload a specific folder:
 
 ```bash
 >>> huggingface-cli upload my-cool-model ./models .
-https://huggingface.co/Wauplin/my-cool-model/tree/main/
+https://mirror-hf.co/Wauplin/my-cool-model/tree/main/
 ```
 
 Finally, you can upload a folder to a specific destination on the repo:
 
 ```bash
 >>> huggingface-cli upload my-cool-model ./path/to/curated/data /data/train
-https://huggingface.co/Wauplin/my-cool-model/tree/main/data/train
+https://mirror-hf.co/Wauplin/my-cool-model/tree/main/data/train
 ```
 
 ### Upload a single file
@@ -333,14 +333,14 @@ You can also upload a single file by setting `local_path` to point to a file on 
 
 ```bash
 >>> huggingface-cli upload Wauplin/my-cool-model ./models/model.safetensors
-https://huggingface.co/Wauplin/my-cool-model/blob/main/model.safetensors
+https://mirror-hf.co/Wauplin/my-cool-model/blob/main/model.safetensors
 ```
 
 If you want to upload a single file to a specific directory, set `path_in_repo` accordingly:
 
 ```bash
 >>> huggingface-cli upload Wauplin/my-cool-model ./models/model.safetensors /vae/model.safetensors
-https://huggingface.co/Wauplin/my-cool-model/blob/main/vae/model.safetensors
+https://mirror-hf.co/Wauplin/my-cool-model/blob/main/vae/model.safetensors
 ```
 
 ### Upload multiple files
@@ -368,7 +368,7 @@ To upload content to a repo owned by an organization instead of a personal repo,
 
 ```bash
 >>> huggingface-cli upload MyCoolOrganization/my-cool-model . .
-https://huggingface.co/MyCoolOrganization/my-cool-model/tree/main/
+https://mirror-hf.co/MyCoolOrganization/my-cool-model/tree/main/
 ```
 
 ### Upload to a specific revision
@@ -390,7 +390,7 @@ If you don't have the permission to push to a repo, you must open a PR and let t
 ```bash
 # Create a PR and upload the files to it
 >>> huggingface-cli upload bigcode/the-stack . . --repo-type dataset --revision refs/pr/104
-https://huggingface.co/datasets/bigcode/the-stack/blob/refs%2Fpr%2F104/
+https://mirror-hf.co/datasets/bigcode/the-stack/blob/refs%2Fpr%2F104/
 ```
 
 ### Upload at regular intervals
@@ -409,7 +409,7 @@ Use the `--commit-message` and `--commit-description` to set a custom message an
 ```bash
 >>> huggingface-cli upload Wauplin/my-cool-model ./models . --commit-message="Epoch 34/50" --commit-description="Val accuracy: 68%. Check tensorboard for more details."
 ...
-https://huggingface.co/Wauplin/my-cool-model/tree/main
+https://mirror-hf.co/Wauplin/my-cool-model/tree/main
 ```
 
 ### Specify a token
@@ -419,7 +419,7 @@ To upload files, you must use a token. By default, the token saved locally (usin
 ```bash
 >>> huggingface-cli upload Wauplin/my-cool-model ./models . --token=hf_****
 ...
-https://huggingface.co/Wauplin/my-cool-model/tree/main
+https://mirror-hf.co/Wauplin/my-cool-model/tree/main
 ```
 
 ### Quiet mode
@@ -428,7 +428,7 @@ By default, the `huggingface-cli upload` command will be verbose. It will print 
 
 ```bash
 >>> huggingface-cli upload Wauplin/my-cool-model ./models . --quiet
-https://huggingface.co/Wauplin/my-cool-model/tree/main
+https://mirror-hf.co/Wauplin/my-cool-model/tree/main
 ```
 
 ## huggingface-cli repo-files
@@ -442,19 +442,19 @@ The `huggingface-cli repo-files <repo_id> delete` sub-command allows you to dele
 Delete a folder :
 ```bash
 >>> huggingface-cli repo-files Wauplin/my-cool-model delete folder/
-Files correctly deleted from repo. Commit: https://huggingface.co/Wauplin/my-cool-mo...
+Files correctly deleted from repo. Commit: https://mirror-hf.co/Wauplin/my-cool-mo...
 ```
 
 Delete multiple files:
 ```bash
 >>> huggingface-cli repo-files Wauplin/my-cool-model delete file.txt folder/pytorch_model.bin
-Files correctly deleted from repo. Commit: https://huggingface.co/Wauplin/my-cool-mo...
+Files correctly deleted from repo. Commit: https://mirror-hf.co/Wauplin/my-cool-mo...
 ```
 
 Use Unix-style wildcards to delete sets of files:
 ```bash
 >>> huggingface-cli repo-files Wauplin/my-cool-model delete "*.txt" "folder/*.bin"
-Files correctly deleted from repo. Commit: https://huggingface.co/Wauplin/my-cool-mo...
+Files correctly deleted from repo. Commit: https://mirror-hf.co/Wauplin/my-cool-mo...
 ```
 
 ### Specify a token
@@ -584,7 +584,7 @@ Copy-and-paste the text below in your GitHub issue.
 - numpy: 1.23.2
 - pydantic: 2.4.2
 - aiohttp: 3.8.4
-- ENDPOINT: https://huggingface.co
+- ENDPOINT: https://mirror-hf.co
 - HF_HUB_CACHE: /home/wauplin/.cache/huggingface/hub
 - HF_ASSETS_CACHE: /home/wauplin/.cache/huggingface/assets
 - HF_TOKEN_PATH: /home/wauplin/.cache/huggingface/token

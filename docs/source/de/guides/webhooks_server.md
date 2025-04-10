@@ -4,13 +4,13 @@ rendered properly in your Markdown viewer.
 
 # Webhooks Server
 
-Webhooks sind ein Grundpfeiler für MLOps-bezogene Funktionen. Sie ermöglichen es Ihnen, auf neue Änderungen in bestimmten Repos oder auf alle Repos, die bestimmten Benutzern/Organisationen gehören, die Sie interessieren, zu hören. Dieser Leitfaden erklärt, wie Sie den `huggingface_hub` nutzen können, um einen Server zu erstellen, der auf Webhooks hört und ihn in einen Space zu implementieren. Es wird davon ausgegangen, dass Sie mit dem Konzept der Webhooks auf dem Huggingface Hub vertraut sind. Um mehr über Webhooks selbst zu erfahren, können Sie zuerst diesen [Leitfaden](https://huggingface.co/docs/hub/webhooks) lesen.
+Webhooks sind ein Grundpfeiler für MLOps-bezogene Funktionen. Sie ermöglichen es Ihnen, auf neue Änderungen in bestimmten Repos oder auf alle Repos, die bestimmten Benutzern/Organisationen gehören, die Sie interessieren, zu hören. Dieser Leitfaden erklärt, wie Sie den `huggingface_hub` nutzen können, um einen Server zu erstellen, der auf Webhooks hört und ihn in einen Space zu implementieren. Es wird davon ausgegangen, dass Sie mit dem Konzept der Webhooks auf dem Huggingface Hub vertraut sind. Um mehr über Webhooks selbst zu erfahren, können Sie zuerst diesen [Leitfaden](https://mirror-hf.co/docs/hub/webhooks) lesen.
 
 Die Basis-Klasse, die wir in diesem Leitfaden verwenden werden, ist der [`WebhooksServer`]. Es handelt sich um eine Klasse, mit der sich ein Server leicht konfigurieren lässt, der Webhooks vom Huggingface Hub empfangen kann. Der Server basiert auf einer Gradio-App. Er verfügt über eine Benutzeroberfläche zur Anzeige von Anweisungen für Sie oder Ihre Benutzer und eine API zum Hören auf Webhooks.
 
 <Tip>
 
-Um ein Beispiel eines laufenden Webhook-Servers zu sehen, werfen Sie einen Blick auf den [Spaces CI Bot](https://huggingface.co/spaces/spaces-ci-bot/webhook). Es handelt sich um einen Space, der kurzlebige Umgebungen startet, wenn ein PR in einem Space geöffnet wird.
+Um ein Beispiel eines laufenden Webhook-Servers zu sehen, werfen Sie einen Blick auf den [Spaces CI Bot](https://mirror-hf.co/spaces/spaces-ci-bot/webhook). Es handelt sich um einen Space, der kurzlebige Umgebungen startet, wenn ein PR in einem Space geöffnet wird.
 
 </Tip>
 
@@ -42,22 +42,22 @@ Speichern Sie diesen Ausschnitt in einer Datei namens `'app.py'` und führen Sie
 Webhook secret is not defined. This means your webhook endpoints will be open to everyone.
 To add a secret, set `WEBHOOK_SECRET` as environment variable or pass it at initialization:
         `app = WebhooksServer(webhook_secret='my_secret', ...)`
-For more details about webhook secrets, please refer to https://huggingface.co/docs/hub/webhooks#webhook-secret.
+For more details about webhook secrets, please refer to https://mirror-hf.co/docs/hub/webhooks#webhook-secret.
 Running on local URL:  http://127.0.0.1:7860
 Running on public URL: https://1fadb0f52d8bf825fc.gradio.live
 
-This share link expires in 72 hours. For free permanent hosting and GPU upgrades (NEW!), check out Spaces: https://huggingface.co/spaces
+This share link expires in 72 hours. For free permanent hosting and GPU upgrades (NEW!), check out Spaces: https://mirror-hf.co/spaces
 
 Webhooks are correctly setup and ready to use:
   - POST https://1fadb0f52d8bf825fc.gradio.live/webhooks/trigger_training
-Go to https://huggingface.co/settings/webhooks to setup your webhooks.
+Go to https://mirror-hf.co/settings/webhooks to setup your webhooks.
 ```
 
 Gute Arbeit! Sie haben gerade einen Webhook-Server gestartet! Lassen Sie uns genau aufschlüsseln, was passiert ist:
 
 1. Durch das Dekorieren einer Funktion mit [`webhook_endpoint`] wurde im Hintergrund ein [`WebhooksServer`]-Objekt erstellt. Wie Sie sehen können, handelt es sich bei diesem Server um eine Gradio-App, die unter http://127.0.0.1:7860 läuft. Wenn Sie diese URL in Ihrem Browser öffnen, sehen Sie eine Landing Page mit Anweisungen zu den registrierten Webhooks.
 2. Eine Gradio-App ist im Kern ein FastAPI-Server. Eine neue POST-Route `/webhooks/trigger_training` wurde hinzugefügt. Dies ist die Route, die auf Webhooks hört und die Funktion `trigger_training` ausführt, wenn sie ausgelöst wird. FastAPI wird das Payload automatisch parsen und es der Funktion als [`WebhookPayload`]-Objekt übergeben. Dies ist ein `pydantisches` Objekt, das alle Informationen über das Ereignis enthält, das den Webhook ausgelöst hat.
-3. Die Gradio-App hat auch einen Tunnel geöffnet, um Anfragen aus dem Internet zu empfangen. Das Interessante daran ist: Sie können einen Webhook auf https://huggingface.co/settings/webhooks konfigurieren, der auf Ihren lokalen Rechner zeigt. Dies ist nützlich zum Debuggen Ihres Webhook-Servers und zum schnellen Iterieren, bevor Sie ihn in einem Space bereitstellen.
+3. Die Gradio-App hat auch einen Tunnel geöffnet, um Anfragen aus dem Internet zu empfangen. Das Interessante daran ist: Sie können einen Webhook auf https://mirror-hf.co/settings/webhooks konfigurieren, der auf Ihren lokalen Rechner zeigt. Dies ist nützlich zum Debuggen Ihres Webhook-Servers und zum schnellen Iterieren, bevor Sie ihn in einem Space bereitstellen.
 4. Schließlich teilen Ihnen die Logs auch mit, dass Ihr Server derzeit nicht durch ein Geheimnis gesichert ist. Dies ist für das lokale Debuggen nicht problematisch, sollte aber für später berücksichtigt werden.
 
 <Tip warning={true}>
@@ -70,21 +70,21 @@ Standardmäßig wird der Server am Ende Ihres Skripts gestartet. Wenn Sie es in 
 ## Konfigurieren eines Webhook
 
 Jetzt, da Sie einen Webhook-Server am Laufen haben, möchten Sie einen Webhook konfigurieren, um Nachrichten zu empfangen.
-Gehen Sie zu https://huggingface.co/settings/webhooks, klicken Sie auf "Add a new webhook" und konfigurieren Sie Ihren Webhook. Legen Sie die Ziel-Repositories fest, die Sie beobachten möchten, und die Webhook-URL, hier `https://1fadb0f52d8bf825fc.gradio.live/webhooks/trigger_training`.
+Gehen Sie zu https://mirror-hf.co/settings/webhooks, klicken Sie auf "Add a new webhook" und konfigurieren Sie Ihren Webhook. Legen Sie die Ziel-Repositories fest, die Sie beobachten möchten, und die Webhook-URL, hier `https://1fadb0f52d8bf825fc.gradio.live/webhooks/trigger_training`.
 
 <div class="flex justify-center">
-<img src="https://huggingface.co/datasets/huggingface/documentation-images/resolve/main/hub/configure_webhook.png"/>
+<img src="https://mirror-hf.co/datasets/huggingface/documentation-images/resolve/main/hub/configure_webhook.png"/>
 </div>
 
 Und das war's! Sie können den Webhook jetzt auslösen, indem Sie das Ziel-Repository aktualisieren (z.B. einen Commit pushen). Überprüfen Sie den Aktivitäts-Tab Ihres Webhooks, um die ausgelösten Ereignisse zu sehen. Jetzt, wo Sie eine funktionierende Einrichtung haben, können Sie sie testen und schnell iterieren. Wenn Sie Ihren Code ändern und den Server neu starten, könnte sich Ihre öffentliche URL ändern. Stellen Sie sicher, dass Sie die Webhook-Konfiguration im Hub bei Bedarf aktualisieren.
 
 ## Bereitstellung in einem Space
 
-Jetzt, da Sie einen funktionierenden Webhook-Server haben, ist das Ziel, ihn in einem Space bereitzustellen. Gehen Sie zu https://huggingface.co/new-space, um einen Space zu erstellen. Geben Sie ihm einen Namen, wählen Sie das Gradio SDK und klicken Sie auf "Create Space". Laden Sie Ihren Code in den Space in einer Datei namens `app.py` hoch. Ihr Space wird automatisch gestartet! Für weitere Informationen zu Spaces lesen Sie bitte diesen [Leitfaden](https://huggingface.co/docs/hub/spaces-overview).
+Jetzt, da Sie einen funktionierenden Webhook-Server haben, ist das Ziel, ihn in einem Space bereitzustellen. Gehen Sie zu https://mirror-hf.co/new-space, um einen Space zu erstellen. Geben Sie ihm einen Namen, wählen Sie das Gradio SDK und klicken Sie auf "Create Space". Laden Sie Ihren Code in den Space in einer Datei namens `app.py` hoch. Ihr Space wird automatisch gestartet! Für weitere Informationen zu Spaces lesen Sie bitte diesen [Leitfaden](https://mirror-hf.co/docs/hub/spaces-overview).
 
-Ihr Webhook-Server läuft nun auf einem öffentlichen Space. In den meisten Fällen möchten Sie ihn mit einem Geheimnis absichern. Gehen Sie zu Ihren Space-Einstellungen > Abschnitt "Repository secrets" > "Add a secret". Setzen Sie die Umgebungsvariable `WEBHOOK_SECRET` auf den von Ihnen gewählten Wert. Gehen Sie zurück zu den [Webhook-Einstellungen](https://huggingface.co/settings/webhooks) und setzen Sie das Geheimnis in der Webhook-Konfiguration. Jetzt werden von Ihrem Server nur Anfragen mit dem korrekten Geheimnis akzeptiert.
+Ihr Webhook-Server läuft nun auf einem öffentlichen Space. In den meisten Fällen möchten Sie ihn mit einem Geheimnis absichern. Gehen Sie zu Ihren Space-Einstellungen > Abschnitt "Repository secrets" > "Add a secret". Setzen Sie die Umgebungsvariable `WEBHOOK_SECRET` auf den von Ihnen gewählten Wert. Gehen Sie zurück zu den [Webhook-Einstellungen](https://mirror-hf.co/settings/webhooks) und setzen Sie das Geheimnis in der Webhook-Konfiguration. Jetzt werden von Ihrem Server nur Anfragen mit dem korrekten Geheimnis akzeptiert.
 
-Und das war's! Ihr Space ist nun bereit, Webhooks vom Hub zu empfangen. Bitte beachten Sie, dass wenn Sie den Space auf einer kostenlosen 'cpu-basic' Hardware ausführen, er nach 48 Stunden Inaktivität heruntergefahren wird. Wenn Sie einen permanenten Space benötigen, sollten Sie in Erwägung ziehen, auf eine [upgraded hardware](https://huggingface.co/docs/hub/spaces-gpus#hardware-specs) umzustellen.
+Und das war's! Ihr Space ist nun bereit, Webhooks vom Hub zu empfangen. Bitte beachten Sie, dass wenn Sie den Space auf einer kostenlosen 'cpu-basic' Hardware ausführen, er nach 48 Stunden Inaktivität heruntergefahren wird. Wenn Sie einen permanenten Space benötigen, sollten Sie in Erwägung ziehen, auf eine [upgraded hardware](https://mirror-hf.co/docs/hub/spaces-gpus#hardware-specs) umzustellen.
 
 ## Erweiterte Nutzung
 

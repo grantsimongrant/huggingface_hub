@@ -54,7 +54,7 @@ class TagCommands(BaseHuggingfaceCLICommand):
         tag_parser.add_argument("-m", "--message", type=str, help="The description of the tag to create.")
         tag_parser.add_argument("--revision", type=str, help="The git revision to tag.")
         tag_parser.add_argument(
-            "--token", type=str, help="A User Access Token generated from https://huggingface.co/settings/tokens."
+            "--token", type=str, help="A User Access Token generated from https://mirror-hf.co/settings/tokens."
         )
         tag_parser.add_argument(
             "--repo-type",

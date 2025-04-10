@@ -11,13 +11,13 @@ interactions:
       X-Amzn-Trace-Id:
       - 1c0bdf09-cde3-4470-a6a8-148b626599b3
     method: GET
-    uri: https://huggingface.co/api/models/meta-llama/Meta-Llama-3.1-8B-Instruct
+    uri: https://mirror-hf.co/api/models/meta-llama/Meta-Llama-3.1-8B-Instruct
   response:
     body:
       string: Temporary Redirect. Redirecting to /api/models/meta-llama/Llama-3.1-8B-Instruct
     headers:
       Access-Control-Allow-Origin:
-      - https://huggingface.co
+      - https://mirror-hf.co
       Access-Control-Expose-Headers:
       - X-Repo-Commit,X-Request-Id,X-Error-Code,X-Error-Message,X-Total-Count,ETag,Link,Accept-Ranges,Content-Range,X-Xet-Access-Token,X-Xet-Token-Expiration,X-Xet-Refresh-Route,X-Xet-Cas-Url,X-Xet-Hash
       Connection:
@@ -63,7 +63,7 @@ interactions:
       X-Amzn-Trace-Id:
       - 1c0bdf09-cde3-4470-a6a8-148b626599b3
     method: GET
-    uri: https://huggingface.co/api/models/meta-llama/Llama-3.1-8B-Instruct
+    uri: https://mirror-hf.co/api/models/meta-llama/Llama-3.1-8B-Instruct
   response:
     body:
       string: "{\"_id\":\"6698d8a0653e4babe21e1e7d\",\"id\":\"meta-llama/Llama-3.1-8B-Instruct\",\"private\":false,\"pipeline_tag\":\"text-generation\",\"library_name\":\"transformers\",\"tags\":[\"transformers\",\"safetensors\",\"llama\",\"text-generation\",\"facebook\",\"meta\",\"pytorch\",\"llama-3\",\"conversational\",\"en\",\"de\",\"fr\",\"it\",\"pt\",\"hi\",\"es\",\"th\",\"arxiv:2204.05149\",\"base_model:meta-llama/Llama-3.1-8B\",\"base_model:finetune:meta-llama/Llama-3.1-8B\",\"license:llama3.1\",\"autotrain_compatible\",\"text-generation-inference\",\"endpoints_compatible\",\"region:us\"],\"downloads\":5795728,\"likes\":3763,\"modelId\":\"meta-llama/Llama-3.1-8B-Instruct\",\"author\":\"meta-llama\",\"sha\":\"0e9e39f249a16976918f6564b8830bc894c89659\",\"lastModified\":\"2024-09-25T17:00:57.000Z\",\"gated\":\"manual\",\"disabled\":false,\"widgetData\":[{\"text\":\"Hi,
@@ -302,7 +302,7 @@ interactions:
         accordance with the [Meta Privacy Policy](https://www.facebook.com/privacy/policy/).\",\"extra_gated_button_content\":\"Submit\"},\"transformersInfo\":{\"auto_model\":\"AutoModelForCausalLM\",\"pipeline_tag\":\"text-generation\",\"processor\":\"AutoTokenizer\"},\"siblings\":[{\"rfilename\":\".gitattributes\"},{\"rfilename\":\"LICENSE\"},{\"rfilename\":\"README.md\"},{\"rfilename\":\"USE_POLICY.md\"},{\"rfilename\":\"config.json\"},{\"rfilename\":\"generation_config.json\"},{\"rfilename\":\"model-00001-of-00004.safetensors\"},{\"rfilename\":\"model-00002-of-00004.safetensors\"},{\"rfilename\":\"model-00003-of-00004.safetensors\"},{\"rfilename\":\"model-00004-of-00004.safetensors\"},{\"rfilename\":\"model.safetensors.index.json\"},{\"rfilename\":\"original/consolidated.00.pth\"},{\"rfilename\":\"original/params.json\"},{\"rfilename\":\"original/tokenizer.model\"},{\"rfilename\":\"special_tokens_map.json\"},{\"rfilename\":\"tokenizer.json\"},{\"rfilename\":\"tokenizer_config.json\"}],\"spaces\":[\"KingNish/OpenGPT-4o\",\"akhaliq/anychat\",\"argilla/synthetic-data-generator\",\"cvachet/pdf-chatbot\",\"data-agents/jupyter-agent\",\"featherless-ai/try-this-model\",\"baconnier/prompt-plus-plus\",\"eduagarcia/open_pt_llm_leaderboard\",\"prithivMLmods/Agent-Dino\",\"VIDraft/PHI4-Multimodal\",\"microsoft/MInference\",\"logikon/open_cot_leaderboard\",\"flowers-team/StickToYourRoleLeaderboard\",\"prithivMLmods/Llama-3.1-8B-Instruct\",\"Crisp-Unimib/INVALSIbenchmark\",\"NiansuhAI/HFLLMs\",\"Nymbo/Serverless-TextGen-Hub\",\"ngebodh/SimpleChatbot\",\"KBaba7/Quant\",\"Nymbo/overthink-1\",\"nvidia/kvpress\",\"ysharma/Chat_with_Meta_llama3_1_8b\",\"codelion/optillm\",\"CZLC/BenCzechMark\",\"bethgelab/lm-similarity\",\"AiActivity/AI-Assistant\",\"panuthept/thai_sentence_embedding_benchmark\",\"davidberenstein1957/llm-human-feedback-collector-chat-interface-dpo\",\"Shreyas094/SearchGPT\",\"dataset-rewriter/dataset-rewriter\",\"davanstrien/would-you-read-it\",\"freQuensy23/LLMhistory\",\"NiansuhAI/Main\",\"huggingface/keras-chatbot-arena\",\"cot-leaderboard/open-cot-dashboard\",\"ml-energy/leaderboard\",\"cryptocalypse/sophia_ai_robot_prophet\",\"TWO/sutra-tokenizer-comparison\",\"yanolja/arena\",\"eltorio/Llama-3.2-3B-appreciation\",\"GIZ/audit_assistant\",\"lightmate/llm-chatbot\",\"merve/gradio-tgi-2\",\"davidberenstein1957/llm-human-feedback-collector-chat-interface-kto\",\"Nymbo/Llama-3.1-8B-Instruct-Inference\",\"gaverfraxz/Weight_Comparator\",\"totolook/Quant\",\"nvidia/Test-Time-Translation-LLM-Demo\",\"awacke1/ChatStreamlitMultiplayer\",\"bhaskartripathi/LLM_Quantization\",\"Nymbo/Llama-3.1-8B-Instruct\",\"Ffftdtd5dtft/gfgf\",\"arabmejo/Chat_Prompt_Enhancer_AI2\",\"merterbak/RAG-Llama\",\"saikub/chatB\",\"FallnAI/Quantize-HF-Models\",\"argilla/distilabel-argilla-labeller\",\"saikub/chat\",\"burtenshaw/my_personas_generator\",\"giulio98/beyondrag\",\"aliceblue11/logo_o1-preview\",\"coltt/paper-reading-assistant\",\"DanielDJ1987/chat-financial\",\"arad1367/Llama-3.1-8b-Chatbot\",\"nbroad/HF-API-monitor\",\"artificialguybr/OpenRouter-LLM-Chat\",\"TTsamurai/UserStudyFinancialAdvisor\",\"chernistry/overthink-1\",\"GIZ/climate_vulnerability_analysis\",\"open-nlp/Chris-lab\",\"sheenfar2025/meta-llama-Llama-3.1-8B-Instruct\",\"UltraRonin/LR2Bench_old\",\"re-mind/Crawl4AI\",\"trialog/der_zeiten\",\"fdaudens/meta-download-stats\",\"nico-s/First_agent_template\",\"tiantian-paris/FRM_Study_chatbot\",\"gmz1711/Leeruitkomsten\",\"sc666/CameraFlex\",\"PravinTiwari/o3genai\",\"Shreyas094/SearchGPTTest\",\"jirvingphd/blog-personal-chatbot\",\"ILLERRAPS/OpenGPT-4o\",\"sudonate/meta-llama-Meta-Llama-3.1-8B-Instruct\",\"dragonhearted/ai-coding-assistant\",\"ruslanmv/convert_to_gguf\",\"CreativeWorks/Test_Llama-3.1-8B-Instruct\",\"Shreyas094/Sentinel-AI-Beta-Test\",\"ashmib/green-city-finder\",\"hackerpro17/Llama-3.1-8B-Instruct\",\"Yersel/Meta-Llama-3.1-8B-Instruct\",\"tchans123/resume_optimizer\",\"AFischer1985/Frag-dein-PDF\",\"ccapo/portfolio\",\"pzshen/shuttle-ai\",\"awacke1/DrNovaQuantumVoiceAI\",\"HarshBhanushali7705/own_meta_llama_Llama_3.2-1B\",\"barathm111/nike\",\"daksh5656/meta-llama-Llama-3.1-8B-Instruct\",\"xulh/ymx\"],\"createdAt\":\"2024-07-18T08:56:00.000Z\",\"safetensors\":{\"parameters\":{\"BF16\":8030261248},\"total\":8030261248},\"inference\":\"warm\",\"usedStorage\":32123357950}"
     headers:
       Access-Control-Allow-Origin:
-      - https://huggingface.co
+      - https://mirror-hf.co
       Access-Control-Expose-Headers:
       - X-Repo-Commit,X-Request-Id,X-Error-Code,X-Error-Message,X-Total-Count,ETag,Link,Accept-Ranges,Content-Range,X-Xet-Access-Token,X-Xet-Token-Expiration,X-Xet-Refresh-Route,X-Xet-Cas-Url,X-Xet-Hash
       Connection:
@@ -340,7 +340,7 @@ interactions:
     body: null
     headers: {}
     method: POST
-    uri: https://router.huggingface.co/hf-inference/models/meta-llama/Meta-Llama-3.1-8B-Instruct/v1/chat/completions
+    uri: https://router.mirror-hf.co/hf-inference/models/meta-llama/Meta-Llama-3.1-8B-Instruct/v1/chat/completions
   response:
     body:
       string: '{"object":"chat.completion","id":"","created":1742562275,"model":"meta-llama/Meta-Llama-3.1-8B-Instruct","system_fingerprint":"3.2.1-native","choices":[{"index":0,"message":{"role":"assistant","content":"1,

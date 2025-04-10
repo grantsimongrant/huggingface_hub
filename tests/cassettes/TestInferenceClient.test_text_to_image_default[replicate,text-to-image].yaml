@@ -11,13 +11,13 @@ interactions:
       X-Amzn-Trace-Id:
       - e3d217dc-e997-4d0e-b9c4-9844980e2591
     method: GET
-    uri: https://huggingface.co/api/models/ByteDance/SDXL-Lightning?expand=inferenceProviderMapping
+    uri: https://mirror-hf.co/api/models/ByteDance/SDXL-Lightning?expand=inferenceProviderMapping
   response:
     body:
       string: '{"_id":"65d505951e2597ff935d1be2","id":"ByteDance/SDXL-Lightning","inferenceProviderMapping":{"fal-ai":{"status":"live","providerId":"fal-ai/lightning-models","task":"text-to-image"},"replicate":{"status":"live","providerId":"bytedance/sdxl-lightning-4step:5599ed30703defd1d160a25a63321b4dec97101d98b4674bcc56e41f62f35637","task":"text-to-image"}}}'
     headers:
       Access-Control-Allow-Origin:
-      - https://huggingface.co
+      - https://mirror-hf.co
       Access-Control-Expose-Headers:
       - X-Repo-Commit,X-Request-Id,X-Error-Code,X-Error-Message,X-Total-Count,ETag,Link,Accept-Ranges,Content-Range,X-Xet-Access-Token,X-Xet-Token-Expiration,X-Xet-Refresh-Route,X-Xet-Cas-Url,X-Xet-Hash
       Connection:
@@ -70,7 +70,7 @@ interactions:
       X-Amzn-Trace-Id:
       - 6ab663dd-39e4-4d0e-97ea-4020833807b0
     method: POST
-    uri: https://router.huggingface.co/replicate/v1/predictions
+    uri: https://router.mirror-hf.co/replicate/v1/predictions
   response:
     body:
       string: '{"id":"jf23sy140hrj00cn0008841srg","model":"bytedance/sdxl-lightning-4step","version":"5599ed30703defd1d160a25a63321b4dec97101d98b4674bcc56e41f62f35637","input":{"prompt":"An

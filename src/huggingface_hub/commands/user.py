@@ -26,7 +26,7 @@ Usage:
     # logout from a specific token, if no token-name is provided, all tokens will be deleted from your machine.
     huggingface-cli logout --token-name=your_token_name
 
-    # find out which huggingface.co account you are logged in as
+    # find out which mirror-hf.co account you are logged in as
     huggingface-cli whoami
 
     # create a new dataset repo on the Hub
@@ -72,11 +72,11 @@ except ImportError:
 class UserCommands(BaseHuggingfaceCLICommand):
     @staticmethod
     def register_subcommand(parser: _SubParsersAction):
-        login_parser = parser.add_parser("login", help="Log in using a token from huggingface.co/settings/tokens")
+        login_parser = parser.add_parser("login", help="Log in using a token from mirror-hf.co/settings/tokens")
         login_parser.add_argument(
             "--token",
             type=str,
-            help="Token generated from https://huggingface.co/settings/tokens",
+            help="Token generated from https://mirror-hf.co/settings/tokens",
         )
         login_parser.add_argument(
             "--add-to-git-credential",
@@ -84,7 +84,7 @@ class UserCommands(BaseHuggingfaceCLICommand):
             help="Optional: Save token to git credential helper.",
         )
         login_parser.set_defaults(func=lambda args: LoginCommand(args))
-        whoami_parser = parser.add_parser("whoami", help="Find out which huggingface.co account you are logged in as.")
+        whoami_parser = parser.add_parser("whoami", help="Find out which mirror-hf.co account you are logged in as.")
         whoami_parser.set_defaults(func=lambda args: WhoamiCommand(args))
 
         logout_parser = parser.add_parser("logout", help="Log out")
@@ -112,9 +112,9 @@ class UserCommands(BaseHuggingfaceCLICommand):
         auth_list_parser = auth_subparsers.add_parser("list", help="List all stored access tokens")
         auth_list_parser.set_defaults(func=lambda args: AuthListCommand(args))
         # new system: git-based repo system
-        repo_parser = parser.add_parser("repo", help="{create} Commands to interact with your huggingface.co repos.")
-        repo_subparsers = repo_parser.add_subparsers(help="huggingface.co repos related commands")
-        repo_create_parser = repo_subparsers.add_parser("create", help="Create a new repo on huggingface.co")
+        repo_parser = parser.add_parser("repo", help="{create} Commands to interact with your mirror-hf.co repos.")
+        repo_subparsers = repo_parser.add_subparsers(help="mirror-hf.co repos related commands")
+        repo_create_parser = repo_subparsers.add_parser("create", help="Create a new repo on mirror-hf.co")
         repo_create_parser.add_argument(
             "name",
             type=str,
@@ -232,7 +232,7 @@ class WhoamiCommand(BaseUserCommand):
             if orgs:
                 print(ANSI.bold("orgs: "), ",".join(orgs))
 
-            if ENDPOINT != "https://huggingface.co":
+            if ENDPOINT != "https://mirror-hf.co":
                 print(f"Authenticated through private endpoint: {ENDPOINT}")
         except HTTPError as e:
             print(e)

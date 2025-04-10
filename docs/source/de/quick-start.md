@@ -4,7 +4,7 @@ rendered properly in your Markdown viewer.
 
 # Kurzanleitung
 
-Der [Hugging Face Hub](https://huggingface.co/) ist die erste Anlaufstelle für das Teilen von Maschinenlernmodellen, Demos, Datensätzen und Metriken. Die `huggingface_hub`-Bibliothek hilft Ihnen, mit dem Hub zu interagieren, ohne Ihre Entwicklungs-Umgebung zu verlassen. Sie können Repositories einfach erstellen und verwalten, Dateien herunterladen und hochladen und nützliche Model- und Datensatz-Metadaten vom Hub abrufen.
+Der [Hugging Face Hub](https://mirror-hf.co/) ist die erste Anlaufstelle für das Teilen von Maschinenlernmodellen, Demos, Datensätzen und Metriken. Die `huggingface_hub`-Bibliothek hilft Ihnen, mit dem Hub zu interagieren, ohne Ihre Entwicklungs-Umgebung zu verlassen. Sie können Repositories einfach erstellen und verwalten, Dateien herunterladen und hochladen und nützliche Model- und Datensatz-Metadaten vom Hub abrufen.
 
 ## Installation
 
@@ -23,7 +23,7 @@ oder das gesamte Repository herunterladen. Sie können die Funktion [`hf_hub_dow
 Diese Funktion lädt eine Datei herunter und speichert sie im Cache auf Ihrer lokalen Festplatte. Das nächste Mal, wenn Sie diese Datei benötigen, wird sie aus Ihrem Cache geladen, sodass Sie sie nicht erneut herunterladen müssen.
 
 Sie benötigen die Repository-ID und den Dateinamen der Datei, die Sie herunterladen möchten. Zum
-Beispiel, um die Konfigurationsdatei des [Pegasus](https://huggingface.co/google/pegasus-xsum) Modells herunterzuladen:
+Beispiel, um die Konfigurationsdatei des [Pegasus](https://mirror-hf.co/google/pegasus-xsum) Modells herunterzuladen:
 
 ```py
 >>> from huggingface_hub import hf_hub_download
@@ -48,7 +48,7 @@ Für weitere Details und Optionen siehe die API-Referenz für [`hf_hub_download`
 ## Anmeldung
 
 In vielen Fällen müssen Sie mit einem Hugging Face-Konto angemeldet sein, um mit dem Hub zu interagieren: private Repos herunterladen, Dateien hochladen, PRs erstellen,...
-[Erstellen Sie ein Konto](https://huggingface.co/join), wenn Sie noch keines haben, und melden Sie sich dann an, um Ihr ["User Access Token"](https://huggingface.co/docs/hub/security-tokens) von Ihrer [Einstellungsseite](https://huggingface.co/settings/tokens) zu erhalten. Das "User Access Token" wird verwendet, um Ihre Identität gegenüber dem Hub zu authentifizieren.
+[Erstellen Sie ein Konto](https://mirror-hf.co/join), wenn Sie noch keines haben, und melden Sie sich dann an, um Ihr ["User Access Token"](https://mirror-hf.co/docs/hub/security-tokens) von Ihrer [Einstellungsseite](https://mirror-hf.co/settings/tokens) zu erhalten. Das "User Access Token" wird verwendet, um Ihre Identität gegenüber dem Hub zu authentifizieren.
 
 Sobald Sie Ihr "User Access Token" haben, führen Sie den folgenden Befehl in Ihrem Terminal aus:
 
@@ -97,7 +97,7 @@ Private Repositories sind für niemanden außer Ihnen selbst sichtbar.
 
 <Tip>
 
-Um eine Repository zu erstellen oder Inhalte auf den Hub zu pushen, müssen Sie ein "User Access Token" bereitstellen, das die Schreibberechtigung (`write`) hat. Sie können die Berechtigung auswählen, wenn Sie das Token auf Ihrer [Einstellungsseite](https://huggingface.co/settings/tokens) erstellen.
+Um eine Repository zu erstellen oder Inhalte auf den Hub zu pushen, müssen Sie ein "User Access Token" bereitstellen, das die Schreibberechtigung (`write`) hat. Sie können die Berechtigung auswählen, wenn Sie das Token auf Ihrer [Einstellungsseite](https://mirror-hf.co/settings/tokens) erstellen.
 
 </Tip>
 

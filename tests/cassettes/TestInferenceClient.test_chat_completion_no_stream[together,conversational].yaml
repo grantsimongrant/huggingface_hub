@@ -11,13 +11,13 @@ interactions:
       X-Amzn-Trace-Id:
       - f4ba700d-b9e4-48cc-add2-74c4a3b89c42
     method: GET
-    uri: https://huggingface.co/api/models/meta-llama/Meta-Llama-3-8B-Instruct?expand=inferenceProviderMapping
+    uri: https://mirror-hf.co/api/models/meta-llama/Meta-Llama-3-8B-Instruct?expand=inferenceProviderMapping
   response:
     body:
       string: '{"_id":"661f97d0b00f5f1f620c4f25","id":"meta-llama/Meta-Llama-3-8B-Instruct","inferenceProviderMapping":{"fireworks-ai":{"status":"staging","providerId":"accounts/fireworks/models/llama-v3-8b-instruct","task":"conversational"},"together":{"status":"live","providerId":"meta-llama/Meta-Llama-3-8B-Instruct-Turbo","task":"conversational"},"hf-inference":{"status":"live","providerId":"meta-llama/Meta-Llama-3-8B-Instruct","task":"conversational"}}}'
     headers:
       Access-Control-Allow-Origin:
-      - https://huggingface.co
+      - https://mirror-hf.co
       Access-Control-Expose-Headers:
       - X-Repo-Commit,X-Request-Id,X-Error-Code,X-Error-Message,X-Total-Count,ETag,Link,Accept-Ranges,Content-Range,X-Xet-Access-Token,X-Xet-Token-Expiration,X-Xet-Refresh-Route,X-Xet-Cas-Url,X-Xet-Hash
       Connection:
@@ -69,7 +69,7 @@ interactions:
       X-Amzn-Trace-Id:
       - ad475e90-ab8c-4f22-984d-8eb3b7d2d423
     method: POST
-    uri: https://router.huggingface.co/together/v1/chat/completions
+    uri: https://router.mirror-hf.co/together/v1/chat/completions
   response:
     body:
       string: "{\n  \"id\": \"9115d3daeab10608\",\n  \"object\": \"chat.completion\",\n

@@ -253,7 +253,7 @@ class OfflineModeSessionTest(unittest.TestCase):
         configure_http_backend()
         session = get_session()
         with self.assertRaises(OfflineModeIsEnabled):
-            session.get("https://huggingface.co")
+            session.get("https://mirror-hf.co")
 
 
 class TestUniqueRequestId(unittest.TestCase):
@@ -301,13 +301,13 @@ def _is_uuid(string: str) -> bool:
     ("base_url", "endpoint", "expected_url"),
     [
         # Staging url => unchanged
-        ("https://hub-ci.huggingface.co/resolve/...", None, "https://hub-ci.huggingface.co/resolve/..."),
+        ("https://hub-ci.mirror-hf.co/resolve/...", None, "https://hub-ci.mirror-hf.co/resolve/..."),
         # Prod url => unchanged
-        ("https://huggingface.co/resolve/...", None, "https://huggingface.co/resolve/..."),
+        ("https://mirror-hf.co/resolve/...", None, "https://mirror-hf.co/resolve/..."),
         # Custom endpoint + staging url => fixed
-        ("https://hub-ci.huggingface.co/api/models", "https://mirror.co", "https://mirror.co/api/models"),
+        ("https://hub-ci.mirror-hf.co/api/models", "https://mirror.co", "https://mirror.co/api/models"),
         # Custom endpoint + prod url => fixed
-        ("https://huggingface.co/api/models", "https://mirror.co", "https://mirror.co/api/models"),
+        ("https://mirror-hf.co/api/models", "https://mirror.co", "https://mirror.co/api/models"),
     ],
 )
 def test_fix_hf_endpoint_in_url(base_url: str, endpoint: Optional[str], expected_url: str) -> None:

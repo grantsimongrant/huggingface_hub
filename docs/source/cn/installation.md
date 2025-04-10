@@ -118,7 +118,7 @@ conda install -c conda-forge huggingface_hub
 python -c "from huggingface_hub import model_info; print(model_info('gpt2'))"
 ```
 
-这个命令将从 Hub 获取有关 [gpt2](https://huggingface.co/gpt2) 模型的信息。
+这个命令将从 Hub 获取有关 [gpt2](https://mirror-hf.co/gpt2) 模型的信息。
 
 输出应如下所示：
 

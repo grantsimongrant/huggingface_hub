@@ -33,7 +33,7 @@ Hugging Face Hub是一组 Git 存储库。[Git](https://git-scm.com/)是软件�
 ```py
 >>> from huggingface_hub import create_repo
 >>> create_repo("lysandre/test-model")
-'https://huggingface.co/lysandre/test-model'
+'https://mirror-hf.co/lysandre/test-model'
 ```
 
 默认情况下，[`create_repo`] 会创建一个模型仓库。但是你可以使用 `repo_type`参数来指定其他仓库类型。例如，如果你想创建一个数据集仓库
@@ -43,7 +43,7 @@ Hugging Face Hub是一组 Git 存储库。[Git](https://git-scm.com/)是软件�
 ```py
 >>> from huggingface_hub import create_repo
 >>> create_repo("lysandre/test-dataset", repo_type="dataset")
-'https://huggingface.co/datasets/lysandre/test-dataset'
+'https://mirror-hf.co/datasets/lysandre/test-dataset'
 ```
 
 创建仓库时，你可以使用 `private`参数设置仓库的可见性
@@ -78,7 +78,7 @@ Hugging Face Hub是一组 Git 存储库。[Git](https://git-scm.com/)是软件�
 ```py
 >>> from huggingface_hub import duplicate_space
 >>> duplicate_space("multimodalart/dreambooth-training", private=False)
-RepoUrl('https://huggingface.co/spaces/nateraw/dreambooth-training',...)
+RepoUrl('https://mirror-hf.co/spaces/nateraw/dreambooth-training',...)
 ```
 
 ## 上传和下载文件
@@ -189,7 +189,7 @@ GitRefs(
 请运行以下代码：
 
 ```py
->>> repo = Repository(local_dir="huggingface-hub", clone_from="https://huggingface.co/facebook/wav2vec2-large-960h-lv60")
+>>> repo = Repository(local_dir="huggingface-hub", clone_from="https://mirror-hf.co/facebook/wav2vec2-large-960h-lv60")
 ```
 
 你可以将`clone_from`参数与[`create_repo`]结合使用，以创建并克隆一个存储库：

@@ -66,5 +66,5 @@ Zum Beispiel holt das folgende Beispiel die 5 am häufigsten heruntergeladenen D
 
 
 Eine andere Möglichkeit, dies zu tun,
-besteht darin, die [Modelle](https://huggingface.co/models) und [Datensätze](https://huggingface.co/datasets) Seiten
+besteht darin, die [Modelle](https://mirror-hf.co/models) und [Datensätze](https://mirror-hf.co/datasets) Seiten
 in Ihrem Browser zu besuchen, nach einigen Parametern zu suchen und die Werte in der URL anzusehen.

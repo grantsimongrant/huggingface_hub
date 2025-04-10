@@ -36,7 +36,7 @@ git push -u --tags origin v<MINOR-VERSION>-release
    ```
 
 7. Verify that the docs have been built correctly. You can check that on the following link:
-https://huggingface.co/docs/huggingface_hub/v<VERSION>
+https://mirror-hf.co/docs/huggingface_hub/v<VERSION>
 
 8. Checkout main once again to update the version in the `__init__.py` file:
 ```

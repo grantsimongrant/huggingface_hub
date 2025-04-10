@@ -20,7 +20,7 @@ def test_push_to_hub(user: str) -> None:
     model_id = f"{user}/en_core_web_sm"
     _delete_repo(model_id)
 
-    # Download example file from HF Hub (see https://huggingface.co/spacy/en_core_web_sm)
+    # Download example file from HF Hub (see https://mirror-hf.co/spacy/en_core_web_sm)
     with production_endpoint():
         whl_path = hf_hub_download(
             repo_id="spacy/en_core_web_sm",

@@ -31,7 +31,7 @@ Erstellen Sie ein leeres Repository mit [`create_repo`] und geben Sie ihm mit de
 ```py
 >>> from huggingface_hub import create_repo
 >>> create_repo("lysandre/test-model")
-'https://huggingface.co/lysandre/test-model'
+'https://mirror-hf.co/lysandre/test-model'
 ```
 
 Standardmäßig erstellt [`create_repo`] ein Modellrepository. Sie können jedoch den Parameter `repo_type` verwenden, um einen anderen Repository-Typ anzugeben. Wenn Sie beispielsweise ein Dataset-Repository erstellen möchten:
@@ -39,7 +39,7 @@ Standardmäßig erstellt [`create_repo`] ein Modellrepository. Sie können jedoc
 ```py
 >>> from huggingface_hub import create_repo
 >>> create_repo("lysandre/test-dataset", repo_type="dataset")
-'https://huggingface.co/datasets/lysandre/test-dataset'
+'https://mirror-hf.co/datasets/lysandre/test-dataset'
 ```
 
 Wenn Sie ein Repository erstellen, können Sie mit dem Parameter `private` die Sichtbarkeit Ihres Repositories festlegen.
@@ -69,7 +69,7 @@ Sie müssen jedoch noch Ihre eigenen Einstellungen konfigurieren (Hardware, Schl
 ```py
 >>> from huggingface_hub import duplicate_space
 >>> duplicate_space("multimodalart/dreambooth-training", private=False)
-RepoUrl('https://huggingface.co/spaces/nateraw/dreambooth-training',...)
+RepoUrl('https://mirror-hf.co/spaces/nateraw/dreambooth-training',...)
 ```
 
 ## Dateien hochladen und herunterladen
@@ -170,7 +170,7 @@ Der `clone_from` Parameter klont ein Repository von einer Hugging Face Repositor
 `clone_from` kann auch ein Repository mit einer URL klonen:
 
 ```py
->>> repo = Repository(local_dir="huggingface-hub", clone_from="https://huggingface.co/facebook/wav2vec2-large-960h-lv60")
+>>> repo = Repository(local_dir="huggingface-hub", clone_from="https://mirror-hf.co/facebook/wav2vec2-large-960h-lv60")
 ```
 
 Sie können den `clone_from` Parameter mit [`create_repo`] kombinieren, um ein Repository zu erstellen und zu klonen:

@@ -184,7 +184,7 @@ class RepositoryNotFoundError(HfHubHTTPError):
     (...)
     huggingface_hub.utils._errors.RepositoryNotFoundError: 401 Client Error. (Request ID: PvMw_VjBMjVdMz53WKIzP)
 
-    Repository Not Found for url: https://huggingface.co/api/models/%3Cnon_existent_repository%3E.
+    Repository Not Found for url: https://mirror-hf.co/api/models/%3Cnon_existent_repository%3E.
     Please make sure you specified the correct `repo_id` and `repo_type`.
     If the repo is private, make sure you are authenticated.
     Invalid username or password.
@@ -207,9 +207,9 @@ class GatedRepoError(RepositoryNotFoundError):
     (...)
     huggingface_hub.utils._errors.GatedRepoError: 403 Client Error. (Request ID: ViT1Bf7O_026LGSQuVqfa)
 
-    Cannot access gated repo for url https://huggingface.co/api/models/ardent-figment/gated-model.
+    Cannot access gated repo for url https://mirror-hf.co/api/models/ardent-figment/gated-model.
     Access to model ardent-figment/gated-model is restricted and you are not in the authorized list.
-    Visit https://huggingface.co/ardent-figment/gated-model to ask for access.
+    Visit https://mirror-hf.co/ardent-figment/gated-model to ask for access.
     ```
     """
 
@@ -226,7 +226,7 @@ class DisabledRepoError(HfHubHTTPError):
     (...)
     huggingface_hub.utils._errors.DisabledRepoError: 403 Client Error. (Request ID: Root=1-659fc3fa-3031673e0f92c71a2260dbe2;bc6f4dfb-b30a-4862-af0a-5cfe827610d8)
 
-    Cannot access repository for url https://huggingface.co/api/datasets/laion/laion-art.
+    Cannot access repository for url https://mirror-hf.co/api/datasets/laion/laion-art.
     Access to this resource is disabled.
     ```
     """
@@ -248,7 +248,7 @@ class RevisionNotFoundError(HfHubHTTPError):
     (...)
     huggingface_hub.utils._errors.RevisionNotFoundError: 404 Client Error. (Request ID: Mwhe_c3Kt650GcdKEFomX)
 
-    Revision Not Found for url: https://huggingface.co/bert-base-cased/resolve/%3Cnon-existent-revision%3E/config.json.
+    Revision Not Found for url: https://mirror-hf.co/bert-base-cased/resolve/%3Cnon-existent-revision%3E/config.json.
     ```
     """
 
@@ -267,7 +267,7 @@ class EntryNotFoundError(HfHubHTTPError):
     (...)
     huggingface_hub.utils._errors.EntryNotFoundError: 404 Client Error. (Request ID: 53pNl6M0MxsnG5Sw8JA6x)
 
-    Entry Not Found for url: https://huggingface.co/bert-base-cased/resolve/main/%3Cnon-existent-file%3E.
+    Entry Not Found for url: https://mirror-hf.co/bert-base-cased/resolve/main/%3Cnon-existent-file%3E.
     ```
     """
 

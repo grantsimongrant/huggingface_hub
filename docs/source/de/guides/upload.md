@@ -224,7 +224,7 @@ Für weitere Details über den [`CommitScheduler`], hier das Wichtigste:
 
 #### Space Persistenz-Demo
 
-Das Speichern von Daten aus einem Space in einem Dataset auf dem Hub ist der Hauptanwendungsfall für den [`CommitScheduler`]. Je nach Anwendungsfall möchten Sie Ihre Daten möglicherweise anders strukturieren. Die Struktur muss robust gegenüber gleichzeitigen Benutzern und Neustarts sein, was oft das Generieren von UUIDs impliziert. Neben der Robustheit sollten Sie Daten in einem Format hochladen, das von der 🤗 Datasets-Bibliothek für die spätere Wiederverwendung gelesen werden kann. Wir haben einen [Space](https://huggingface.co/spaces/Wauplin/space_to_dataset_saver) erstellt, der zeigt, wie man verschiedene Datenformate speichert (dies muss möglicherweise für Ihre speziellen Bedürfnisse angepasst werden).
+Das Speichern von Daten aus einem Space in einem Dataset auf dem Hub ist der Hauptanwendungsfall für den [`CommitScheduler`]. Je nach Anwendungsfall möchten Sie Ihre Daten möglicherweise anders strukturieren. Die Struktur muss robust gegenüber gleichzeitigen Benutzern und Neustarts sein, was oft das Generieren von UUIDs impliziert. Neben der Robustheit sollten Sie Daten in einem Format hochladen, das von der 🤗 Datasets-Bibliothek für die spätere Wiederverwendung gelesen werden kann. Wir haben einen [Space](https://mirror-hf.co/spaces/Wauplin/space_to_dataset_saver) erstellt, der zeigt, wie man verschiedene Datenformate speichert (dies muss möglicherweise für Ihre speziellen Bedürfnisse angepasst werden).
 
 #### Benutzerdefinierte Uploads
 
@@ -263,7 +263,7 @@ Wenn Sie `push_to_hub` überschreiben, haben Sie Zugriff auf die Attribute vom [
 
 <Tip>
 
-Für weitere Beispiele von benutzerdefinierten Schedulern, schauen Sie sich unseren [Demo Space](https://huggingface.co/spaces/Wauplin/space_to_dataset_saver) an, der verschiedene Implementierungen je nach Ihren Anforderungen enthält.
+Für weitere Beispiele von benutzerdefinierten Schedulern, schauen Sie sich unseren [Demo Space](https://mirror-hf.co/spaces/Wauplin/space_to_dataset_saver) an, der verschiedene Implementierungen je nach Ihren Anforderungen enthält.
 
 </Tip>
 
@@ -341,7 +341,7 @@ Was meinen wir, wenn wir von "großen Uploads" sprechen, und welche Einschränku
 Hinter den Kulissen verwendet der Hub Git zur Versionierung der Daten, was strukturelle Auswirkungen darauf hat, was Sie in Ihrem Repo tun können.
 Wenn Ihr Repo einige der im vorherigen Abschnitt erwähnten Zahlen überschreitet, **empfehlen wir Ihnen dringend, [`git-sizer`](https://github.com/github/git-sizer) zu verwenden**, das eine sehr detaillierte Dokumentation über die verschiedenen Faktoren bietet, die Ihr Erlebnis beeinflussen werden. Hier ist ein TL;DR der zu berücksichtigenden Faktoren:
 
-- **Repository-Größe**: Die Gesamtgröße der Daten, die Sie hochladen möchten. Es gibt keine feste Obergrenze für die Größe eines Hub-Repositories. Wenn Sie jedoch vorhaben, Hunderte von GBs oder sogar TBs an Daten hochzuladen, würden wir es begrüßen, wenn Sie uns dies im Voraus mitteilen könnten, damit wir Ihnen besser helfen können, falls Sie während des Prozesses Fragen haben. Sie können uns unter datasets@huggingface.co oder auf [unserem Discord](http://hf.co/join/discord) kontaktieren.
+- **Repository-Größe**: Die Gesamtgröße der Daten, die Sie hochladen möchten. Es gibt keine feste Obergrenze für die Größe eines Hub-Repositories. Wenn Sie jedoch vorhaben, Hunderte von GBs oder sogar TBs an Daten hochzuladen, würden wir es begrüßen, wenn Sie uns dies im Voraus mitteilen könnten, damit wir Ihnen besser helfen können, falls Sie während des Prozesses Fragen haben. Sie können uns unter datasets@mirror-hf.co oder auf [unserem Discord](http://hf.co/join/discord) kontaktieren.
 - **Anzahl der Dateien**:
     - Für ein optimales Erlebnis empfehlen wir, die Gesamtzahl der Dateien unter 100k zu halten. Versuchen Sie, die Daten zu weniger Dateien zusammenzuführen, wenn Sie mehr haben.
       Zum Beispiel können json-Dateien zu einer einzigen jsonl-Datei zusammengeführt oder große Datensätze als Parquet-Dateien exportiert werden.

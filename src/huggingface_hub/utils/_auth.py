@@ -94,7 +94,7 @@ def _get_token_from_google_colab() -> Optional[str]:
             warnings.warn(
                 "\nThe secret `HF_TOKEN` does not exist in your Colab secrets."
                 "\nTo authenticate with the Hugging Face Hub, create a token in your settings tab "
-                "(https://huggingface.co/settings/tokens), set it as secret in your Google Colab and restart your session."
+                "(https://mirror-hf.co/settings/tokens), set it as secret in your Google Colab and restart your session."
                 "\nYou will be able to reuse this secret in all of your notebooks."
                 "\nPlease note that authentication is recommended but still optional to access public models or datasets."
             )

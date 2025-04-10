@@ -11,13 +11,13 @@ interactions:
       X-Amzn-Trace-Id:
       - c224935e-7a41-4745-807b-47796ffb957a
     method: GET
-    uri: https://huggingface.co/api/models/black-forest-labs/FLUX.1-dev?expand=inferenceProviderMapping
+    uri: https://mirror-hf.co/api/models/black-forest-labs/FLUX.1-dev?expand=inferenceProviderMapping
   response:
     body:
       string: '{"_id":"66aaa908fc35e079a941470d","id":"black-forest-labs/FLUX.1-dev","inferenceProviderMapping":{"fal-ai":{"status":"live","providerId":"fal-ai/flux/dev","task":"text-to-image"},"replicate":{"status":"live","providerId":"black-forest-labs/flux-dev","task":"text-to-image"},"together":{"status":"live","providerId":"black-forest-labs/FLUX.1-dev","task":"text-to-image"},"hf-inference":{"status":"live","providerId":"black-forest-labs/FLUX.1-dev","task":"text-to-image"},"nebius":{"status":"staging","providerId":"black-forest-labs/flux-dev","task":"text-to-image"},"black-forest-labs":{"status":"staging","providerId":"flux-dev","task":"text-to-image"}}}'
     headers:
       Access-Control-Allow-Origin:
-      - https://huggingface.co
+      - https://mirror-hf.co
       Access-Control-Expose-Headers:
       - X-Repo-Commit,X-Request-Id,X-Error-Code,X-Error-Message,X-Total-Count,ETag,Link,Accept-Ranges,Content-Range,X-Xet-Access-Token,X-Xet-Token-Expiration,X-Xet-Refresh-Route,X-Xet-Cas-Url,X-Xet-Hash
       Connection:
@@ -67,7 +67,7 @@ interactions:
       X-Amzn-Trace-Id:
       - 7207663f-4802-47e8-8ab5-32c30b0fb783
     method: POST
-    uri: https://router.huggingface.co/black-forest-labs/v1/flux-dev
+    uri: https://router.mirror-hf.co/black-forest-labs/v1/flux-dev
   response:
     body:
       string: '{"id":"d11b93f5-4d13-42bb-b26b-95fead3634ac","polling_url":"https://api.us1.bfl.ai/v1/get_result?id=d11b93f5-4d13-42bb-b26b-95fead3634ac"}'

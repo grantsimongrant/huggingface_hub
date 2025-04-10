@@ -5,8 +5,8 @@ rendered properly in your Markdown viewer.
 # Verwalten Ihres Spaces (Bereiches)
 
 In diesem Leitfaden werden wir sehen, wie man den Laufzeitbereich eines Space
-([Geheimnisse (Secrets)](https://huggingface.co/docs/hub/spaces-overview#managing-secrets),
-[Hardware](https://huggingface.co/docs/hub/spaces-gpus) und Speicher (Storage)) mit `huggingface_hub` verwaltet.
+([Geheimnisse (Secrets)](https://mirror-hf.co/docs/hub/spaces-overview#managing-secrets),
+[Hardware](https://mirror-hf.co/docs/hub/spaces-gpus) und Speicher (Storage)) mit `huggingface_hub` verwaltet.
 
 ## Ein einfaches Beispiel: Konfigurieren von Geheimnissen und Hardware
 
@@ -46,7 +46,7 @@ Möglicherweise möchten Sie sie jedoch weiterhin mit Geheimnissen und aufgerüs
 **3. Konfigurieren von Geheimnissen und Variablen**
 
 Ihr Space könnte einige geheime Schlüssel, Tokens oder Variablen benötigen, um zu funktionieren.
-Siehe [Dokumentation](https://huggingface.co/docs/hub/spaces-overview#managing-secrets) für weitere Details.
+Siehe [Dokumentation](https://mirror-hf.co/docs/hub/spaces-overview#managing-secrets) für weitere Details.
 Zum Beispiel ein HF-Token, um einen Bilddatensatz auf den Hub hochzuladen, sobald er aus Ihrem Space generiert wurde.
 
 ```py
@@ -95,7 +95,7 @@ Geheimnisse und Variablen können beim Erstellen oder Duplizieren eines Space ge
 
 Standardmäßig wird Ihr Space kostenlos in einer CPU-Umgebung ausgeführt. Sie können die Hardware
 aktualisieren, um sie auf GPUs laufen zu lassen. Eine Zahlungskarte oder ein Community-Grant wird benötigt, um Ihren
-Space zu aktualisieren. Siehe [Dokumentation](https://huggingface.co/docs/hub/spaces-gpus) für weitere Details.
+Space zu aktualisieren. Siehe [Dokumentation](https://mirror-hf.co/docs/hub/spaces-gpus) für weitere Details.
 
 ```py
 # Verwenden von `SpaceHardware` Enum
@@ -152,7 +152,7 @@ Aktualisierte Hardware wird Ihrem Space automatisch zugewiesen, sobald er erstel
 Standardmäßig, wenn Ihr Space auf augewerteter Hardware läuft, wird er nie angehalten. Um jedoch zu vermeiden, dass Ihnen Gebühren berechnet werden,
 möchten Sie ihn möglicherweise anhalten, wenn Sie ihn nicht verwenden. Dies ist mit [`pause_space`] möglich. Ein pausierter Space bleibt
 inaktiv, bis der Besitzer des Space ihn entweder über die Benutzeroberfläche oder über die API mit [`restart_space`] neu startet.
-Weitere Informationen zum Pausenmodus finden Sie in [diesem Abschnitt](https://huggingface.co/docs/hub/spaces-gpus#pause).
+Weitere Informationen zum Pausenmodus finden Sie in [diesem Abschnitt](https://mirror-hf.co/docs/hub/spaces-gpus#pause).
 
 ```py
 # Pausieren des Space, um Gebühren zu vermeiden
@@ -164,7 +164,7 @@ Weitere Informationen zum Pausenmodus finden Sie in [diesem Abschnitt](https://h
 
 Eine weitere Möglichkeit besteht darin, für Ihren Space einen Timeout festzulegen. Wenn Ihr Space länger als die Timeout-Dauer inaktiv ist,
 wird er in den Schlafmodus versetzt. Jeder Besucher, der auf Ihren Space zugreift, wird ihn wieder starten. Sie können ein Timeout mit
-[`set_space_sleep_time`] festlegen. Weitere Informationen zum Schlafmodus finden Sie in [diesem Abschnitt](https://huggingface.co/docs/hub/spaces-gpus#sleep-time).
+[`set_space_sleep_time`] festlegen. Weitere Informationen zum Schlafmodus finden Sie in [diesem Abschnitt](https://mirror-hf.co/docs/hub/spaces-gpus#sleep-time).
 
 ```py
 # Setzen den Space nach 1h Inaktivität in den Schlafmodus
@@ -204,7 +204,7 @@ Aufgewertete Hardware wird Ihrem Space automatisch zugewiesen, sobald er erstell
 
 **6. Dem Space dauerhaften Speicherplatz hinzufügen**
 
-Sie können den Speicher-Tier Ihrer Wahl auswählen, um auf Festplattenspeicher zuzugreifen, der Neustarts Ihres Space überdauert. Dies bedeutet, dass Sie von der Festplatte lesen und darauf schreiben können, wie Sie es von einer herkömmlichen Festplatte gewöhnt sind. Weitere Informationen finden Sie in der [Dokumentation](https://huggingface.co/docs/hub/spaces-storage#persistent-storage) .
+Sie können den Speicher-Tier Ihrer Wahl auswählen, um auf Festplattenspeicher zuzugreifen, der Neustarts Ihres Space überdauert. Dies bedeutet, dass Sie von der Festplatte lesen und darauf schreiben können, wie Sie es von einer herkömmlichen Festplatte gewöhnt sind. Weitere Informationen finden Sie in der [Dokumentation](https://mirror-hf.co/docs/hub/spaces-storage#persistent-storage) .
 
 ```py
 >>> from huggingface_hub import SpaceStorage

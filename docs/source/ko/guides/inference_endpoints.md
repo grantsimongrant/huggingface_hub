@@ -1,9 +1,9 @@
 # 추론 엔드포인트[[inference-endpoints]]
 
-추론 엔드포인트는 Hugging Face가 관리하는 전용 및 자동 확장 인프라에 `transformers`, `sentence-transformers` 및 `diffusers` 모델을 쉽게 배포할 수 있는 안전한 프로덕션 솔루션을 제공합니다. 추론 엔드포인트는 [Hub](https://huggingface.co/models)의 모델로 구축됩니다.
-이 가이드에서는 `huggingface_hub`를 사용하여 프로그래밍 방식으로 추론 엔드포인트를 관리하는 방법을 배웁니다. 추론 엔드포인트 제품 자체에 대한 자세한 내용은 [공식 문서](https://huggingface.co/docs/inference-endpoints/index)를 참조하세요.
+추론 엔드포인트는 Hugging Face가 관리하는 전용 및 자동 확장 인프라에 `transformers`, `sentence-transformers` 및 `diffusers` 모델을 쉽게 배포할 수 있는 안전한 프로덕션 솔루션을 제공합니다. 추론 엔드포인트는 [Hub](https://mirror-hf.co/models)의 모델로 구축됩니다.
+이 가이드에서는 `huggingface_hub`를 사용하여 프로그래밍 방식으로 추론 엔드포인트를 관리하는 방법을 배웁니다. 추론 엔드포인트 제품 자체에 대한 자세한 내용은 [공식 문서](https://mirror-hf.co/docs/inference-endpoints/index)를 참조하세요.
 
-이 가이드에서는 `huggingface_hub`가 올바르게 설치 및 로그인되어 있다고 가정합니다. 아직 그렇지 않은 경우 [빠른 시작 가이드](https://huggingface.co/docs/huggingface_hub/quick-start#quickstart)를 참조하세요. 추론 엔드포인트 API를 지원하는 최소 버전은 `v0.19.0`입니다.
+이 가이드에서는 `huggingface_hub`가 올바르게 설치 및 로그인되어 있다고 가정합니다. 아직 그렇지 않은 경우 [빠른 시작 가이드](https://mirror-hf.co/docs/huggingface_hub/quick-start#quickstart)를 참조하세요. 추론 엔드포인트 API를 지원하는 최소 버전은 `v0.19.0`입니다.
 
 ## 추론 엔드포인트 생성[[create-an-inference-endpoint]]
 
@@ -26,7 +26,7 @@
 ... )
 ```
 
-예시에서는 `"my-endpoint-name"`라는 `protected` 추론 엔드포인트를 생성하여 `text-generation`을 위한 [gpt2](https://huggingface.co/gpt2)를 제공합니다. `protected` 추론 엔드포인트 API에 액세스하려면 토큰이 필요합니다. 또한 벤더, 지역, 액셀러레이터, 인스턴스 유형, 크기와 같은 하드웨어 요구 사항을 구성하기 위한 추가 정보를 제공해야 합니다. 사용 가능한 리소스 목록은 [여기](https://api.endpoints.huggingface.cloud/#/v2%3A%3Aprovider/list_vendors)에서 확인할 수 있습니다. 또한 [웹 인터페이스](https://ui.endpoints.huggingface.co/new)를 사용하여 편리하게 수동으로 추론 엔드포인트를 생성할 수 있습니다. 고급 설정 및 사용법에 대한 자세한 내용은 [이 가이드](https://huggingface.co/docs/inference-endpoints/guides/advanced)를 참조하세요.
+예시에서는 `"my-endpoint-name"`라는 `protected` 추론 엔드포인트를 생성하여 `text-generation`을 위한 [gpt2](https://mirror-hf.co/gpt2)를 제공합니다. `protected` 추론 엔드포인트 API에 액세스하려면 토큰이 필요합니다. 또한 벤더, 지역, 액셀러레이터, 인스턴스 유형, 크기와 같은 하드웨어 요구 사항을 구성하기 위한 추가 정보를 제공해야 합니다. 사용 가능한 리소스 목록은 [여기](https://api.endpoints.huggingface.cloud/#/v2%3A%3Aprovider/list_vendors)에서 확인할 수 있습니다. 또한 [웹 인터페이스](https://ui.endpoints.mirror-hf.co/new)를 사용하여 편리하게 수동으로 추론 엔드포인트를 생성할 수 있습니다. 고급 설정 및 사용법에 대한 자세한 내용은 [이 가이드](https://mirror-hf.co/docs/inference-endpoints/guides/advanced)를 참조하세요.
 
 [`create_inference_endpoint`]에서 반환된 값은 [`InferenceEndpoint`] 개체입니다:
 
@@ -37,9 +37,9 @@ InferenceEndpoint(name='my-endpoint-name', namespace='Wauplin', repository='gpt2
 
 이것은 엔드포인트에 대한 정보를 저장하는 데이터클래스입니다. `name`, `repository`, `status`, `task`, `created_at`, `updated_at` 등과 같은 중요한 속성에 접근할 수 있습니다. 필요한 경우 `endpoint.raw`를 통해 서버로부터의 원시 응답에도 접근할 수 있습니다.
 
-추론 엔드포인트가 생성되면 [개인 대시보드](https://ui.endpoints.huggingface.co/)에서 확인할 수 있습니다.
+추론 엔드포인트가 생성되면 [개인 대시보드](https://ui.endpoints.mirror-hf.co/)에서 확인할 수 있습니다.
 
-![](https://huggingface.co/datasets/huggingface/documentation-images/resolve/main/huggingface_hub/inference_endpoints_created.png)
+![](https://mirror-hf.co/datasets/huggingface/documentation-images/resolve/main/huggingface_hub/inference_endpoints_created.png)
 
 #### 사용자 정의 이미지 사용[[using-a-custom-image]]
 

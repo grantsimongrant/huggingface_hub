@@ -65,7 +65,7 @@ def set_git_credential(token: str, username: str = "hf_user", folder: Optional[s
             A git username. Defaults to `"hf_user"`, the default user used in the Hub.
         token (`str`, defaults to `"hf_user"`):
             A git password. In practice, the User Access Token for the Hub.
-            See https://huggingface.co/settings/tokens.
+            See https://mirror-hf.co/settings/tokens.
         folder (`str`, *optional*):
             The folder in which to check the configured helpers.
     """
@@ -112,7 +112,7 @@ def _parse_credential_output(output: str) -> List[str]:
             The output of `git credential fill`.
     """
     # NOTE: If user has set an helper for a custom URL, it will not we caught here.
-    #       Example: `credential.https://huggingface.co.helper=store`
+    #       Example: `credential.https://mirror-hf.co.helper=store`
     #       See: https://github.com/huggingface/huggingface_hub/pull/1138#discussion_r1013324508
     return sorted(  # Sort for nice printing
         set(  # Might have some duplicates

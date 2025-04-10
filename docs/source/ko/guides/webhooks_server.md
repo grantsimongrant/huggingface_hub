@@ -8,7 +8,7 @@ rendered properly in your Markdown viewer.
 관심 있는 특정 사용자/조직에 속한 모든 저장소의 변경 사항을 받아볼 수 있습니다.
 이 가이드에서는 `huggingface_hub`를 활용하여 웹훅을 수신하는 서버를 만들고 Space에 배포하는 방법을 설명합니다. 
 이를 위해서는 Huggingface Hub의 웹훅 개념에 대해 익숙해야 합니다. 
-웹훅 자체에 대해 더 자세히 알아보려면 이 [가이드](https://huggingface.co/docs/hub/webhooks)를 먼저 읽어보세요.  
+웹훅 자체에 대해 더 자세히 알아보려면 이 [가이드](https://mirror-hf.co/docs/hub/webhooks)를 먼저 읽어보세요.  
 
 이 가이드에서 사용할 기본 클래스는 [`WebhooksServer`]입니다. 
 이 클래스는 Huggingface Hub에서 웹훅을 받을 수 있는 서버를 쉽게 구성할 수 있습니다. 서버는 [Gradio](https://gradio.app/) 앱을 기반으로 합니다. 
@@ -16,7 +16,7 @@ rendered properly in your Markdown viewer.
 
 <Tip>
 
-웹훅 서버의 실행 예시를 보려면 [Spaces CI Bot](https://huggingface.co/spaces/spaces-ci-bot/webhook)을 확인하세요. 
+웹훅 서버의 실행 예시를 보려면 [Spaces CI Bot](https://mirror-hf.co/spaces/spaces-ci-bot/webhook)을 확인하세요. 
 이것은 Space의 PR이 열릴 때마다 임시 환경을 실행하는 Space입니다.
 
 </Tip>
@@ -52,15 +52,15 @@ async def trigger_training(payload: WebhookPayload) -> None:
 Webhook secret is not defined. This means your webhook endpoints will be open to everyone.
 To add a secret, set `WEBHOOK_SECRET` as environment variable or pass it at initialization:
         `app = WebhooksServer(webhook_secret='my_secret', ...)`
-For more details about webhook secrets, please refer to https://huggingface.co/docs/hub/webhooks#webhook-secret.
+For more details about webhook secrets, please refer to https://mirror-hf.co/docs/hub/webhooks#webhook-secret.
 Running on local URL:  http://127.0.0.1:7860
 Running on public URL: https://1fadb0f52d8bf825fc.gradio.live
 
-This share link expires in 72 hours. For free permanent hosting and GPU upgrades (NEW!), check out Spaces: https://huggingface.co/spaces
+This share link expires in 72 hours. For free permanent hosting and GPU upgrades (NEW!), check out Spaces: https://mirror-hf.co/spaces
 
 Webhooks are correctly setup and ready to use:
   - POST https://1fadb0f52d8bf825fc.gradio.live/webhooks/trigger_training
-Go to https://huggingface.co/settings/webhooks to setup your webhooks.
+Go to https://mirror-hf.co/settings/webhooks to setup your webhooks.
 ```
 
 축하합니다! 웹훅 서버를 실행했습니다! 정확히 어떤 일이 일어났는지 살펴보겠습니다:
@@ -73,7 +73,7 @@ Go to https://huggingface.co/settings/webhooks to setup your webhooks.
 FastAPI는 자동으로 페이로드를 구문 분석하고 [`WebhookPayload`] 객체로 함수에 전달합니다. 
 이 `pydantic` 객체에는 웹훅을 트리거한 이벤트에 대한 모든 정보가 포함되어 있습니다.
 3. Gradio 앱은 인터넷에서 요청을 받을 수 있는 터널도 열었습니다. 
-이것은 흥미로운 부분으로, https://huggingface.co/settings/webhooks 에서 로컬 머신을 가리키는 웹훅을 구성할 수 있습니다. 
+이것은 흥미로운 부분으로, https://mirror-hf.co/settings/webhooks 에서 로컬 머신을 가리키는 웹훅을 구성할 수 있습니다. 
 이를 통해 웹훅 서버를 디버깅하고 Space에 배포하기 전에 빠르게 반복할 수 있습니다.
 4. 마지막으로 로그에는 서버가 현재 비밀로 보호되지 않는다고 알려줍니다. 
 이것은 로컬 디버깅에는 문제가 되지 않지만 나중에 고려해야 할 사항입니다.
@@ -90,11 +90,11 @@ FastAPI는 자동으로 페이로드를 구문 분석하고 [`WebhookPayload`] �
 ## 웹훅 설정하기[[configure-a-webhook]]
 
 웹훅 서버를 실행하고 있으므로, 이제 메시지를 수신하기 위해 웹훅을 구성해야 합니다.
-https://huggingface.co/settings/webhooks 로 이동하여 "Add a new webhook"을 클릭하고 웹훅을 구성하세요. 
+https://mirror-hf.co/settings/webhooks 로 이동하여 "Add a new webhook"을 클릭하고 웹훅을 구성하세요. 
 모니터링할 대상 저장소와 웹훅 URL `https://1fadb0f52d8bf825fc.gradio.live/webhooks/trigger_training`을 설정하세요.
 
 <div class="flex justify-center">
-<img src="https://huggingface.co/datasets/huggingface/documentation-images/resolve/main/hub/configure_webhook.png"/>
+<img src="https://mirror-hf.co/datasets/huggingface/documentation-images/resolve/main/hub/configure_webhook.png"/>
 </div>
 
 이걸로 끝입니다! 이제 대상 저장소를 업데이트하면 웹훅을 트리거할 수 있습니다. 예를 들면, 커밋 푸시가 그 방법이 될 수 있습니다.
@@ -104,19 +104,19 @@ https://huggingface.co/settings/webhooks 로 이동하여 "Add a new webhook"을
 
 ## Space에 배포하기[[deploy-to-a-space]]
 
-이제 작동하는 웹훅 서버가 마련되었으므로, 다음 목표는 이를 Space에 배포하는 것입니다. https://huggingface.co/new-space 에 가서 Space를 생성합니다. 
+이제 작동하는 웹훅 서버가 마련되었으므로, 다음 목표는 이를 Space에 배포하는 것입니다. https://mirror-hf.co/new-space 에 가서 Space를 생성합니다. 
 이름을 지정하고, Gradio SDK를 선택한 다음 "Create Space"를 클릭합니다. 코드를 `app.py` 파일로 Space에 업로드합니다.
 Space가 자동으로 시작됩니다!
-Space에 대한 자세한 내용은 이 [가이드](https://huggingface.co/docs/hub/spaces-overview)를 참조하세요.
+Space에 대한 자세한 내용은 이 [가이드](https://mirror-hf.co/docs/hub/spaces-overview)를 참조하세요.
 
 웹훅 서버가 이제 공개 Space에서 실행 중입니다. 대부분의 경우 비밀번호로 보안을 설정하고 싶을 것입니다.
 Space 설정 > "Repository secrets" 섹션 > "Add a secret" 로 이동합니다. `WEBHOOK_SECRET` 환경 변수에 원하는 값을 설정합니다. 
-[Webhooks 설정](https://huggingface.co/settings/webhooks)으로 돌아가서 웹훅 구성에 비밀번호를 설정합니다. 
+[Webhooks 설정](https://mirror-hf.co/settings/webhooks)으로 돌아가서 웹훅 구성에 비밀번호를 설정합니다. 
 이제 올바른 비밀번호가 있는 요청만 서버에서 허용됩니다.
 
 이게 전부입니다! Space가 이제 Hub의 웹훅을 수신할 준비가 되었습니다.
 무료 하드웨어인 'cpu-basic'에서 Space를 실행 시, 48시간 동안 비활성화되면 종료된다는 점을 유념하세요. 
-영구적인 Space가 필요한 경우 [업그레이드된 하드웨어](https://huggingface.co/docs/hub/spaces-gpus#hardware-specs)를 설정해야 합니다.
+영구적인 Space가 필요한 경우 [업그레이드된 하드웨어](https://mirror-hf.co/docs/hub/spaces-gpus#hardware-specs)를 설정해야 합니다.
 
 ## 고급 사용법[[advanced-usage]]
 

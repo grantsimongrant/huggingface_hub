@@ -53,11 +53,11 @@ CODER_T = Tuple[ENCODER_T, DECODER_T]
 DEFAULT_MODEL_CARD = """
 ---
 # For reference on model card metadata, see the spec: https://github.com/huggingface/hub-docs/blob/main/modelcard.md?plain=1
-# Doc / guide: https://huggingface.co/docs/hub/model-cards
+# Doc / guide: https://mirror-hf.co/docs/hub/model-cards
 {{ card_data }}
 ---
 
-This model has been pushed to the Hub using the [PytorchModelHubMixin](https://huggingface.co/docs/huggingface_hub/package_reference/mixins#huggingface_hub.PyTorchModelHubMixin) integration:
+This model has been pushed to the Hub using the [PytorchModelHubMixin](https://mirror-hf.co/docs/huggingface_hub/package_reference/mixins#huggingface_hub.PyTorchModelHubMixin) integration:
 - Code: {{ repo_url | default("[More Information Needed]", true) }}
 - Paper: {{ paper_url | default("[More Information Needed]", true) }}
 - Docs: {{ docs_url | default("[More Information Needed]", true) }}
@@ -131,7 +131,7 @@ class ModelHubMixin:
     ...         tags=["computer-vision"],
     ...         repo_url="https://github.com/huggingface/my-cool-library",
     ...         paper_url="https://arxiv.org/abs/2304.12244",
-    ...         docs_url="https://huggingface.co/docs/my-cool-library",
+    ...         docs_url="https://mirror-hf.co/docs/my-cool-library",
     ...         # ^ optional metadata to generate model card
     ...     ):
     ...     def __init__(self, size: int = 512, device: str = "cpu"):

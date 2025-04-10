@@ -126,7 +126,7 @@ Once installed, check that `huggingface_hub` works properly by running the follo
 python -c "from huggingface_hub import model_info; print(model_info('gpt2'))"
 ```
 
-This command will fetch information from the Hub about the [gpt2](https://huggingface.co/gpt2) model.
+This command will fetch information from the Hub about the [gpt2](https://mirror-hf.co/gpt2) model.
 Output should look like this:
 
 ```text

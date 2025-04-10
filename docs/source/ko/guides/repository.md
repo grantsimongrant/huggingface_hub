@@ -31,7 +31,7 @@ Hub에 리포지토리를 생성하고 관리하려면, 로그인이 되어 있�
 ```py
 >>> from huggingface_hub import create_repo
 >>> create_repo("lysandre/test-model")
-'https://huggingface.co/lysandre/test-model'
+'https://mirror-hf.co/lysandre/test-model'
 ```
 
 기본적으로 [`create_repo`]는 모델 리포지토리를 만듭니다. 하지만 `repo_type` 매개변수를 사용하여 다른 유형의 리포지토리를 지정할 수 있습니다. 예를 들어 데이터셋 리포지토리를 만들고 싶다면:
@@ -39,7 +39,7 @@ Hub에 리포지토리를 생성하고 관리하려면, 로그인이 되어 있�
 ```py
 >>> from huggingface_hub import create_repo
 >>> create_repo("lysandre/test-dataset", repo_type="dataset")
-'https://huggingface.co/datasets/lysandre/test-dataset'
+'https://mirror-hf.co/datasets/lysandre/test-dataset'
 ```
 
 리포지토리를 만들 때, `private` 매개변수를 사용하여 가시성을 설정할 수 있습니다.
@@ -68,7 +68,7 @@ Hub에 리포지토리를 생성하고 관리하려면, 로그인이 되어 있�
 ```py
 >>> from huggingface_hub import duplicate_space
 >>> duplicate_space("multimodalart/dreambooth-training", private=False)
-RepoUrl('https://huggingface.co/spaces/nateraw/dreambooth-training',...)
+RepoUrl('https://mirror-hf.co/spaces/nateraw/dreambooth-training',...)
 ```
 
 ## 파일 다운로드와 업로드[[upload-and-download-files]]
@@ -174,7 +174,7 @@ Spaces를 위한 특정 설정들(하드웨어, 환경변수 등)을 구성하�
 `clone_from`은 URL을 사용해 리포지토리를 복제할 수 있습니다.
 
 ```py
->>> repo = Repository(local_dir="huggingface-hub", clone_from="https://huggingface.co/facebook/wav2vec2-large-960h-lv60")
+>>> repo = Repository(local_dir="huggingface-hub", clone_from="https://mirror-hf.co/facebook/wav2vec2-large-960h-lv60")
 ```
 
 `clone_from` 매개변수를 [`create_repo`]와 결합하여 리포지토리를 만들고 복제할 수 있습니다.

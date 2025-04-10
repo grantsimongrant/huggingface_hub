@@ -126,7 +126,7 @@ class UploadCommand(BaseHuggingfaceCLICommand):
             help="If set, a background job is scheduled to create commits every `every` minutes.",
         )
         upload_parser.add_argument(
-            "--token", type=str, help="A User Access Token generated from https://huggingface.co/settings/tokens"
+            "--token", type=str, help="A User Access Token generated from https://mirror-hf.co/settings/tokens"
         )
         upload_parser.add_argument(
             "--quiet",
@@ -218,7 +218,7 @@ class UploadCommand(BaseHuggingfaceCLICommand):
         if not HF_HUB_ENABLE_HF_TRANSFER:
             logger.info(
                 "Consider using `hf_transfer` for faster uploads. This solution comes with some limitations. See"
-                " https://huggingface.co/docs/huggingface_hub/hf_transfer for more details."
+                " https://mirror-hf.co/docs/huggingface_hub/hf_transfer for more details."
             )
 
         # Schedule commits if `every` is set

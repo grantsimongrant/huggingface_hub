@@ -233,22 +233,22 @@ logger = logging.get_logger(__name__)
 
 def repo_type_and_id_from_hf_id(hf_id: str, hub_url: Optional[str] = None) -> Tuple[Optional[str], Optional[str], str]:
     """
-    Returns the repo type and ID from a huggingface.co URL linking to a
+    Returns the repo type and ID from a mirror-hf.co URL linking to a
     repository
 
     Args:
         hf_id (`str`):
             An URL or ID of a repository on the HF hub. Accepted values are:
 
-            - https://huggingface.co/<repo_type>/<namespace>/<repo_id>
-            - https://huggingface.co/<namespace>/<repo_id>
+            - https://mirror-hf.co/<repo_type>/<namespace>/<repo_id>
+            - https://mirror-hf.co/<namespace>/<repo_id>
             - hf://<repo_type>/<namespace>/<repo_id>
             - hf://<namespace>/<repo_id>
             - <repo_type>/<namespace>/<repo_id>
             - <namespace>/<repo_id>
             - <repo_id>
         hub_url (`str`, *optional*):
-            The URL of the HuggingFace Hub, defaults to https://huggingface.co
+            The URL of the HuggingFace Hub, defaults to https://mirror-hf.co
 
     Returns:
         A tuple with three items: repo_type (`str` or `None`), namespace (`str` or
@@ -537,21 +537,21 @@ class RepoUrl(str):
         url (`Any`):
             String value of the repo url.
         endpoint (`str`, *optional*):
-            Endpoint of the Hub. Defaults to <https://huggingface.co>.
+            Endpoint of the Hub. Defaults to <https://mirror-hf.co>.
 
     Example:
     ```py
-    >>> RepoUrl('https://huggingface.co/gpt2')
-    RepoUrl('https://huggingface.co/gpt2', endpoint='https://huggingface.co', repo_type='model', repo_id='gpt2')
+    >>> RepoUrl('https://mirror-hf.co/gpt2')
+    RepoUrl('https://mirror-hf.co/gpt2', endpoint='https://mirror-hf.co', repo_type='model', repo_id='gpt2')
 
-    >>> RepoUrl('https://hub-ci.huggingface.co/datasets/dummy_user/dummy_dataset', endpoint='https://hub-ci.huggingface.co')
-    RepoUrl('https://hub-ci.huggingface.co/datasets/dummy_user/dummy_dataset', endpoint='https://hub-ci.huggingface.co', repo_type='dataset', repo_id='dummy_user/dummy_dataset')
+    >>> RepoUrl('https://hub-ci.mirror-hf.co/datasets/dummy_user/dummy_dataset', endpoint='https://hub-ci.mirror-hf.co')
+    RepoUrl('https://hub-ci.mirror-hf.co/datasets/dummy_user/dummy_dataset', endpoint='https://hub-ci.mirror-hf.co', repo_type='dataset', repo_id='dummy_user/dummy_dataset')
 
     >>> RepoUrl('hf://datasets/my-user/my-dataset')
-    RepoUrl('hf://datasets/my-user/my-dataset', endpoint='https://huggingface.co', repo_type='dataset', repo_id='user/dataset')
+    RepoUrl('hf://datasets/my-user/my-dataset', endpoint='https://mirror-hf.co', repo_type='dataset', repo_id='user/dataset')
 
     >>> HfApi.create_repo("dummy_model")
-    RepoUrl('https://huggingface.co/Wauplin/dummy_model', endpoint='https://huggingface.co', repo_type='model', repo_id='Wauplin/dummy_model')
+    RepoUrl('https://mirror-hf.co/Wauplin/dummy_model', endpoint='https://mirror-hf.co', repo_type='model', repo_id='Wauplin/dummy_model')
     ```
 
     Raises:
@@ -1543,7 +1543,7 @@ class LFSFileInfo:
 
     Git LFS files are tracked using SHA-256 object IDs, rather than file paths, to optimize performance
     This approach is necessary because a single object can be referenced by multiple paths across different commits,
-    making it impractical to search and resolve these connections. Check out [our documentation](https://huggingface.co/docs/hub/storage-limits#advanced-track-lfs-file-references)
+    making it impractical to search and resolve these connections. Check out [our documentation](https://mirror-hf.co/docs/hub/storage-limits#advanced-track-lfs-file-references)
     to learn how to know which filename(s) is(are) associated with each SHA.
 
     Attributes:
@@ -1638,11 +1638,11 @@ class HfApi:
 
     Args:
         endpoint (`str`, *optional*):
-            Endpoint of the Hub. Defaults to <https://huggingface.co>.
+            Endpoint of the Hub. Defaults to <https://mirror-hf.co>.
         token (Union[bool, str, None], optional):
             A valid user access token (string). Defaults to the locally saved
             token, which is the recommended method for authentication (see
-            https://huggingface.co/docs/huggingface_hub/quick-start#authentication).
+            https://mirror-hf.co/docs/huggingface_hub/quick-start#authentication).
             To disable authentication, pass `False`.
         library_name (`str`, *optional*):
             The name of the library that is making the HTTP request. Will be added to
@@ -1724,7 +1724,7 @@ class HfApi:
             token (Union[bool, str, None], optional):
                 A valid user access token (string). Defaults to the locally saved
                 token, which is the recommended method for authentication (see
-                https://huggingface.co/docs/huggingface_hub/quick-start#authentication).
+                https://mirror-hf.co/docs/huggingface_hub/quick-start#authentication).
                 To disable authentication, pass `False`.
         """
         # Get the effective token using the helper function get_token
@@ -1772,13 +1772,13 @@ class HfApi:
 
         </Tip>
 
-        For more details about tokens, please refer to https://huggingface.co/docs/hub/security-tokens#what-are-user-access-tokens.
+        For more details about tokens, please refer to https://mirror-hf.co/docs/hub/security-tokens#what-are-user-access-tokens.
 
         Args:
             token (Union[bool, str, None], optional):
                 A valid user access token (string). Defaults to the locally saved
                 token, which is the recommended method for authentication (see
-                https://huggingface.co/docs/huggingface_hub/quick-start#authentication).
+                https://mirror-hf.co/docs/huggingface_hub/quick-start#authentication).
                 To disable authentication, pass `False`.
 
         Returns:
@@ -1906,7 +1906,7 @@ class HfApi:
             token (Union[bool, str, None], optional):
                 A valid user access token (string). Defaults to the locally saved
                 token, which is the recommended method for authentication (see
-                https://huggingface.co/docs/huggingface_hub/quick-start#authentication).
+                https://mirror-hf.co/docs/huggingface_hub/quick-start#authentication).
                 To disable authentication, pass `False`.
 
 
@@ -2119,7 +2119,7 @@ class HfApi:
             token (Union[bool, str, None], optional):
                 A valid user access token (string). Defaults to the locally saved
                 token, which is the recommended method for authentication (see
-                https://huggingface.co/docs/huggingface_hub/quick-start#authentication).
+                https://mirror-hf.co/docs/huggingface_hub/quick-start#authentication).
                 To disable authentication, pass `False`.
 
         Returns:
@@ -2296,7 +2296,7 @@ class HfApi:
             token (Union[bool, str, None], optional):
                 A valid user access token (string). Defaults to the locally saved
                 token, which is the recommended method for authentication (see
-                https://huggingface.co/docs/huggingface_hub/quick-start#authentication).
+                https://mirror-hf.co/docs/huggingface_hub/quick-start#authentication).
                 To disable authentication, pass `False`.
 
         Returns:
@@ -2371,7 +2371,7 @@ class HfApi:
             token (Union[bool, str, None], optional):
                 A valid user access token (string). Defaults to the locally saved
                 token, which is the recommended method for authentication (see
-                https://huggingface.co/docs/huggingface_hub/quick-start#authentication).
+                https://mirror-hf.co/docs/huggingface_hub/quick-start#authentication).
                 To disable authentication, pass `False`.
 
             repo_type (`str`, *optional*):
@@ -2408,7 +2408,7 @@ class HfApi:
         token: Union[bool, str, None] = None,
     ) -> UserLikes:
         """
-        List all public repos liked by a user on huggingface.co.
+        List all public repos liked by a user on mirror-hf.co.
 
         This list is public so token is optional. If `user` is not passed, it defaults to
         the logged in user.
@@ -2421,7 +2421,7 @@ class HfApi:
             token (Union[bool, str, None], optional):
                 A valid user access token (string). Defaults to the locally saved
                 token, which is the recommended method for authentication (see
-                https://huggingface.co/docs/huggingface_hub/quick-start#authentication).
+                https://mirror-hf.co/docs/huggingface_hub/quick-start#authentication).
                 To disable authentication, pass `False`.
 
         Returns:
@@ -2496,7 +2496,7 @@ class HfApi:
             token (Union[bool, str, None], optional):
                 A valid user access token (string). Defaults to the locally saved
                 token, which is the recommended method for authentication (see
-                https://huggingface.co/docs/huggingface_hub/quick-start#authentication).
+                https://mirror-hf.co/docs/huggingface_hub/quick-start#authentication).
                 To disable authentication, pass `False`.
 
             repo_type (`str`, *optional*):
@@ -2528,7 +2528,7 @@ class HfApi:
         token: Union[bool, str, None] = None,
     ) -> ModelInfo:
         """
-        Get info on one specific model on huggingface.co
+        Get info on one specific model on mirror-hf.co
 
         Model can be private if you pass an acceptable token or are logged in.
 
@@ -2554,7 +2554,7 @@ class HfApi:
             token (Union[bool, str, None], optional):
                 A valid user access token (string). Defaults to the locally saved
                 token, which is the recommended method for authentication (see
-                https://huggingface.co/docs/huggingface_hub/quick-start#authentication).
+                https://mirror-hf.co/docs/huggingface_hub/quick-start#authentication).
                 To disable authentication, pass `False`.
 
         Returns:
@@ -2605,7 +2605,7 @@ class HfApi:
         token: Union[bool, str, None] = None,
     ) -> DatasetInfo:
         """
-        Get info on one specific dataset on huggingface.co.
+        Get info on one specific dataset on mirror-hf.co.
 
         Dataset can be private if you pass an acceptable token.
 
@@ -2628,7 +2628,7 @@ class HfApi:
             token (Union[bool, str, None], optional):
                 A valid user access token (string). Defaults to the locally saved
                 token, which is the recommended method for authentication (see
-                https://huggingface.co/docs/huggingface_hub/quick-start#authentication).
+                https://mirror-hf.co/docs/huggingface_hub/quick-start#authentication).
                 To disable authentication, pass `False`.
 
         Returns:
@@ -2678,7 +2678,7 @@ class HfApi:
         token: Union[bool, str, None] = None,
     ) -> SpaceInfo:
         """
-        Get info on one specific Space on huggingface.co.
+        Get info on one specific Space on mirror-hf.co.
 
         Space can be private if you pass an acceptable token.
 
@@ -2701,7 +2701,7 @@ class HfApi:
             token (Union[bool, str, None], optional):
                 A valid user access token (string). Defaults to the locally saved
                 token, which is the recommended method for authentication (see
-                https://huggingface.co/docs/huggingface_hub/quick-start#authentication).
+                https://mirror-hf.co/docs/huggingface_hub/quick-start#authentication).
                 To disable authentication, pass `False`.
 
         Returns:
@@ -2776,7 +2776,7 @@ class HfApi:
             token (Union[bool, str, None], optional):
                 A valid user access token (string). Defaults to the locally saved
                 token, which is the recommended method for authentication (see
-                https://huggingface.co/docs/huggingface_hub/quick-start#authentication).
+                https://mirror-hf.co/docs/huggingface_hub/quick-start#authentication).
                 To disable authentication, pass `False`.
 
         Returns:
@@ -2834,7 +2834,7 @@ class HfApi:
             token (Union[bool, str, None], optional):
                 A valid user access token (string). Defaults to the locally saved
                 token, which is the recommended method for authentication (see
-                https://huggingface.co/docs/huggingface_hub/quick-start#authentication).
+                https://mirror-hf.co/docs/huggingface_hub/quick-start#authentication).
                 To disable authentication, pass `False`.
 
         Returns:
@@ -2881,7 +2881,7 @@ class HfApi:
             token (Union[bool, str, None], optional):
                 A valid user access token (string). Defaults to the locally saved
                 token, which is the recommended method for authentication (see
-                https://huggingface.co/docs/huggingface_hub/quick-start#authentication).
+                https://mirror-hf.co/docs/huggingface_hub/quick-start#authentication).
                 To disable authentication, pass `False`.
 
         Returns:
@@ -2932,7 +2932,7 @@ class HfApi:
             token (Union[bool, str, None], optional):
                 A valid user access token (string). Defaults to the locally saved
                 token, which is the recommended method for authentication (see
-                https://huggingface.co/docs/huggingface_hub/quick-start#authentication).
+                https://mirror-hf.co/docs/huggingface_hub/quick-start#authentication).
                 To disable authentication, pass `False`.
 
         Returns:
@@ -2985,7 +2985,7 @@ class HfApi:
             token (Union[bool, str, None], optional):
                 A valid user access token (string). Defaults to the locally saved
                 token, which is the recommended method for authentication (see
-                https://huggingface.co/docs/huggingface_hub/quick-start#authentication).
+                https://mirror-hf.co/docs/huggingface_hub/quick-start#authentication).
                 To disable authentication, pass `False`.
 
         Returns:
@@ -3035,7 +3035,7 @@ class HfApi:
             token (Union[bool, str, None], optional):
                 A valid user access token (string). Defaults to the locally saved
                 token, which is the recommended method for authentication (see
-                https://huggingface.co/docs/huggingface_hub/quick-start#authentication).
+                https://mirror-hf.co/docs/huggingface_hub/quick-start#authentication).
                 To disable authentication, pass `False`.
 
         Returns:
@@ -3155,7 +3155,7 @@ class HfApi:
             token (Union[bool, str, None], optional):
                 A valid user access token (string). Defaults to the locally saved
                 token, which is the recommended method for authentication (see
-                https://huggingface.co/docs/huggingface_hub/quick-start#authentication).
+                https://mirror-hf.co/docs/huggingface_hub/quick-start#authentication).
                 To disable authentication, pass `False`.
 
         Example:
@@ -3227,7 +3227,7 @@ class HfApi:
             token (Union[bool, str, None], optional):
                 A valid user access token (string). Defaults to the locally saved
                 token, which is the recommended method for authentication (see
-                https://huggingface.co/docs/huggingface_hub/quick-start#authentication).
+                https://mirror-hf.co/docs/huggingface_hub/quick-start#authentication).
                 To disable authentication, pass `False`.
             revision (`str`, *optional*):
                 The git revision to commit from. Defaults to the head of the `"main"` branch.
@@ -3322,7 +3322,7 @@ class HfApi:
             token (Union[bool, str, None], optional):
                 A valid user access token (string). Defaults to the locally saved
                 token, which is the recommended method for authentication (see
-                https://huggingface.co/docs/huggingface_hub/quick-start#authentication).
+                https://mirror-hf.co/docs/huggingface_hub/quick-start#authentication).
                 To disable authentication, pass `False`.
 
         Returns:
@@ -3407,7 +3407,7 @@ class HfApi:
             token (Union[bool, str, None], optional):
                 A valid user access token (string). Defaults to the locally saved
                 token, which is the recommended method for authentication (see
-                https://huggingface.co/docs/huggingface_hub/quick-start#authentication).
+                https://mirror-hf.co/docs/huggingface_hub/quick-start#authentication).
                 To disable authentication, pass `False`.
 
         Raises:
@@ -3476,7 +3476,7 @@ class HfApi:
             token (Union[bool, str, None], optional):
                 A valid user access token (string). Defaults to the locally saved
                 token, which is the recommended method for authentication (see
-                https://huggingface.co/docs/huggingface_hub/quick-start#authentication).
+                https://mirror-hf.co/docs/huggingface_hub/quick-start#authentication).
                 To disable authentication, pass `False`.
 
         Returns:
@@ -3540,7 +3540,7 @@ class HfApi:
             token (Union[bool, str, None], optional):
                 A valid user access token (string). Defaults to the locally saved
                 token, which is the recommended method for authentication (see
-                https://huggingface.co/docs/huggingface_hub/quick-start#authentication).
+                https://mirror-hf.co/docs/huggingface_hub/quick-start#authentication).
                 To disable authentication, pass `False`.
 
         Example:
@@ -3603,7 +3603,7 @@ class HfApi:
             token (Union[bool, str, None], optional):
                 A valid user access token (string). Defaults to the locally saved
                 token, which is the recommended method for authentication (see
-                https://huggingface.co/docs/huggingface_hub/quick-start#authentication).
+                https://mirror-hf.co/docs/huggingface_hub/quick-start#authentication).
                 To disable authentication, pass `False`.
             private (`bool`, *optional*):
                 Whether to make the repo private. If `None` (default), the repo will be public unless the organization's default is private. This value is ignored if the repo already exists.
@@ -3617,7 +3617,7 @@ class HfApi:
                 Resource group in which to create the repo. Resource groups is only available for organizations and
                 allow to define which members of the organization can access the resource. The ID of a resource group
                 can be found in the URL of the resource's page on the Hub (e.g. `"66670e5163145ca562cb1988"`).
-                To learn more about resource groups, see https://huggingface.co/docs/hub/en/security-resource-groups.
+                To learn more about resource groups, see https://mirror-hf.co/docs/hub/en/security-resource-groups.
             space_sdk (`str`, *optional*):
                 Choice of SDK to use if repo_type is "space". Can be "streamlit", "gradio", "docker", or "static".
             space_hardware (`SpaceHardware` or `str`, *optional*):
@@ -3628,13 +3628,13 @@ class HfApi:
                 Number of seconds of inactivity to wait before a Space is put to sleep. Set to `-1` if you don't want
                 your Space to sleep (default behavior for upgraded hardware). For free hardware, you can't configure
                 the sleep time (value is fixed to 48 hours of inactivity).
-                See https://huggingface.co/docs/hub/spaces-gpus#sleep-time for more details.
+                See https://mirror-hf.co/docs/hub/spaces-gpus#sleep-time for more details.
             space_secrets (`List[Dict[str, str]]`, *optional*):
                 A list of secret keys to set in your Space. Each item is in the form `{"key": ..., "value": ..., "description": ...}` where description is optional.
-                For more details, see https://huggingface.co/docs/hub/spaces-overview#managing-secrets.
+                For more details, see https://mirror-hf.co/docs/hub/spaces-overview#managing-secrets.
             space_variables (`List[Dict[str, str]]`, *optional*):
                 A list of public environment variables to set in your Space. Each item is in the form `{"key": ..., "value": ..., "description": ...}` where description is optional.
-                For more details, see https://huggingface.co/docs/hub/spaces-overview#managing-secrets-and-environment-variables.
+                For more details, see https://mirror-hf.co/docs/hub/spaces-overview#managing-secrets-and-environment-variables.
 
         Returns:
             [`RepoUrl`]: URL to the newly created repo. Value is a subclass of `str` containing
@@ -3745,7 +3745,7 @@ class HfApi:
             token (Union[bool, str, None], optional):
                 A valid user access token (string). Defaults to the locally saved
                 token, which is the recommended method for authentication (see
-                https://huggingface.co/docs/huggingface_hub/quick-start#authentication).
+                https://mirror-hf.co/docs/huggingface_hub/quick-start#authentication).
                 To disable authentication, pass `False`.
             repo_type (`str`, *optional*):
                 Set to `"dataset"` or `"space"` if uploading to a dataset or
@@ -3798,7 +3798,7 @@ class HfApi:
             token (Union[bool, str, None], optional):
                 A valid user access token (string). Defaults to the locally saved
                 token, which is the recommended method for authentication (see
-                https://huggingface.co/docs/huggingface_hub/quick-start#authentication).
+                https://mirror-hf.co/docs/huggingface_hub/quick-start#authentication).
                 To disable authentication, pass `False`.
             repo_type (`str`, *optional*):
                 Set to `"dataset"` or `"space"` if uploading to a dataset or
@@ -3861,7 +3861,7 @@ class HfApi:
             token (`Union[str, bool, None]`, *optional*):
                 A valid user access token (string). Defaults to the locally saved token,
                 which is the recommended method for authentication (see
-                https://huggingface.co/docs/huggingface_hub/quick-start#authentication).
+                https://mirror-hf.co/docs/huggingface_hub/quick-start#authentication).
                 To disable authentication, pass False.
             repo_type (`str`, *optional*):
                 The type of the repository to update settings from (`"model"`, `"dataset"` or `"space"`).
@@ -3941,7 +3941,7 @@ class HfApi:
             token (Union[bool, str, None], optional):
                 A valid user access token (string). Defaults to the locally saved
                 token, which is the recommended method for authentication (see
-                https://huggingface.co/docs/huggingface_hub/quick-start#authentication).
+                https://mirror-hf.co/docs/huggingface_hub/quick-start#authentication).
                 To disable authentication, pass `False`.
 
         <Tip>
@@ -4077,7 +4077,7 @@ class HfApi:
             token (Union[bool, str, None], optional):
                 A valid user access token (string). Defaults to the locally saved
                 token, which is the recommended method for authentication (see
-                https://huggingface.co/docs/huggingface_hub/quick-start#authentication).
+                https://mirror-hf.co/docs/huggingface_hub/quick-start#authentication).
                 To disable authentication, pass `False`.
 
             repo_type (`str`, *optional*):
@@ -4352,7 +4352,7 @@ class HfApi:
             token (Union[bool, str, None], optional):
                 A valid user access token (string). Defaults to the locally saved
                 token, which is the recommended method for authentication (see
-                https://huggingface.co/docs/huggingface_hub/quick-start#authentication).
+                https://mirror-hf.co/docs/huggingface_hub/quick-start#authentication).
                 To disable authentication, pass `False`.
 
             repo_type (`str`, *optional*):
@@ -4555,7 +4555,7 @@ class HfApi:
             token (Union[bool, str, None], optional):
                 A valid user access token (string). Defaults to the locally saved
                 token, which is the recommended method for authentication (see
-                https://huggingface.co/docs/huggingface_hub/quick-start#authentication).
+                https://mirror-hf.co/docs/huggingface_hub/quick-start#authentication).
                 To disable authentication, pass `False`.
             repo_type (`str`, *optional*):
                 Set to `"dataset"` or `"space"` if uploading to a dataset or
@@ -4628,7 +4628,7 @@ class HfApi:
         ...         repo_type="dataset",
         ...         token="my_token",
         ...     )
-        "https://huggingface.co/datasets/username/my-dataset/blob/main/remote/file/path.h5"
+        "https://mirror-hf.co/datasets/username/my-dataset/blob/main/remote/file/path.h5"
 
         >>> upload_file(
         ...     path_or_fileobj=".\\\\local\\\\file\\\\path",
@@ -4636,7 +4636,7 @@ class HfApi:
         ...     repo_id="username/my-model",
         ...     token="my_token",
         ... )
-        "https://huggingface.co/username/my-model/blob/main/remote/file/path.h5"
+        "https://mirror-hf.co/username/my-model/blob/main/remote/file/path.h5"
 
         >>> upload_file(
         ...     path_or_fileobj=".\\\\local\\\\file\\\\path",
@@ -4645,7 +4645,7 @@ class HfApi:
         ...     token="my_token",
         ...     create_pr=True,
         ... )
-        "https://huggingface.co/username/my-model/blob/refs%2Fpr%2F1/remote/file/path.h5"
+        "https://mirror-hf.co/username/my-model/blob/refs%2Fpr%2F1/remote/file/path.h5"
         ```
         """
         if repo_type not in constants.REPO_TYPES:
@@ -4783,7 +4783,7 @@ class HfApi:
             token (Union[bool, str, None], optional):
                 A valid user access token (string). Defaults to the locally saved
                 token, which is the recommended method for authentication (see
-                https://huggingface.co/docs/huggingface_hub/quick-start#authentication).
+                https://mirror-hf.co/docs/huggingface_hub/quick-start#authentication).
                 To disable authentication, pass `False`.
             repo_type (`str`, *optional*):
                 Set to `"dataset"` or `"space"` if uploading to a dataset or
@@ -4863,7 +4863,7 @@ class HfApi:
         ...     token="my_token",
         ...     ignore_patterns="**/logs/*.txt",
         ... )
-        # "https://huggingface.co/datasets/username/my-dataset/tree/main/remote/experiment/checkpoints"
+        # "https://mirror-hf.co/datasets/username/my-dataset/tree/main/remote/experiment/checkpoints"
 
         # Upload checkpoints folder including logs while deleting existing logs from the repo
         # Useful if you don't know exactly which log files have already being pushed
@@ -4875,7 +4875,7 @@ class HfApi:
         ...     token="my_token",
         ...     delete_patterns="**/logs/*.txt",
         ... )
-        "https://huggingface.co/datasets/username/my-dataset/tree/main/remote/experiment/checkpoints"
+        "https://mirror-hf.co/datasets/username/my-dataset/tree/main/remote/experiment/checkpoints"
 
         # Upload checkpoints folder while creating a PR
         >>> upload_folder(
@@ -4886,7 +4886,7 @@ class HfApi:
         ...     token="my_token",
         ...     create_pr=True,
         ... )
-        "https://huggingface.co/datasets/username/my-dataset/tree/refs%2Fpr%2F1/remote/experiment/checkpoints"
+        "https://mirror-hf.co/datasets/username/my-dataset/tree/refs%2Fpr%2F1/remote/experiment/checkpoints"
 
         ```
         """
@@ -4988,7 +4988,7 @@ class HfApi:
             token (Union[bool, str, None], optional):
                 A valid user access token (string). Defaults to the locally saved
                 token, which is the recommended method for authentication (see
-                https://huggingface.co/docs/huggingface_hub/quick-start#authentication).
+                https://mirror-hf.co/docs/huggingface_hub/quick-start#authentication).
                 To disable authentication, pass `False`.
             repo_type (`str`, *optional*):
                 Set to `"dataset"` or `"space"` if the file is in a dataset or
@@ -5082,7 +5082,7 @@ class HfApi:
             token (Union[bool, str, None], optional):
                 A valid user access token (string). Defaults to the locally saved
                 token, which is the recommended method for authentication (see
-                https://huggingface.co/docs/huggingface_hub/quick-start#authentication).
+                https://mirror-hf.co/docs/huggingface_hub/quick-start#authentication).
                 To disable authentication, pass `False`.
                 to the stored token.
             repo_type (`str`, *optional*):
@@ -5155,7 +5155,7 @@ class HfApi:
             token (Union[bool, str, None], optional):
                 A valid user access token (string). Defaults to the locally saved
                 token, which is the recommended method for authentication (see
-                https://huggingface.co/docs/huggingface_hub/quick-start#authentication).
+                https://mirror-hf.co/docs/huggingface_hub/quick-start#authentication).
                 To disable authentication, pass `False`.
                 to the stored token.
             repo_type (`str`, *optional*):
@@ -5250,7 +5250,7 @@ class HfApi:
         <Tip>
 
         A few things to keep in mind:
-            - Repository limits still apply: https://huggingface.co/docs/hub/repositories-recommendations
+            - Repository limits still apply: https://mirror-hf.co/docs/hub/repositories-recommendations
             - Do not start several processes in parallel.
             - You can interrupt and resume the process at any time.
             - Do not upload the same folder to several repositories. If you need to do so, you must delete the local `.cache/.huggingface/` folder first.
@@ -5331,7 +5331,7 @@ class HfApi:
             token (Union[bool, str, None], optional):
                 A valid user access token (string). Defaults to the locally saved
                 token, which is the recommended method for authentication (see
-                https://huggingface.co/docs/huggingface_hub/quick-start#authentication).
+                https://mirror-hf.co/docs/huggingface_hub/quick-start#authentication).
                 To disable authentication, pass `False`.
             proxies (`dict`, *optional*):
                 Dictionary mapping protocol to the URL of the proxy passed to `requests.request`.
@@ -5440,7 +5440,7 @@ class HfApi:
             token (Union[bool, str, None], optional):
                 A valid user access token (string). Defaults to the locally saved
                 token, which is the recommended method for authentication (see
-                https://huggingface.co/docs/huggingface_hub/quick-start#authentication).
+                https://mirror-hf.co/docs/huggingface_hub/quick-start#authentication).
                 To disable authentication, pass `False`.
             local_files_only (`bool`, *optional*, defaults to `False`):
                 If `True`, avoid downloading the file and return the path to the
@@ -5556,7 +5556,7 @@ class HfApi:
             token (Union[bool, str, None], optional):
                 A valid user access token (string). Defaults to the locally saved
                 token, which is the recommended method for authentication (see
-                https://huggingface.co/docs/huggingface_hub/quick-start#authentication).
+                https://mirror-hf.co/docs/huggingface_hub/quick-start#authentication).
                 To disable authentication, pass `False`.
             local_files_only (`bool`, *optional*, defaults to `False`):
                 If `True`, avoid downloading the file and return the path to the
@@ -5637,7 +5637,7 @@ class HfApi:
 
         To parse metadata from a single safetensors file, use [`parse_safetensors_file_metadata`].
 
-        For more details regarding the safetensors format, check out https://huggingface.co/docs/safetensors/index#format.
+        For more details regarding the safetensors format, check out https://mirror-hf.co/docs/safetensors/index#format.
 
         Args:
             repo_id (`str`):
@@ -5651,7 +5651,7 @@ class HfApi:
             token (Union[bool, str, None], optional):
                 A valid user access token (string). Defaults to the locally saved
                 token, which is the recommended method for authentication (see
-                https://huggingface.co/docs/huggingface_hub/quick-start#authentication).
+                https://mirror-hf.co/docs/huggingface_hub/quick-start#authentication).
                 To disable authentication, pass `False`.
 
         Returns:
@@ -5774,7 +5774,7 @@ class HfApi:
 
         To parse metadata from all safetensors files in a repo at once, use [`get_safetensors_metadata`].
 
-        For more details regarding the safetensors format, check out https://huggingface.co/docs/safetensors/index#format.
+        For more details regarding the safetensors format, check out https://mirror-hf.co/docs/safetensors/index#format.
 
         Args:
             repo_id (`str`):
@@ -5790,7 +5790,7 @@ class HfApi:
             token (Union[bool, str, None], optional):
                 A valid user access token (string). Defaults to the locally saved
                 token, which is the recommended method for authentication (see
-                https://huggingface.co/docs/huggingface_hub/quick-start#authentication).
+                https://mirror-hf.co/docs/huggingface_hub/quick-start#authentication).
                 To disable authentication, pass `False`.
 
         Returns:
@@ -5894,7 +5894,7 @@ class HfApi:
             token (Union[bool, str, None], optional):
                 A valid user access token (string). Defaults to the locally saved
                 token, which is the recommended method for authentication (see
-                https://huggingface.co/docs/huggingface_hub/quick-start#authentication).
+                https://mirror-hf.co/docs/huggingface_hub/quick-start#authentication).
                 To disable authentication, pass `False`.
 
             repo_type (`str`, *optional*):
@@ -5966,7 +5966,7 @@ class HfApi:
             token (Union[bool, str, None], optional):
                 A valid user access token (string). Defaults to the locally saved
                 token, which is the recommended method for authentication (see
-                https://huggingface.co/docs/huggingface_hub/quick-start#authentication).
+                https://mirror-hf.co/docs/huggingface_hub/quick-start#authentication).
                 To disable authentication, pass `False`.
 
             repo_type (`str`, *optional*):
@@ -6029,7 +6029,7 @@ class HfApi:
             token (Union[bool, str, None], optional):
                 A valid user access token (string). Defaults to the locally saved
                 token, which is the recommended method for authentication (see
-                https://huggingface.co/docs/huggingface_hub/quick-start#authentication).
+                https://mirror-hf.co/docs/huggingface_hub/quick-start#authentication).
                 To disable authentication, pass `False`.
 
             repo_type (`str`, *optional*):
@@ -6092,7 +6092,7 @@ class HfApi:
             token (Union[bool, str, None], optional):
                 A valid user access token (string). Defaults to the locally saved
                 token, which is the recommended method for authentication (see
-                https://huggingface.co/docs/huggingface_hub/quick-start#authentication).
+                https://mirror-hf.co/docs/huggingface_hub/quick-start#authentication).
                 To disable authentication, pass `False`.
 
             repo_type (`str`, *optional*):
@@ -6139,7 +6139,7 @@ class HfApi:
             token (Union[bool, str, None], optional):
                 A valid user access token (string). Defaults to the locally saved
                 token, which is the recommended method for authentication (see
-                https://huggingface.co/docs/huggingface_hub/quick-start#authentication).
+                https://mirror-hf.co/docs/huggingface_hub/quick-start#authentication).
                 To disable authentication, pass `False`.
 
         Returns:
@@ -6193,7 +6193,7 @@ class HfApi:
             token (Union[bool, str, None], optional):
                 A valid user access token (string). Defaults to the locally saved
                 token, which is the recommended method for authentication (see
-                https://huggingface.co/docs/huggingface_hub/quick-start#authentication).
+                https://mirror-hf.co/docs/huggingface_hub/quick-start#authentication).
                 To disable authentication, pass `False`.
 
         Returns:
@@ -6288,7 +6288,7 @@ class HfApi:
             token (Union[bool, str, None], optional):
                 A valid user access token (string). Defaults to the locally saved
                 token, which is the recommended method for authentication (see
-                https://huggingface.co/docs/huggingface_hub/quick-start#authentication).
+                https://mirror-hf.co/docs/huggingface_hub/quick-start#authentication).
                 To disable authentication, pass `False`.
 
         Returns: [`DiscussionWithDetails`]
@@ -6371,7 +6371,7 @@ class HfApi:
             token (Union[bool, str, None], optional):
                 A valid user access token (string). Defaults to the locally saved
                 token, which is the recommended method for authentication (see
-                https://huggingface.co/docs/huggingface_hub/quick-start#authentication).
+                https://mirror-hf.co/docs/huggingface_hub/quick-start#authentication).
                 To disable authentication, pass `False`.
             description (`str`, *optional*):
                 An optional description for the Pull Request.
@@ -6412,7 +6412,7 @@ class HfApi:
             else (
                 f"{'Pull Request' if pull_request else 'Discussion'} opened with the"
                 " [huggingface_hub Python"
-                " library](https://huggingface.co/docs/huggingface_hub)"
+                " library](https://mirror-hf.co/docs/huggingface_hub)"
             )
         )
 
@@ -6462,7 +6462,7 @@ class HfApi:
             token (Union[bool, str, None], optional):
                 A valid user access token (string). Defaults to the locally saved
                 token, which is the recommended method for authentication (see
-                https://huggingface.co/docs/huggingface_hub/quick-start#authentication).
+                https://mirror-hf.co/docs/huggingface_hub/quick-start#authentication).
                 To disable authentication, pass `False`.
             description (`str`, *optional*):
                 An optional description for the Pull Request.
@@ -6549,7 +6549,7 @@ class HfApi:
             token (Union[bool, str, None], optional):
                 A valid user access token (string). Defaults to the locally saved
                 token, which is the recommended method for authentication (see
-                https://huggingface.co/docs/huggingface_hub/quick-start#authentication).
+                https://mirror-hf.co/docs/huggingface_hub/quick-start#authentication).
                 To disable authentication, pass `False`.
 
         Returns:
@@ -6628,7 +6628,7 @@ class HfApi:
             token (Union[bool, str, None], optional):
                 A valid user access token (string). Defaults to the locally saved
                 token, which is the recommended method for authentication (see
-                https://huggingface.co/docs/huggingface_hub/quick-start#authentication).
+                https://mirror-hf.co/docs/huggingface_hub/quick-start#authentication).
                 To disable authentication, pass `False`.
 
         Returns:
@@ -6701,7 +6701,7 @@ class HfApi:
             token (Union[bool, str, None], optional):
                 A valid user access token (string). Defaults to the locally saved
                 token, which is the recommended method for authentication (see
-                https://huggingface.co/docs/huggingface_hub/quick-start#authentication).
+                https://mirror-hf.co/docs/huggingface_hub/quick-start#authentication).
                 To disable authentication, pass `False`.
 
         Returns:
@@ -6776,7 +6776,7 @@ class HfApi:
             token (Union[bool, str, None], optional):
                 A valid user access token (string). Defaults to the locally saved
                 token, which is the recommended method for authentication (see
-                https://huggingface.co/docs/huggingface_hub/quick-start#authentication).
+                https://mirror-hf.co/docs/huggingface_hub/quick-start#authentication).
                 To disable authentication, pass `False`.
 
         Returns:
@@ -6835,7 +6835,7 @@ class HfApi:
             token (Union[bool, str, None], optional):
                 A valid user access token (string). Defaults to the locally saved
                 token, which is the recommended method for authentication (see
-                https://huggingface.co/docs/huggingface_hub/quick-start#authentication).
+                https://mirror-hf.co/docs/huggingface_hub/quick-start#authentication).
                 To disable authentication, pass `False`.
 
         Returns:
@@ -6896,7 +6896,7 @@ class HfApi:
             token (Union[bool, str, None], optional):
                 A valid user access token (string). Defaults to the locally saved
                 token, which is the recommended method for authentication (see
-                https://huggingface.co/docs/huggingface_hub/quick-start#authentication).
+                https://mirror-hf.co/docs/huggingface_hub/quick-start#authentication).
                 To disable authentication, pass `False`.
 
         Returns:
@@ -6942,7 +6942,7 @@ class HfApi:
         """Adds or updates a secret in a Space.
 
         Secrets allow to set secret keys or tokens to a Space without hardcoding them.
-        For more details, see https://huggingface.co/docs/hub/spaces-overview#managing-secrets.
+        For more details, see https://mirror-hf.co/docs/hub/spaces-overview#managing-secrets.
 
         Args:
             repo_id (`str`):
@@ -6956,7 +6956,7 @@ class HfApi:
             token (Union[bool, str, None], optional):
                 A valid user access token (string). Defaults to the locally saved
                 token, which is the recommended method for authentication (see
-                https://huggingface.co/docs/huggingface_hub/quick-start#authentication).
+                https://mirror-hf.co/docs/huggingface_hub/quick-start#authentication).
                 To disable authentication, pass `False`.
         """
         payload = {"key": key, "value": value}
@@ -6974,7 +6974,7 @@ class HfApi:
         """Deletes a secret from a Space.
 
         Secrets allow to set secret keys or tokens to a Space without hardcoding them.
-        For more details, see https://huggingface.co/docs/hub/spaces-overview#managing-secrets.
+        For more details, see https://mirror-hf.co/docs/hub/spaces-overview#managing-secrets.
 
         Args:
             repo_id (`str`):
@@ -6984,7 +6984,7 @@ class HfApi:
             token (Union[bool, str, None], optional):
                 A valid user access token (string). Defaults to the locally saved
                 token, which is the recommended method for authentication (see
-                https://huggingface.co/docs/huggingface_hub/quick-start#authentication).
+                https://mirror-hf.co/docs/huggingface_hub/quick-start#authentication).
                 To disable authentication, pass `False`.
         """
         r = get_session().delete(
@@ -6999,7 +6999,7 @@ class HfApi:
         """Gets all variables from a Space.
 
         Variables allow to set environment variables to a Space without hardcoding them.
-        For more details, see https://huggingface.co/docs/hub/spaces-overview#managing-secrets-and-environment-variables
+        For more details, see https://mirror-hf.co/docs/hub/spaces-overview#managing-secrets-and-environment-variables
 
         Args:
             repo_id (`str`):
@@ -7007,7 +7007,7 @@ class HfApi:
             token (Union[bool, str, None], optional):
                 A valid user access token (string). Defaults to the locally saved
                 token, which is the recommended method for authentication (see
-                https://huggingface.co/docs/huggingface_hub/quick-start#authentication).
+                https://mirror-hf.co/docs/huggingface_hub/quick-start#authentication).
                 To disable authentication, pass `False`.
         """
         r = get_session().get(
@@ -7030,7 +7030,7 @@ class HfApi:
         """Adds or updates a variable in a Space.
 
         Variables allow to set environment variables to a Space without hardcoding them.
-        For more details, see https://huggingface.co/docs/hub/spaces-overview#managing-secrets-and-environment-variables
+        For more details, see https://mirror-hf.co/docs/hub/spaces-overview#managing-secrets-and-environment-variables
 
         Args:
             repo_id (`str`):
@@ -7044,7 +7044,7 @@ class HfApi:
             token (Union[bool, str, None], optional):
                 A valid user access token (string). Defaults to the locally saved
                 token, which is the recommended method for authentication (see
-                https://huggingface.co/docs/huggingface_hub/quick-start#authentication).
+                https://mirror-hf.co/docs/huggingface_hub/quick-start#authentication).
                 To disable authentication, pass `False`.
         """
         payload = {"key": key, "value": value}
@@ -7065,7 +7065,7 @@ class HfApi:
         """Deletes a variable from a Space.
 
         Variables allow to set environment variables to a Space without hardcoding them.
-        For more details, see https://huggingface.co/docs/hub/spaces-overview#managing-secrets-and-environment-variables
+        For more details, see https://mirror-hf.co/docs/hub/spaces-overview#managing-secrets-and-environment-variables
 
         Args:
             repo_id (`str`):
@@ -7075,7 +7075,7 @@ class HfApi:
             token (Union[bool, str, None], optional):
                 A valid user access token (string). Defaults to the locally saved
                 token, which is the recommended method for authentication (see
-                https://huggingface.co/docs/huggingface_hub/quick-start#authentication).
+                https://mirror-hf.co/docs/huggingface_hub/quick-start#authentication).
                 To disable authentication, pass `False`.
         """
         r = get_session().delete(
@@ -7096,7 +7096,7 @@ class HfApi:
             token (Union[bool, str, None], optional):
                 A valid user access token (string). Defaults to the locally saved
                 token, which is the recommended method for authentication (see
-                https://huggingface.co/docs/huggingface_hub/quick-start#authentication).
+                https://mirror-hf.co/docs/huggingface_hub/quick-start#authentication).
                 To disable authentication, pass `False`.
         Returns:
             [`SpaceRuntime`]: Runtime information about a Space including Space stage and hardware.
@@ -7126,13 +7126,13 @@ class HfApi:
             token (Union[bool, str, None], optional):
                 A valid user access token (string). Defaults to the locally saved
                 token, which is the recommended method for authentication (see
-                https://huggingface.co/docs/huggingface_hub/quick-start#authentication).
+                https://mirror-hf.co/docs/huggingface_hub/quick-start#authentication).
                 To disable authentication, pass `False`.
             sleep_time (`int`, *optional*):
                 Number of seconds of inactivity to wait before a Space is put to sleep. Set to `-1` if you don't want
                 your Space to sleep (default behavior for upgraded hardware). For free hardware, you can't configure
                 the sleep time (value is fixed to 48 hours of inactivity).
-                See https://huggingface.co/docs/hub/spaces-gpus#sleep-time for more details.
+                See https://mirror-hf.co/docs/hub/spaces-gpus#sleep-time for more details.
         Returns:
             [`SpaceRuntime`]: Runtime information about a Space including Space stage and hardware.
 
@@ -7169,7 +7169,7 @@ class HfApi:
         Your Space will go to sleep after X seconds of inactivity. You are not billed when your Space is in "sleep"
         mode. If a new visitor lands on your Space, it will "wake it up". Only upgraded hardware can have a
         configurable sleep time. To know more about the sleep stage, please refer to
-        https://huggingface.co/docs/hub/spaces-gpus#sleep-time.
+        https://mirror-hf.co/docs/hub/spaces-gpus#sleep-time.
 
         Args:
             repo_id (`str`):
@@ -7178,11 +7178,11 @@ class HfApi:
                 Number of seconds of inactivity to wait before a Space is put to sleep. Set to `-1` if you don't want
                 your Space to pause (default behavior for upgraded hardware). For free hardware, you can't configure
                 the sleep time (value is fixed to 48 hours of inactivity).
-                See https://huggingface.co/docs/hub/spaces-gpus#sleep-time for more details.
+                See https://mirror-hf.co/docs/hub/spaces-gpus#sleep-time for more details.
             token (Union[bool, str, None], optional):
                 A valid user access token (string). Defaults to the locally saved
                 token, which is the recommended method for authentication (see
-                https://huggingface.co/docs/huggingface_hub/quick-start#authentication).
+                https://mirror-hf.co/docs/huggingface_hub/quick-start#authentication).
                 To disable authentication, pass `False`.
         Returns:
             [`SpaceRuntime`]: Runtime information about a Space including Space stage and hardware.
@@ -7219,7 +7219,7 @@ class HfApi:
         state in which free Spaces go after 48h of inactivity. Paused time is not billed to your account, no matter the
         hardware you've selected. To restart your Space, use [`restart_space`] and go to your Space settings page.
 
-        For more details, please visit [the docs](https://huggingface.co/docs/hub/spaces-gpus#pause).
+        For more details, please visit [the docs](https://mirror-hf.co/docs/hub/spaces-gpus#pause).
 
         Args:
             repo_id (`str`):
@@ -7227,7 +7227,7 @@ class HfApi:
             token (Union[bool, str, None], optional):
                 A valid user access token (string). Defaults to the locally saved
                 token, which is the recommended method for authentication (see
-                https://huggingface.co/docs/huggingface_hub/quick-start#authentication).
+                https://mirror-hf.co/docs/huggingface_hub/quick-start#authentication).
                 To disable authentication, pass `False`.
 
         Returns:
@@ -7260,7 +7260,7 @@ class HfApi:
         must be the owner of the Space to restart it. If you are using an upgraded hardware, your account will be
         billed as soon as the Space is restarted. You can trigger a restart no matter the current state of a Space.
 
-        For more details, please visit [the docs](https://huggingface.co/docs/hub/spaces-gpus#pause).
+        For more details, please visit [the docs](https://mirror-hf.co/docs/hub/spaces-gpus#pause).
 
         Args:
             repo_id (`str`):
@@ -7268,7 +7268,7 @@ class HfApi:
             token (Union[bool, str, None], optional):
                 A valid user access token (string). Defaults to the locally saved
                 token, which is the recommended method for authentication (see
-                https://huggingface.co/docs/huggingface_hub/quick-start#authentication).
+                https://mirror-hf.co/docs/huggingface_hub/quick-start#authentication).
                 To disable authentication, pass `False`.
             factory_reboot (`bool`, *optional*):
                 If `True`, the Space will be rebuilt from scratch without caching any requirements.
@@ -7327,7 +7327,7 @@ class HfApi:
             token (Union[bool, str, None], optional):
                 A valid user access token (string). Defaults to the locally saved
                 token, which is the recommended method for authentication (see
-                https://huggingface.co/docs/huggingface_hub/quick-start#authentication).
+                https://mirror-hf.co/docs/huggingface_hub/quick-start#authentication).
                 To disable authentication, pass `False`.
             exist_ok (`bool`, *optional*, defaults to `False`):
                 If `True`, do not raise an error if repo already exists.
@@ -7339,13 +7339,13 @@ class HfApi:
                 Number of seconds of inactivity to wait before a Space is put to sleep. Set to `-1` if you don't want
                 your Space to sleep (default behavior for upgraded hardware). For free hardware, you can't configure
                 the sleep time (value is fixed to 48 hours of inactivity).
-                See https://huggingface.co/docs/hub/spaces-gpus#sleep-time for more details.
+                See https://mirror-hf.co/docs/hub/spaces-gpus#sleep-time for more details.
             secrets (`List[Dict[str, str]]`, *optional*):
                 A list of secret keys to set in your Space. Each item is in the form `{"key": ..., "value": ..., "description": ...}` where description is optional.
-                For more details, see https://huggingface.co/docs/hub/spaces-overview#managing-secrets.
+                For more details, see https://mirror-hf.co/docs/hub/spaces-overview#managing-secrets.
             variables (`List[Dict[str, str]]`, *optional*):
                 A list of public environment variables to set in your Space. Each item is in the form `{"key": ..., "value": ..., "description": ...}` where description is optional.
-                For more details, see https://huggingface.co/docs/hub/spaces-overview#managing-secrets-and-environment-variables.
+                For more details, see https://mirror-hf.co/docs/hub/spaces-overview#managing-secrets-and-environment-variables.
 
         Returns:
             [`RepoUrl`]: URL to the newly created repo. Value is a subclass of `str` containing
@@ -7364,11 +7364,11 @@ class HfApi:
 
         # Duplicate a Space to your account
         >>> duplicate_space("multimodalart/dreambooth-training")
-        RepoUrl('https://huggingface.co/spaces/nateraw/dreambooth-training',...)
+        RepoUrl('https://mirror-hf.co/spaces/nateraw/dreambooth-training',...)
 
         # Can set custom destination id and visibility flag.
         >>> duplicate_space("multimodalart/dreambooth-training", to_id="my-dreambooth", private=True)
-        RepoUrl('https://huggingface.co/spaces/nateraw/my-dreambooth',...)
+        RepoUrl('https://mirror-hf.co/spaces/nateraw/my-dreambooth',...)
         ```
         """
         # Parse to_id if provided
@@ -7432,7 +7432,7 @@ class HfApi:
             token (Union[bool, str, None], optional):
                 A valid user access token (string). Defaults to the locally saved
                 token, which is the recommended method for authentication (see
-                https://huggingface.co/docs/huggingface_hub/quick-start#authentication).
+                https://mirror-hf.co/docs/huggingface_hub/quick-start#authentication).
                 To disable authentication, pass `False`.
         Returns:
             [`SpaceRuntime`]: Runtime information about a Space including Space stage and hardware.
@@ -7468,7 +7468,7 @@ class HfApi:
             token (Union[bool, str, None], optional):
                 A valid user access token (string). Defaults to the locally saved
                 token, which is the recommended method for authentication (see
-                https://huggingface.co/docs/huggingface_hub/quick-start#authentication).
+                https://mirror-hf.co/docs/huggingface_hub/quick-start#authentication).
                 To disable authentication, pass `False`.
         Returns:
             [`SpaceRuntime`]: Runtime information about a Space including Space stage and hardware.
@@ -7500,7 +7500,7 @@ class HfApi:
             token (Union[bool, str, None], optional):
                 A valid user access token (string). Defaults to the locally saved
                 token, which is the recommended method for authentication (see
-                https://huggingface.co/docs/huggingface_hub/quick-start#authentication).
+                https://mirror-hf.co/docs/huggingface_hub/quick-start#authentication).
                 To disable authentication, pass `False`.
 
         Returns:
@@ -7612,7 +7612,7 @@ class HfApi:
             token (Union[bool, str, None], optional):
                 A valid user access token (string). Defaults to the locally saved
                 token, which is the recommended method for authentication (see
-                https://huggingface.co/docs/huggingface_hub/quick-start#authentication).
+                https://mirror-hf.co/docs/huggingface_hub/quick-start#authentication).
                 To disable authentication, pass `False`.
 
             Returns:
@@ -7725,7 +7725,7 @@ class HfApi:
         """Create a new Inference Endpoint from a model in the Hugging Face Inference Catalog.
 
         The goal of the Inference Catalog is to provide a curated list of models that are optimized for inference
-        and for which default configurations have been tested. See https://endpoints.huggingface.co/catalog for a list
+        and for which default configurations have been tested. See https://endpoints.mirror-hf.co/catalog for a list
         of available models in the catalog.
 
         Args:
@@ -7736,7 +7736,7 @@ class HfApi:
             token (Union[bool, str, None], optional):
                 A valid user access token (string). Defaults to the locally saved
                 token, which is the recommended method for authentication (see
-                https://huggingface.co/docs/huggingface_hub/quick-start#authentication).
+                https://mirror-hf.co/docs/huggingface_hub/quick-start#authentication).
             namespace (`str`, *optional*):
                 The namespace where the Inference Endpoint will be created. Defaults to the current user's namespace.
 
@@ -7773,7 +7773,7 @@ class HfApi:
         """List models available in the Hugging Face Inference Catalog.
 
         The goal of the Inference Catalog is to provide a curated list of models that are optimized for inference
-        and for which default configurations have been tested. See https://endpoints.huggingface.co/catalog for a list
+        and for which default configurations have been tested. See https://endpoints.mirror-hf.co/catalog for a list
         of available models in the catalog.
 
         Use [`create_inference_endpoint_from_catalog`] to deploy a model from the catalog.
@@ -7782,7 +7782,7 @@ class HfApi:
             token (Union[bool, str, None], optional):
                 A valid user access token (string). Defaults to the locally saved
                 token, which is the recommended method for authentication (see
-                https://huggingface.co/docs/huggingface_hub/quick-start#authentication).
+                https://mirror-hf.co/docs/huggingface_hub/quick-start#authentication).
 
         Returns:
             List[`str`]: A list of model IDs available in the catalog.
@@ -7813,7 +7813,7 @@ class HfApi:
             token (Union[bool, str, None], optional):
                 A valid user access token (string). Defaults to the locally saved
                 token, which is the recommended method for authentication (see
-                https://huggingface.co/docs/huggingface_hub/quick-start#authentication).
+                https://mirror-hf.co/docs/huggingface_hub/quick-start#authentication).
                 To disable authentication, pass `False`.
 
         Returns:
@@ -7911,7 +7911,7 @@ class HfApi:
             token (Union[bool, str, None], optional):
                 A valid user access token (string). Defaults to the locally saved
                 token, which is the recommended method for authentication (see
-                https://huggingface.co/docs/huggingface_hub/quick-start#authentication).
+                https://mirror-hf.co/docs/huggingface_hub/quick-start#authentication).
                 To disable authentication, pass `False`.
 
         Returns:
@@ -7973,7 +7973,7 @@ class HfApi:
             token (Union[bool, str, None], optional):
                 A valid user access token (string). Defaults to the locally saved
                 token, which is the recommended method for authentication (see
-                https://huggingface.co/docs/huggingface_hub/quick-start#authentication).
+                https://mirror-hf.co/docs/huggingface_hub/quick-start#authentication).
                 To disable authentication, pass `False`.
         """
         namespace = namespace or self._get_namespace(token=token)
@@ -8002,7 +8002,7 @@ class HfApi:
             token (Union[bool, str, None], optional):
                 A valid user access token (string). Defaults to the locally saved
                 token, which is the recommended method for authentication (see
-                https://huggingface.co/docs/huggingface_hub/quick-start#authentication).
+                https://mirror-hf.co/docs/huggingface_hub/quick-start#authentication).
                 To disable authentication, pass `False`.
 
         Returns:
@@ -8041,7 +8041,7 @@ class HfApi:
             token (Union[bool, str, None], optional):
                 A valid user access token (string). Defaults to the locally saved
                 token, which is the recommended method for authentication (see
-                https://huggingface.co/docs/huggingface_hub/quick-start#authentication).
+                https://mirror-hf.co/docs/huggingface_hub/quick-start#authentication).
                 To disable authentication, pass `False`.
 
         Returns:
@@ -8083,7 +8083,7 @@ class HfApi:
             token (Union[bool, str, None], optional):
                 A valid user access token (string). Defaults to the locally saved
                 token, which is the recommended method for authentication (see
-                https://huggingface.co/docs/huggingface_hub/quick-start#authentication).
+                https://mirror-hf.co/docs/huggingface_hub/quick-start#authentication).
                 To disable authentication, pass `False`.
 
         Returns:
@@ -8144,7 +8144,7 @@ class HfApi:
             token (Union[bool, str, None], optional):
                 A valid user access token (string). Defaults to the locally saved
                 token, which is the recommended method for authentication (see
-                https://huggingface.co/docs/huggingface_hub/quick-start#authentication).
+                https://mirror-hf.co/docs/huggingface_hub/quick-start#authentication).
                 To disable authentication, pass `False`.
 
         Returns:
@@ -8181,7 +8181,7 @@ class HfApi:
             token (Union[bool, str, None], optional):
                 A valid user access token (string). Defaults to the locally saved
                 token, which is the recommended method for authentication (see
-                https://huggingface.co/docs/huggingface_hub/quick-start#authentication).
+                https://mirror-hf.co/docs/huggingface_hub/quick-start#authentication).
                 To disable authentication, pass `False`.
 
         Returns: [`Collection`]
@@ -8237,7 +8237,7 @@ class HfApi:
             token (Union[bool, str, None], optional):
                 A valid user access token (string). Defaults to the locally saved
                 token, which is the recommended method for authentication (see
-                https://huggingface.co/docs/huggingface_hub/quick-start#authentication).
+                https://mirror-hf.co/docs/huggingface_hub/quick-start#authentication).
                 To disable authentication, pass `False`.
 
         Returns: [`Collection`]
@@ -8310,7 +8310,7 @@ class HfApi:
             token (Union[bool, str, None], optional):
                 A valid user access token (string). Defaults to the locally saved
                 token, which is the recommended method for authentication (see
-                https://huggingface.co/docs/huggingface_hub/quick-start#authentication).
+                https://mirror-hf.co/docs/huggingface_hub/quick-start#authentication).
                 To disable authentication, pass `False`.
 
         Returns: [`Collection`]
@@ -8360,7 +8360,7 @@ class HfApi:
             token (Union[bool, str, None], optional):
                 A valid user access token (string). Defaults to the locally saved
                 token, which is the recommended method for authentication (see
-                https://huggingface.co/docs/huggingface_hub/quick-start#authentication).
+                https://mirror-hf.co/docs/huggingface_hub/quick-start#authentication).
                 To disable authentication, pass `False`.
 
         Example:
@@ -8415,7 +8415,7 @@ class HfApi:
             token (Union[bool, str, None], optional):
                 A valid user access token (string). Defaults to the locally saved
                 token, which is the recommended method for authentication (see
-                https://huggingface.co/docs/huggingface_hub/quick-start#authentication).
+                https://mirror-hf.co/docs/huggingface_hub/quick-start#authentication).
                 To disable authentication, pass `False`.
 
         Returns: [`Collection`]
@@ -8494,7 +8494,7 @@ class HfApi:
             token (Union[bool, str, None], optional):
                 A valid user access token (string). Defaults to the locally saved
                 token, which is the recommended method for authentication (see
-                https://huggingface.co/docs/huggingface_hub/quick-start#authentication).
+                https://mirror-hf.co/docs/huggingface_hub/quick-start#authentication).
                 To disable authentication, pass `False`.
 
         Example:
@@ -8544,7 +8544,7 @@ class HfApi:
             token (Union[bool, str, None], optional):
                 A valid user access token (string). Defaults to the locally saved
                 token, which is the recommended method for authentication (see
-                https://huggingface.co/docs/huggingface_hub/quick-start#authentication).
+                https://mirror-hf.co/docs/huggingface_hub/quick-start#authentication).
                 To disable authentication, pass `False`.
 
         Example:
@@ -8590,7 +8590,7 @@ class HfApi:
         If the approval mode is automatic, this list should be empty. Pending requests can be accepted or rejected
         using [`accept_access_request`] and [`reject_access_request`].
 
-        For more info about gated repos, see https://huggingface.co/docs/hub/models-gated.
+        For more info about gated repos, see https://mirror-hf.co/docs/hub/models-gated.
 
         Args:
             repo_id (`str`):
@@ -8601,7 +8601,7 @@ class HfApi:
             token (Union[bool, str, None], optional):
                 A valid user access token (string). Defaults to the locally saved
                 token, which is the recommended method for authentication (see
-                https://huggingface.co/docs/huggingface_hub/quick-start#authentication).
+                https://mirror-hf.co/docs/huggingface_hub/quick-start#authentication).
                 To disable authentication, pass `False`.
 
         Returns:
@@ -8656,7 +8656,7 @@ class HfApi:
         [`reject_access_request`]. A cancelled request will go back to the pending list while a rejected request will
         go to the rejected list. In both cases, the user will lose access to the repo.
 
-        For more info about gated repos, see https://huggingface.co/docs/hub/models-gated.
+        For more info about gated repos, see https://mirror-hf.co/docs/hub/models-gated.
 
         Args:
             repo_id (`str`):
@@ -8667,7 +8667,7 @@ class HfApi:
             token (Union[bool, str, None], optional):
                 A valid user access token (string). Defaults to the locally saved
                 token, which is the recommended method for authentication (see
-                https://huggingface.co/docs/huggingface_hub/quick-start#authentication).
+                https://mirror-hf.co/docs/huggingface_hub/quick-start#authentication).
                 To disable authentication, pass `False`.
 
         Returns:
@@ -8718,7 +8718,7 @@ class HfApi:
         [`cancel_access_request`]. A cancelled request will go back to the pending list while an accepted request will
         go to the accepted list.
 
-        For more info about gated repos, see https://huggingface.co/docs/hub/models-gated.
+        For more info about gated repos, see https://mirror-hf.co/docs/hub/models-gated.
 
         Args:
             repo_id (`str`):
@@ -8729,7 +8729,7 @@ class HfApi:
             token (Union[bool, str, None], optional):
                 A valid user access token (string). Defaults to the locally saved
                 token, which is the recommended method for authentication (see
-                https://huggingface.co/docs/huggingface_hub/quick-start#authentication).
+                https://mirror-hf.co/docs/huggingface_hub/quick-start#authentication).
                 To disable authentication, pass `False`.
 
         Returns:
@@ -8805,7 +8805,7 @@ class HfApi:
 
         A cancelled request will go back to the pending list and the user will lose access to the repo.
 
-        For more info about gated repos, see https://huggingface.co/docs/hub/models-gated.
+        For more info about gated repos, see https://mirror-hf.co/docs/hub/models-gated.
 
         Args:
             repo_id (`str`):
@@ -8818,7 +8818,7 @@ class HfApi:
             token (Union[bool, str, None], optional):
                 A valid user access token (string). Defaults to the locally saved
                 token, which is the recommended method for authentication (see
-                https://huggingface.co/docs/huggingface_hub/quick-start#authentication).
+                https://mirror-hf.co/docs/huggingface_hub/quick-start#authentication).
                 To disable authentication, pass `False`.
 
         Raises:
@@ -8847,7 +8847,7 @@ class HfApi:
         tab. If the approval mode is automatic, you don't have to accept requests manually. An accepted request can be
         cancelled or rejected at any time using [`cancel_access_request`] and [`reject_access_request`].
 
-        For more info about gated repos, see https://huggingface.co/docs/hub/models-gated.
+        For more info about gated repos, see https://mirror-hf.co/docs/hub/models-gated.
 
         Args:
             repo_id (`str`):
@@ -8860,7 +8860,7 @@ class HfApi:
             token (Union[bool, str, None], optional):
                 A valid user access token (string). Defaults to the locally saved
                 token, which is the recommended method for authentication (see
-                https://huggingface.co/docs/huggingface_hub/quick-start#authentication).
+                https://mirror-hf.co/docs/huggingface_hub/quick-start#authentication).
                 To disable authentication, pass `False`.
 
         Raises:
@@ -8895,7 +8895,7 @@ class HfApi:
         requests can be accepted or cancelled at any time using [`accept_access_request`] and [`cancel_access_request`].
         A cancelled request will go back to the pending list while an accepted request will go to the accepted list.
 
-        For more info about gated repos, see https://huggingface.co/docs/hub/models-gated.
+        For more info about gated repos, see https://mirror-hf.co/docs/hub/models-gated.
 
         Args:
             repo_id (`str`):
@@ -8910,7 +8910,7 @@ class HfApi:
             token (Union[bool, str, None], optional):
                 A valid user access token (string). Defaults to the locally saved
                 token, which is the recommended method for authentication (see
-                https://huggingface.co/docs/huggingface_hub/quick-start#authentication).
+                https://mirror-hf.co/docs/huggingface_hub/quick-start#authentication).
                 To disable authentication, pass `False`.
 
         Raises:
@@ -8970,7 +8970,7 @@ class HfApi:
         added to the accepted list meaning they can download the files You can revoke the granted access at any time
         using [`cancel_access_request`] or [`reject_access_request`].
 
-        For more info about gated repos, see https://huggingface.co/docs/hub/models-gated.
+        For more info about gated repos, see https://mirror-hf.co/docs/hub/models-gated.
 
         Args:
             repo_id (`str`):
@@ -8983,7 +8983,7 @@ class HfApi:
             token (Union[bool, str, None], optional):
                 A valid user access token (string). Defaults to the locally saved
                 token, which is the recommended method for authentication (see
-                https://huggingface.co/docs/huggingface_hub/quick-start#authentication).
+                https://mirror-hf.co/docs/huggingface_hub/quick-start#authentication).
                 To disable authentication, pass `False`.
 
         Raises:
@@ -9023,7 +9023,7 @@ class HfApi:
                 The unique identifier of the webhook to get.
             token (Union[bool, str, None], optional):
                 A valid user access token (string). Defaults to the locally saved token, which is the recommended
-                method for authentication (see https://huggingface.co/docs/huggingface_hub/quick-start#authentication).
+                method for authentication (see https://mirror-hf.co/docs/huggingface_hub/quick-start#authentication).
                 To disable authentication, pass `False`.
 
         Returns:
@@ -9072,7 +9072,7 @@ class HfApi:
         Args:
             token (Union[bool, str, None], optional):
                 A valid user access token (string). Defaults to the locally saved token, which is the recommended
-                method for authentication (see https://huggingface.co/docs/huggingface_hub/quick-start#authentication).
+                method for authentication (see https://mirror-hf.co/docs/huggingface_hub/quick-start#authentication).
                 To disable authentication, pass `False`.
 
         Returns:
@@ -9139,7 +9139,7 @@ class HfApi:
                 A secret to sign the payload with.
             token (Union[bool, str, None], optional):
                 A valid user access token (string). Defaults to the locally saved token, which is the recommended
-                method for authentication (see https://huggingface.co/docs/huggingface_hub/quick-start#authentication).
+                method for authentication (see https://mirror-hf.co/docs/huggingface_hub/quick-start#authentication).
                 To disable authentication, pass `False`.
 
         Returns:
@@ -9215,7 +9215,7 @@ class HfApi:
                 A secret to sign the payload with, providing an additional layer of security.
             token (Union[bool, str, None], optional):
                 A valid user access token (string). Defaults to the locally saved token, which is the recommended
-                method for authentication (see https://huggingface.co/docs/huggingface_hub/quick-start#authentication).
+                method for authentication (see https://mirror-hf.co/docs/huggingface_hub/quick-start#authentication).
                 To disable authentication, pass `False`.
 
         Returns:
@@ -9276,7 +9276,7 @@ class HfApi:
                 The unique identifier of the webhook to enable.
             token (Union[bool, str, None], optional):
                 A valid user access token (string). Defaults to the locally saved token, which is the recommended
-                method for authentication (see https://huggingface.co/docs/huggingface_hub/quick-start#authentication).
+                method for authentication (see https://mirror-hf.co/docs/huggingface_hub/quick-start#authentication).
                 To disable authentication, pass `False`.
 
         Returns:
@@ -9327,7 +9327,7 @@ class HfApi:
                 The unique identifier of the webhook to disable.
             token (Union[bool, str, None], optional):
                 A valid user access token (string). Defaults to the locally saved token, which is the recommended
-                method for authentication (see https://huggingface.co/docs/huggingface_hub/quick-start#authentication).
+                method for authentication (see https://mirror-hf.co/docs/huggingface_hub/quick-start#authentication).
                 To disable authentication, pass `False`.
 
         Returns:
@@ -9378,7 +9378,7 @@ class HfApi:
                 The unique identifier of the webhook to delete.
             token (Union[bool, str, None], optional):
                 A valid user access token (string). Defaults to the locally saved token, which is the recommended
-                method for authentication (see https://huggingface.co/docs/huggingface_hub/quick-start#authentication).
+                method for authentication (see https://mirror-hf.co/docs/huggingface_hub/quick-start#authentication).
                 To disable authentication, pass `False`.
 
         Returns:
@@ -9512,7 +9512,7 @@ class HfApi:
                 "It seems you are trying to upload a large folder at once. This might take some time and then fail if "
                 "the folder is too large. For such cases, it is recommended to upload in smaller batches or to use "
                 "`HfApi().upload_large_folder(...)`/`huggingface-cli upload-large-folder` instead. For more details, "
-                "check out https://huggingface.co/docs/huggingface_hub/main/en/guides/upload#upload-a-large-folder."
+                "check out https://mirror-hf.co/docs/huggingface_hub/main/en/guides/upload#upload-a-large-folder."
             )
 
         logger.info(f"Start hashing {len(filtered_repo_objects)} files.")
@@ -9539,7 +9539,7 @@ class HfApi:
             token (Union[bool, str, None], optional):
                 A valid user access token (string). Defaults to the locally saved
                 token, which is the recommended method for authentication (see
-                https://huggingface.co/docs/huggingface_hub/quick-start#authentication).
+                https://mirror-hf.co/docs/huggingface_hub/quick-start#authentication).
                 To disable authentication, pass `False`.
 
         Raises:
@@ -9578,7 +9578,7 @@ class HfApi:
             token (Union[bool, str, None], optional):
                 A valid user access token (string). Defaults to the locally saved
                 token, which is the recommended method for authentication (see
-                https://huggingface.co/docs/huggingface_hub/quick-start#authentication).
+                https://mirror-hf.co/docs/huggingface_hub/quick-start#authentication).
                 To disable authentication, pass `False`.
 
         Returns:
@@ -9604,7 +9604,7 @@ class HfApi:
             token (Union[bool, str, None], optional):
                 A valid user access token (string). Defaults to the locally saved
                 token, which is the recommended method for authentication (see
-                https://huggingface.co/docs/huggingface_hub/quick-start#authentication).
+                https://mirror-hf.co/docs/huggingface_hub/quick-start#authentication).
                 To disable authentication, pass `False`.
 
         Returns:
@@ -9632,7 +9632,7 @@ class HfApi:
             token (Union[bool, str, None], optional):
                 A valid user access token (string). Defaults to the locally saved
                 token, which is the recommended method for authentication (see
-                https://huggingface.co/docs/huggingface_hub/quick-start#authentication).
+                https://mirror-hf.co/docs/huggingface_hub/quick-start#authentication).
                 To disable authentication, pass `False`.
 
         Returns:
@@ -9660,7 +9660,7 @@ class HfApi:
             token (Union[bool, str, None], optional):
                 A valid user access token (string). Defaults to the locally saved
                 token, which is the recommended method for authentication (see
-                https://huggingface.co/docs/huggingface_hub/quick-start#authentication).
+                https://mirror-hf.co/docs/huggingface_hub/quick-start#authentication).
                 To disable authentication, pass `False`.
 
         Returns:
@@ -9694,7 +9694,7 @@ class HfApi:
             token (Union[bool, str, None], *optional*):
                 A valid user access token (string). Defaults to the locally saved
                 token, which is the recommended method for authentication (see
-                https://huggingface.co/docs/huggingface_hub/quick-start#authentication).
+                https://mirror-hf.co/docs/huggingface_hub/quick-start#authentication).
                 To disable authentication, pass `False`.
 
         Returns:
@@ -9766,7 +9766,7 @@ class HfApi:
             token `(Union[bool, str, None]`, *optional*):
                 A valid user access token. If not provided, the locally saved token will be used, which is the
                 recommended authentication method. Set to `False` to disable authentication.
-                Refer to: https://huggingface.co/docs/huggingface_hub/quick-start#authentication.
+                Refer to: https://mirror-hf.co/docs/huggingface_hub/quick-start#authentication.
 
         Raises:
             [`~utils.RepositoryNotFoundError`]:
@@ -9814,7 +9814,7 @@ def _parse_revision_from_pr_url(pr_url: str) -> str:
 
     Example:
     ```py
-    >>> _parse_revision_from_pr_url("https://huggingface.co/bigscience/bloom/discussions/2")
+    >>> _parse_revision_from_pr_url("https://mirror-hf.co/bigscience/bloom/discussions/2")
     "refs/pr/2"
     ```
     """

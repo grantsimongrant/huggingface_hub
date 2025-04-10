@@ -110,7 +110,7 @@ conda install -c conda-forge huggingface_hub
 python -c "from huggingface_hub import model_info; print(model_info('gpt2'))"
 ```
 
-இந்த கட்டளை, Hub-இல் உள்ள [gpt2](https://huggingface.co/gpt2) மாடலுக்கான தகவல்களை பெறும். வெளியீடு கீழ்காணும் மாதிரியாக இருக்க வேண்டும்:
+இந்த கட்டளை, Hub-இல் உள்ள [gpt2](https://mirror-hf.co/gpt2) மாடலுக்கான தகவல்களை பெறும். வெளியீடு கீழ்காணும் மாதிரியாக இருக்க வேண்டும்:
 
 
 ```text

@@ -347,7 +347,7 @@ huggingface-cli delete-cache
 이제 선택/해제할 수 있는 수정 버전 목록이 표시됩니다:
 
 <div class="flex justify-center">
-    <img src="https://huggingface.co/datasets/huggingface/documentation-images/resolve/main/hub/delete-cache-tui.png"/>
+    <img src="https://mirror-hf.co/datasets/huggingface/documentation-images/resolve/main/hub/delete-cache-tui.png"/>
 </div>
 사용방법:
    - `up` 및 `down` 키를 사용하여 커서를 이동합니다.

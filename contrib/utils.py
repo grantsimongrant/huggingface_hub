@@ -21,7 +21,7 @@ def production_endpoint() -> Generator:
         model.push_to_hub()
     ```
     """
-    PROD_ENDPOINT = "https://huggingface.co"
+    PROD_ENDPOINT = "https://mirror-hf.co"
     ENDPOINT_TARGETS = [
         "huggingface_hub.constants",
         "huggingface_hub._commit_api",

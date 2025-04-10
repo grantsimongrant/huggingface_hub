@@ -4,7 +4,7 @@ rendered properly in your Markdown viewer.
 
 # Collections
 
-A collection is a group of related items on the Hub (models, datasets, Spaces, papers) that are organized together on the same page. Collections are useful for creating your own portfolio, bookmarking content in categories, or presenting a curated list of items you want to share. Check out this [guide](https://huggingface.co/docs/hub/collections) to understand in more detail what collections are and how they look on the Hub.
+A collection is a group of related items on the Hub (models, datasets, Spaces, papers) that are organized together on the same page. Collections are useful for creating your own portfolio, bookmarking content in categories, or presenting a curated list of items you want to share. Check out this [guide](https://mirror-hf.co/docs/hub/collections) to understand in more detail what collections are and how they look on the Hub.
 
 You can directly manage collections in the browser, but in this guide, we will focus on how to manage them programmatically.
 
@@ -13,7 +13,7 @@ You can directly manage collections in the browser, but in this guide, we will f
 Use [`get_collection`] to fetch your collections or any public ones. You must have the collection's *slug* to retrieve a collection. A slug is an identifier for a collection based on the title and a unique ID. You can find the slug in the URL of the collection page.
 
 <div class="flex justify-center">
-    <img src="https://huggingface.co/datasets/huggingface/documentation-images/resolve/main/hfh_collection_slug.png"/>
+    <img src="https://mirror-hf.co/datasets/huggingface/documentation-images/resolve/main/hfh_collection_slug.png"/>
 </div>
 
 Let's fetch the collection with, `"TheBloke/recent-models-64f9a55bb3115b4f513ec026"`:
@@ -60,7 +60,7 @@ In addition to these base attributes, returned items can have additional attribu
 
 ## List collections
 
-We can also retrieve collections using [`list_collections`]. Collections can be filtered using some parameters. Let's list all the collections from the user [`teknium`](https://huggingface.co/teknium).
+We can also retrieve collections using [`list_collections`]. Collections can be filtered using some parameters. Let's list all the collections from the user [`teknium`](https://mirror-hf.co/teknium).
 ```py
 >>> from huggingface_hub import list_collections
 
@@ -82,7 +82,7 @@ When listing collections, the item list per collection is truncated to 4 items m
 
 </Tip>
 
-It is possible to do more advanced filtering. Let's get all collections containing the model [TheBloke/OpenHermes-2.5-Mistral-7B-GGUF](https://huggingface.co/TheBloke/OpenHermes-2.5-Mistral-7B-GGUF), sorted by trending, and limit the count to 5.
+It is possible to do more advanced filtering. Let's get all collections containing the model [TheBloke/OpenHermes-2.5-Mistral-7B-GGUF](https://mirror-hf.co/TheBloke/OpenHermes-2.5-Mistral-7B-GGUF), sorted by trending, and limit the count to 5.
 ```py
 >>> collections = list_collections(item="models/TheBloke/OpenHermes-2.5-Mistral-7B-GGUF", sort="trending", limit=5):
 >>> for collection in collections:
@@ -125,7 +125,7 @@ It will return a [`Collection`] object with the high-level metadata (title, desc
 >>> collection.owner
 "username"
 >>> collection.url
-'https://huggingface.co/collections/owner/iccv-2023-15e23b46cb98efca45'
+'https://mirror-hf.co/collections/owner/iccv-2023-15e23b46cb98efca45'
 ```
 
 ## Manage items in a collection

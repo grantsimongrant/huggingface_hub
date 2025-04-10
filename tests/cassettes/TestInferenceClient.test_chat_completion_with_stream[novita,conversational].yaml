@@ -11,13 +11,13 @@ interactions:
       X-Amzn-Trace-Id:
       - 57f95b3d-89bb-4b6a-9212-50434305a81c
     method: GET
-    uri: https://huggingface.co/api/models/meta-llama/Llama-3.1-8B-Instruct?expand=inferenceProviderMapping
+    uri: https://mirror-hf.co/api/models/meta-llama/Llama-3.1-8B-Instruct?expand=inferenceProviderMapping
   response:
     body:
       string: '{"_id":"6698d8a0653e4babe21e1e7d","id":"meta-llama/Llama-3.1-8B-Instruct","inferenceProviderMapping":{"fireworks-ai":{"status":"live","providerId":"accounts/fireworks/models/llama-v3p1-8b-instruct","task":"conversational"},"sambanova":{"status":"live","providerId":"Meta-Llama-3.1-8B-Instruct","task":"conversational"},"hf-inference":{"status":"live","providerId":"meta-llama/Llama-3.1-8B-Instruct","task":"conversational"},"nebius":{"status":"live","providerId":"meta-llama/Meta-Llama-3.1-8B-Instruct-fast","task":"conversational"},"novita":{"status":"live","providerId":"meta-llama/llama-3.1-8b-instruct","task":"conversational"},"hyperbolic":{"status":"staging","providerId":"meta-llama/Meta-Llama-3.1-8B-Instruct","task":"conversational"}}}'
     headers:
       Access-Control-Allow-Origin:
-      - https://huggingface.co
+      - https://mirror-hf.co
       Access-Control-Expose-Headers:
       - X-Repo-Commit,X-Request-Id,X-Error-Code,X-Error-Message,X-Total-Count,ETag,Link,Accept-Ranges,Content-Range,X-Xet-Access-Token,X-Xet-Token-Expiration,X-Xet-Refresh-Route,X-Xet-Cas-Url,X-Xet-Hash
       Connection:
@@ -69,7 +69,7 @@ interactions:
       X-Amzn-Trace-Id:
       - 5cf4dfde-9f8d-4fb8-a01d-3934e8537f59
     method: POST
-    uri: https://router.huggingface.co/novita/v3/openai/chat/completions
+    uri: https://router.mirror-hf.co/novita/v3/openai/chat/completions
   response:
     body:
       string: 'data: {"id":"chatcmpl-af6e9802f1554a49be4dd42048b91565","object":"chat.completion.chunk","created":1741793930,"model":"meta-llama/llama-3.1-8b-instruct","choices":[{"index":0,"delta":{"role":"assistant"},"finish_reason":null,"content_filter_results":{"hate":{"filtered":false},"self_harm":{"filtered":false},"sexual":{"filtered":false},"violence":{"filtered":false},"jailbreak":{"filtered":false,"detected":false},"profanity":{"filtered":false,"detected":false}}}],"system_fingerprint":"","usage":{"prompt_tokens":46,"completion_tokens":0,"total_tokens":46,"prompt_tokens_details":null,"completion_tokens_details":null}}

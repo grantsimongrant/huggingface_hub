@@ -4,7 +4,7 @@ rendered properly in your Markdown viewer.
 
 # जल्दी शुरू
 
-[Hugging Face Hub](https://huggingface.co/) मशीन लर्निंग मॉडल, डेमो, डेटासेट और मेट्रिक्स साझा करने के लिए सबसे उपयुक्त स्थान है।
+[Hugging Face Hub](https://mirror-hf.co/) मशीन लर्निंग मॉडल, डेमो, डेटासेट और मेट्रिक्स साझा करने के लिए सबसे उपयुक्त स्थान है।
 `huggingface_hub` लाइब्रेरी आपको अपने विकास परिवेश को छोड़े बिना हब के साथ इंटरैक्ट करने में मदद करती है।
 आप आसानी से रिपॉजिटरी बना और प्रबंधित कर सकते हैं, फ़ाइलें डाउनलोड और अपलोड कर सकते हैं, और हब से उपयोगी मॉडल और डेटासेट मेटाडेटा प्राप्त कर सकते हैं।
 
@@ -26,7 +26,7 @@ pip install --upgrade huggingface_hub
 तो यह आपके `cache` से लोड हो जाएगी, इसलिए आपको इसे फिर से डाउनलोड करने की आवश्यकता नहीं है।
 
 आपको उस फ़ाइल की रिपॉजिटरी आईडी और फ़ाइल नाम की आवश्यकता होगी जिसे आप डाउनलोड करना चाहते हैं।
-उदाहरण के लिए, [Pegasus](https://huggingface.co/google/pegasus-xsum) मॉडल कॉन्फ़िगरेशन फ़ाइल डाउनलोड करने के लिए:
+उदाहरण के लिए, [Pegasus](https://mirror-hf.co/google/pegasus-xsum) मॉडल कॉन्फ़िगरेशन फ़ाइल डाउनलोड करने के लिए:
 
 ```py
 >>> from huggingface_hub import hf_hub_download
@@ -51,7 +51,7 @@ pip install --upgrade huggingface_hub
 
 कई मामलों में, हब के साथ इंटरैक्ट करने के लिए आपको `Hugging Face` खाते से प्रमाणित होना होगा:
 निजी रेपो डाउनलोड करें, फ़ाइलें अपलोड करें, पीआर बनाएं,...
-[एक खाता बनाएं](https://huggingface.co/join), यदि आपके पास पहले से कोई खाता नहीं है| और फिर अपना [User Access Token](https://huggingface.co/docs/hub/security-tokens) प्राप्त करने के लिए साइन इन करें, आपके [सेटिंग्स पेज](https://huggingface.co/settings/tokens) से। उपयोगकर्ता एक्सेस टोकन का उपयोग हब पर आपकी पहचान को प्रमाणित करने के लिए किया जाता है।
+[एक खाता बनाएं](https://mirror-hf.co/join), यदि आपके पास पहले से कोई खाता नहीं है| और फिर अपना [User Access Token](https://mirror-hf.co/docs/hub/security-tokens) प्राप्त करने के लिए साइन इन करें, आपके [सेटिंग्स पेज](https://mirror-hf.co/settings/tokens) से। उपयोगकर्ता एक्सेस टोकन का उपयोग हब पर आपकी पहचान को प्रमाणित करने के लिए किया जाता है।
 
 <Tip>
 
@@ -101,7 +101,7 @@ huggingface-cli auth switch
 
 ### पर्यावरण चर
 
-पर्यावरण चर `HF_TOKEN` का उपयोग स्वयं को प्रमाणित करने के लिए भी किया जा सकता है। यह एक ऐसे स्थान में विशेष रूप से उपयोगी है जहाँ आप `HF_TOKEN` को [Space Secret](https://huggingface.co/docs/hub/spaces-overview#managing-secrets) के रूप में सेट कर सकते हैं।
+पर्यावरण चर `HF_TOKEN` का उपयोग स्वयं को प्रमाणित करने के लिए भी किया जा सकता है। यह एक ऐसे स्थान में विशेष रूप से उपयोगी है जहाँ आप `HF_TOKEN` को [Space Secret](https://mirror-hf.co/docs/hub/spaces-overview#managing-secrets) के रूप में सेट कर सकते हैं।
 
 <Tip>
 
@@ -153,7 +153,7 @@ user = whoami(token=...)
 
 रिपॉजिटरी बनाने या हब पर सामग्री पुश करने के लिए, आपको एक उपयोगकर्ता एक्सेस
 टोकन प्रदान करना होगा जिसके पास `write` की अनुमति हो।
-टोकन बनाते समय आप अपने [सेटिंग्स पेज](https://huggingface.co/settings/tokens) में अनुमति चुन सकते हैं।
+टोकन बनाते समय आप अपने [सेटिंग्स पेज](https://mirror-hf.co/settings/tokens) में अनुमति चुन सकते हैं।
 
 </Tip>
 
