@@ -6,9 +6,9 @@ rendered properly in your Markdown viewer.
 
 Inference is the process of using a trained model to make predictions on new data. Because this process can be compute-intensive, running on a dedicated or external service can be an interesting option.  
 The `huggingface_hub`  library provides a unified interface to run inference across multiple services for models hosted on the Hugging Face Hub:
-1.  [Inference API](https://mirror-hf.co/docs/api-inference/index): a serverless solution that allows you to run accelerated inference on Hugging Face's infrastructure for free. This service is a fast way to get started, test different models, and prototype AI products.
+1.  [Inference API](https://hf-mirror.com/docs/api-inference/index): a serverless solution that allows you to run accelerated inference on Hugging Face's infrastructure for free. This service is a fast way to get started, test different models, and prototype AI products.
 2. Third-party providers: various serverless solution provided by external providers (Together, Sambanova, etc.). These providers offer production-ready APIs on a pay-a-you-go model. This is the fastest way to integrate AI in your products with a maintenance-free and scalable solution. Refer to the [Supported providers and tasks](../guides/inference#supported-providers-and-tasks) section for a list of supported providers.      
-3. [Inference Endpoints](https://mirror-hf.co/docs/inference-endpoints/index): a product to easily deploy models to production. Inference is run by Hugging Face in a dedicated, fully managed infrastructure on a cloud provider of your choice.
+3. [Inference Endpoints](https://hf-mirror.com/docs/inference-endpoints/index): a product to easily deploy models to production. Inference is run by Hugging Face in a dedicated, fully managed infrastructure on a cloud provider of your choice.
 
 These services can be called with the [`InferenceClient`] object. Please refer to [this guide](../guides/inference)
 for more information on how to use it.

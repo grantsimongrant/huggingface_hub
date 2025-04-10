@@ -85,7 +85,7 @@ class DownloadCommand(BaseHuggingfaceCLICommand):
             type=str,
             help=(
                 "If set, the downloaded file will be placed under this directory. Check out"
-                " https://mirror-hf.co/docs/huggingface_hub/guides/download#download-files-to-local-folder for more"
+                " https://hf-mirror.com/docs/huggingface_hub/guides/download#download-files-to-local-folder for more"
                 " details."
             ),
         )
@@ -105,7 +105,7 @@ class DownloadCommand(BaseHuggingfaceCLICommand):
             help="Deprecated and ignored. Downloading a file to local dir always attempts to resume previously interrupted downloads (unless hf-transfer is enabled).",
         )
         download_parser.add_argument(
-            "--token", type=str, help="A User Access Token generated from https://mirror-hf.co/settings/tokens"
+            "--token", type=str, help="A User Access Token generated from https://hf-mirror.com/settings/tokens"
         )
         download_parser.add_argument(
             "--quiet",

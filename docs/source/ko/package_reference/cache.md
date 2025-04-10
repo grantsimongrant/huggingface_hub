@@ -52,6 +52,6 @@ rendered properly in your Markdown viewer.
 
 ## 예외[[exceptions]]
 
-### CorruptedCacheException[[huggingface_hub.CorruptedCacheException]]
+### CorruptedCacheException[[huggingface_hub.corruptedCacheException]]
 
-[[autodoc]] huggingface_hub.CorruptedCacheException
+[[autodoc]] huggingface_hub.corruptedCacheException

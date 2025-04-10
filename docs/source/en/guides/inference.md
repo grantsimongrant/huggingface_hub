@@ -7,9 +7,9 @@ rendered properly in your Markdown viewer.
 Inference is the process of using a trained model to make predictions on new data. Because this process can be compute-intensive, running on a dedicated or external service can be an interesting option.
 The `huggingface_hub` library provides a unified interface to run inference across multiple services for models hosted on the Hugging Face Hub:
 
-1.  [HF Inference API](https://mirror-hf.co/docs/api-inference/index): a serverless solution that allows you to run model inference on Hugging Face's infrastructure for free. This service is a fast way to get started, test different models, and prototype AI products.
+1.  [HF Inference API](https://hf-mirror.com/docs/api-inference/index): a serverless solution that allows you to run model inference on Hugging Face's infrastructure for free. This service is a fast way to get started, test different models, and prototype AI products.
 2.  [Third-party providers](#supported-providers-and-tasks): various serverless solution provided by external providers (Together, Sambanova, etc.). These providers offer production-ready APIs on a pay-as-you-go model. This is the fastest way to integrate AI in your products with a maintenance-free and scalable solution. Refer to the [Supported providers and tasks](#supported-providers-and-tasks) section for a list of supported providers.
-3.  [Inference Endpoints](https://mirror-hf.co/docs/inference-endpoints/index): a product to easily deploy models to production. Inference is run by Hugging Face in a dedicated, fully managed infrastructure on a cloud provider of your choice.
+3.  [Inference Endpoints](https://hf-mirror.com/docs/inference-endpoints/index): a product to easily deploy models to production. Inference is run by Hugging Face in a dedicated, fully managed infrastructure on a cloud provider of your choice.
 
 These services can all be called from the [`InferenceClient`] object. It acts as a replacement for the legacy
 [`InferenceApi`] client, adding specific support for tasks and third-party providers.
@@ -18,10 +18,10 @@ Learn how to migrate to the new client in the [Legacy InferenceAPI client](#lega
 <Tip>
 
 [`InferenceClient`] is a Python client making HTTP calls to our APIs. If you want to make the HTTP calls directly using
-your preferred tool (curl, postman,...), please refer to the [Inference API](https://mirror-hf.co/docs/api-inference/index)
-or to the [Inference Endpoints](https://mirror-hf.co/docs/inference-endpoints/index) documentation pages.
+your preferred tool (curl, postman,...), please refer to the [Inference API](https://hf-mirror.com/docs/api-inference/index)
+or to the [Inference Endpoints](https://hf-mirror.com/docs/inference-endpoints/index) documentation pages.
 
-For web development, a [JS client](https://mirror-hf.co/docs/huggingface.js/inference/README) has been released.
+For web development, a [JS client](https://hf-mirror.com/docs/huggingface.js/inference/README) has been released.
 If you are interested in game development, you might have a look at our [C# project](https://github.com/huggingface/unity-api).
 
 </Tip>
@@ -91,7 +91,7 @@ In the example above, we used a third-party provider ([Together AI](https://www.
 <Tip warning={true}>
 
 The API is designed to be simple. Not all parameters and options are available or described for the end user. Check out
-[this page](https://mirror-hf.co/docs/api-inference/detailed_parameters) if you are interested in learning more about
+[this page](https://hf-mirror.com/docs/api-inference/detailed_parameters) if you are interested in learning more about
 all the parameters available for each task.
 
 </Tip>
@@ -125,7 +125,7 @@ When using the Hugging Face Inference API (default provider), each task comes wi
 However, this recommendation can change over time, so it's best to explicitly set a model once you've decided which one to use.
 For third-party providers, you must always specify a model that is compatible with that provider.
 
-Visit the [Models](https://mirror-hf.co/models?inference=warm) page on the Hub to explore models available through the Inference API, or check the provider's documentation for their supported models.
+Visit the [Models](https://hf-mirror.com/models?inference=warm) page on the Hub to explore models available through the Inference API, or check the provider's documentation for their supported models.
 
 </Tip>
 
@@ -133,7 +133,7 @@ Visit the [Models](https://mirror-hf.co/models?inference=warm) page on the Hub t
 
 The examples we saw above use either the Hugging Face Inference API or third-party providers. While these prove to be very useful for prototyping
 and testing things quickly. Once you're ready to deploy your model to production, you'll need to use a dedicated infrastructure.
-That's where [Inference Endpoints](https://mirror-hf.co/docs/inference-endpoints/index) comes into play. It allows you to deploy
+That's where [Inference Endpoints](https://hf-mirror.com/docs/inference-endpoints/index) comes into play. It allows you to deploy
 any model and expose it as a private API. Once deployed, you'll get a URL that you can connect to using exactly the same
 code as before, changing only the `model` parameter:
 
@@ -151,14 +151,14 @@ Note that you cannot specify both a URL and a provider - they are mutually exclu
 
 Authentication depends on which provider you are using:
 
-1. For the default Hugging Face Inference API, you can authenticate using a [User Access Token](https://mirror-hf.co/docs/hub/security-tokens):
+1. For the default Hugging Face Inference API, you can authenticate using a [User Access Token](https://hf-mirror.com/docs/hub/security-tokens):
 
 ```python
 >>> from huggingface_hub import InferenceClient
 >>> client = InferenceClient(token="hf_***")
 ```
 
-By default, it will use the token saved on your machine if you are logged in (see [how to authenticate](https://mirror-hf.co/docs/huggingface_hub/quick-start#authentication)).
+By default, it will use the token saved on your machine if you are logged in (see [how to authenticate](https://hf-mirror.com/docs/huggingface_hub/quick-start#authentication)).
 
 2. For third-party providers, you have two options:
 
@@ -217,7 +217,7 @@ using our provider keys, and the usage will be billed directly to your Hugging F
 
 <Tip>
 
-Check out the [Tasks](https://mirror-hf.co/tasks) page to learn more about each task.
+Check out the [Tasks](https://hf-mirror.com/tasks) page to learn more about each task.
 
 </Tip>
 
@@ -250,7 +250,7 @@ for chunk in output:
     print(chunk.choices[0].delta.content)
 ```
 
-And that's it! The only required changes are to replace `from openai import OpenAI` by `from huggingface_hub import InferenceClient` and `client = OpenAI(...)` by `client = InferenceClient(...)`. You can choose any LLM model from the Hugging Face Hub by passing its model id as `model` parameter. [Here is a list](https://mirror-hf.co/models?pipeline_tag=text-generation&other=conversational,text-generation-inference&sort=trending) of supported models. For authentication, you should pass a valid [User Access Token](https://mirror-hf.co/settings/tokens) as `api_key` or authenticate using `huggingface_hub` (see the [authentication guide](https://mirror-hf.co/docs/huggingface_hub/quick-start#authentication)).
+And that's it! The only required changes are to replace `from openai import OpenAI` by `from huggingface_hub import InferenceClient` and `client = OpenAI(...)` by `client = InferenceClient(...)`. You can choose any LLM model from the Hugging Face Hub by passing its model id as `model` parameter. [Here is a list](https://hf-mirror.com/models?pipeline_tag=text-generation&other=conversational,text-generation-inference&sort=trending) of supported models. For authentication, you should pass a valid [User Access Token](https://hf-mirror.com/settings/tokens) as `api_key` or authenticate using `huggingface_hub` (see the [authentication guide](https://hf-mirror.com/docs/huggingface_hub/quick-start#authentication)).
 
 All input parameters and output format are strictly the same. In particular, you can pass `stream=True` to receive tokens as they are generated. You can also use the [`AsyncInferenceClient`] to run inference using `asyncio`:
 
@@ -322,7 +322,7 @@ In the above section, we saw the main aspects of [`InferenceClient`]. Let's dive
 
 ### Billing
 
-As an HF user, you get monthly credits to run inference through various providers on the Hub. The amount of credits you get depends on your type of account (Free or PRO or Enterprise Hub). You get charged for every inference request, depending on the provider's pricing table. By default, the requests are billed to your personal account. However, it is possible to set the billing so that requests are charged to an organization you are part of by simply passing `bill_to="<your_org_name>"` to `InferenceClient`. For this to work, your organization must be subscribed to Enterprise Hub. For more details about billing, check out [this guide](https://mirror-hf.co/docs/api-inference/pricing#features-using-inference-providers).
+As an HF user, you get monthly credits to run inference through various providers on the Hub. The amount of credits you get depends on your type of account (Free or PRO or Enterprise Hub). You get charged for every inference request, depending on the provider's pricing table. By default, the requests are billed to your personal account. However, it is possible to set the billing so that requests are charged to an organization you are part of by simply passing `bill_to="<your_org_name>"` to `InferenceClient`. For this to work, your organization must be subscribed to Enterprise Hub. For more details about billing, check out [this guide](https://hf-mirror.com/docs/api-inference/pricing#features-using-inference-providers).
 
 ```py
 >>> from huggingface_hub import InferenceClient

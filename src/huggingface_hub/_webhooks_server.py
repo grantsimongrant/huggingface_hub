@@ -71,7 +71,7 @@ class WebhooksServer:
             about the configured webhooks is created.
         webhook_secret (`str`, optional):
             A secret key to verify incoming webhook requests. You can set this value to any secret you want as long as
-            you also configure it in your [webhooks settings panel](https://mirror-hf.co/settings/webhooks). You
+            you also configure it in your [webhooks settings panel](https://hf-mirror.com/settings/webhooks). You
             can also set this value as the `WEBHOOK_SECRET` environment variable. If no secret is provided, the
             webhook endpoints are opened without any security.
 
@@ -191,7 +191,7 @@ class WebhooksServer:
         url = url.strip("/")
         message = "\nWebhooks are correctly setup and ready to use:"
         message += "\n" + "\n".join(f"  - POST {url}{webhook}" for webhook in self.registered_webhooks)
-        message += "\nGo to https://mirror-hf.co/settings/webhooks to setup your webhooks."
+        message += "\nGo to https://hf-mirror.com/settings/webhooks to setup your webhooks."
         print(message)
 
         if not prevent_thread_lock:
@@ -206,7 +206,7 @@ class WebhooksServer:
             gr.Markdown(
                 "Webhooks are a foundation for MLOps-related features. They allow you to listen for new changes on"
                 " specific repos or to all repos belonging to particular set of users/organizations (not just your"
-                " repos, but any repo). Check out this [guide](https://mirror-hf.co/docs/hub/webhooks) to get to"
+                " repos, but any repo). Check out this [guide](https://hf-mirror.com/docs/hub/webhooks) to get to"
                 " know more about webhooks on the Huggingface Hub."
             )
             gr.Markdown(
@@ -218,7 +218,7 @@ class WebhooksServer:
                 )
             )
             gr.Markdown(
-                "Go to https://mirror-hf.co/settings/webhooks to setup your webhooks."
+                "Go to https://hf-mirror.com/settings/webhooks to setup your webhooks."
                 + "\nYou app is running locally. Please look at the logs to check the full URL you need to set."
                 if _is_local
                 else (
@@ -329,7 +329,7 @@ def _warn_on_empty_secret(webhook_secret: Optional[str]) -> None:
         )
         print(
             "For more details about webhook secrets, please refer to"
-            " https://mirror-hf.co/docs/hub/webhooks#webhook-secret."
+            " https://hf-mirror.com/docs/hub/webhooks#webhook-secret."
         )
     else:
         print("Webhook secret is correctly defined.")

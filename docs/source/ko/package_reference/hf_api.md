@@ -21,7 +21,7 @@ models = list_models()
 
 # 또는 HfApi client를 구성하세요.
 hf_api = HfApi(
-    endpoint="https://mirror-hf.co", # 비공개 Hub 엔드포인트를 지정할 수 있습니다.
+    endpoint="https://hf-mirror.com", # 비공개 Hub 엔드포인트를 지정할 수 있습니다.
     token="hf_xxx", # 토큰은 머신에 유지되지 않습니다.
 )
 models = hf_api.list_models()
@@ -37,7 +37,7 @@ models = hf_api.list_models()
 
 [[autodoc]] huggingface_hub.hf_api.AccessRequest
 
-### CommitInfo[[huggingface_hub.CommitInfo]]
+### CommitInfo[[huggingface_hub.commitInfo]]
 
 [[autodoc]] huggingface_hub.hf_api.CommitInfo
 
@@ -97,7 +97,7 @@ models = hf_api.list_models()
 
 [[autodoc]] huggingface_hub.hf_api.UserLikes
 
-## CommitOperation[[huggingface_hub.CommitOperationAdd]]
+## CommitOperation[[huggingface_hub.commitOperationAdd]]
 
 [`CommitOperation`]에 지원되는 값은 다음과 같습니다:
 
@@ -107,7 +107,7 @@ models = hf_api.list_models()
 
 [[autodoc]] CommitOperationCopy
 
-## CommitScheduler[[huggingface_hub.CommitScheduler]]
+## CommitScheduler[[huggingface_hub.commitScheduler]]
 
 [[autodoc]] CommitScheduler
 

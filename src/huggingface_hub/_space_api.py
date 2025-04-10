@@ -117,7 +117,7 @@ class SpaceRuntime:
         sleep_time (`int` or `None`):
             Number of seconds the Space will be kept alive after the last request. By default (if value is `None`), the
             Space will never go to sleep if it's running on an upgraded hardware, while it will go to sleep after 48
-            hours on a free 'cpu-basic' hardware. For more details, see https://mirror-hf.co/docs/hub/spaces-gpus#sleep-time.
+            hours on a free 'cpu-basic' hardware. For more details, see https://hf-mirror.com/docs/hub/spaces-gpus#sleep-time.
         raw (`dict`):
             Raw response from the server. Contains more information about the Space
             runtime like number of replicas, number of cpu, memory size,...

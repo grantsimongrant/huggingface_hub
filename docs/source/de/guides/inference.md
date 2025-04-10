@@ -5,16 +5,16 @@ rendered properly in your Markdown viewer.
 # Inferenz auf Servern ausführen
 
 Inferenz ist der Prozess, bei dem ein trainiertes Modell verwendet wird, um Vorhersagen für neue Daten zu treffen. Da dieser Prozess rechenintensiv sein kann, kann die Ausführung auf einem dedizierten Server eine interessante Option sein. Die `huggingface_hub` Bibliothek bietet eine einfache Möglichkeit, einen Dienst aufzurufen, der die Inferenz für gehostete Modelle durchführt. Es gibt mehrere Dienste, mit denen Sie sich verbinden können:
-- [Inferenz API](https://mirror-hf.co/docs/api-inference/index): ein Service, der Ihnen ermöglicht, beschleunigte Inferenz auf der Infrastruktur von Hugging Face kostenlos auszuführen. Dieser Service ist eine schnelle Möglichkeit, um anzufangen, verschiedene Modelle zu testen und AI-Produkte zu prototypisieren.
-- [Inferenz Endpunkte](https://mirror-hf.co/inference-endpoints/index): ein Produkt zur einfachen Bereitstellung von Modellen im Produktivbetrieb. Die Inferenz wird von Hugging Face in einer dedizierten, vollständig verwalteten Infrastruktur auf einem Cloud-Anbieter Ihrer Wahl durchgeführt.
+- [Inferenz API](https://hf-mirror.com/docs/api-inference/index): ein Service, der Ihnen ermöglicht, beschleunigte Inferenz auf der Infrastruktur von Hugging Face kostenlos auszuführen. Dieser Service ist eine schnelle Möglichkeit, um anzufangen, verschiedene Modelle zu testen und AI-Produkte zu prototypisieren.
+- [Inferenz Endpunkte](https://hf-mirror.com/inference-endpoints/index): ein Produkt zur einfachen Bereitstellung von Modellen im Produktivbetrieb. Die Inferenz wird von Hugging Face in einer dedizierten, vollständig verwalteten Infrastruktur auf einem Cloud-Anbieter Ihrer Wahl durchgeführt.
 
-Diese Dienste können mit dem [`InferenceClient`] Objekt aufgerufen werden. Dieser fungiert als Ersatz für den älteren [`InferenceApi`] Client und fügt spezielle Unterstützung für Aufgaben und das Ausführen von Inferenz hinzu, sowohl auf [Inferenz API](https://mirror-hf.co/docs/api-inference/index) als auch auf [Inferenz Endpunkten](https://mirror-hf.co/docs/inference-endpoints/index). Im Abschnitt [Legacy InferenceAPI client](#legacy-inferenceapi-client) erfahren Sie, wie Sie zum neuen Client migrieren können.
+Diese Dienste können mit dem [`InferenceClient`] Objekt aufgerufen werden. Dieser fungiert als Ersatz für den älteren [`InferenceApi`] Client und fügt spezielle Unterstützung für Aufgaben und das Ausführen von Inferenz hinzu, sowohl auf [Inferenz API](https://hf-mirror.com/docs/api-inference/index) als auch auf [Inferenz Endpunkten](https://hf-mirror.com/docs/inference-endpoints/index). Im Abschnitt [Legacy InferenceAPI client](#legacy-inferenceapi-client) erfahren Sie, wie Sie zum neuen Client migrieren können.
 
 <Tip>
 
-[`InferenceClient`] ist ein Python-Client, der HTTP-Anfragen an unsere APIs stellt. Wenn Sie die HTTP-Anfragen direkt mit Ihrem bevorzugten Tool (curl, postman,...) durchführen möchten, lesen Sie bitte die Dokumentationsseiten der [Inferenz API](https://mirror-hf.co/docs/api-inference/index) oder der [Inferenz Endpunkte](https://mirror-hf.co/docs/inference-endpoints/index).
+[`InferenceClient`] ist ein Python-Client, der HTTP-Anfragen an unsere APIs stellt. Wenn Sie die HTTP-Anfragen direkt mit Ihrem bevorzugten Tool (curl, postman,...) durchführen möchten, lesen Sie bitte die Dokumentationsseiten der [Inferenz API](https://hf-mirror.com/docs/api-inference/index) oder der [Inferenz Endpunkte](https://hf-mirror.com/docs/inference-endpoints/index).
 
-Für die Webentwicklung wurde ein [JS-Client](https://mirror-hf.co/docs/huggingface.js/inference/README) veröffentlicht. Wenn Sie sich für die Spieleentwicklung interessieren, sollten Sie einen Blick auf unser [C#-Projekt](https://github.com/huggingface/unity-api) werfen.
+Für die Webentwicklung wurde ein [JS-Client](https://hf-mirror.com/docs/huggingface.js/inference/README) veröffentlicht. Wenn Sie sich für die Spieleentwicklung interessieren, sollten Sie einen Blick auf unser [C#-Projekt](https://github.com/huggingface/unity-api) werfen.
 
 </Tip>
 
@@ -34,7 +34,7 @@ Wir haben einen [`InferenceClient`] mit den Standardparametern initialisiert. Da
 
 <Tip warning={true}>
 
-Die API ist darauf ausgelegt, einfach zu sein. Nicht alle Parameter und Optionen sind für den Endbenutzer verfügbar oder beschrieben. Schauen Sie auf [dieser Seite](https://mirror-hf.co/docs/api-inference/detailed_parameters) nach, wenn Sie mehr über alle verfügbaren Parameter für jede Aufgabe erfahren möchten.
+Die API ist darauf ausgelegt, einfach zu sein. Nicht alle Parameter und Optionen sind für den Endbenutzer verfügbar oder beschrieben. Schauen Sie auf [dieser Seite](https://hf-mirror.com/docs/api-inference/detailed_parameters) nach, wenn Sie mehr über alle verfügbaren Parameter für jede Aufgabe erfahren möchten.
 
 </Tip>
 
@@ -54,13 +54,13 @@ Was ist, wenn Sie ein bestimmtes Modell verwenden möchten? Sie können es entwe
 
 <Tip>
 
-Es gibt mehr als 200k Modelle im Hugging Face Hub! Jede Aufgabe im [`InferenceClient`] kommt mit einem empfohlenen Modell. Beachten Sie, dass die HF-Empfehlung sich im Laufe der Zeit ohne vorherige Ankündigung ändern kann. Daher ist es am besten, ein Modell explizit festzulegen, sobald Sie sich entschieden haben. In den meisten Fällen werden Sie daran interessiert sein, ein Modell zu finden, das speziell auf _Ihre_ Bedürfnisse zugeschnitten ist. Besuchen Sie die [Modelle](https://mirror-hf.co/models)-Seite im Hub, um Ihre Möglichkeiten zu erkunden.
+Es gibt mehr als 200k Modelle im Hugging Face Hub! Jede Aufgabe im [`InferenceClient`] kommt mit einem empfohlenen Modell. Beachten Sie, dass die HF-Empfehlung sich im Laufe der Zeit ohne vorherige Ankündigung ändern kann. Daher ist es am besten, ein Modell explizit festzulegen, sobald Sie sich entschieden haben. In den meisten Fällen werden Sie daran interessiert sein, ein Modell zu finden, das speziell auf _Ihre_ Bedürfnisse zugeschnitten ist. Besuchen Sie die [Modelle](https://hf-mirror.com/models)-Seite im Hub, um Ihre Möglichkeiten zu erkunden.
 
 </Tip>
 
 ### Verwendung einer spezifischen URL
 
-Die oben gesehenen Beispiele nutzen die kostenfrei gehostete Inferenz API. Dies erweist sich als sehr nützlich für Prototyping und schnelles Testen. Wenn Sie bereit sind, Ihr Modell in die Produktion zu übernehmen, müssen Sie eine dedizierte Infrastruktur verwenden. Hier kommen [Inferenz Endpunkte](https://mirror-hf.co/docs/inference-endpoints/index) ins Spiel. Es ermöglicht Ihnen, jedes Modell zu implementieren und als private API freizugeben. Nach der Implementierung erhalten Sie eine URL, zu der Sie mit genau dem gleichen Code wie zuvor eine Verbindung herstellen können, wobei nur der `Modell`-Parameter geändert wird:
+Die oben gesehenen Beispiele nutzen die kostenfrei gehostete Inferenz API. Dies erweist sich als sehr nützlich für Prototyping und schnelles Testen. Wenn Sie bereit sind, Ihr Modell in die Produktion zu übernehmen, müssen Sie eine dedizierte Infrastruktur verwenden. Hier kommen [Inferenz Endpunkte](https://hf-mirror.com/docs/inference-endpoints/index) ins Spiel. Es ermöglicht Ihnen, jedes Modell zu implementieren und als private API freizugeben. Nach der Implementierung erhalten Sie eine URL, zu der Sie mit genau dem gleichen Code wie zuvor eine Verbindung herstellen können, wobei nur der `Modell`-Parameter geändert wird:
 
 ```python
 >>> from huggingface_hub import InferenceClient
@@ -72,7 +72,7 @@ Die oben gesehenen Beispiele nutzen die kostenfrei gehostete Inferenz API. Dies 
 
 ### Authentifizierung
 
-Aufrufe, die mit dem [`InferenceClient`] gemacht werden, können mit einem [User Access Token](https://mirror-hf.co/docs/hub/security-tokens) authentifiziert werden. Standardmäßig wird das auf Ihrem Computer gespeicherte Token verwendet, wenn Sie angemeldet sind (sehen Sie hier, [wie Sie sich anmelden können](https://mirror-hf.co/docs/huggingface_hub/quick-start#login)). Wenn Sie nicht angemeldet sind, können Sie Ihr Token als Instanzparameter übergeben:
+Aufrufe, die mit dem [`InferenceClient`] gemacht werden, können mit einem [User Access Token](https://hf-mirror.com/docs/hub/security-tokens) authentifiziert werden. Standardmäßig wird das auf Ihrem Computer gespeicherte Token verwendet, wenn Sie angemeldet sind (sehen Sie hier, [wie Sie sich anmelden können](https://hf-mirror.com/docs/huggingface_hub/quick-start#login)). Wenn Sie nicht angemeldet sind, können Sie Ihr Token als Instanzparameter übergeben:
 
 ```python
 >>> from huggingface_hub import InferenceClient
@@ -91,37 +91,37 @@ Das Ziel von [`InferenceClient`] ist es, die einfachste Schnittstelle zum Ausfü
 
 | Domäne | Aufgabe                           | Unterstützt   | Dokumentation                             |
 |--------|--------------------------------|--------------|------------------------------------|
-| Audio | [Audio Classification](https://mirror-hf.co/tasks/audio-classification)           | ✅ | [`~InferenceClient.audio_classification`] |
-| | [Automatic Speech Recognition](https://mirror-hf.co/tasks/automatic-speech-recognition)   | ✅ | [`~InferenceClient.automatic_speech_recognition`] |
-| | [Text-to-Speech](https://mirror-hf.co/tasks/text-to-speech)                 | ✅ | [`~InferenceClient.text_to_speech`] |
-| Computer Vision | [Image Classification](https://mirror-hf.co/tasks/image-classification)           | ✅ | [`~InferenceClient.image_classification`] |
-| | [Image Segmentation](https://mirror-hf.co/tasks/image-segmentation)             | ✅ | [`~InferenceClient.image_segmentation`] |
-| | [Image-to-Image](https://mirror-hf.co/tasks/image-to-image)                 | ✅ | [`~InferenceClient.image_to_image`] |
-| | [Image-to-Text](https://mirror-hf.co/tasks/image-to-text)                  | ✅ | [`~InferenceClient.image_to_text`] |
-| | [Object Detection](https://mirror-hf.co/tasks/object-detection)            | ✅ | [`~InferenceClient.object_detection`] |
-| | [Text-to-Image](https://mirror-hf.co/tasks/text-to-image)                  | ✅ | [`~InferenceClient.text_to_image`] |
-| | [Zero-Shot-Image-Classification](https://mirror-hf.co/tasks/zero-shot-image-classification)                  | ✅ | [`~InferenceClient.zero_shot_image_classification`] |
-| Multimodal | [Documentation Question Answering](https://mirror-hf.co/tasks/document-question-answering) | ✅ | [`~InferenceClient.document_question_answering`] |
-| | [Visual Question Answering](https://mirror-hf.co/tasks/visual-question-answering)      | ✅ | [`~InferenceClient.visual_question_answering`] |
-| NLP | [Conversational](https://mirror-hf.co/tasks/conversational)                 | ✅ | [`~InferenceClient.conversational`] |
-| | [Feature Extraction](https://mirror-hf.co/tasks/feature-extraction)             | ✅ | [`~InferenceClient.feature_extraction`] |
-| | [Fill Mask](https://mirror-hf.co/tasks/fill-mask)                      | ✅ | [`~InferenceClient.fill_mask`] |
-| | [Question Answering](https://mirror-hf.co/tasks/question-answering)             | ✅ | [`~InferenceClient.question_answering`] |
-| | [Sentence Similarity](https://mirror-hf.co/tasks/sentence-similarity) | ✅ | [`~InferenceClient.sentence_similarity`] |
-| | [Summarization](https://mirror-hf.co/tasks/summarization)                  | ✅ | [`~InferenceClient.summarization`] |
-| | [Table Question Answering](https://mirror-hf.co/tasks/table-question-answering)       | ✅ | [`~InferenceClient.table_question_answering`] |
-| | [Text Classification](https://mirror-hf.co/tasks/text-classification)            | ✅ | [`~InferenceClient.text_classification`] |
-| | [Text Generation](https://mirror-hf.co/tasks/text-generation)   | ✅ | [`~InferenceClient.text_generation`] |
-| | [Token Classification](https://mirror-hf.co/tasks/token-classification)           | ✅ | [`~InferenceClient.token_classification`] |
-| | [Translation](https://mirror-hf.co/tasks/translation)       | ✅ | [`~InferenceClient.translation`] |
-| | [Zero Shot Classification](https://mirror-hf.co/tasks/zero-shot-classification)       | ✅ | [`~InferenceClient.zero_shot_classification`] |
-| Tabular | [Tabular Classification](https://mirror-hf.co/tasks/tabular-classification)         | ✅ | [`~InferenceClient.tabular_classification`] |
-| | [Tabular Regression](https://mirror-hf.co/tasks/tabular-regression)             | ✅ | [`~InferenceClient.tabular_regression`] |
+| Audio | [Audio Classification](https://hf-mirror.com/tasks/audio-classification)           | ✅ | [`~InferenceClient.audio_classification`] |
+| | [Automatic Speech Recognition](https://hf-mirror.com/tasks/automatic-speech-recognition)   | ✅ | [`~InferenceClient.automatic_speech_recognition`] |
+| | [Text-to-Speech](https://hf-mirror.com/tasks/text-to-speech)                 | ✅ | [`~InferenceClient.text_to_speech`] |
+| Computer Vision | [Image Classification](https://hf-mirror.com/tasks/image-classification)           | ✅ | [`~InferenceClient.image_classification`] |
+| | [Image Segmentation](https://hf-mirror.com/tasks/image-segmentation)             | ✅ | [`~InferenceClient.image_segmentation`] |
+| | [Image-to-Image](https://hf-mirror.com/tasks/image-to-image)                 | ✅ | [`~InferenceClient.image_to_image`] |
+| | [Image-to-Text](https://hf-mirror.com/tasks/image-to-text)                  | ✅ | [`~InferenceClient.image_to_text`] |
+| | [Object Detection](https://hf-mirror.com/tasks/object-detection)            | ✅ | [`~InferenceClient.object_detection`] |
+| | [Text-to-Image](https://hf-mirror.com/tasks/text-to-image)                  | ✅ | [`~InferenceClient.text_to_image`] |
+| | [Zero-Shot-Image-Classification](https://hf-mirror.com/tasks/zero-shot-image-classification)                  | ✅ | [`~InferenceClient.zero_shot_image_classification`] |
+| Multimodal | [Documentation Question Answering](https://hf-mirror.com/tasks/document-question-answering) | ✅ | [`~InferenceClient.document_question_answering`] |
+| | [Visual Question Answering](https://hf-mirror.com/tasks/visual-question-answering)      | ✅ | [`~InferenceClient.visual_question_answering`] |
+| NLP | [Conversational](https://hf-mirror.com/tasks/conversational)                 | ✅ | [`~InferenceClient.conversational`] |
+| | [Feature Extraction](https://hf-mirror.com/tasks/feature-extraction)             | ✅ | [`~InferenceClient.feature_extraction`] |
+| | [Fill Mask](https://hf-mirror.com/tasks/fill-mask)                      | ✅ | [`~InferenceClient.fill_mask`] |
+| | [Question Answering](https://hf-mirror.com/tasks/question-answering)             | ✅ | [`~InferenceClient.question_answering`] |
+| | [Sentence Similarity](https://hf-mirror.com/tasks/sentence-similarity) | ✅ | [`~InferenceClient.sentence_similarity`] |
+| | [Summarization](https://hf-mirror.com/tasks/summarization)                  | ✅ | [`~InferenceClient.summarization`] |
+| | [Table Question Answering](https://hf-mirror.com/tasks/table-question-answering)       | ✅ | [`~InferenceClient.table_question_answering`] |
+| | [Text Classification](https://hf-mirror.com/tasks/text-classification)            | ✅ | [`~InferenceClient.text_classification`] |
+| | [Text Generation](https://hf-mirror.com/tasks/text-generation)   | ✅ | [`~InferenceClient.text_generation`] |
+| | [Token Classification](https://hf-mirror.com/tasks/token-classification)           | ✅ | [`~InferenceClient.token_classification`] |
+| | [Translation](https://hf-mirror.com/tasks/translation)       | ✅ | [`~InferenceClient.translation`] |
+| | [Zero Shot Classification](https://hf-mirror.com/tasks/zero-shot-classification)       | ✅ | [`~InferenceClient.zero_shot_classification`] |
+| Tabular | [Tabular Classification](https://hf-mirror.com/tasks/tabular-classification)         | ✅ | [`~InferenceClient.tabular_classification`] |
+| | [Tabular Regression](https://hf-mirror.com/tasks/tabular-regression)             | ✅ | [`~InferenceClient.tabular_regression`] |
 
 
 <Tip>
 
-Schauen Sie sich die [Aufgaben](https://mirror-hf.co/tasks)-Seite an, um mehr über jede Aufgabe zu erfahren, wie man sie verwendet und die beliebtesten Modelle für jede Aufgabe.
+Schauen Sie sich die [Aufgaben](https://hf-mirror.com/tasks)-Seite an, um mehr über jede Aufgabe zu erfahren, wie man sie verwendet und die beliebtesten Modelle für jede Aufgabe.
 
 </Tip>
 
@@ -204,7 +204,7 @@ Einige Aufgaben erfordern binäre Eingaben, zum Beispiel bei der Arbeit mit Bild
 
 ## Legacy InferenceAPI client
 
-Der [`InferenceClient`] dient als Ersatz für den veralteten [`InferenceApi`]-Client. Er bietet spezifische Unterstützung für Aufgaben und behandelt Inferenz sowohl auf der [Inferenz API](https://mirror-hf.co/docs/api-inference/index) als auch auf den [Inferenz Endpunkten](https://mirror-hf.co/docs/inference-endpoints/index).
+Der [`InferenceClient`] dient als Ersatz für den veralteten [`InferenceApi`]-Client. Er bietet spezifische Unterstützung für Aufgaben und behandelt Inferenz sowohl auf der [Inferenz API](https://hf-mirror.com/docs/api-inference/index) als auch auf den [Inferenz Endpunkten](https://hf-mirror.com/docs/inference-endpoints/index).
 
 Hier finden Sie eine kurze Anleitung, die Ihnen hilft, von [`InferenceApi`] zu [`InferenceClient`] zu migrieren.
 

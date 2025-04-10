@@ -1,7 +1,7 @@
 """
 Data structures to interact with Discussions and Pull Requests on the Hub.
 
-See [the Discussions and Pull Requests guide](https://mirror-hf.co/docs/hub/repositories-pull-requests-discussions)
+See [the Discussions and Pull Requests guide](https://hf-mirror.com/docs/hub/repositories-pull-requests-discussions)
 for more information on Pull Requests, Discussions, and the community tab.
 """
 
@@ -49,7 +49,7 @@ class Discussion:
         created_at (`datetime`):
             The `datetime` of creation of the Discussion / Pull Request.
         endpoint (`str`):
-            Endpoint of the Hub. Default is https://mirror-hf.co.
+            Endpoint of the Hub. Default is https://hf-mirror.com.
         git_reference (`str`, *optional*):
             (property) Git reference to which changes can be pushed if this is a Pull Request, `None` otherwise.
         url (`str`):
@@ -129,7 +129,7 @@ class DiscussionWithDetails(Discussion):
         diff (`str`, *optional*):
             The git diff if this is a Pull Request , `None` otherwise.
         endpoint (`str`):
-            Endpoint of the Hub. Default is https://mirror-hf.co.
+            Endpoint of the Hub. Default is https://hf-mirror.com.
         git_reference (`str`, *optional*):
             (property) Git reference to which changes can be pushed if this is a Pull Request, `None` otherwise.
         url (`str`):

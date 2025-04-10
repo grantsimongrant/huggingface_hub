@@ -90,10 +90,10 @@ You can either upload a single file or an entire folder:
 ```bash
 # Usage:  huggingface-cli upload [repo_id] [local_path] [path_in_repo]
 >>> huggingface-cli upload Wauplin/my-cool-model ./models/model.safetensors model.safetensors
-https://mirror-hf.co/Wauplin/my-cool-model/blob/main/model.safetensors
+https://hf-mirror.com/Wauplin/my-cool-model/blob/main/model.safetensors
 
 >>> huggingface-cli upload Wauplin/my-cool-model ./models .
-https://mirror-hf.co/Wauplin/my-cool-model/tree/main
+https://hf-mirror.com/Wauplin/my-cool-model/tree/main
 ```
 
 `local_path` and `path_in_repo` are optional and can be implicitly inferred. If `local_path` is not set, the tool will
@@ -124,7 +124,7 @@ Here is how to use [`upload_large_folder`] in a script. The method signature is 
 
 You will see the following output in your terminal:
 ```
-Repo created: https://mirror-hf.co/datasets/HuggingFaceM4/Docmatix
+Repo created: https://hf-mirror.com/datasets/HuggingFaceM4/Docmatix
 Found 5 candidate files to upload
 Recovering from metadata files: 100%|█████████████████████████████████████| 5/5 [00:00<00:00, 542.66it/s]
 
@@ -162,11 +162,11 @@ While being much more robust to upload large folders, `upload_large_folder` is m
 
 There are some limitations to be aware of when dealing with a large amount of data in your repo. Given the time it takes to stream the data, getting an upload/push to fail at the end of the process or encountering a degraded experience, be it on hf.co or when working locally, can be very annoying.
 
-Check out our [Repository limitations and recommendations](https://mirror-hf.co/docs/hub/repositories-recommendations) guide for best practices on how to structure your repositories on the Hub. Let's move on with some practical tips to make your upload process as smooth as possible.
+Check out our [Repository limitations and recommendations](https://hf-mirror.com/docs/hub/repositories-recommendations) guide for best practices on how to structure your repositories on the Hub. Let's move on with some practical tips to make your upload process as smooth as possible.
 
 - **Start small**: We recommend starting with a small amount of data to test your upload script. It's easier to iterate on a script when failing takes only a little time.
 - **Expect failures**: Streaming large amounts of data is challenging. You don't know what can happen, but it's always best to consider that something will fail at least once -no matter if it's due to your machine, your connection, or our servers. For example, if you plan to upload a large number of files, it's best to keep track locally of which files you already uploaded before uploading the next batch. You are ensured that an LFS file that is already committed will never be re-uploaded twice but checking it client-side can still save some time. This is what [`upload_large_folder`] does for you.
-- **Use `hf_xet`**: this leverages the new storage backend for Hub, is written in Rust, and is being rolled out to users right now. In order to upload using `hf_xet` your repo must be enabled to use the Xet storage backend. It is being rolled out now, so join the [waitlist](https://mirror-hf.co/join/xet) to get onboarded soon!
+- **Use `hf_xet`**: this leverages the new storage backend for Hub, is written in Rust, and is being rolled out to users right now. In order to upload using `hf_xet` your repo must be enabled to use the Xet storage backend. It is being rolled out now, so join the [waitlist](https://hf-mirror.com/join/xet) to get onboarded soon!
 - **Use `hf_transfer`**: this is a Rust-based [library](https://github.com/huggingface/hf_transfer) meant to speed up uploads on machines with very high bandwidth (uploads LFS files). To use `hf_transfer`:
     1. Specify the `hf_transfer` extra when installing `huggingface_hub`
        (i.e., `pip install huggingface_hub[hf_transfer]`).
@@ -174,7 +174,7 @@ Check out our [Repository limitations and recommendations](https://mirror-hf.co/
 
 <Tip warning={true}>
 
-`hf_transfer` is a power user tool for uploading LFS files! It is tested and production-ready, but it is less future-proof and lacks user-friendly features like advanced error handling or proxies. For more details, please take a look at this [section](https://mirror-hf.co/docs/huggingface_hub/hf_transfer).
+`hf_transfer` is a power user tool for uploading LFS files! It is tested and production-ready, but it is less future-proof and lacks user-friendly features like advanced error handling or proxies. For more details, please take a look at this [section](https://hf-mirror.com/docs/huggingface_hub/hf_transfer).
 
 Note that `hf_xet` and `hf_transfer` tools are mutually exclusive. The former is used to upload files to Xet-enabled repos while the later uploads LFS files to regular repos.
 
@@ -191,7 +191,7 @@ Take advantage of faster uploads through `hf_xet`, the Python binding to the [`x
 
 <Tip warning={true}>
 
-Xet storage is being rolled out to Hugging Face Hub users at this time, so xet uploads may need to be enabled for your repo for `hf_xet` to actually upload to the Xet backend. Join the [waitlist](https://mirror-hf.co/join/xet) to get onboarded soon! Also, `hf_xet` today only works with files on the file system, so cannot be used with file-like objects (byte-arrays, buffers).
+Xet storage is being rolled out to Hugging Face Hub users at this time, so xet uploads may need to be enabled for your repo for `hf_xet` to actually upload to the Xet backend. Join the [waitlist](https://hf-mirror.com/join/xet) to get onboarded soon! Also, `hf_xet` today only works with files on the file system, so cannot be used with file-like objects (byte-arrays, buffers).
 
 </Tip>
 
@@ -203,7 +203,7 @@ To enable it, specify the `hf_xet` extra when installing `huggingface_hub`:
 pip install -U huggingface_hub[hf_xet]
 ```
 
-All other `huggingface_hub` APIs will continue to work without any modification. To learn more about the benefits of Xet storage and `hf_xet`, refer to this [section](https://mirror-hf.co/docs/hub/storage-backends).
+All other `huggingface_hub` APIs will continue to work without any modification. To learn more about the benefits of Xet storage and `hf_xet`, refer to this [section](https://hf-mirror.com/docs/hub/storage-backends).
 
 ### Non-blocking uploads
 
@@ -332,7 +332,7 @@ For more details about the [`CommitScheduler`], here is what you need to know:
 
 Persisting data from a Space to a Dataset on the Hub is the main use case for [`CommitScheduler`]. Depending on the use
 case, you might want to structure your data differently. The structure has to be robust to concurrent users and
-restarts which often implies generating UUIDs. Besides robustness, you should upload data in a format readable by the 🤗 Datasets library for later reuse. We created a [Space](https://mirror-hf.co/spaces/Wauplin/space_to_dataset_saver)
+restarts which often implies generating UUIDs. Besides robustness, you should upload data in a format readable by the 🤗 Datasets library for later reuse. We created a [Space](https://hf-mirror.com/spaces/Wauplin/space_to_dataset_saver)
 that demonstrates how to save several different data formats (you may need to adapt it for your own specific needs).
 
 #### Custom uploads
@@ -377,7 +377,7 @@ When you overwrite `push_to_hub`, you have access to the attributes of [`CommitS
 
 <Tip>
 
-For more examples of custom schedulers, check out our [demo Space](https://mirror-hf.co/spaces/Wauplin/space_to_dataset_saver)
+For more examples of custom schedulers, check out our [demo Space](https://hf-mirror.com/spaces/Wauplin/space_to_dataset_saver)
 containing different implementations depending on your use cases.
 
 </Tip>

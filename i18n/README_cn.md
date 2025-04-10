@@ -1,8 +1,8 @@
 <p align="center">
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://mirror-hf.co/datasets/huggingface/documentation-images/raw/main/huggingface_hub-dark.svg">
-    <source media="(prefers-color-scheme: light)" srcset="https://mirror-hf.co/datasets/huggingface/documentation-images/raw/main/huggingface_hub.svg">
-    <img alt="huggingface_hub library logo" src="https://mirror-hf.co/datasets/huggingface/documentation-images/raw/main/huggingface_hub.svg" width="352" height="59" style="max-width: 100%;">
+    <source media="(prefers-color-scheme: dark)" srcset="https://hf-mirror.com/datasets/huggingface/documentation-images/raw/main/huggingface_hub-dark.svg">
+    <source media="(prefers-color-scheme: light)" srcset="https://hf-mirror.com/datasets/huggingface/documentation-images/raw/main/huggingface_hub.svg">
+    <img alt="huggingface_hub library logo" src="https://hf-mirror.com/datasets/huggingface/documentation-images/raw/main/huggingface_hub.svg" width="352" height="59" style="max-width: 100%;">
   </picture>
   <br/>
   <br/>
@@ -13,7 +13,7 @@
 </p>
 
 <p align="center">
-    <a href="https://mirror-hf.co/docs/huggingface_hub/en/index"><img alt="Documentation" src="https://img.shields.io/website/http/mirror-hf.co/docs/huggingface_hub/index.svg?down_color=red&down_message=offline&up_message=online&label=doc"></a>
+    <a href="https://hf-mirror.com/docs/huggingface_hub/en/index"><img alt="Documentation" src="https://img.shields.io/website/http/hf-mirror.com/docs/huggingface_hub/index.svg?down_color=red&down_message=offline&up_message=online&label=doc"></a>
     <a href="https://github.com/huggingface/huggingface_hub/releases"><img alt="GitHub release" src="https://img.shields.io/github/release/huggingface/huggingface_hub.svg"></a>
     <a href="https://github.com/huggingface/huggingface_hub"><img alt="PyPi version" src="https://img.shields.io/pypi/pyversions/huggingface_hub.svg"></a>
     <a href="https://pypi.org/project/huggingface-hub"><img alt="PyPI - Downloads" src="https://img.shields.io/pypi/dm/huggingface_hub"></a>
@@ -40,17 +40,17 @@
 
 ## 欢迎使用 Hugging Face Hub 库
 
-通过`huggingface_hub` 库，您可以与面向机器学习开发者和协作者的平台 [Hugging Face Hub](https://mirror-hf.co/)进行交互，找到适用于您所在项目的预训练模型和数据集，体验在平台托管的数百个机器学习应用，还可以创建或分享自己的模型和数据集并于社区共享。以上所有都可以用Python在`huggingface_hub` 库中轻松实现。
+通过`huggingface_hub` 库，您可以与面向机器学习开发者和协作者的平台 [Hugging Face Hub](https://hf-mirror.com/)进行交互，找到适用于您所在项目的预训练模型和数据集，体验在平台托管的数百个机器学习应用，还可以创建或分享自己的模型和数据集并于社区共享。以上所有都可以用Python在`huggingface_hub` 库中轻松实现。
 
 ## 主要特点
 
-- [从hugging face hub下载文件](https://mirror-hf.co/docs/huggingface_hub/en/guides/download)
-- [上传文件到 hugging face hub](https://mirror-hf.co/docs/huggingface_hub/en/guides/upload)
-- [管理您的存储库](https://mirror-hf.co/docs/huggingface_hub/en/guides/repository)
-- [在部署的模型上运行推断](https://mirror-hf.co/docs/huggingface_hub/en/guides/inference)
-- [搜索模型、数据集和空间](https://mirror-hf.co/docs/huggingface_hub/en/guides/search)
-- [分享模型卡片](https://mirror-hf.co/docs/huggingface_hub/en/guides/model-cards)
-- [社区互动](https://mirror-hf.co/docs/huggingface_hub/en/guides/community)
+- [从hugging face hub下载文件](https://hf-mirror.com/docs/huggingface_hub/en/guides/download)
+- [上传文件到 hugging face hub](https://hf-mirror.com/docs/huggingface_hub/en/guides/upload)
+- [管理您的存储库](https://hf-mirror.com/docs/huggingface_hub/en/guides/repository)
+- [在部署的模型上运行推断](https://hf-mirror.com/docs/huggingface_hub/en/guides/inference)
+- [搜索模型、数据集和空间](https://hf-mirror.com/docs/huggingface_hub/en/guides/search)
+- [分享模型卡片](https://hf-mirror.com/docs/huggingface_hub/en/guides/model-cards)
+- [社区互动](https://hf-mirror.com/docs/huggingface_hub/en/guides/community)
 
 ## 安装
 
@@ -68,7 +68,7 @@ pip install huggingface_hub
 pip install huggingface_hub[inference]
 ```
 
-要了解更多安装和可选依赖项，请查看[安装指南](https://mirror-hf.co/docs/huggingface_hub/cn/安装)
+要了解更多安装和可选依赖项，请查看[安装指南](https://hf-mirror.com/docs/huggingface_hub/cn/安装)
 
 ## 快速入门指南
 
@@ -90,11 +90,11 @@ from huggingface_hub import snapshot_download
 snapshot_download("stabilityai/stable-diffusion-2-1")
 ```
 
-文件将被下载到本地缓存文件夹。更多详细信息请参阅此 [指南](https://mirror-hf.co/docs/huggingface_hub/en/guides/manage-cache).
+文件将被下载到本地缓存文件夹。更多详细信息请参阅此 [指南](https://hf-mirror.com/docs/huggingface_hub/en/guides/manage-cache).
 
 ### 登录
 
-Hugging Face Hub 使用令牌对应用进行身份验证(请参阅[文档](https://mirror-hf.co/docs/hub/security-tokens)). 要登录您的机器，请运行以下命令行：
+Hugging Face Hub 使用令牌对应用进行身份验证(请参阅[文档](https://hf-mirror.com/docs/hub/security-tokens)). 要登录您的机器，请运行以下命令行：
 
 ```bash
 huggingface-cli login
@@ -138,11 +138,11 @@ upload_folder(
 )
 ```
 
-有关详细信息，请查看 [上传指南](https://mirror-hf.co/docs/huggingface_hub/en/guides/upload).
+有关详细信息，请查看 [上传指南](https://hf-mirror.com/docs/huggingface_hub/en/guides/upload).
 
 ## 集成到 Hub 中
 
-我们正在与一些出色的开源机器学习库合作，提供免费的模型托管和版本控制。您可以在 [这里](https://mirror-hf.co/docs/hub/libraries)找到现有的集成
+我们正在与一些出色的开源机器学习库合作，提供免费的模型托管和版本控制。您可以在 [这里](https://hf-mirror.com/docs/hub/libraries)找到现有的集成
 
 优势包括:
 

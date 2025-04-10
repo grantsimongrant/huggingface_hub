@@ -123,7 +123,7 @@ conda install -c conda-forge huggingface_hub
 python -c "from huggingface_hub import model_info; print(model_info('gpt2'))"
 ```
 
-यह कमांड हब से [gpt2](https://mirror-hf.co/gpt2) मॉडल के बारे में जानकारी प्राप्त करेगा।
+यह कमांड हब से [gpt2](https://hf-mirror.com/gpt2) मॉडल के बारे में जानकारी प्राप्त करेगा।
 आउटपुट इस तरह दिखना चाहिए:
 
 ```text

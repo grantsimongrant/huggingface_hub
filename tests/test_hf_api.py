@@ -113,8 +113,8 @@ from .testing_utils import (
 logger = logging.get_logger(__name__)
 
 WORKING_REPO_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "fixtures/working_repo")
-LARGE_FILE_14MB = "https://cdn-media.mirror-hf.co/lfs-largefiles/progit.epub"
-LARGE_FILE_18MB = "https://cdn-media.mirror-hf.co/lfs-largefiles/progit.pdf"
+LARGE_FILE_14MB = "https://cdn-media.hf-mirror.com/lfs-largefiles/progit.epub"
+LARGE_FILE_18MB = "https://cdn-media.hf-mirror.com/lfs-largefiles/progit.pdf"
 
 INVALID_MODELCARD = """
 ---
@@ -154,10 +154,10 @@ class HfApiRepoFileExistsTest(HfApiCommonTest):
         assert not self._api.revision_exists(self.repo_id, "main", token=False)  # private repo
         assert not self._api.revision_exists("repo-that-does-not-exist", "main")  # missing repo
 
-    @patch("huggingface_hub.constants.ENDPOINT", "https://hub-ci.mirror-hf.co")
+    @patch("huggingface_hub.constants.ENDPOINT", "https://hub-ci.hf-mirror.com")
     @patch(
         "huggingface_hub.constants.HUGGINGFACE_CO_URL_TEMPLATE",
-        "https://hub-ci.mirror-hf.co/{repo_id}/resolve/{revision}/{filename}",
+        "https://hub-ci.hf-mirror.com/{repo_id}/resolve/{revision}/{filename}",
     )
     def test_file_exists(self):
         assert self._api.file_exists(self.repo_id, "file.txt")
@@ -767,7 +767,7 @@ class CommitApiTest(HfApiCommonTest):
             " make sure you specified the correct `repo_id` and"
             " `repo_type`.\nIf you are trying to access a private or gated"
             " repo, make sure you are authenticated."
-            " For more details, see https://mirror-hf.co/docs/huggingface_hub/authentication"
+            " For more details, see https://hf-mirror.com/docs/huggingface_hub/authentication"
             "\nNote: Creating a commit assumes that the repo already exists on the Huggingface Hub."
             " Please use `create_repo` if it's not the case."
         )
@@ -1974,7 +1974,7 @@ class HfApiPublicProductionTest(unittest.TestCase):
         Here we use a model with a "model-index" that is not an array. Git hook should prevent this from happening
         on the server, but models uploaded before we implemented the check might have this issue.
 
-        Example data from https://mirror-hf.co/Waynehillsdev/Waynehills-STT-doogie-server.
+        Example data from https://hf-mirror.com/Waynehillsdev/Waynehills-STT-doogie-server.
         """
         with self.assertLogs("huggingface_hub", level="WARNING") as warning_logs:
             model = ModelInfo(
@@ -2814,10 +2814,10 @@ class HfLargefilesTest(HfApiCommonTest):
 class ParseHFUrlTest(unittest.TestCase):
     def test_repo_type_and_id_from_hf_id_on_correct_values(self):
         possible_values = {
-            "https://mirror-hf.co/id": [None, None, "id"],
-            "https://mirror-hf.co/user/id": [None, "user", "id"],
-            "https://mirror-hf.co/datasets/user/id": ["dataset", "user", "id"],
-            "https://mirror-hf.co/spaces/user/id": ["space", "user", "id"],
+            "https://hf-mirror.com/id": [None, None, "id"],
+            "https://hf-mirror.com/user/id": [None, "user", "id"],
+            "https://hf-mirror.com/datasets/user/id": ["dataset", "user", "id"],
+            "https://hf-mirror.com/spaces/user/id": ["space", "user", "id"],
             "user/id": [None, "user", "id"],
             "dataset/user/id": ["dataset", "user", "id"],
             "space/user/id": ["space", "user", "id"],
@@ -2837,7 +2837,7 @@ class ParseHFUrlTest(unittest.TestCase):
     def test_repo_type_and_id_from_hf_id_on_wrong_values(self):
         for hub_id in [
             "https://unknown-endpoint.co/id",
-            "https://mirror-hf.co/datasets/user/id@revision",  # @ forbidden
+            "https://hf-mirror.com/datasets/user/id@revision",  # @ forbidden
             "datasets/user/id/subpath",
             "hffs://model/user/name",
             "spaeces/user/id",  # with typo in repo type
@@ -3826,29 +3826,29 @@ class HfApiTokenAttributeTest(unittest.TestCase):
 @patch("huggingface_hub.constants.ENDPOINT", ENDPOINT_PRODUCTION)
 class RepoUrlTest(unittest.TestCase):
     def test_repo_url_class(self):
-        url = RepoUrl("https://mirror-hf.co/gpt2")
+        url = RepoUrl("https://hf-mirror.com/gpt2")
 
         # RepoUrl Is a string
         self.assertIsInstance(url, str)
-        self.assertEqual(url, "https://mirror-hf.co/gpt2")
+        self.assertEqual(url, "https://hf-mirror.com/gpt2")
 
         # Any str-method can be applied
-        self.assertEqual(url.split("/"), "https://mirror-hf.co/gpt2".split("/"))
+        self.assertEqual(url.split("/"), "https://hf-mirror.com/gpt2".split("/"))
 
         # String formatting and concatenation work
-        self.assertEqual(f"New repo: {url}", "New repo: https://mirror-hf.co/gpt2")
-        self.assertEqual("New repo: " + url, "New repo: https://mirror-hf.co/gpt2")
+        self.assertEqual(f"New repo: {url}", "New repo: https://hf-mirror.com/gpt2")
+        self.assertEqual("New repo: " + url, "New repo: https://hf-mirror.com/gpt2")
 
         # __repr__ is modified for debugging purposes
         self.assertEqual(
             repr(url),
-            "RepoUrl('https://mirror-hf.co/gpt2',"
-            " endpoint='https://mirror-hf.co', repo_type='model', repo_id='gpt2')",
+            "RepoUrl('https://hf-mirror.com/gpt2',"
+            " endpoint='https://hf-mirror.com', repo_type='model', repo_id='gpt2')",
         )
 
     def test_repo_url_endpoint(self):
         # Implicit endpoint
-        url = RepoUrl("https://mirror-hf.co/gpt2")
+        url = RepoUrl("https://hf-mirror.com/gpt2")
         self.assertEqual(url.endpoint, ENDPOINT_PRODUCTION)
 
         # Explicit endpoint
@@ -3857,47 +3857,47 @@ class RepoUrlTest(unittest.TestCase):
 
     def test_repo_url_repo_type(self):
         # Explicit repo type
-        url = RepoUrl("https://mirror-hf.co/user/repo_name")
+        url = RepoUrl("https://hf-mirror.com/user/repo_name")
         self.assertEqual(url.repo_type, "model")
 
-        url = RepoUrl("https://mirror-hf.co/datasets/user/repo_name")
+        url = RepoUrl("https://hf-mirror.com/datasets/user/repo_name")
         self.assertEqual(url.repo_type, "dataset")
 
-        url = RepoUrl("https://mirror-hf.co/spaces/user/repo_name")
+        url = RepoUrl("https://hf-mirror.com/spaces/user/repo_name")
         self.assertEqual(url.repo_type, "space")
 
         # Implicit repo type (model)
-        url = RepoUrl("https://mirror-hf.co/user/repo_name")
+        url = RepoUrl("https://hf-mirror.com/user/repo_name")
         self.assertEqual(url.repo_type, "model")
 
     def test_repo_url_namespace(self):
         # Canonical model (e.g. no username)
-        url = RepoUrl("https://mirror-hf.co/gpt2")
+        url = RepoUrl("https://hf-mirror.com/gpt2")
         self.assertIsNone(url.namespace)
         self.assertEqual(url.repo_id, "gpt2")
 
         # "Normal" model
-        url = RepoUrl("https://mirror-hf.co/dummy_user/dummy_model")
+        url = RepoUrl("https://hf-mirror.com/dummy_user/dummy_model")
         self.assertEqual(url.namespace, "dummy_user")
         self.assertEqual(url.repo_id, "dummy_user/dummy_model")
 
     def test_repo_url_url_property(self):
         # RepoUrl.url returns a pure `str` value
-        url = RepoUrl("https://mirror-hf.co/gpt2")
-        self.assertEqual(url, "https://mirror-hf.co/gpt2")
-        self.assertEqual(url.url, "https://mirror-hf.co/gpt2")
+        url = RepoUrl("https://hf-mirror.com/gpt2")
+        self.assertEqual(url, "https://hf-mirror.com/gpt2")
+        self.assertEqual(url.url, "https://hf-mirror.com/gpt2")
         self.assertIsInstance(url, RepoUrl)
         self.assertNotIsInstance(url.url, RepoUrl)
 
     def test_repo_url_canonical_model(self):
-        for _id in ("gpt2", "hf://gpt2", "https://mirror-hf.co/gpt2"):
+        for _id in ("gpt2", "hf://gpt2", "https://hf-mirror.com/gpt2"):
             with self.subTest(_id):
                 url = RepoUrl(_id)
                 self.assertEqual(url.repo_id, "gpt2")
                 self.assertEqual(url.repo_type, "model")
 
     def test_repo_url_canonical_dataset(self):
-        for _id in ("datasets/squad", "hf://datasets/squad", "https://mirror-hf.co/datasets/squad"):
+        for _id in ("datasets/squad", "hf://datasets/squad", "https://hf-mirror.com/datasets/squad"):
             with self.subTest(_id):
                 url = RepoUrl(_id)
                 self.assertEqual(url.repo_id, "squad")
@@ -3905,14 +3905,14 @@ class RepoUrlTest(unittest.TestCase):
 
     def test_repo_url_in_commit_info(self):
         info = CommitInfo(
-            commit_url="https://mirror-hf.co/Wauplin/test-repo-id-mixin/commit/52d172a8b276e529d5260d6f3f76c85be5889dee",
+            commit_url="https://hf-mirror.com/Wauplin/test-repo-id-mixin/commit/52d172a8b276e529d5260d6f3f76c85be5889dee",
             commit_message="Dummy message",
             commit_description="Dummy description",
             oid="52d172a8b276e529d5260d6f3f76c85be5889dee",
             pr_url=None,
         )
         assert isinstance(info.repo_url, RepoUrl)
-        assert info.repo_url.endpoint == "https://mirror-hf.co"
+        assert info.repo_url.endpoint == "https://hf-mirror.com"
         assert info.repo_url.repo_id == "Wauplin/test-repo-id-mixin"
         assert info.repo_url.repo_type == "model"
 

@@ -3,7 +3,7 @@ interactions:
     body: null
     headers: {}
     method: POST
-    uri: https://api-inference.mirror-hf.co/models/meta-llama/Meta-Llama-3-8B-Instruct/v1/chat/completions
+    uri: https://api-inference.hf-mirror.com/models/meta-llama/Meta-Llama-3-8B-Instruct/v1/chat/completions
   response:
     body:
       string: '{"object":"chat.completion","id":"","created":1737565505,"model":"meta-llama/Meta-Llama-3-8B-Instruct","system_fingerprint":"3.0.1-sha-bb9095a","choices":[{"index":0,"message":{"role":"assistant","content":"Here
@@ -27,7 +27,7 @@ interactions:
       x-compute-type:
       - cache
       x-proxied-host:
-      - internal.api-inference.mirror-hf.co
+      - internal.api-inference.hf-mirror.com
       x-proxied-path:
       - /v1/chat/completions
       x-request-id:

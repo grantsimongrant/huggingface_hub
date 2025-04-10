@@ -11,13 +11,13 @@ interactions:
       X-Amzn-Trace-Id:
       - c142df36-31ff-430e-956d-0869c7e5906c
     method: GET
-    uri: https://mirror-hf.co/api/models/openai/whisper-large-v3?expand=inferenceProviderMapping
+    uri: https://hf-mirror.com/api/models/openai/whisper-large-v3?expand=inferenceProviderMapping
   response:
     body:
       string: '{"_id":"654a84cadff2f49007ce6c37","id":"openai/whisper-large-v3","inferenceProviderMapping":{"fal-ai":{"status":"live","providerId":"fal-ai/whisper","task":"automatic-speech-recognition"},"hf-inference":{"status":"live","providerId":"openai/whisper-large-v3","task":"automatic-speech-recognition"}}}'
     headers:
       Access-Control-Allow-Origin:
-      - https://mirror-hf.co
+      - https://hf-mirror.com
       Access-Control-Expose-Headers:
       - X-Repo-Commit,X-Request-Id,X-Error-Code,X-Error-Message,X-Total-Count,ETag,Link,Accept-Ranges,Content-Range,X-Xet-Access-Token,X-Xet-Token-Expiration,X-Xet-Refresh-Route,X-Xet-Cas-Url,X-Xet-Hash
       Connection:
@@ -67,7 +67,7 @@ interactions:
       X-Amzn-Trace-Id:
       - 9b505d04-124b-4e77-8df6-c699c86b68f8
     method: POST
-    uri: https://router.mirror-hf.co/fal-ai/fal-ai/whisper
+    uri: https://router.hf-mirror.com/fal-ai/fal-ai/whisper
   response:
     body:
       string: '{"text":" A man said to the universe, Sir, I exist.","chunks":[{"timestamp":[0.0,4.08],"text":"

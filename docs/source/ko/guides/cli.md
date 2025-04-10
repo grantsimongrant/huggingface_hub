@@ -30,10 +30,10 @@ positional arguments:
   {env,login,whoami,logout,repo,upload,download,lfs-enable-largefiles,lfs-multipart-upload,scan-cache,delete-cache}
                         huggingface-cli command helpers
     env                 Print information about the environment.
-    login               Log in using a token from mirror-hf.co/settings/tokens
-    whoami              Find out which mirror-hf.co account you are logged in as.
+    login               Log in using a token from hf-mirror.com/settings/tokens
+    whoami              Find out which hf-mirror.com account you are logged in as.
     logout              Log out
-    repo                {create} Commands to interact with your mirror-hf.co repos.
+    repo                {create} Commands to interact with your hf-mirror.com repos.
     upload              Upload a file or a folder to a repo on the Hub
     download            Download files from the Hub
     lfs-enable-largefiles
@@ -69,7 +69,7 @@ CLI가 제대로 설치되었다면 CLI에서 사용 가능한 모든 옵션 목
 >>> pkgx huggingface-cli --help
 ```
 
-pkgx huggingface에 대한 자세한 내용은 [여기](https://pkgx.dev/pkgs/mirror-hf.co/)에서 확인할 수 있습니다.
+pkgx huggingface에 대한 자세한 내용은 [여기](https://pkgx.dev/pkgs/hf-mirror.com/)에서 확인할 수 있습니다.
 
 #### Homebrew 사용하기 [[using-homebrew]]
 
@@ -83,7 +83,7 @@ Homebrew huggingface에 대한 자세한 내용은 [여기](https://formulae.bre
 
 ## huggingface-cli login [[huggingface-cli-login]]
 
-Hugging Face Hub에 접근하는 대부분의 작업(비공개 리포지토리 액세스, 파일 업로드, PR 제출 등)을 위해서는 Hugging Face 계정에 로그인해야 합니다. 로그인을 하기 위해서 [설정 페이지](https://mirror-hf.co/settings/tokens)에서 생성한 [사용자 액세스 토큰](https://mirror-hf.co/docs/hub/security-tokens)이 필요하며, 이 토큰은 Hub에서의 사용자 인증에 사용됩니다. 파일 업로드나 콘텐츠 수정을 위해선 쓰기 권한이 있는 토큰이 필요합니다.
+Hugging Face Hub에 접근하는 대부분의 작업(비공개 리포지토리 액세스, 파일 업로드, PR 제출 등)을 위해서는 Hugging Face 계정에 로그인해야 합니다. 로그인을 하기 위해서 [설정 페이지](https://hf-mirror.com/settings/tokens)에서 생성한 [사용자 액세스 토큰](https://hf-mirror.com/docs/hub/security-tokens)이 필요하며, 이 토큰은 Hub에서의 사용자 인증에 사용됩니다. 파일 업로드나 콘텐츠 수정을 위해선 쓰기 권한이 있는 토큰이 필요합니다.
 토큰을 받은 후에 터미널에서 다음 명령을 실행하세요:
 
 ```bash
@@ -99,7 +99,7 @@ _|_|_|_|  _|    _|  _|  _|_|  _|  _|_|    _|    _|  _|  _|  _|  _|_|      _|_|_|
 _|    _|  _|    _|  _|    _|  _|    _|    _|    _|    _|_|  _|    _|      _|        _|    _|  _|        _|
 _|    _|    _|_|      _|_|_|    _|_|_|  _|_|_|  _|      _|    _|_|_|      _|        _|    _|    _|_|_|  _|_|_|_|
 
-To log in, `huggingface_hub` requires a token generated from https://mirror-hf.co/settings/tokens .
+To log in, `huggingface_hub` requires a token generated from https://hf-mirror.com/settings/tokens .
 Token:
 Add token as git credential? (Y/n)
 Token is valid (permission: write).
@@ -154,7 +154,7 @@ huggingface-cli download --help
 
 ```bash
 >>> huggingface-cli download gpt2 config.json
-downloading https://mirror-hf.co/gpt2/resolve/main/config.json to /home/wauplin/.cache/huggingface/hub/tmpwrq8dm5o
+downloading https://hf-mirror.com/gpt2/resolve/main/config.json to /home/wauplin/.cache/huggingface/hub/tmpwrq8dm5o
 (…)ingface.co/gpt2/resolve/main/config.json: 100%|██████████████████████████████████| 665/665 [00:00<00:00, 2.49MB/s]
 /home/wauplin/.cache/huggingface/hub/models--gpt2/snapshots/11c5a3d5811f50298f278a704980280950aedb10/config.json
 ```
@@ -180,13 +180,13 @@ Fetching 23 files:   0%|                                                | 0/23 [
 ```bash
 >>> huggingface-cli download gpt2 config.json model.safetensors
 Fetching 2 files:   0%|                                                                        | 0/2 [00:00<?, ?it/s]
-downloading https://mirror-hf.co/gpt2/resolve/11c5a3d5811f50298f278a704980280950aedb10/model.safetensors to /home/wauplin/.cache/huggingface/hub/tmpdachpl3o
+downloading https://hf-mirror.com/gpt2/resolve/11c5a3d5811f50298f278a704980280950aedb10/model.safetensors to /home/wauplin/.cache/huggingface/hub/tmpdachpl3o
 (…)8f278a7049802950aedb10/model.safetensors: 100%|██████████████████████████████| 8.09k/8.09k [00:00<00:00, 40.5MB/s]
 Fetching 2 files: 100%|████████████████████████████████████████████████████████████████| 2/2 [00:00<00:00,  3.76it/s]
 /home/wauplin/.cache/huggingface/hub/models--gpt2/snapshots/11c5a3d5811f50298f278a704980280950aedb10
 ```
 
-또 다른 방법은 `--include`와 `--exclude` 옵션을 사용하여 원하는 파일을 필터링하는 것입니다. 예를 들어, [stabilityai/stable-diffusion-xl-base-1.0](https://mirror-hf.co/stabilityai/stable-diffusion-xl-base-1.0)의 모든 safetensors 파일을 다운로드하되 FP16 정밀도의 파일은 제외하고 싶다면 다음과 같이 실행할 수 있습니다:
+또 다른 방법은 `--include`와 `--exclude` 옵션을 사용하여 원하는 파일을 필터링하는 것입니다. 예를 들어, [stabilityai/stable-diffusion-xl-base-1.0](https://hf-mirror.com/stabilityai/stable-diffusion-xl-base-1.0)의 모든 safetensors 파일을 다운로드하되 FP16 정밀도의 파일은 제외하고 싶다면 다음과 같이 실행할 수 있습니다:
 
 ```bash
 >>> huggingface-cli download stabilityai/stable-diffusion-xl-base-1.0 --include "*.safetensors" --exclude "*.fp16.*"*
@@ -202,10 +202,10 @@ Fetching 8 files: 100%|███████████████████
 앞서 소개된 예시들을 통해 모델 리포지토리에서 다운로드하는 방법을 배웠습니다. 데이터 세트나 Space를 다운로드하고자 할 때는 `--repo-type` 옵션을 사용하세요:
 
 ```bash
-# https://mirror-hf.co/datasets/HuggingFaceH4/ultrachat_200k
+# https://hf-mirror.com/datasets/HuggingFaceH4/ultrachat_200k
 >>> huggingface-cli download HuggingFaceH4/ultrachat_200k --repo-type dataset
 
-# https://mirror-hf.co/spaces/HuggingFaceH4/zephyr-chat
+# https://hf-mirror.com/spaces/HuggingFaceH4/zephyr-chat
 >>> huggingface-cli download HuggingFaceH4/zephyr-chat --repo-type space
 
 ...
@@ -284,7 +284,7 @@ Hub에서 파일을 다운로드하는 권장되고 기본적인 방법은 캐�
 
 ```bash
 >>> huggingface-cli upload my-cool-model . .
-https://mirror-hf.co/Wauplin/my-cool-model/tree/main/
+https://hf-mirror.com/Wauplin/my-cool-model/tree/main/
 ```
 
 <Tip>
@@ -297,14 +297,14 @@ https://mirror-hf.co/Wauplin/my-cool-model/tree/main/
 
 ```bash
 >>> huggingface-cli upload my-cool-model ./models .
-https://mirror-hf.co/Wauplin/my-cool-model/tree/main/
+https://hf-mirror.com/Wauplin/my-cool-model/tree/main/
 ```
 
 마지막으로, 리포지토리의 특정 위치에 폴더를 업로드할 수 있습니다:
 
 ```bash
 >>> huggingface-cli upload my-cool-model ./path/to/curated/data /data/train
-https://mirror-hf.co/Wauplin/my-cool-model/tree/main/data/train
+https://hf-mirror.com/Wauplin/my-cool-model/tree/main/data/train
 ```
 
 ### 파일 한 개 업로드하기 [[upload-a-single-file]]
@@ -313,14 +313,14 @@ https://mirror-hf.co/Wauplin/my-cool-model/tree/main/data/train
 
 ```bash
 >>> huggingface-cli upload Wauplin/my-cool-model ./models/model.safetensors
-https://mirror-hf.co/Wauplin/my-cool-model/blob/main/model.safetensors
+https://hf-mirror.com/Wauplin/my-cool-model/blob/main/model.safetensors
 ```
 
 파일 한 개를 특정 디렉터리에 업로드하고 싶다면, `path_in_repo`를 그에 맞게 설정하세요:
 
 ```bash
 >>> huggingface-cli upload Wauplin/my-cool-model ./models/model.safetensors /vae/model.safetensors
-https://mirror-hf.co/Wauplin/my-cool-model/blob/main/vae/model.safetensors
+https://hf-mirror.com/Wauplin/my-cool-model/blob/main/vae/model.safetensors
 ```
 
 ### 여러 파일 업로드하기 [[upload-multiple-files]]
@@ -348,7 +348,7 @@ https://mirror-hf.co/Wauplin/my-cool-model/blob/main/vae/model.safetensors
 
 ```bash
 >>> huggingface-cli upload MyCoolOrganization/my-cool-model . .
-https://mirror-hf.co/MyCoolOrganization/my-cool-model/tree/main/
+https://hf-mirror.com/MyCoolOrganization/my-cool-model/tree/main/
 ```
 
 ### 특정 개정에 업로드하기 [[upload-to-a-specific-revision]]
@@ -370,7 +370,7 @@ https://mirror-hf.co/MyCoolOrganization/my-cool-model/tree/main/
 ```bash
 # Create a PR and upload the files to it
 >>> huggingface-cli upload bigcode/the-stack . . --repo-type dataset --revision refs/pr/104
-https://mirror-hf.co/datasets/bigcode/the-stack/blob/refs%2Fpr%2F104/
+https://hf-mirror.com/datasets/bigcode/the-stack/blob/refs%2Fpr%2F104/
 ```
 
 ### 정기적으로 업로드하기 [[upload-at-regular-intervals]]
@@ -389,7 +389,7 @@ huggingface-cli upload training-model logs/ --every=10
 ```bash
 >>> huggingface-cli upload Wauplin/my-cool-model ./models . --commit-message="Epoch 34/50" --commit-description="Val accuracy: 68%. Check tensorboard for more details."
 ...
-https://mirror-hf.co/Wauplin/my-cool-model/tree/main
+https://hf-mirror.com/Wauplin/my-cool-model/tree/main
 ```
 
 ### 토큰 지정하기 [[specify-a-token]]
@@ -399,7 +399,7 @@ https://mirror-hf.co/Wauplin/my-cool-model/tree/main
 ```bash
 >>> huggingface-cli upload Wauplin/my-cool-model ./models . --token=hf_****
 ...
-https://mirror-hf.co/Wauplin/my-cool-model/tree/main
+https://hf-mirror.com/Wauplin/my-cool-model/tree/main
 ```
 
 ### 조용한 모드 [[quiet-mode]]
@@ -408,7 +408,7 @@ https://mirror-hf.co/Wauplin/my-cool-model/tree/main
 
 ```bash
 >>> huggingface-cli upload Wauplin/my-cool-model ./models . --quiet
-https://mirror-hf.co/Wauplin/my-cool-model/tree/main
+https://hf-mirror.com/Wauplin/my-cool-model/tree/main
 ```
 
 ## huggingface-cli scan-cache [[huggingface-cli-scan-cache]]
@@ -468,7 +468,7 @@ Copy-and-paste the text below in your GitHub issue.
 - numpy: 1.23.2
 - pydantic: 2.4.2
 - aiohttp: 3.8.4
-- ENDPOINT: https://mirror-hf.co
+- ENDPOINT: https://hf-mirror.com
 - HF_HUB_CACHE: /home/wauplin/.cache/huggingface/hub
 - HF_ASSETS_CACHE: /home/wauplin/.cache/huggingface/assets
 - HF_TOKEN_PATH: /home/wauplin/.cache/huggingface/token

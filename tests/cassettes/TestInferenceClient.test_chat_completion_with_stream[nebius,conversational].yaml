@@ -11,13 +11,13 @@ interactions:
       X-Amzn-Trace-Id:
       - 10b02db7-19de-4cc6-af3b-1a9495ed97e5
     method: GET
-    uri: https://mirror-hf.co/api/models/meta-llama/Llama-3.1-8B-Instruct?expand=inferenceProviderMapping
+    uri: https://hf-mirror.com/api/models/meta-llama/Llama-3.1-8B-Instruct?expand=inferenceProviderMapping
   response:
     body:
       string: '{"_id":"6698d8a0653e4babe21e1e7d","id":"meta-llama/Llama-3.1-8B-Instruct","inferenceProviderMapping":{"fireworks-ai":{"status":"live","providerId":"accounts/fireworks/models/llama-v3p1-8b-instruct","task":"conversational"},"sambanova":{"status":"live","providerId":"Meta-Llama-3.1-8B-Instruct","task":"conversational"},"hf-inference":{"status":"live","providerId":"meta-llama/Llama-3.1-8B-Instruct","task":"conversational"},"nebius":{"status":"live","providerId":"meta-llama/Meta-Llama-3.1-8B-Instruct-fast","task":"conversational"},"novita":{"status":"live","providerId":"meta-llama/llama-3.1-8b-instruct","task":"conversational"},"hyperbolic":{"status":"staging","providerId":"meta-llama/Meta-Llama-3.1-8B-Instruct","task":"conversational"}}}'
     headers:
       Access-Control-Allow-Origin:
-      - https://mirror-hf.co
+      - https://hf-mirror.com
       Access-Control-Expose-Headers:
       - X-Repo-Commit,X-Request-Id,X-Error-Code,X-Error-Message,X-Total-Count,ETag,Link,Accept-Ranges,Content-Range,X-Xet-Access-Token,X-Xet-Token-Expiration,X-Xet-Refresh-Route,X-Xet-Cas-Url,X-Xet-Hash
       Connection:
@@ -69,7 +69,7 @@ interactions:
       X-Amzn-Trace-Id:
       - a812afb0-5648-4b54-bf02-3aa0bcdab1c0
     method: POST
-    uri: https://router.mirror-hf.co/nebius/v1/chat/completions
+    uri: https://router.hf-mirror.com/nebius/v1/chat/completions
   response:
     body:
       string: 'data: {"id":"chatcmpl-f42aee3e144f465dae0cf33f04bf7c92","choices":[{"delta":{"content":"","role":"assistant"},"finish_reason":null,"index":0,"logprobs":null}],"created":1741793918,"model":"meta-llama/Meta-Llama-3.1-8B-Instruct-fast","object":"chat.completion.chunk"}

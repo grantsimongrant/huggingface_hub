@@ -6,7 +6,7 @@ rendered properly in your Markdown viewer.
 
 Webhooks are a foundation for MLOps-related features. They allow you to listen for new changes on specific repos or to all repos belonging to particular users/organizations you're interested in following. This guide will first explain how to manage webhooks programmatically. Then we'll see how to leverage `huggingface_hub` to create a server listening to webhooks and deploy it to a Space.
 
-This guide assumes you are familiar with the concept of webhooks on the Huggingface Hub. To learn more about webhooks themselves, you should read this [guide](https://mirror-hf.co/docs/hub/webhooks) first.
+This guide assumes you are familiar with the concept of webhooks on the Huggingface Hub. To learn more about webhooks themselves, you should read this [guide](https://hf-mirror.com/docs/hub/webhooks) first.
 
 ## Managing Webhooks
 
@@ -92,7 +92,7 @@ to display instructions for you or your users and an API to listen to webhooks.
 
 <Tip>
 
-To see a running example of a webhook server, check out the [Spaces CI Bot](https://mirror-hf.co/spaces/spaces-ci-bot/webhook)
+To see a running example of a webhook server, check out the [Spaces CI Bot](https://hf-mirror.com/spaces/spaces-ci-bot/webhook)
 one. It is a Space that launches ephemeral environments when a PR is opened on a Space.
 
 </Tip>
@@ -128,15 +128,15 @@ Save this snippet in a file called `'app.py'` and run it with `'python app.py'`.
 Webhook secret is not defined. This means your webhook endpoints will be open to everyone.
 To add a secret, set `WEBHOOK_SECRET` as environment variable or pass it at initialization:
         `app = WebhooksServer(webhook_secret='my_secret', ...)`
-For more details about webhook secrets, please refer to https://mirror-hf.co/docs/hub/webhooks#webhook-secret.
+For more details about webhook secrets, please refer to https://hf-mirror.com/docs/hub/webhooks#webhook-secret.
 Running on local URL:  http://127.0.0.1:7860
 Running on public URL: https://1fadb0f52d8bf825fc.gradio.live
 
-This share link expires in 72 hours. For free permanent hosting and GPU upgrades (NEW!), check out Spaces: https://mirror-hf.co/spaces
+This share link expires in 72 hours. For free permanent hosting and GPU upgrades (NEW!), check out Spaces: https://hf-mirror.com/spaces
 
 Webhooks are correctly setup and ready to use:
   - POST https://1fadb0f52d8bf825fc.gradio.live/webhooks/trigger_training
-Go to https://mirror-hf.co/settings/webhooks to setup your webhooks.
+Go to https://hf-mirror.com/settings/webhooks to setup your webhooks.
 ```
 
 Good job! You just launched a webhook server! Let's break down what happened exactly:
@@ -149,7 +149,7 @@ This is the route that will listen to webhooks and run the `trigger_training` fu
 automatically parse the payload and pass it to the function as a [`WebhookPayload`] object. This is a `pydantic` object
 that contains all the information about the event that triggered the webhook.
 3. The Gradio app also opened a tunnel to receive requests from the internet. This is the interesting part: you can
-configure a Webhook on https://mirror-hf.co/settings/webhooks pointing to your local machine. This is useful for
+configure a Webhook on https://hf-mirror.com/settings/webhooks pointing to your local machine. This is useful for
 debugging your webhook server and quickly iterating before deploying it to a Space.
 4. Finally, the logs also tell you that your server is currently not secured by a secret. This is not problematic for
 local debugging but is to keep in mind for later.
@@ -166,11 +166,11 @@ once even if you have multiple endpoints.
 ### Configure a Webhook
 
 Now that you have a webhook server running, you want to configure a Webhook to start receiving messages.
-Go to https://mirror-hf.co/settings/webhooks, click on "Add a new webhook" and configure your Webhook. Set the target
+Go to https://hf-mirror.com/settings/webhooks, click on "Add a new webhook" and configure your Webhook. Set the target
 repositories you want to watch and the Webhook URL, here `https://1fadb0f52d8bf825fc.gradio.live/webhooks/trigger_training`.
 
 <div class="flex justify-center">
-<img src="https://mirror-hf.co/datasets/huggingface/documentation-images/resolve/main/hub/configure_webhook.png"/>
+<img src="https://hf-mirror.com/datasets/huggingface/documentation-images/resolve/main/hub/configure_webhook.png"/>
 </div>
 
 And that's it! You can now trigger that webhook by updating the target repository (e.g. push a commit). Check the
@@ -180,19 +180,19 @@ to update the webhook configuration on the Hub if needed.
 
 ### Deploy to a Space
 
-Now that you have a working webhook server, the goal is to deploy it to a Space. Go to https://mirror-hf.co/new-space
+Now that you have a working webhook server, the goal is to deploy it to a Space. Go to https://hf-mirror.com/new-space
 to create a Space. Give it a name, select the Gradio SDK and click on "Create Space". Upload your code to the Space
 in a file called `app.py`. Your Space will start automatically! For more details about Spaces, please refer to this
-[guide](https://mirror-hf.co/docs/hub/spaces-overview).
+[guide](https://hf-mirror.com/docs/hub/spaces-overview).
 
 Your webhook server is now running on a public Space. If most cases, you will want to secure it with a secret. Go to
 your Space settings > Section "Repository secrets" > "Add a secret". Set the `WEBHOOK_SECRET` environment variable to
-the value of your choice. Go back to the [Webhooks settings](https://mirror-hf.co/settings/webhooks) and set the
+the value of your choice. Go back to the [Webhooks settings](https://hf-mirror.com/settings/webhooks) and set the
 secret in the webhook configuration. Now, only requests with the correct secret will be accepted by your server.
 
 And this is it! Your Space is now ready to receive webhooks from the Hub. Please keep in mind that if you run the Space
 on a free 'cpu-basic' hardware, it will be shut down after 48 hours of inactivity. If you need a permanent Space, you
-should consider setting to an [upgraded hardware](https://mirror-hf.co/docs/hub/spaces-gpus#hardware-specs).
+should consider setting to an [upgraded hardware](https://hf-mirror.com/docs/hub/spaces-gpus#hardware-specs).
 
 ### Advanced usage
 

@@ -4,7 +4,7 @@ rendered properly in your Markdown viewer.
 
 # 快速入门
 
-[Hugging Face Hub](https://mirror-hf.co/)是分享机器学习模型、演示、数据集和指标的首选平台`huggingface_hub`库帮助你在不离开开发环境的情况下与 Hub 进行交互。你可以轻松地创建和管理仓库,下载和上传文件,并从 Hub 获取有用的模型和数据集元数据
+[Hugging Face Hub](https://hf-mirror.com/)是分享机器学习模型、演示、数据集和指标的首选平台`huggingface_hub`库帮助你在不离开开发环境的情况下与 Hub 进行交互。你可以轻松地创建和管理仓库,下载和上传文件,并从 Hub 获取有用的模型和数据集元数据
 
 ## 安装
 
@@ -20,7 +20,7 @@ pip install --upgrade huggingface_hub
 
 Hugging Face 平台上的存储库是使用 git 版本控制的，用户可以下载单个文件或整个存储库。您可以使用 [`hf_hub_download`] 函数下载文件。该函数将下载并将文件缓存在您的本地磁盘上。下次您需要该文件时，它将从您的缓存中加载，因此您无需重新下载它
 
-您将需要填写存储库 ID 和您要下载的文件的文件名。例如，要下载[Pegasus](https://mirror-hf.co/google/pegasus-xsum)模型配置文件，请运行以下代码：
+您将需要填写存储库 ID 和您要下载的文件的文件名。例如，要下载[Pegasus](https://hf-mirror.com/google/pegasus-xsum)模型配置文件，请运行以下代码：
 
 ```py
 >>> from huggingface_hub import hf_hub_download
@@ -44,7 +44,7 @@ filename: 要下载的文件名，这里是 "config.json"
 
 ## 登录
 
-在许多情况下，您必须使用 Hugging Face 帐户进行登录后才能与 Hugging Face 模型库进行交互，例如下载私有存储库、上传文件、创建 PR 等。如果您还没有帐户，请[创建一个](https://mirror-hf.co/join),然后登录以获取您的 [用户访问令牌](https://mirror-hf.co/docs/hub/security-tokens),security-tokens从您的[设置页面](https://mirror-hf.co/settings/tokens)进入设置,用户访问令牌用于向模型库进行身份验证
+在许多情况下，您必须使用 Hugging Face 帐户进行登录后才能与 Hugging Face 模型库进行交互，例如下载私有存储库、上传文件、创建 PR 等。如果您还没有帐户，请[创建一个](https://hf-mirror.com/join),然后登录以获取您的 [用户访问令牌](https://hf-mirror.com/docs/hub/security-tokens),security-tokens从您的[设置页面](https://hf-mirror.com/settings/tokens)进入设置,用户访问令牌用于向模型库进行身份验证
 
 运行以下代码，这将使用您的用户访问令牌登录到Hugging Face模型库
 
@@ -91,7 +91,7 @@ huggingface-cli login --token $HUGGINGFACE_TOKEN
 
 <Tip>
 
-创建存储库或将内容推送到 Hub 时，必须提供具有`写入`权限的用户访问令牌。您可以在创建令牌时在您的[设置页面](https://mirror-hf.co/settings/tokens)中选择权限
+创建存储库或将内容推送到 Hub 时，必须提供具有`写入`权限的用户访问令牌。您可以在创建令牌时在您的[设置页面](https://hf-mirror.com/settings/tokens)中选择权限
 
 </Tip>
 

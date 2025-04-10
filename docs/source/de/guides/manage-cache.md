@@ -436,7 +436,7 @@ huggingface-cli delete-cache
 Sie sollten jetzt eine Liste von Revisionen sehen, die Sie auswählen/abwählen können:
 
 <div class="flex justify-center">
-    <img src="https://mirror-hf.co/datasets/huggingface/documentation-images/resolve/main/hub/delete-cache-tui.png"/>
+    <img src="https://hf-mirror.com/datasets/huggingface/documentation-images/resolve/main/hub/delete-cache-tui.png"/>
 </div>
 
 Anleitung:

@@ -5,17 +5,17 @@ rendered properly in your Markdown viewer.
 # Intégrez votre framework de ML avec le Hub
 
 Le Hugging Face Hub facilite l'hébergement et le partage de modèles et de jeux de données.
-Des [dizaines de librairies](https://mirror-hf.co/docs/hub/models-libraries) sont intégrées à cet écosystème. La communauté travaille constamment à en intégrer de nouvelles et contribue ainsi à faciliter la collaboration dans le milieu du machine learning. La librairie `huggingface_hub` joue un rôle clé dans ce processus puisqu'elle permet d'interagir avec le Hub depuis n'importe quel script Python.
+Des [dizaines de librairies](https://hf-mirror.com/docs/hub/models-libraries) sont intégrées à cet écosystème. La communauté travaille constamment à en intégrer de nouvelles et contribue ainsi à faciliter la collaboration dans le milieu du machine learning. La librairie `huggingface_hub` joue un rôle clé dans ce processus puisqu'elle permet d'interagir avec le Hub depuis n'importe quel script Python.
 
 Il existe quatre façons principales d'intégrer une bibliothèque au Hub :
-1. **Push to Hub**  implémente une méthode pour upload un modèle sur le Hub. Cela inclut les paramètres du modèle, sa fiche descriptive (appelée [Model Card](https://mirror-hf.co/docs/huggingface_hub/how-to-model-cards)) et toute autre information pertinente liée au modèle (par exemple, les logs d'entraînement). Cette méthode est souvent appelée `push_to_hub()`.
+1. **Push to Hub**  implémente une méthode pour upload un modèle sur le Hub. Cela inclut les paramètres du modèle, sa fiche descriptive (appelée [Model Card](https://hf-mirror.com/docs/huggingface_hub/how-to-model-cards)) et toute autre information pertinente liée au modèle (par exemple, les logs d'entraînement). Cette méthode est souvent appelée `push_to_hub()`.
 2. **Download from Hub** implémente une méthode pour charger un modèle depuis le Hub. La méthode doit télécharger la configuration et les poids du modèle puis instancier celui-ci. Cette méthode est souvent appelée `from_pretrained` ou `load_from_hub()`.
 3. **Inference API** utilise nos serveurs pour faire de l'inférence gratuitement sur des modèles supportés par votre librairie.
 4. **Widgets** affiche un widget sur la page d'accueil de votre modèle dans le Hub. Les widgets permettent aux utilisateurs de rapidement tester un modèle depuis le navigateur.
 
 Dans ce guide, nous nous concentrerons sur les deux premiers sujets. Nous présenterons les deux approches principales que vous pouvez utiliser pour intégrer une librairie, avec leurs avantages et leurs inconvénients. Tout est résumé à la fin du guide pour vous aider à choisir entre les deux. Veuillez garder à l'esprit que ce ne sont que des conseils, et vous êtes libres de les adapter à votre cas d'usage.
 
-Si l'Inference API et les Widgets vous intéressent, vous pouvez suivre [ce guide](https://mirror-hf.co/docs/hub/models-adding-libraries#set-up-the-inference-api). Dans les deux cas, vous pouvez nous contacter si vous intégrez une librairie au Hub et que vous voulez être listé [dans la documentation officielle](https://mirror-hf.co/docs/hub/models-libraries).
+Si l'Inference API et les Widgets vous intéressent, vous pouvez suivre [ce guide](https://hf-mirror.com/docs/hub/models-adding-libraries#set-up-the-inference-api). Dans les deux cas, vous pouvez nous contacter si vous intégrez une librairie au Hub et que vous voulez être listé [dans la documentation officielle](https://hf-mirror.com/docs/hub/models-libraries).
 
 ## Une approche flexible: les helpers
 
@@ -127,7 +127,7 @@ devez implémenter. Ainsi, pour intégrer votre librairie, vous devez :
     - [`~ModelHubMixin._save_pretrained`]: méthode qui prend en entrée un chemin vers un directory et qui sauvegarde le modèle. 
     Vous devez écrire toute la logique pour dump votre modèle de cette manière: model card, poids du modèle, fichiers de configuration,
     et logs d'entraînement. Toute information pertinente pour ce modèle doit être gérée par cette méthode. Les
-    [model cards](https://mirror-hf.co/docs/hub/model-cards) sont particulièrement importantes pour décrire votre modèle. Vérifiez
+    [model cards](https://hf-mirror.com/docs/hub/model-cards) sont particulièrement importantes pour décrire votre modèle. Vérifiez
     [notre guide d'implémentation](./model-cards) pour plus de détails.
     - [`~ModelHubMixin._from_pretrained`]: **méthode de classe** prenant en entrée un `model_id` et qui retourne un modèle instancié.
     Cette méthode doit télécharger un ou plusieurs fichier(s) et le(s) charger.

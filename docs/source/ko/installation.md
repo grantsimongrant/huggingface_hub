@@ -115,7 +115,7 @@ conda install -c conda-forge huggingface_hub
 python -c "from huggingface_hub import model_info; print(model_info('gpt2'))"
 ```
 
-이 명령은 Hub에서 [gpt2](https://mirror-hf.co/gpt2) 모델에 대한 정보를 가져옵니다.
+이 명령은 Hub에서 [gpt2](https://hf-mirror.com/gpt2) 모델에 대한 정보를 가져옵니다.
 출력은 다음과 같아야 합니다:
 
 ```text

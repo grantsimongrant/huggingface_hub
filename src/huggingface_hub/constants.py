@@ -57,12 +57,12 @@ FILELOCK_LOG_EVERY_SECONDS = 10
 DEFAULT_REVISION = "main"
 REGEX_COMMIT_OID = re.compile(r"[A-Fa-f0-9]{5,40}")
 
-HUGGINGFACE_CO_URL_HOME = "https://mirror-hf.co/"
+HUGGINGFACE_CO_URL_HOME = "https://hf-mirror.com/"
 
 _staging_mode = _is_true(os.environ.get("HUGGINGFACE_CO_STAGING"))
 
-_HF_DEFAULT_ENDPOINT = "https://mirror-hf.co"
-_HF_DEFAULT_STAGING_ENDPOINT = "https://hub-ci.mirror-hf.co"
+_HF_DEFAULT_ENDPOINT = "https://hf-mirror.com"
+_HF_DEFAULT_STAGING_ENDPOINT = "https://hub-ci.hf-mirror.com"
 ENDPOINT = os.getenv("HF_ENDPOINT", _HF_DEFAULT_ENDPOINT).rstrip("/")
 HUGGINGFACE_CO_URL_TEMPLATE = ENDPOINT + "/{repo_id}/resolve/{revision}/{filename}"
 
@@ -75,14 +75,14 @@ HUGGINGFACE_HEADER_X_LINKED_ETAG = "X-Linked-Etag"
 HUGGINGFACE_HEADER_X_LINKED_SIZE = "X-Linked-Size"
 HUGGINGFACE_HEADER_X_BILL_TO = "X-HF-Bill-To"
 
-INFERENCE_ENDPOINT = os.environ.get("HF_INFERENCE_ENDPOINT", "https://api-inference.mirror-hf.co")
+INFERENCE_ENDPOINT = os.environ.get("HF_INFERENCE_ENDPOINT", "https://api-inference.hf-mirror.com")
 
-# See https://mirror-hf.co/docs/inference-endpoints/index
+# See https://hf-mirror.com/docs/inference-endpoints/index
 INFERENCE_ENDPOINTS_ENDPOINT = "https://api.endpoints.huggingface.cloud/v2"
-INFERENCE_CATALOG_ENDPOINT = "https://endpoints.mirror-hf.co/api/catalog"
+INFERENCE_CATALOG_ENDPOINT = "https://endpoints.hf-mirror.com/api/catalog"
 
 # Proxy for third-party providers
-INFERENCE_PROXY_TEMPLATE = "https://router.mirror-hf.co/{provider}"
+INFERENCE_PROXY_TEMPLATE = "https://router.hf-mirror.com/{provider}"
 
 REPO_ID_SEPARATOR = "--"
 # ^ this substring is not allowed in repo_ids on hf.co

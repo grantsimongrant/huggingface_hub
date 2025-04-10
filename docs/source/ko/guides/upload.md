@@ -89,10 +89,10 @@ Hub에 파일을 업로드 하려면 허깅페이스 계정으로 로그인해�
 ```bash
 # 사용례:  huggingface-cli upload [repo_id] [local_path] [path_in_repo]
 >>> huggingface-cli upload Wauplin/my-cool-model ./models/model.safetensors model.safetensors
-https://mirror-hf.co/Wauplin/my-cool-model/blob/main/model.safetensors
+https://hf-mirror.com/Wauplin/my-cool-model/blob/main/model.safetensors
 
 >>> huggingface-cli upload Wauplin/my-cool-model ./models .
-https://mirror-hf.co/Wauplin/my-cool-model/tree/main
+https://hf-mirror.com/Wauplin/my-cool-model/tree/main
 ```
 
 `local_path` 와 `path_in_repo`는 선택 사항이며 주어지지 않을 시 임의로 추정됩니다.
@@ -267,7 +267,7 @@ Hub에 데이터(잠재적으로 수백만 개의 사용자 피드백)를 저장
 각 사용 사례에 따라 데이터 구조를 다르게 설정해야 할 수도 있습니다.
 데이터 구조는 동시 사용자와 재시작에 대해 견고해야 하며, 이는 대개 UUID를 생성 해야 함을 의미합니다. 
 견고함 뿐만 아니라, 재사용성을 위해 🤗 데이터 세트 라이브러리에서 읽을 수 있는 형식으로 데이터를 업로드해야 합니다.
-이 [스페이스](https://mirror-hf.co/spaces/Wauplin/space_to_dataset_saver)
+이 [스페이스](https://hf-mirror.com/spaces/Wauplin/space_to_dataset_saver)
 예제에서 여러 가지 데이터 형식을 저장하는 방법을 보여줍니다(각자의 필요에 맞게 조정해야 할 수도 있습니다).
 
 #### 사용자 지정 업로드[[custom-uploads]]
@@ -310,7 +310,7 @@ class ZipScheduler(CommitScheduler):
 
 <Tip>
 
-사용자 정의 스케줄러의 더 많은 예제는 사용 사례에 따른 다양한 구현이 포함된 [데모 스페이스](https://mirror-hf.co/spaces/Wauplin/space_to_dataset_saver)를 참조하세요.
+사용자 정의 스케줄러의 더 많은 예제는 사용 사례에 따른 다양한 구현이 포함된 [데모 스페이스](https://hf-mirror.com/spaces/Wauplin/space_to_dataset_saver)를 참조하세요.
 
 </Tip>
 
@@ -417,7 +417,7 @@ class ZipScheduler(CommitScheduler):
 리포지토리에 있는 대량의 데이터를 처리할 때 주의해야 할 몇 가지 제한 사항이 있습니다.
 데이터를 스트리밍하는 데 걸리는 시간을 고려하면, 프로세스 마지막에 업로드/푸시가 실패하거나 hf.co에서 또는 로컬에서 작업할 때 성능 저하가 발생하는 것은 매우 성가신 일이 될 수 있습니다.
 
-Hub에서 리포지토리를 구성하는 방법에 대한 모범 사례는 [리포지토리 제한 사항 및 권장 사항](https://mirror-hf.co/docs/hub/repositories-recommendations) 가이드를 참조하세요.
+Hub에서 리포지토리를 구성하는 방법에 대한 모범 사례는 [리포지토리 제한 사항 및 권장 사항](https://hf-mirror.com/docs/hub/repositories-recommendations) 가이드를 참조하세요.
 다음으로 업로드 프로세스를 최대한 원활하게 진행할 수 있는 몇 가지 실용적인 팁을 살펴보겠습니다.
 
 - **작게 시작하세요**: 업로드 스크립트를 테스트할 때는 소량의 데이터로 시작하는 것이 좋습니다. 소량의 데이터를 처리하는데 적은 시간이 들기 때문에 스크립트를 반복하는 것이 더 쉽습니다.
@@ -432,7 +432,7 @@ Hub에서 리포지토리를 구성하는 방법에 대한 모범 사례는 [리
 
 `hf_transfer`는 고급 사용자 도구입니다!
 테스트 및 프로덕션 준비가 완료되었지만, 고급 오류 처리나 프록시와 같은 사용자 친화적인 기능이 부족합니다.
-자세한 내용은 [이 섹션](https://mirror-hf.co/docs/huggingface_hub/hf_transfer)을 참조하세요.
+자세한 내용은 [이 섹션](https://hf-mirror.com/docs/huggingface_hub/hf_transfer)을 참조하세요.
 
 </Tip>
 

@@ -5,8 +5,8 @@ rendered properly in your Markdown viewer.
 # Manage your Space
 
 In this guide, we will see how to manage your Space runtime
-([secrets](https://mirror-hf.co/docs/hub/spaces-overview#managing-secrets),
-[hardware](https://mirror-hf.co/docs/hub/spaces-gpus), and [storage](https://mirror-hf.co/docs/hub/spaces-storage#persistent-storage)) using `huggingface_hub`.
+([secrets](https://hf-mirror.com/docs/hub/spaces-overview#managing-secrets),
+[hardware](https://hf-mirror.com/docs/hub/spaces-gpus), and [storage](https://hf-mirror.com/docs/hub/spaces-storage#persistent-storage)) using `huggingface_hub`.
 
 ## A simple example: configure secrets and hardware.
 
@@ -46,7 +46,7 @@ However, you might want to configure it further with secrets and upgraded hardwa
 **3. Configure secrets and variables**
 
 Your Space might require some secret keys, token or variables to work.
-See [docs](https://mirror-hf.co/docs/hub/spaces-overview#managing-secrets) for more details.
+See [docs](https://hf-mirror.com/docs/hub/spaces-overview#managing-secrets) for more details.
 For example, an HF token to upload an image dataset to the Hub once generated from your Space.
 
 ```py
@@ -95,7 +95,7 @@ Secrets and variables can be set when creating or duplicating a space:
 
 By default, your Space will run on a CPU environment for free. You can upgrade the hardware
 to run it on GPUs. A payment card or a community grant is required to access upgrade your
-Space. See [docs](https://mirror-hf.co/docs/hub/spaces-gpus) for more details.
+Space. See [docs](https://hf-mirror.com/docs/hub/spaces-gpus) for more details.
 
 ```py
 # Use `SpaceHardware` enum
@@ -151,7 +151,7 @@ Upgraded hardware will be automatically assigned to your Space once it's built.
 By default if your Space is running on an upgraded hardware, it will never be stopped. However to avoid getting billed,
 you might want to pause it when you are not using it. This is possible using [`pause_space`]. A paused Space will be
 inactive until the owner of the Space restarts it, either with the UI or via API using [`restart_space`].
-For more details about paused mode, please refer to [this section](https://mirror-hf.co/docs/hub/spaces-gpus#pause)
+For more details about paused mode, please refer to [this section](https://hf-mirror.com/docs/hub/spaces-gpus#pause)
 
 ```py
 # Pause your Space to avoid getting billed
@@ -163,7 +163,7 @@ For more details about paused mode, please refer to [this section](https://mirro
 
 Another possibility is to set a timeout for your Space. If your Space is inactive for more than the timeout duration,
 it will go to sleep. Any visitor landing on your Space will start it back up. You can set a timeout using
-[`set_space_sleep_time`]. For more details about sleeping mode, please refer to [this section](https://mirror-hf.co/docs/hub/spaces-gpus#sleep-time).
+[`set_space_sleep_time`]. For more details about sleeping mode, please refer to [this section](https://hf-mirror.com/docs/hub/spaces-gpus#sleep-time).
 
 ```py
 # Put your Space to sleep after 1h of inactivity
@@ -202,7 +202,7 @@ Upgraded hardware will be automatically assigned to your Space once it's built.
 
 **6. Add persistent storage to your Space**
 
-You can choose the storage tier of your choice to access disk space that persists across restarts of your Space. This means you can read and write from disk like you would with a traditional hard drive. See [docs](https://mirror-hf.co/docs/hub/spaces-storage#persistent-storage) for more details.
+You can choose the storage tier of your choice to access disk space that persists across restarts of your Space. This means you can read and write from disk like you would with a traditional hard drive. See [docs](https://hf-mirror.com/docs/hub/spaces-storage#persistent-storage) for more details.
 
 ```py
 >>> from huggingface_hub import SpaceStorage

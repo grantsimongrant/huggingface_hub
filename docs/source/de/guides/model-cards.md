@@ -4,17 +4,17 @@ rendered properly in your Markdown viewer.
 
 # Erstellen und Teilen von Model Cards
 
-Die `huggingface_hub`-Bibliothek bietet eine Python-Schnittstelle zum Erstellen, Teilen und Aktualisieren von Model Cards. Besuchen Sie [die spezielle Dokumentationsseite](https://mirror-hf.co/docs/hub/models-cards) für einen tieferen Einblick in das, was Model Cards im Hub sind und wie sie unter der Haube funktionieren.
+Die `huggingface_hub`-Bibliothek bietet eine Python-Schnittstelle zum Erstellen, Teilen und Aktualisieren von Model Cards. Besuchen Sie [die spezielle Dokumentationsseite](https://hf-mirror.com/docs/hub/models-cards) für einen tieferen Einblick in das, was Model Cards im Hub sind und wie sie unter der Haube funktionieren.
 
 <Tip>
 
-[Neu (Beta)! Probieren Sie unsere experimentelle Model Card Creator App aus](https://mirror-hf.co/spaces/huggingface/Model_Cards_Writing_Tool)
+[Neu (Beta)! Probieren Sie unsere experimentelle Model Card Creator App aus](https://hf-mirror.com/spaces/huggingface/Model_Cards_Writing_Tool)
 
 </Tip>
 
 ## Eine Model Card vom Hub laden
 
-Um eine bestehende Karte vom Hub zu laden, können Sie die Funktion [`ModelCard.load`] verwenden. Hier laden wir die Karte von [`nateraw/vit-base-beans`](https://mirror-hf.co/nateraw/vit-base-beans).
+Um eine bestehende Karte vom Hub zu laden, können Sie die Funktion [`ModelCard.load`] verwenden. Hier laden wir die Karte von [`nateraw/vit-base-beans`](https://hf-mirror.com/nateraw/vit-base-beans).
 
 ```python
 from huggingface_hub import ModelCard
@@ -219,7 +219,7 @@ Schließlich laden wir das zum Hub hoch:
 card.push_to_hub(repo_id)
 ```
 
-Sie können die resultierende Karte [hier](https://mirror-hf.co/nateraw/hf-hub-modelcards-pr-test/blob/main/README.md) überprüfen.
+Sie können die resultierende Karte [hier](https://hf-mirror.com/nateraw/hf-hub-modelcards-pr-test/blob/main/README.md) überprüfen.
 
 Wenn Sie eine Karte als Pull-Request hinzufügen möchten, können Sie beim Aufruf von `push_to_hub` einfach `create_pr=True` angeben:
 
@@ -227,11 +227,11 @@ Wenn Sie eine Karte als Pull-Request hinzufügen möchten, können Sie beim Aufr
 card.push_to_hub(repo_id, create_pr=True)
 ```
 
-Ein PR, der mit diesem Befehl erstellt wurde, kann [hier](https://mirror-hf.co/nateraw/hf-hub-modelcards-pr-test/discussions/3) aufgerufen werden.
+Ein PR, der mit diesem Befehl erstellt wurde, kann [hier](https://hf-mirror.com/nateraw/hf-hub-modelcards-pr-test/discussions/3) aufgerufen werden.
 
 ### Evaluierungsergebnisse einbeziehen
 
-Um Evaluierungsergebnisse in den Metadaten `model-index` einzufügen, können Sie ein [`EvalResult`] oder eine Liste von `EvalResult` mit Ihren zugehörigen Evaluierungsergebnissen übergeben. Im Hintergrund wird der `model-index` erstellt, wenn Sie `card.data.to_dict()` aufrufen. Weitere Informationen darüber, wie dies funktioniert, finden Sie in [diesem Abschnitt der Hub-Dokumentation](https://mirror-hf.co/docs/hub/models-cards#evaluation-results).
+Um Evaluierungsergebnisse in den Metadaten `model-index` einzufügen, können Sie ein [`EvalResult`] oder eine Liste von `EvalResult` mit Ihren zugehörigen Evaluierungsergebnissen übergeben. Im Hintergrund wird der `model-index` erstellt, wenn Sie `card.data.to_dict()` aufrufen. Weitere Informationen darüber, wie dies funktioniert, finden Sie in [diesem Abschnitt der Hub-Dokumentation](https://hf-mirror.com/docs/hub/models-cards#evaluation-results).
 
 <Tip>
 

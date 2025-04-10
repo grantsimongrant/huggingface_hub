@@ -11,7 +11,7 @@ interactions:
       X-Amzn-Trace-Id:
       - 30f5d202-6ba4-4b7e-bbca-592b12db1d48
     method: GET
-    uri: https://mirror-hf.co/api/models/dbmdz/bert-large-cased-finetuned-conll03-english
+    uri: https://hf-mirror.com/api/models/dbmdz/bert-large-cased-finetuned-conll03-english
   response:
     body:
       string: '{"_id":"621ffdc136468d709f17a4a5","id":"dbmdz/bert-large-cased-finetuned-conll03-english","private":false,"pipeline_tag":"token-classification","library_name":"transformers","tags":["transformers","pytorch","tf","jax","rust","safetensors","bert","token-classification","autotrain_compatible","endpoints_compatible","region:us"],"downloads":1465961,"likes":78,"modelId":"dbmdz/bert-large-cased-finetuned-conll03-english","author":"dbmdz","sha":"4c534963167c08d4b8ff1f88733cf2930f86add0","lastModified":"2023-09-06T22:17:56.000Z","gated":false,"disabled":false,"mask_token":"[MASK]","widgetData":[{"text":"My
@@ -19,7 +19,7 @@ interactions:
         in London"},{"text":"My name is Clara and I live in Berkeley, California."}],"config":{"architectures":["BertForTokenClassification"],"model_type":"bert","tokenizer_config":{}},"transformersInfo":{"auto_model":"AutoModelForTokenClassification","pipeline_tag":"token-classification","processor":"AutoTokenizer"},"siblings":[{"rfilename":".gitattributes"},{"rfilename":"config.json"},{"rfilename":"flax_model.msgpack"},{"rfilename":"model.safetensors"},{"rfilename":"pytorch_model.bin"},{"rfilename":"rust_model.ot"},{"rfilename":"tf_model.h5"},{"rfilename":"tokenizer_config.json"},{"rfilename":"vocab.txt"}],"spaces":["zjunlp/KGEditor","UjjwalVIT/Text_analysis_and_metadata_app","DevBM/QGen","Eddevs/brian-challenge","Manojajj/dbmdz-bert-large-cased-finetuned","kparkhade/nlp-genius","sandeepmajumdar/nlp-sorcery","LampOfSocrates/hf-nlp-cw-group27","imenayadi/Smart-inbox","DevBM/MCQ-Generator-from-PDFs","Ranadani/Web_Application_Resume","dwb2023/toy-intelligence","Zoe911/Transformers-NER","green/TopicDig","HamidBekam/Text_NER_HFMs_Streamlit","koalsky/koal","JaCrispy35/financial_sentiment_analysis_advisor","blasblues/nlpproyect","ganeshkamath89/NamedEntityRecognition","LegendaryToe/SqlParser","zeimoto/voicelead","iShare/hf-pipeline-API","liewchooichin/ner_from_pretrained","cm0805/ResuMate_NVIDIA","LampOfSocrates/hf_streamlit_plodcw_group27","LampOfSocrates/hf_gradio_plodcw_group27","Artteiv/arxiv_chatbot","ArxivBot/arxiv_chatbot","hrguarinv/fastlane","achink/tcbProductFlavors","nafees369/NER","antoniorached/Named-Entity-Recognition","BabiesAlexander/ppp","thewall0308/scoutingservice2","tchans123/resume_enhancement_tool","huimanho/Customer-Feedback-Analysis","Guilianno/Reservoir-properties-calculator","saifeddinemk/cv_job","Appendage5203/for_distilbert_squad","DreamStream-1/HR-New","DreamStream-1/HR-Test","Manojajj/bert-base-cased-resume_parser","Manojajj/Resume_parser_excel_to_excel","CephasAldrich/Post_Disaster_AidCenter","CephasAldrich/Post_Disaster_Relief","kltn20133118/demo_obsei","AR14020/Invoice_creation","EngrNarmeen/Environmental_Compliance_Checker","fmohsen22/chatbot_cosmeticshop","AskarBekB/Mr_Translater","sam6309/text_to_video","Zainajabroh/Discussion_Buddy","Gopi9177/NLP","KrishanRao/URL","muqeet1234/Named-Entity-Recognition","Felguk/Simple-test-apps","jdasic/TrainTravelGradio","Jagadeesh2411/NLP","raz-1412/chat-dynamics-analysis","svsaurav95/Moderation_bot","gauravprakashh/SentinelBot","kohlin/nlp-project","thlinhares/docling","Mummia-99/Nlp_pipelines","elikwame/climate_disclosure","kanneboinakumar/transformers-pipeline"],"createdAt":"2022-03-02T23:29:05.000Z","safetensors":{"parameters":{"F32":333588489},"total":333588489},"inference":"warm","usedStorage":6668556323}'
     headers:
       Access-Control-Allow-Origin:
-      - https://mirror-hf.co
+      - https://hf-mirror.com
       Access-Control-Expose-Headers:
       - X-Repo-Commit,X-Request-Id,X-Error-Code,X-Error-Message,X-Total-Count,ETag,Link,Accept-Ranges,Content-Range,X-Xet-Access-Token,X-Xet-Token-Expiration,X-Xet-Refresh-Route,X-Xet-Cas-Url,X-Xet-Hash
       Connection:
@@ -70,7 +70,7 @@ interactions:
       X-Amzn-Trace-Id:
       - 81e8e52d-52d5-45df-a7be-f88a7f47e59b
     method: POST
-    uri: https://router.mirror-hf.co/hf-inference/models/dbmdz/bert-large-cased-finetuned-conll03-english
+    uri: https://router.hf-mirror.com/hf-inference/models/dbmdz/bert-large-cased-finetuned-conll03-english
   response:
     body:
       string: '[{"entity_group":"PER","score":0.9991335868835449,"word":"Sarah Jessica

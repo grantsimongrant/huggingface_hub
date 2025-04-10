@@ -220,7 +220,7 @@ class RepoCard:
         headers = {"Accept": "text/plain"}
 
         try:
-            r = get_session().post("https://mirror-hf.co/api/validate-yaml", body, headers=headers)
+            r = get_session().post("https://hf-mirror.com/api/validate-yaml", body, headers=headers)
             r.raise_for_status()
         except requests.exceptions.HTTPError as exc:
             if r.status_code == 400:
@@ -594,7 +594,7 @@ def metadata_eval_result(
             The name of the metric configuration used in `load_metric()`.
             Example: bleurt-large-512 in `load_metric("bleurt", "bleurt-large-512")`.
         metrics_verified (`bool`, *optional*, defaults to `False`):
-            Indicates whether the metrics originate from Hugging Face's [evaluation service](https://mirror-hf.co/spaces/autoevaluate/model-evaluator) or not. Automatically computed by Hugging Face, do not set.
+            Indicates whether the metrics originate from Hugging Face's [evaluation service](https://hf-mirror.com/spaces/autoevaluate/model-evaluator) or not. Automatically computed by Hugging Face, do not set.
         dataset_config (`str`, *optional*):
             Example: fr. The name of the dataset configuration used in `load_dataset()`.
         dataset_split (`str`, *optional*):
@@ -603,7 +603,7 @@ def metadata_eval_result(
             Example: 5503434ddd753f426f4b38109466949a1217c2bb. The name of the dataset dataset revision
             used in `load_dataset()`.
         metrics_verification_token (`bool`, *optional*):
-            A JSON Web Token that is used to verify whether the metrics originate from Hugging Face's [evaluation service](https://mirror-hf.co/spaces/autoevaluate/model-evaluator) or not.
+            A JSON Web Token that is used to verify whether the metrics originate from Hugging Face's [evaluation service](https://hf-mirror.com/spaces/autoevaluate/model-evaluator) or not.
 
     Returns:
         `dict`: a metadata dict with the result from a model evaluated on a dataset.

@@ -172,7 +172,7 @@ Standardmäßig werden Dateien im Cache-Verzeichnis heruntergeladen, das durch d
 ./cache/models--gpt2/snapshots/11c5a3d5811f50298f278a704980280950aedb10/config.json
 ```
 
-Wenn Sie Dateien in einen lokalen Ordner herunterladen möchten, ohne die Cache-Verzeichnisstruktur, können Sie `--local-dir` verwenden. Das Herunterladen in einen lokalen Ordner hat seine Einschränkungen, die in dieser [Tabelle](https://mirror-hf.co/docs/huggingface_hub/guides/download#download-files-to-local-folder) aufgeführt sind.
+Wenn Sie Dateien in einen lokalen Ordner herunterladen möchten, ohne die Cache-Verzeichnisstruktur, können Sie `--local-dir` verwenden. Das Herunterladen in einen lokalen Ordner hat seine Einschränkungen, die in dieser [Tabelle](https://hf-mirror.com/docs/huggingface_hub/guides/download#download-files-to-local-folder) aufgeführt sind.
 
 ```bash
 >>> huggingface-cli download gpt2 config.json --local-dir=./models/gpt2

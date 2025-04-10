@@ -178,9 +178,9 @@ tags:
 🥳 Congratulations on hosting your fastai model on the Hugging Face Hub!
 
 # Some next steps
-1. Fill out this model card with more information (see the template below and the [documentation here](https://mirror-hf.co/docs/hub/model-repos))!
+1. Fill out this model card with more information (see the template below and the [documentation here](https://hf-mirror.com/docs/hub/model-repos))!
 
-2. Create a demo in Gradio or Streamlit using 🤗 Spaces ([documentation here](https://mirror-hf.co/docs/hub/spaces)).
+2. Create a demo in Gradio or Streamlit using 🤗 Spaces ([documentation here](https://hf-mirror.com/docs/hub/spaces)).
 
 3. Join the fastai community on the [Fastai Discord](https://discord.com/invite/YKrxeNn)!
 
@@ -252,7 +252,7 @@ def _save_pretrained_fastai(
         save_directory (`str` or `Path`):
             Specific directory in which you want to save the fastai learner.
         config (`dict`, *optional*):
-            Configuration object. Will be uploaded as a .json file. Example: 'https://mirror-hf.co/espejelomar/fastai-pet-breeds-classification/blob/main/config.json'.
+            Configuration object. Will be uploaded as a .json file. Example: 'https://hf-mirror.com/espejelomar/fastai-pet-breeds-classification/blob/main/config.json'.
 
     <Tip>
 

@@ -11,13 +11,13 @@ interactions:
       X-Amzn-Trace-Id:
       - 655be9b4-10f2-4945-9e07-f82af06b7976
     method: GET
-    uri: https://mirror-hf.co/api/models/meta-llama/Llama-3.3-70B-Instruct?expand=inferenceProviderMapping
+    uri: https://hf-mirror.com/api/models/meta-llama/Llama-3.3-70B-Instruct?expand=inferenceProviderMapping
   response:
     body:
       string: '{"_id":"6745f28f9333dfcc06268b1e","id":"meta-llama/Llama-3.3-70B-Instruct","inferenceProviderMapping":{"fireworks-ai":{"status":"live","providerId":"accounts/fireworks/models/llama-v3p3-70b-instruct","task":"conversational"},"sambanova":{"status":"live","providerId":"Meta-Llama-3.3-70B-Instruct","task":"conversational"},"together":{"status":"live","providerId":"meta-llama/Llama-3.3-70B-Instruct-Turbo","task":"conversational"},"hf-inference":{"status":"live","providerId":"meta-llama/Llama-3.3-70B-Instruct","task":"conversational"},"nebius":{"status":"staging","providerId":"meta-llama/Llama-3.3-70B-Instruct-fast","task":"conversational"}}}'
     headers:
       Access-Control-Allow-Origin:
-      - https://mirror-hf.co
+      - https://hf-mirror.com
       Access-Control-Expose-Headers:
       - X-Repo-Commit,X-Request-Id,X-Error-Code,X-Error-Message,X-Total-Count,ETag,Link,Accept-Ranges,Content-Range,X-Xet-Access-Token,X-Xet-Token-Expiration,X-Xet-Refresh-Route,X-Xet-Cas-Url,X-Xet-Hash
       Connection:
@@ -69,7 +69,7 @@ interactions:
       X-Amzn-Trace-Id:
       - 29362983-2d2d-495a-9af1-4008d59e4f2c
     method: POST
-    uri: https://router.mirror-hf.co/fireworks-ai/inference/v1/chat/completions
+    uri: https://router.hf-mirror.com/fireworks-ai/inference/v1/chat/completions
   response:
     body:
       string: '{"id":"2fd15a30-af2d-4296-89ec-a89b08a65b47","object":"chat.completion","created":1739460295,"model":"accounts/fireworks/models/llama-v3p3-70b-instruct","choices":[{"index":0,"message":{"role":"assistant","content":"**Deep

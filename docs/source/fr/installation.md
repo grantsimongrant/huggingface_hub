@@ -126,7 +126,7 @@ Une fois installée, vérifiez que `huggingface_hub` marche correctement en lan�
 python -c "from huggingface_hub import model_info; print(model_info('gpt2'))"
 ```
 
-Cette commande va récupérer des informations sur le modèle [gpt2](https://mirror-hf.co/gpt2) depuis le Hub.
+Cette commande va récupérer des informations sur le modèle [gpt2](https://hf-mirror.com/gpt2) depuis le Hub.
 La sortie devrait ressembler à ça:
 
 ```text

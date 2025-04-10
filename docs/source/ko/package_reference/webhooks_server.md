@@ -5,7 +5,7 @@ rendered properly in your Markdown viewer.
 # 웹훅 서버[[webhooks-server]]
 
 웹훅은 MLOps 관련 기능의 기반이 됩니다. 이를 통해 특정 저장소의 새로운 변경 사항을 수신하거나, 관심 있는 특정 사용자/조직에 속한 모든 저장소의 변경 사항을 받아볼 수 있습니다.
-Huggingface Hub의 웹훅에 대해 더 자세히 알아보려면 이 [가이드](https://mirror-hf.co/docs/hub/webhooks)를 읽어보세요.
+Huggingface Hub의 웹훅에 대해 더 자세히 알아보려면 이 [가이드](https://hf-mirror.com/docs/hub/webhooks)를 읽어보세요.
 
 <Tip>
 
@@ -34,7 +34,7 @@ Huggingface Hub의 웹훅에 대해 더 자세히 알아보려면 이 [가이드
 
 [`WebhookPayload`]는 웹훅의 페이로드를 포함하는 기본 데이터 구조입니다. 이것은 `pydantic` 클래스로서 FastAPI에서 매우 쉽게 사용할 수 있습니다. 즉 WebhookPayload를 웹후크 엔드포인트에 매개변수로 전달하면 자동으로 유효성이 검사되고 파이썬 객체로 파싱됩니다.
 
-웹훅 페이로드에 대한 자세한 사항은 이 [가이드](https://mirror-hf.co/docs/hub/webhooks#webhook-payloads)를 참고하세요.
+웹훅 페이로드에 대한 자세한 사항은 이 [가이드](https://hf-mirror.com/docs/hub/webhooks#webhook-payloads)를 참고하세요.
 
 [[autodoc]] huggingface_hub.WebhookPayload
 

@@ -57,7 +57,7 @@ class UploadLargeFolderCommand(BaseHuggingfaceCLICommand):
         subparser.add_argument("--include", nargs="*", type=str, help="Glob patterns to match files to upload.")
         subparser.add_argument("--exclude", nargs="*", type=str, help="Glob patterns to exclude from files to upload.")
         subparser.add_argument(
-            "--token", type=str, help="A User Access Token generated from https://mirror-hf.co/settings/tokens"
+            "--token", type=str, help="A User Access Token generated from https://hf-mirror.com/settings/tokens"
         )
         subparser.add_argument(
             "--num-workers", type=int, help="Number of workers to use to hash, upload and commit files."
@@ -94,7 +94,7 @@ class UploadLargeFolderCommand(BaseHuggingfaceCLICommand):
                 "This is a new feature so feedback is very welcome!\n"
                 "\n"
                 "A few things to keep in mind:\n"
-                "  - Repository limits still apply: https://mirror-hf.co/docs/hub/repositories-recommendations\n"
+                "  - Repository limits still apply: https://hf-mirror.com/docs/hub/repositories-recommendations\n"
                 "  - Do not start several processes in parallel.\n"
                 "  - You can interrupt and resume the process at any time. "
                 "The script will pick up where it left off except for partially uploaded files that would have to be entirely reuploaded.\n"
@@ -109,7 +109,7 @@ class UploadLargeFolderCommand(BaseHuggingfaceCLICommand):
                 "You can also entirely disable the status report with `--no-report`.\n"
                 "\n"
                 "For more details, run `huggingface-cli upload-large-folder --help` or check the documentation at "
-                "https://mirror-hf.co/docs/huggingface_hub/guides/upload#upload-a-large-folder."
+                "https://hf-mirror.com/docs/huggingface_hub/guides/upload#upload-a-large-folder."
             )
         )
 

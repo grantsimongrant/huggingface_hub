@@ -11,13 +11,13 @@ interactions:
       X-Amzn-Trace-Id:
       - b575973c-6ae8-4bb8-a0eb-5271474af638
     method: GET
-    uri: https://mirror-hf.co/api/models/meta-llama/Llama-3.3-70B-Instruct?expand=inferenceProviderMapping
+    uri: https://hf-mirror.com/api/models/meta-llama/Llama-3.3-70B-Instruct?expand=inferenceProviderMapping
   response:
     body:
       string: '{"_id":"6745f28f9333dfcc06268b1e","id":"meta-llama/Llama-3.3-70B-Instruct","inferenceProviderMapping":{"fireworks-ai":{"status":"live","providerId":"accounts/fireworks/models/llama-v3p3-70b-instruct","task":"conversational"},"sambanova":{"status":"live","providerId":"Meta-Llama-3.3-70B-Instruct","task":"conversational"},"together":{"status":"live","providerId":"meta-llama/Llama-3.3-70B-Instruct-Turbo","task":"conversational"},"hf-inference":{"status":"live","providerId":"meta-llama/Llama-3.3-70B-Instruct","task":"conversational"},"nebius":{"status":"live","providerId":"meta-llama/Llama-3.3-70B-Instruct-fast","task":"conversational"},"novita":{"status":"live","providerId":"meta-llama/llama-3.3-70b-instruct","task":"conversational"},"hyperbolic":{"status":"live","providerId":"meta-llama/Llama-3.3-70B-Instruct","task":"conversational"},"cerebras":{"status":"live","providerId":"llama-3.3-70b","task":"conversational"}}}'
     headers:
       Access-Control-Allow-Origin:
-      - https://mirror-hf.co
+      - https://hf-mirror.com
       Access-Control-Expose-Headers:
       - X-Repo-Commit,X-Request-Id,X-Error-Code,X-Error-Message,X-Total-Count,ETag,Link,Accept-Ranges,Content-Range,X-Xet-Access-Token,X-Xet-Token-Expiration,X-Xet-Refresh-Route,X-Xet-Cas-Url,X-Xet-Hash
       Connection:
@@ -69,7 +69,7 @@ interactions:
       X-Amzn-Trace-Id:
       - fc4502a6-fe0f-45d0-b7ae-27638a6283ac
     method: POST
-    uri: https://router.mirror-hf.co/cerebras/v1/chat/completions
+    uri: https://router.hf-mirror.com/cerebras/v1/chat/completions
   response:
     body:
       string: '{"id":"chatcmpl-dd4a6858-2b21-4c71-bf21-39380aacc820","choices":[{"finish_reason":"stop","index":0,"message":{"content":"**Deep Learning: An Overview**\\n================================\\n\\nDeep learning is a subset of machine learning that involves the use of artificial neural networks to analyze and interpret data.","role":"assistant"}}],"created":1741627730,"model":"llama-3.3-70b","system_fingerprint":"fp_5fb719f1e4","object":"chat.completion","usage":{"prompt_tokens":46,"completion_tokens":637,"total_tokens":683},"time_info":{"queue_time":9.163e-05,"prompt_time":0.002692986,"completion_time":0.302867283,"total_time":0.30690574645996094,"created":1741627730}}'

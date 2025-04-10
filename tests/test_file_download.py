@@ -64,7 +64,7 @@ REVISION_ID_DEFAULT = "main"
 # Default branch name
 
 DATASET_ID = SAMPLE_DATASET_IDENTIFIER
-# An actual dataset hosted on mirror-hf.co
+# An actual dataset hosted on hf-mirror.com
 
 
 DATASET_REVISION_ID_ONE_SPECIFIC_COMMIT = "e25d55a1c4933f987c46cc75d8ffadd67f257c61"
@@ -353,10 +353,10 @@ class CachedDownloadTests(unittest.TestCase):
             )
         )
 
-    @patch("huggingface_hub.file_download.constants.ENDPOINT", "https://mirror-hf.co")
+    @patch("huggingface_hub.file_download.constants.ENDPOINT", "https://hf-mirror.com")
     @patch(
         "huggingface_hub.file_download.HUGGINGFACE_CO_URL_TEMPLATE",
-        "https://mirror-hf.co/{repo_id}/resolve/{revision}/{filename}",
+        "https://hf-mirror.com/{repo_id}/resolve/{revision}/{filename}",
     )
     def test_hf_hub_url_with_endpoint(self):
         self.assertEqual(
@@ -1137,13 +1137,13 @@ class TestNormalizeEtag(unittest.TestCase):
 
     @with_production_testing
     def test_resolve_endpoint_on_regular_file(self):
-        url = "https://mirror-hf.co/gpt2/resolve/e7da7f221d5bf496a48136c0cd264e630fe9fcc8/README.md"
+        url = "https://hf-mirror.com/gpt2/resolve/e7da7f221d5bf496a48136c0cd264e630fe9fcc8/README.md"
         response = requests.head(url)
         self.assertEqual(self._get_etag_and_normalize(response), "a16a55fda99d2f2e7b69cce5cf93ff4ad3049930")
 
     @with_production_testing
     def test_resolve_endpoint_on_lfs_file(self):
-        url = "https://mirror-hf.co/gpt2/resolve/e7da7f221d5bf496a48136c0cd264e630fe9fcc8/pytorch_model.bin"
+        url = "https://hf-mirror.com/gpt2/resolve/e7da7f221d5bf496a48136c0cd264e630fe9fcc8/pytorch_model.bin"
         response = requests.head(url)
         self.assertEqual(
             self._get_etag_and_normalize(response), "7c5d3f4b8b76583b422fcb9189ad6c89d5d97a094541ce8932dce3ecabde1421"

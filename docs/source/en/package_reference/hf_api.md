@@ -21,7 +21,7 @@ models = list_models()
 
 # Or configure a HfApi client
 hf_api = HfApi(
-    endpoint="https://mirror-hf.co", # Can be a Private Hub endpoint.
+    endpoint="https://hf-mirror.com", # Can be a Private Hub endpoint.
     token="hf_xxx", # Token is not persisted on the machine.
 )
 models = hf_api.list_models()

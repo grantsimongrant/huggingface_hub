@@ -54,7 +54,7 @@ hf://[<repo_type_prefix>]<repo_id>[@<revision>]/<path/in/repo>
 ```
 
 <div class="flex justify-center">
-<img src="https://mirror-hf.co/datasets/huggingface/documentation-images/resolve/main/huggingface_hub/hf_urls.png"/>
+<img src="https://hf-mirror.com/datasets/huggingface/documentation-images/resolve/main/huggingface_hub/hf_urls.png"/>
 </div>
 
 The `repo_type_prefix` is `datasets/` for datasets, `spaces/` for spaces, and models don't need a prefix in the URL.

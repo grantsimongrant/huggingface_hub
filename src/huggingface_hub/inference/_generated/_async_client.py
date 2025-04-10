@@ -118,7 +118,7 @@ class AsyncInferenceClient:
             automatically selected for the task.
             Note: for better compatibility with OpenAI's client, `model` has been aliased as `base_url`. Those 2
             arguments are mutually exclusive. If using `base_url` for chat completion, the `/chat/completions` suffix
-            path will be appended to the base URL (see the [TGI Messages API](https://mirror-hf.co/docs/text-generation-inference/en/messages_api)
+            path will be appended to the base URL (see the [TGI Messages API](https://hf-mirror.com/docs/text-generation-inference/en/messages_api)
             documentation for details). When passing a URL as `model`, the client will not append any suffix path to it.
         provider (`str`, *optional*):
             Name of the provider to use for inference. Can be `"black-forest-labs"`, `"cerebras"`, `"cohere"`, `"fal-ai"`, `"fireworks-ai"`, `"hf-inference"`, `"hyperbolic"`, `"nebius"`, `"novita"`, `"openai"`, `"replicate"`, "sambanova"` or `"together"`.
@@ -662,7 +662,7 @@ class AsyncInferenceClient:
 
         The `client.chat_completion` method is aliased as `client.chat.completions.create` for compatibility with OpenAI's client.
         Inputs and outputs are strictly the same and using either syntax will yield the same results.
-        Check out the [Inference guide](https://mirror-hf.co/docs/huggingface_hub/guides/inference#openai-compatibility)
+        Check out the [Inference guide](https://hf-mirror.com/docs/huggingface_hub/guides/inference#openai-compatibility)
         for more details about OpenAI's compatibility.
 
         </Tip>
@@ -677,7 +677,7 @@ class AsyncInferenceClient:
             model (`str`, *optional*):
                 The model to use for chat-completion. Can be a model ID hosted on the Hugging Face Hub or a URL to a deployed
                 Inference Endpoint. If not provided, the default recommended model for chat-based text-generation will be used.
-                See https://mirror-hf.co/tasks/text-generation for more details.
+                See https://hf-mirror.com/tasks/text-generation for more details.
                 If `model` is a model ID, it is passed to the server as the `model` parameter. If you want to define a
                 custom URL while setting `model` in the request payload, you must set `base_url` when initializing [`InferenceClient`].
             frequency_penalty (`float`, *optional*):
@@ -1098,7 +1098,7 @@ class AsyncInferenceClient:
         # Must be run in an async context
         >>> from huggingface_hub import AsyncInferenceClient
         >>> client = AsyncInferenceClient()
-        >>> await client.document_question_answering(image="https://mirror-hf.co/spaces/impira/docquery/resolve/2359223c1837a7587402bda0f2643382a6eefeab/invoice.png", question="What is the invoice number?")
+        >>> await client.document_question_answering(image="https://hf-mirror.com/spaces/impira/docquery/resolve/2359223c1837a7587402bda0f2643382a6eefeab/invoice.png", question="What is the invoice number?")
         [DocumentQuestionAnsweringOutputElement(answer='us-001', end=16, score=0.9999666213989258, start=16)]
         ```
         """
@@ -2996,7 +2996,7 @@ class AsyncInferenceClient:
         """
         Convert text from one language to another.
 
-        Check out https://mirror-hf.co/tasks/translation for more information on how to choose the best model for
+        Check out https://hf-mirror.com/tasks/translation for more information on how to choose the best model for
         your specific use case. Source and target languages usually depend on the model.
         However, it is possible to specify source and target languages for certain models. If you are working with one of these models,
         you can use `src_lang` and `tgt_lang` arguments to pass the relevant information.
@@ -3109,7 +3109,7 @@ class AsyncInferenceClient:
         >>> from huggingface_hub import AsyncInferenceClient
         >>> client = AsyncInferenceClient()
         >>> await client.visual_question_answering(
-        ...     image="https://mirror-hf.co/datasets/mishig/sample_images/resolve/main/tiger.jpg",
+        ...     image="https://hf-mirror.com/datasets/mishig/sample_images/resolve/main/tiger.jpg",
         ...     question="What is the animal doing?"
         ... )
         [

@@ -32,7 +32,7 @@ class CommitScheduler:
 
     The recommended way to use the scheduler is to use it as a context manager. This ensures that the scheduler is
     properly stopped and the last commit is triggered when the script ends. The scheduler can also be stopped manually
-    with the `stop` method. Checkout the [upload guide](https://mirror-hf.co/docs/huggingface_hub/guides/upload#scheduled-uploads)
+    with the `stop` method. Checkout the [upload guide](https://hf-mirror.com/docs/huggingface_hub/guides/upload#scheduled-uploads)
     to learn more about how to use it.
 
     Args:
@@ -217,7 +217,7 @@ class CommitScheduler:
         uploads only changed files. If no changes are found, the method returns without committing anything. If you want
         to change this behavior, you can inherit from [`CommitScheduler`] and override this method. This can be useful
         for example to compress data together in a single file before committing. For more details and examples, check
-        out our [integration guide](https://mirror-hf.co/docs/huggingface_hub/main/en/guides/upload#scheduled-uploads).
+        out our [integration guide](https://hf-mirror.com/docs/huggingface_hub/main/en/guides/upload#scheduled-uploads).
         """
         # Check files to upload (with lock)
         with self.lock:

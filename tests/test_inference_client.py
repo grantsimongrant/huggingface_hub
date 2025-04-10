@@ -789,7 +789,7 @@ class TestOpenAsBinary:
             assert isinstance(content, io.BufferedReader)
 
     def test_open_as_binary_from_url(self) -> None:
-        with _open_as_binary("https://mirror-hf.co/datasets/Narsil/image_dummy/resolve/main/tree.png") as content:
+        with _open_as_binary("https://hf-mirror.com/datasets/Narsil/image_dummy/resolve/main/tree.png") as content:
             assert isinstance(content, bytes)
 
     def test_open_as_binary_opened_file(self) -> None:
@@ -825,7 +825,7 @@ class TestHeadersAndCookies(TestBase):
 
         expected_headers = build_hf_headers()
         get_session_mock().post.assert_called_once_with(
-            "https://router.mirror-hf.co/hf-inference/models/username/repo_name",
+            "https://router.hf-mirror.com/hf-inference/models/username/repo_name",
             json=None,
             data=b"content",
             headers={**expected_headers, "X-My-Header": "foo"},
@@ -873,7 +873,7 @@ class TestListDeployedModels(TestBase):
 class TestOpenAICompatibility(TestBase):
     def test_base_url_and_api_key(self):
         client = InferenceClient(
-            base_url="https://api-inference.mirror-hf.co/models/meta-llama/Meta-Llama-3-8B-Instruct",
+            base_url="https://api-inference.hf-mirror.com/models/meta-llama/Meta-Llama-3-8B-Instruct",
             api_key=os.getenv("HF_INFERENCE_TEST_TOKEN"),
         )
         output = client.chat.completions.create(
@@ -1014,7 +1014,7 @@ def test_chat_completion_error_in_stream():
             pass
 
 
-INFERENCE_API_URL = "https://api-inference.mirror-hf.co/models"
+INFERENCE_API_URL = "https://api-inference.hf-mirror.com/models"
 INFERENCE_ENDPOINT_URL = "https://rur2d6yoccusjxgn.us-east-1.aws.endpoints.huggingface.cloud"  # example
 LOCAL_TGI_URL = "http://0.0.0.0:8080"
 

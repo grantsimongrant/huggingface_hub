@@ -5,7 +5,7 @@ rendered properly in your Markdown viewer.
 # Interact with Discussions and Pull Requests
 
 The `huggingface_hub` library provides a Python interface to interact with Pull Requests and Discussions on the Hub.
-Visit [the dedicated documentation page](https://mirror-hf.co/docs/hub/repositories-pull-requests-discussions)
+Visit [the dedicated documentation page](https://hf-mirror.com/docs/hub/repositories-pull-requests-discussions)
 for a deeper view of what Discussions and Pull Requests on the Hub are, and how they work under the hood.
 
 ## Retrieve Discussions and Pull Requests from the Hub
@@ -86,7 +86,7 @@ Pull Requests are listed in [`DiscussionWithDetails.events`].
 ## Create and edit a Discussion or Pull Request programmatically
 
 The [`HfApi`] class also offers ways to create and edit Discussions and Pull Requests.
-You will need an [access token](https://mirror-hf.co/docs/hub/security-tokens) to create and edit Discussions
+You will need an [access token](https://hf-mirror.com/docs/hub/security-tokens) to create and edit Discussions
 or Pull Requests.
 
 The simplest way to propose changes on a repo on the Hub is via the [`create_commit`] API: just

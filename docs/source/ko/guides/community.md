@@ -5,7 +5,7 @@ rendered properly in your Markdown viewer.
 # Discussions 및 Pull Requests를 이용하여 상호작용하기[[interact-with-discussions-and-pull-requests]]
 
 `huggingface_hub` 라이브러리는 Hub의 Pull Requests 및 Discussions와 상호작용할 수 있는 Python 인터페이스를 제공합니다.
-[전용 문서 페이지](https://mirror-hf.co/docs/hub/repositories-pull-requests-discussions)를 방문하여 Hub의 Discussions와 Pull Requests가 무엇이고 어떻게 작동하는지 자세히 살펴보세요.
+[전용 문서 페이지](https://hf-mirror.com/docs/hub/repositories-pull-requests-discussions)를 방문하여 Hub의 Discussions와 Pull Requests가 무엇이고 어떻게 작동하는지 자세히 살펴보세요.
 
 ## Hub에서 Discussions 및 Pull Requests 가져오기[[retrieve-discussions-and-pull-requests-from-the-hub]]
 
@@ -80,7 +80,7 @@ Pull Request의 경우, [`DiscussionWithDetails.diff`]를 통해 원시 git diff
 ## 프로그래밍 방식으로 Discussion 또는 Pull Request를 생성하고 수정하기[[create-and-edit-a-discussion-or-pull-request-programmatically]]
 
 [`HfApi`] 클래스는 Discussions 및 Pull Requests를 생성하고 수정하는 방법도 제공합니다.
-Discussions와 Pull Requests를 만들고 편집하려면 [접근 토큰](https://mirror-hf.co/docs/hub/security-tokens)이 필요합니다.
+Discussions와 Pull Requests를 만들고 편집하려면 [접근 토큰](https://hf-mirror.com/docs/hub/security-tokens)이 필요합니다.
 
 Hub의 리포지토리에 변경 사항을 제안하는 가장 간단한 방법은 [`create_commit`] API를 사용하는 것입니다. `create_pr` 매개변수를 `True`로 설정하기만 하면 됩니다. 이 매개변수는 [`create_commit`]을 래핑하는 다른 함수에서도 사용할 수 있습니다:
 

@@ -36,7 +36,7 @@ test:
     - huggingface_hub
 
 about:
-  home: https://mirror-hf.co
+  home: https://hf-mirror.com
   license: Apache License 2.0
   license_file: LICENSE
-  summary: "Client library to download and publish models and other files on the mirror-hf.co hub"
+  summary: "Client library to download and publish models and other files on the hf-mirror.com hub"

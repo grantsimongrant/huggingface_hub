@@ -30,7 +30,7 @@ class HFInferenceTask(TaskProviderHelper):
         if model_id is None:
             raise ValueError(
                 f"Task {self.task} has no recommended model for HF Inference. Please specify a model"
-                " explicitly. Visit https://mirror-hf.co/tasks for more info."
+                " explicitly. Visit https://hf-mirror.com/tasks for more info."
             )
         _check_supported_task(model_id, self.task)
         return model_id

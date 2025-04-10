@@ -66,5 +66,5 @@ Zum Beispiel holt das folgende Beispiel die 5 am häufigsten heruntergeladenen D
 
 
 Eine andere Möglichkeit, dies zu tun,
-besteht darin, die [Modelle](https://mirror-hf.co/models) und [Datensätze](https://mirror-hf.co/datasets) Seiten
+besteht darin, die [Modelle](https://hf-mirror.com/models) und [Datensätze](https://hf-mirror.com/datasets) Seiten
 in Ihrem Browser zu besuchen, nach einigen Parametern zu suchen und die Werte in der URL anzusehen.

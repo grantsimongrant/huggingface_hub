@@ -16,13 +16,13 @@ interactions:
       X-Amzn-Trace-Id:
       - 4549789f-7f26-4688-9868-9f1bc01c974d
     method: POST
-    uri: https://mirror-hf.co/api/repos/create
+    uri: https://hf-mirror.com/api/repos/create
   response:
     body:
-      string: '{"url":"https://mirror-hf.co/spaces/user/tmp_test_space","name":"user/tmp_test_space","id":"67cae57dfb88e1c3d1fec3f5"}'
+      string: '{"url":"https://hf-mirror.com/spaces/user/tmp_test_space","name":"user/tmp_test_space","id":"67cae57dfb88e1c3d1fec3f5"}'
     headers:
       Access-Control-Allow-Origin:
-      - https://mirror-hf.co
+      - https://hf-mirror.com
       Access-Control-Expose-Headers:
       - X-Repo-Commit,X-Request-Id,X-Error-Code,X-Error-Message,X-Total-Count,ETag,Link,Accept-Ranges,Content-Range,X-Xet-Access-Token,X-Xet-Token-Expiration,X-Xet-Refresh-Route,X-Xet-Cas-Url,X-Xet-Hash
       Connection:
@@ -73,13 +73,13 @@ interactions:
       X-Amzn-Trace-Id:
       - 77fe438e-3344-4de8-9a38-40309aef3c92
     method: POST
-    uri: https://mirror-hf.co/api/spaces/user/tmp_test_space/preupload/main
+    uri: https://hf-mirror.com/api/spaces/user/tmp_test_space/preupload/main
   response:
     body:
       string: '{"files":[{"path":"app.py","uploadMode":"regular","shouldIgnore":false}],"commitOid":"47ad63ebd52a0886c638a6445aa05d6fe5cb0836"}'
     headers:
       Access-Control-Allow-Origin:
-      - https://mirror-hf.co
+      - https://hf-mirror.com
       Access-Control-Expose-Headers:
       - X-Repo-Commit,X-Request-Id,X-Error-Code,X-Error-Message,X-Total-Count,ETag,Link,Accept-Ranges,Content-Range,X-Xet-Access-Token,X-Xet-Token-Expiration,X-Xet-Refresh-Route,X-Xet-Cas-Url,X-Xet-Hash
       Connection:
@@ -125,13 +125,13 @@ interactions:
       X-Amzn-Trace-Id:
       - 798c63f1-e894-4be3-844b-cdd4f782f19e
     method: GET
-    uri: https://mirror-hf.co/api/spaces/user/tmp_test_space/revision/main?expand=xetEnabled
+    uri: https://hf-mirror.com/api/spaces/user/tmp_test_space/revision/main?expand=xetEnabled
   response:
     body:
       string: '{"_id":"67cae57dfb88e1c3d1fec3f5","id":"user/tmp_test_space","xetEnabled":false}'
     headers:
       Access-Control-Allow-Origin:
-      - https://mirror-hf.co
+      - https://hf-mirror.com
       Access-Control-Expose-Headers:
       - X-Repo-Commit,X-Request-Id,X-Error-Code,X-Error-Message,X-Total-Count,ETag,Link,Accept-Ranges,Content-Range,X-Xet-Access-Token,X-Xet-Token-Expiration,X-Xet-Refresh-Route,X-Xet-Cas-Url,X-Xet-Hash
       Connection:
@@ -187,13 +187,13 @@ interactions:
       X-Amzn-Trace-Id:
       - ff93d09b-63d6-4527-90a8-fb753acf0862
     method: POST
-    uri: https://mirror-hf.co/api/spaces/user/tmp_test_space/commit/main
+    uri: https://hf-mirror.com/api/spaces/user/tmp_test_space/commit/main
   response:
     body:
-      string: '{"success":true,"commitOid":"18404cdff7a1dbb7890b52aa94d6f6db6e7b580a","commitUrl":"https://mirror-hf.co/spaces/user/tmp_test_space/commit/18404cdff7a1dbb7890b52aa94d6f6db6e7b580a","hookOutput":""}'
+      string: '{"success":true,"commitOid":"18404cdff7a1dbb7890b52aa94d6f6db6e7b580a","commitUrl":"https://hf-mirror.com/spaces/user/tmp_test_space/commit/18404cdff7a1dbb7890b52aa94d6f6db6e7b580a","hookOutput":""}'
     headers:
       Access-Control-Allow-Origin:
-      - https://mirror-hf.co
+      - https://hf-mirror.com
       Access-Control-Expose-Headers:
       - X-Repo-Commit,X-Request-Id,X-Error-Code,X-Error-Message,X-Total-Count,ETag,Link,Accept-Ranges,Content-Range,X-Xet-Access-Token,X-Xet-Token-Expiration,X-Xet-Refresh-Route,X-Xet-Cas-Url,X-Xet-Hash
       Connection:
@@ -239,13 +239,13 @@ interactions:
       X-Amzn-Trace-Id:
       - 667eaa7d-1339-46c0-82ce-c0bd167b6fe1
     method: GET
-    uri: https://mirror-hf.co/api/spaces/victor/static-space/runtime
+    uri: https://hf-mirror.com/api/spaces/victor/static-space/runtime
   response:
     body:
       string: '{"stage":"RUNNING","hardware":{"current":null,"requested":null},"storage":null,"replicas":{"requested":1,"current":1}}'
     headers:
       Access-Control-Allow-Origin:
-      - https://mirror-hf.co
+      - https://hf-mirror.com
       Access-Control-Expose-Headers:
       - X-Repo-Commit,X-Request-Id,X-Error-Code,X-Error-Message,X-Total-Count,ETag,Link,Accept-Ranges,Content-Range,X-Xet-Access-Token,X-Xet-Token-Expiration,X-Xet-Refresh-Route,X-Xet-Cas-Url,X-Xet-Hash
       Connection:
@@ -295,13 +295,13 @@ interactions:
       X-Amzn-Trace-Id:
       - 19e2c3c5-6fad-4f35-8791-f2d124301c44
     method: DELETE
-    uri: https://mirror-hf.co/api/repos/delete
+    uri: https://hf-mirror.com/api/repos/delete
   response:
     body:
       string: OK
     headers:
       Access-Control-Allow-Origin:
-      - https://mirror-hf.co
+      - https://hf-mirror.com
       Access-Control-Expose-Headers:
       - X-Repo-Commit,X-Request-Id,X-Error-Code,X-Error-Message,X-Total-Count,ETag,Link,Accept-Ranges,Content-Range,X-Xet-Access-Token,X-Xet-Token-Expiration,X-Xet-Refresh-Route,X-Xet-Cas-Url,X-Xet-Hash
       Connection:

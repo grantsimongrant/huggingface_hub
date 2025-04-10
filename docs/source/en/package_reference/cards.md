@@ -5,7 +5,7 @@ rendered properly in your Markdown viewer.
 # Repository Cards
 
 The huggingface_hub library provides a Python interface to create, share, and update Model/Dataset Cards.
-Visit the [dedicated documentation page](https://mirror-hf.co/docs/hub/models-cards) for a deeper view of what
+Visit the [dedicated documentation page](https://hf-mirror.com/docs/hub/models-cards) for a deeper view of what
 Model Cards on the Hub are, and how they work under the hood. You can also check out our [Model Cards guide](../how-to-model-cards) to
 get a feel for how you would use these utilities in your own projects.
 

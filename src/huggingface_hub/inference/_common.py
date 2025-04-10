@@ -363,7 +363,7 @@ async def _async_yield_from(client: "ClientSession", response: "ClientResponse")
 # when available.
 #
 # For more details, see https://github.com/huggingface/text-generation-inference and
-# https://mirror-hf.co/docs/api-inference/detailed_parameters#text-generation-task.
+# https://hf-mirror.com/docs/api-inference/detailed_parameters#text-generation-task.
 
 _UNSUPPORTED_TEXT_GENERATION_KWARGS: Dict[Optional[str], List[str]] = {}
 

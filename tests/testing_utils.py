@@ -25,7 +25,7 @@ SMALL_MODEL_IDENTIFIER = "julien-c/bert-xsmall-dummy"
 DUMMY_DIFF_TOKENIZER_IDENTIFIER = "julien-c/dummy-diff-tokenizer"
 # Example model ids
 
-# An actual model hosted on mirror-hf.co,
+# An actual model hosted on hf-mirror.com,
 # w/ more details.
 DUMMY_MODEL_ID = "julien-c/dummy-unknown"
 DUMMY_MODEL_ID_REVISION_ONE_SPECIFIC_COMMIT = "f2c752cfc5c0ab6f4bdec59acea69eefbee381c2"

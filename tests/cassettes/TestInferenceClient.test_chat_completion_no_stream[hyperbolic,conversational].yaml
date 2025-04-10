@@ -11,13 +11,13 @@ interactions:
       X-Amzn-Trace-Id:
       - f240d30a-9b93-48f2-a781-80c8e318e585
     method: GET
-    uri: https://mirror-hf.co/api/models/meta-llama/Llama-3.2-3B-Instruct?expand=inferenceProviderMapping
+    uri: https://hf-mirror.com/api/models/meta-llama/Llama-3.2-3B-Instruct?expand=inferenceProviderMapping
   response:
     body:
       string: '{"_id":"66eaef786865fea1324edb5d","id":"meta-llama/Llama-3.2-3B-Instruct","inferenceProviderMapping":{"fireworks-ai":{"status":"staging","providerId":"accounts/fireworks/models/llama-v3p2-3b-instruct","task":"conversational"},"sambanova":{"status":"live","providerId":"Meta-Llama-3.2-3B-Instruct","task":"conversational"},"together":{"status":"live","providerId":"meta-llama/Llama-3.2-3B-Instruct-Turbo","task":"conversational"},"hf-inference":{"status":"live","providerId":"meta-llama/Llama-3.2-3B-Instruct","task":"conversational"},"nebius":{"status":"staging","providerId":"meta-llama/Llama-3.2-3B-Instruct","task":"conversational"},"novita":{"status":"staging","providerId":"meta-llama/llama-3.2-3b-instruct","task":"conversational"},"hyperbolic":{"status":"staging","providerId":"meta-llama/Llama-3.2-3B-Instruct","task":"conversational"}}}'
     headers:
       Access-Control-Allow-Origin:
-      - https://mirror-hf.co
+      - https://hf-mirror.com
       Access-Control-Expose-Headers:
       - X-Repo-Commit,X-Request-Id,X-Error-Code,X-Error-Message,X-Total-Count,ETag,Link,Accept-Ranges,Content-Range,X-Xet-Access-Token,X-Xet-Token-Expiration,X-Xet-Refresh-Route,X-Xet-Cas-Url,X-Xet-Hash
       Connection:
@@ -69,7 +69,7 @@ interactions:
       X-Amzn-Trace-Id:
       - 0f652278-fd50-4424-a806-1ee795b0a0bb
     method: POST
-    uri: https://router.mirror-hf.co/hyperbolic/v1/chat/completions
+    uri: https://router.hf-mirror.com/hyperbolic/v1/chat/completions
   response:
     body:
       string: '{"id":"chat-b87e29af773c4d28acd93ab9873bf8fb","object":"chat.completion","created":1739539670,"model":"meta-llama/Llama-3.2-3B-Instruct","choices":[{"index":0,"message":{"role":"assistant","content":"Deep

@@ -41,7 +41,7 @@ Create an empty repository with [`create_repo`] and give it a name with the `rep
 ```py
 >>> from huggingface_hub import create_repo
 >>> create_repo("lysandre/test-model")
-'https://mirror-hf.co/lysandre/test-model'
+'https://hf-mirror.com/lysandre/test-model'
 ```
 
 By default, [`create_repo`] creates a model repository. But you can use the `repo_type` parameter to specify another repository type. For example, if you want to create a dataset repository:
@@ -49,7 +49,7 @@ By default, [`create_repo`] creates a model repository. But you can use the `rep
 ```py
 >>> from huggingface_hub import create_repo
 >>> create_repo("lysandre/test-dataset", repo_type="dataset")
-'https://mirror-hf.co/datasets/lysandre/test-dataset'
+'https://hf-mirror.com/datasets/lysandre/test-dataset'
 ```
 
 When you create a repository, you can set your repository visibility with the `private` parameter.
@@ -63,7 +63,7 @@ If you want to change the repository visibility at a later time, you can use the
 
 <Tip>
 
-If you are part of an organization with an Enterprise plan, you can create a repo in a specific resource group by passing `resource_group_id` as parameter to [`create_repo`]. Resource groups are a security feature to control which members from your org can access a given resource. You can get the resource group ID by copying it from your org settings page url on the Hub (e.g. `"https://mirror-hf.co/organizations/huggingface/settings/resource-groups/66670e5163145ca562cb1988"` => `"66670e5163145ca562cb1988"`). For more details about resource group, check out this [guide](https://mirror-hf.co/docs/hub/en/security-resource-groups).
+If you are part of an organization with an Enterprise plan, you can create a repo in a specific resource group by passing `resource_group_id` as parameter to [`create_repo`]. Resource groups are a security feature to control which members from your org can access a given resource. You can get the resource group ID by copying it from your org settings page url on the Hub (e.g. `"https://hf-mirror.com/organizations/huggingface/settings/resource-groups/66670e5163145ca562cb1988"` => `"66670e5163145ca562cb1988"`). For more details about resource group, check out this [guide](https://hf-mirror.com/docs/hub/en/security-resource-groups).
 
 </Tip>
 
@@ -86,7 +86,7 @@ You will still need to configure your own settings (hardware, sleep-time, storag
 ```py
 >>> from huggingface_hub import duplicate_space
 >>> duplicate_space("multimodalart/dreambooth-training", private=False)
-RepoUrl('https://mirror-hf.co/spaces/nateraw/dreambooth-training',...)
+RepoUrl('https://hf-mirror.com/spaces/nateraw/dreambooth-training',...)
 ```
 
 ## Upload and download files
@@ -213,7 +213,7 @@ The `clone_from` parameter clones a repository from a Hugging Face repository ID
 `clone_from` can also clone a repository using a URL:
 
 ```py
->>> repo = Repository(local_dir="huggingface-hub", clone_from="https://mirror-hf.co/facebook/wav2vec2-large-960h-lv60")
+>>> repo = Repository(local_dir="huggingface-hub", clone_from="https://hf-mirror.com/facebook/wav2vec2-large-960h-lv60")
 ```
 
 You can combine the `clone_from` parameter with [`create_repo`] to create and clone a repository:

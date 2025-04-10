@@ -53,7 +53,7 @@ def save_torch_model(
 
     See also [`save_torch_state_dict`] to save a state dict with more flexibility.
 
-    For more information about tensor sharing, check out [this guide](https://mirror-hf.co/docs/safetensors/torch_shared_tensors).
+    For more information about tensor sharing, check out [this guide](https://hf-mirror.com/docs/safetensors/torch_shared_tensors).
 
     The model state dictionary is split into shards so that each shard is smaller than a given size. The shards are
     saved in the `save_directory` with the given `filename_pattern`. If the model is too big to fit in a single shard,
@@ -153,7 +153,7 @@ def save_torch_state_dict(
 
     See also [`save_torch_model`] to directly save a PyTorch model.
 
-    For more information about tensor sharing, check out [this guide](https://mirror-hf.co/docs/safetensors/torch_shared_tensors).
+    For more information about tensor sharing, check out [this guide](https://hf-mirror.com/docs/safetensors/torch_shared_tensors).
 
     The model state dictionary is split into shards so that each shard is smaller than a given size. The shards are
     saved in the `save_directory` with the given `filename_pattern`. If the model is too big to fit in a single shard,
@@ -949,7 +949,7 @@ def _remove_duplicate_names(
                 "Error while trying to find names to remove to save state dict, but found no suitable name to keep"
                 f" for saving amongst: {shared}. None is covering the entire storage. Refusing to save/load the model"
                 " since you could be storing much more memory than needed. Please refer to"
-                " https://mirror-hf.co/docs/safetensors/torch_shared_tensors for more information. Or open an"
+                " https://hf-mirror.com/docs/safetensors/torch_shared_tensors for more information. Or open an"
                 " issue."
             )
 

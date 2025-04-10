@@ -110,7 +110,7 @@ Nach der Installation überprüfen Sie, ob `huggingface_hub` richtig funktionier
 python -c "from huggingface_hub import model_info; print(model_info('gpt2'))"
 ```
 
-Dieser Befehl ruft Informationen vom Hub über das [gpt2](https://mirror-hf.co/gpt2)-Modell ab. Die Ausgabe sollte so aussehen:
+Dieser Befehl ruft Informationen vom Hub über das [gpt2](https://hf-mirror.com/gpt2)-Modell ab. Die Ausgabe sollte so aussehen:
 
 ```text
 Model Name: gpt2

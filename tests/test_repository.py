@@ -128,7 +128,7 @@ class TestRepositoryShared(RepositoryTestAbstract):
     @expect_deprecation("Repository")
     @with_production_testing
     def test_clone_from_prod_canonical_repo_url(self):
-        Repository(self.repo_path, clone_from="https://mirror-hf.co/bert-base-cased", skip_lfs_files=True)
+        Repository(self.repo_path, clone_from="https://hf-mirror.com/bert-base-cased", skip_lfs_files=True)
 
     @expect_deprecation("Repository")
     def test_init_from_existing_local_clone(self):
@@ -802,7 +802,7 @@ class TestRepositoryOffline(RepositoryTestAbstract):
 
         # hardcode values to avoid another api call to whoami
         self.assertEqual(username.strip(), "Dummy User")
-        self.assertEqual(email.strip(), "julien@mirror-hf.co")
+        self.assertEqual(email.strip(), "julien@hf-mirror.com")
 
     @expect_deprecation("Repository")
     def test_repo_passed_user(self):

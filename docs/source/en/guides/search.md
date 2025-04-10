@@ -57,5 +57,5 @@ the following example fetches the top 5 most downloaded datasets on the Hub:
 
 
 
-To explore available filters on the Hub, visit [models](https://mirror-hf.co/models) and [datasets](https://mirror-hf.co/datasets) pages
+To explore available filters on the Hub, visit [models](https://hf-mirror.com/models) and [datasets](https://hf-mirror.com/datasets) pages
 in your browser, search for some parameters and look at the values in the URL.

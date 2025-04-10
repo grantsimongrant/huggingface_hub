@@ -95,7 +95,7 @@ _RECOMMENDED_MODELS_FOR_VCR = {
 #### b. Set up authentication
 To record VCR cassettes, you'll need authentication:
 
-- If you are a member of the provider organization (e.g., Replicate organization: https://mirror-hf.co/replicate), you can set the `HF_INFERENCE_TEST_TOKEN` environment variable with your HF token:
+- If you are a member of the provider organization (e.g., Replicate organization: https://hf-mirror.com/replicate), you can set the `HF_INFERENCE_TEST_TOKEN` environment variable with your HF token:
    ```bash
    export HF_INFERENCE_TEST_TOKEN="your-hf-token"
    ```

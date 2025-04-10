@@ -1,8 +1,8 @@
 <p align="center">
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://mirror-hf.co/datasets/huggingface/documentation-images/raw/main/huggingface_hub-dark.svg">
-    <source media="(prefers-color-scheme: light)" srcset="https://mirror-hf.co/datasets/huggingface/documentation-images/raw/main/huggingface_hub.svg">
-    <img alt="huggingface_hub library logo" src="https://mirror-hf.co/datasets/huggingface/documentation-images/raw/main/huggingface_hub.svg" width="352" height="59" style="max-width: 100%;">
+    <source media="(prefers-color-scheme: dark)" srcset="https://hf-mirror.com/datasets/huggingface/documentation-images/raw/main/huggingface_hub-dark.svg">
+    <source media="(prefers-color-scheme: light)" srcset="https://hf-mirror.com/datasets/huggingface/documentation-images/raw/main/huggingface_hub.svg">
+    <img alt="huggingface_hub library logo" src="https://hf-mirror.com/datasets/huggingface/documentation-images/raw/main/huggingface_hub.svg" width="352" height="59" style="max-width: 100%;">
   </picture>
   <br/>
   <br/>
@@ -13,7 +13,7 @@
 </p>
 
 <p align="center">
-    <a href="https://mirror-hf.co/docs/huggingface_hub/en/index"><img alt="Documentation" src="https://img.shields.io/website/http/mirror-hf.co/docs/huggingface_hub/index.svg?down_color=red&down_message=offline&up_message=online&label=doc"></a>
+    <a href="https://hf-mirror.com/docs/huggingface_hub/en/index"><img alt="Documentation" src="https://img.shields.io/website/http/hf-mirror.com/docs/huggingface_hub/index.svg?down_color=red&down_message=offline&up_message=online&label=doc"></a>
     <a href="https://github.com/huggingface/huggingface_hub/releases"><img alt="GitHub release" src="https://img.shields.io/github/release/huggingface/huggingface_hub.svg"></a>
     <a href="https://github.com/huggingface/huggingface_hub"><img alt="PyPi version" src="https://img.shields.io/pypi/pyversions/huggingface_hub.svg"></a>
     <a href="https://pypi.org/project/huggingface-hub"><img alt="PyPI - Downloads" src="https://img.shields.io/pypi/dm/huggingface_hub"></a>
@@ -40,17 +40,17 @@
 
 ## Welcome to the huggingface_hub library
 
-The `huggingface_hub` library allows you to interact with the [Hugging Face Hub](https://mirror-hf.co/), a platform democratizing open-source Machine Learning for creators and collaborators. Discover pre-trained models and datasets for your projects or play with the thousands of machine learning apps hosted on the Hub. You can also create and share your own models, datasets and demos with the community. The `huggingface_hub` library provides a simple way to do all these things with Python.
+The `huggingface_hub` library allows you to interact with the [Hugging Face Hub](https://hf-mirror.com/), a platform democratizing open-source Machine Learning for creators and collaborators. Discover pre-trained models and datasets for your projects or play with the thousands of machine learning apps hosted on the Hub. You can also create and share your own models, datasets and demos with the community. The `huggingface_hub` library provides a simple way to do all these things with Python.
 
 ## Key features
 
-- [Download files](https://mirror-hf.co/docs/huggingface_hub/en/guides/download) from the Hub.
-- [Upload files](https://mirror-hf.co/docs/huggingface_hub/en/guides/upload) to the Hub.
-- [Manage your repositories](https://mirror-hf.co/docs/huggingface_hub/en/guides/repository).
-- [Run Inference](https://mirror-hf.co/docs/huggingface_hub/en/guides/inference) on deployed models.
-- [Search](https://mirror-hf.co/docs/huggingface_hub/en/guides/search) for models, datasets and Spaces.
-- [Share Model Cards](https://mirror-hf.co/docs/huggingface_hub/en/guides/model-cards) to document your models.
-- [Engage with the community](https://mirror-hf.co/docs/huggingface_hub/en/guides/community) through PRs and comments.
+- [Download files](https://hf-mirror.com/docs/huggingface_hub/en/guides/download) from the Hub.
+- [Upload files](https://hf-mirror.com/docs/huggingface_hub/en/guides/upload) to the Hub.
+- [Manage your repositories](https://hf-mirror.com/docs/huggingface_hub/en/guides/repository).
+- [Run Inference](https://hf-mirror.com/docs/huggingface_hub/en/guides/inference) on deployed models.
+- [Search](https://hf-mirror.com/docs/huggingface_hub/en/guides/search) for models, datasets and Spaces.
+- [Share Model Cards](https://hf-mirror.com/docs/huggingface_hub/en/guides/model-cards) to document your models.
+- [Engage with the community](https://hf-mirror.com/docs/huggingface_hub/en/guides/community) through PRs and comments.
 
 ## Installation
 
@@ -60,7 +60,7 @@ Install the `huggingface_hub` package with [pip](https://pypi.org/project/huggin
 pip install huggingface_hub
 ```
 
-If you prefer, you can also install it with [conda](https://mirror-hf.co/docs/huggingface_hub/en/installation#install-with-conda).
+If you prefer, you can also install it with [conda](https://hf-mirror.com/docs/huggingface_hub/en/installation#install-with-conda).
 
 In order to keep the package minimal by default, `huggingface_hub` comes with optional dependencies useful for some use cases. For example, if you want have a complete experience for Inference, run:
 
@@ -68,7 +68,7 @@ In order to keep the package minimal by default, `huggingface_hub` comes with op
 pip install huggingface_hub[inference]
 ```
 
-To learn more installation and optional dependencies, check out the [installation guide](https://mirror-hf.co/docs/huggingface_hub/en/installation).
+To learn more installation and optional dependencies, check out the [installation guide](https://hf-mirror.com/docs/huggingface_hub/en/installation).
 
 ## Quick start
 
@@ -90,11 +90,11 @@ from huggingface_hub import snapshot_download
 snapshot_download("stabilityai/stable-diffusion-2-1")
 ```
 
-Files will be downloaded in a local cache folder. More details in [this guide](https://mirror-hf.co/docs/huggingface_hub/en/guides/manage-cache).
+Files will be downloaded in a local cache folder. More details in [this guide](https://hf-mirror.com/docs/huggingface_hub/en/guides/manage-cache).
 
 ### Login
 
-The Hugging Face Hub uses tokens to authenticate applications (see [docs](https://mirror-hf.co/docs/hub/security-tokens)). To log in your machine, run the following CLI:
+The Hugging Face Hub uses tokens to authenticate applications (see [docs](https://hf-mirror.com/docs/hub/security-tokens)). To log in your machine, run the following CLI:
 
 ```bash
 huggingface-cli login
@@ -136,11 +136,11 @@ upload_folder(
 )
 ```
 
-For details in the [upload guide](https://mirror-hf.co/docs/huggingface_hub/en/guides/upload).
+For details in the [upload guide](https://hf-mirror.com/docs/huggingface_hub/en/guides/upload).
 
 ## Integrating to the Hub.
 
-We're partnering with cool open source ML libraries to provide free model hosting and versioning. You can find the existing integrations [here](https://mirror-hf.co/docs/hub/libraries).
+We're partnering with cool open source ML libraries to provide free model hosting and versioning. You can find the existing integrations [here](https://hf-mirror.com/docs/hub/libraries).
 
 The advantages are:
 
@@ -152,7 +152,7 @@ The advantages are:
 - Fast downloads! We use Cloudfront (a CDN) to geo-replicate downloads so they're blazing fast from anywhere on the globe.
 - Usage stats and more features to come.
 
-If you would like to integrate your library, feel free to open an issue to begin the discussion. We wrote a [step-by-step guide](https://mirror-hf.co/docs/hub/adding-a-library) with ❤️ showing how to do this integration.
+If you would like to integrate your library, feel free to open an issue to begin the discussion. We wrote a [step-by-step guide](https://hf-mirror.com/docs/hub/adding-a-library) with ❤️ showing how to do this integration.
 
 ## Contributions (feature requests, bugs, etc.) are super welcome 💙💚💛💜🧡❤️
 

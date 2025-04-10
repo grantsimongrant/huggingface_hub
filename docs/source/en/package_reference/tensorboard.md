@@ -8,7 +8,7 @@ TensorBoard is a visualization toolkit for machine learning experimentation. Ten
 metrics such as loss and accuracy, visualizing the model graph, viewing histograms, displaying images and much more.
 TensorBoard is well integrated with the Hugging Face Hub. The Hub automatically detects TensorBoard traces (such as
 `tfevents`) when pushed to the Hub which starts an instance to visualize them. To get more information about TensorBoard
-integration on the Hub, check out [this guide](https://mirror-hf.co/docs/hub/tensorboard).
+integration on the Hub, check out [this guide](https://hf-mirror.com/docs/hub/tensorboard).
 
 To benefit from this integration, `huggingface_hub` provides a custom logger to push logs to the Hub. It works as a
 drop-in replacement for [SummaryWriter](https://tensorboardx.readthedocs.io/en/latest/tensorboard.html) with no extra

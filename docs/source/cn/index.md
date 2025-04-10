@@ -4,7 +4,7 @@ rendered properly in your Markdown viewer.
 
 # 🤗 Hub 客户端库
 
-通过`huggingface_hub` 库，您可以与面向机器学习开发者和协作者的平台 [Hugging Face Hub](https://mirror-hf.co/)进行交互，找到适用于您所在项目的预训练模型和数据集，体验在平台托管的数百个机器学习应用，还可以创建或分享自己的模型和数据集并于社区共享。以上所有都可以用Python在`huggingface_hub` 库中轻松实现。
+通过`huggingface_hub` 库，您可以与面向机器学习开发者和协作者的平台 [Hugging Face Hub](https://hf-mirror.com/)进行交互，找到适用于您所在项目的预训练模型和数据集，体验在平台托管的数百个机器学习应用，还可以创建或分享自己的模型和数据集并于社区共享。以上所有都可以用Python在`huggingface_hub` 库中轻松实现。
 
 阅读[快速入门指南](快速入门指南)以开始使用huggingface_hub库。您将学习如何从Hub下载文件,创建存储库以及将文件上传到Hub。继续阅读以了解更多关于如何在🤗Hub上管理您的存储库,如何参与讨论或者甚至如何访问推理API的信息。
 
@@ -29,7 +29,7 @@ rendered properly in your Markdown viewer.
 </div>
 </div>
 
-通过 `huggingface_hub`库，您可以与面向机器学习开发者和协作者的平台 [Hugging Face Hub](https://mirror-hf.co/)进行交互，找到适用于您所在项目的预训练模型和数据集，体验在平台托管的数百个机器学习应用，还可以创建或分享自己的模型和数据集并于社区共享。以上所有都可以用Python在 `huggingface_hub`库中轻松实现。
+通过 `huggingface_hub`库，您可以与面向机器学习开发者和协作者的平台 [Hugging Face Hub](https://hf-mirror.com/)进行交互，找到适用于您所在项目的预训练模型和数据集，体验在平台托管的数百个机器学习应用，还可以创建或分享自己的模型和数据集并于社区共享。以上所有都可以用Python在 `huggingface_hub`库中轻松实现。
 
 <!--
 <a class="!no-underline border dark:border-gray-700 p-5 rounded-lg shadow hover:shadow-lg" href="./tutorials/overview"

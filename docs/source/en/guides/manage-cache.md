@@ -174,7 +174,7 @@ by setting the `HF_HUB_DISABLE_SYMLINKS_WARNING` environment variable to true.
 
 ## Chunk-based caching (Xet)
 
-To provide more efficient file transfers, `hf_xet` adds a `xet` directory to the existing `huggingface_hub` cache, creating additional caching layer to enable chunk-based deduplication. This cache holds chunks, which are immutable byte ranges from files (up to 64KB) that are created using content-defined chunking. For more information on the Xet Storage system, see this [section](https://mirror-hf.co/docs/hub/storage-backends).
+To provide more efficient file transfers, `hf_xet` adds a `xet` directory to the existing `huggingface_hub` cache, creating additional caching layer to enable chunk-based deduplication. This cache holds chunks, which are immutable byte ranges from files (up to 64KB) that are created using content-defined chunking. For more information on the Xet Storage system, see this [section](https://hf-mirror.com/docs/hub/storage-backends).
 
 The `xet` directory, located at `~/.cache/huggingface/xet` by default, contains two caches, utilized for uploads and downloads with the following structure
 
@@ -238,7 +238,7 @@ All shards have an expiration date of 3-4 weeks from when they are downloaded. S
 
 The `chunk_cache` is limited to 10GB in size while the `shard_cache` is technically without limits (in practice, the size and use of shards are such that limiting the cache is unnecessary). 
 
-By design, both caches are without high-level APIs. These caches are used primarily to facilitate the reconstruction (download) or upload of a file. To interact with the assets themselves, it’s recommended that you use the [`huggingface_hub` cache system APIs](https://mirror-hf.co/docs/huggingface_hub/guides/manage-cache).
+By design, both caches are without high-level APIs. These caches are used primarily to facilitate the reconstruction (download) or upload of a file. To interact with the assets themselves, it’s recommended that you use the [`huggingface_hub` cache system APIs](https://hf-mirror.com/docs/huggingface_hub/guides/manage-cache).
 
 If you need to reclaim the space utilized by either cache or need to debug any potential cache-related issues, simply remove the `xet` cache entirely by running `rm -rf ~/<cache_dir>/xet` where `<cache_dir>` is the location of your Hugging Face cache, typically `~/.cache/huggingface` 
 
@@ -259,7 +259,7 @@ Example full `xet`cache directory tree:
 │  │  ├─ e8535155b1b11ebd894c908e91a1e14e3461dddd1392695ddc90ae54a548d8b2.mdb
 ```
 
-To learn more about Xet Storage, see this [section](https://mirror-hf.co/docs/hub/storage-backends).
+To learn more about Xet Storage, see this [section](https://hf-mirror.com/docs/hub/storage-backends).
 
 ## Caching assets
 
@@ -528,7 +528,7 @@ huggingface-cli delete-cache
 You should now see a list of revisions that you can select/deselect:
 
 <div class="flex justify-center">
-    <img src="https://mirror-hf.co/datasets/huggingface/documentation-images/resolve/main/hub/delete-cache-tui.png"/>
+    <img src="https://hf-mirror.com/datasets/huggingface/documentation-images/resolve/main/hub/delete-cache-tui.png"/>
 </div>
 
 Instructions:

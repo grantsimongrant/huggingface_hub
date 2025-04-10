@@ -15,7 +15,7 @@ ENTERPRISE_USER = "EnterpriseAdmin"
 ENTERPRISE_ORG = "EnterpriseOrgPrivate"
 ENTERPRISE_TOKEN = "hf_enterprise_admin_token"
 
-ENDPOINT_PRODUCTION = "https://mirror-hf.co"
-ENDPOINT_STAGING = "https://hub-ci.mirror-hf.co"
+ENDPOINT_PRODUCTION = "https://hf-mirror.com"
+ENDPOINT_STAGING = "https://hub-ci.hf-mirror.com"
 
 ENDPOINT_PRODUCTION_URL_SCHEME = ENDPOINT_PRODUCTION + "/{repo_id}/resolve/{revision}/{filename}"

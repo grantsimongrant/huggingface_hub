@@ -80,12 +80,12 @@ class HFSummaryWriter(SummaryWriter):
             The path to the folder in the repo where the logs will be pushed. Defaults to "tensorboard/".
         repo_allow_patterns (`List[str]` or `str`, *optional*):
             A list of patterns to include in the upload. Defaults to `"*.tfevents.*"`. Check out the
-            [upload guide](https://mirror-hf.co/docs/huggingface_hub/guides/upload#upload-a-folder) for more details.
+            [upload guide](https://hf-mirror.com/docs/huggingface_hub/guides/upload#upload-a-folder) for more details.
         repo_ignore_patterns (`List[str]` or `str`, *optional*):
             A list of patterns to exclude in the upload. Check out the
-            [upload guide](https://mirror-hf.co/docs/huggingface_hub/guides/upload#upload-a-folder) for more details.
+            [upload guide](https://hf-mirror.com/docs/huggingface_hub/guides/upload#upload-a-folder) for more details.
         token (`str`, *optional*):
-            Authentication token. Will default to the stored token. See https://mirror-hf.co/settings/token for more
+            Authentication token. Will default to the stored token. See https://hf-mirror.com/settings/token for more
             details
         kwargs:
             Additional keyword arguments passed to `SummaryWriter`.

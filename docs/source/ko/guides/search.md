@@ -61,4 +61,4 @@ models = hf_api.list_models(
 
 
 
-Hub에서 사용 가능한 필터에 대해 살펴보려면 웹브라우저에서 [모델](https://mirror-hf.co/models) 및 [데이터 세트](https://mirror-hf.co/datasets) 페이지를 방문하여 일부 매개변수를 검색한 다음, URL에서 값들을 확인해보세요.
+Hub에서 사용 가능한 필터에 대해 살펴보려면 웹브라우저에서 [모델](https://hf-mirror.com/models) 및 [데이터 세트](https://hf-mirror.com/datasets) 페이지를 방문하여 일부 매개변수를 검색한 다음, URL에서 값들을 확인해보세요.

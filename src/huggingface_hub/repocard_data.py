@@ -45,17 +45,17 @@ class EvalResult:
         metric_config (`str`, *optional*):
             The name of the metric configuration used in `load_metric()`.
             Example: bleurt-large-512 in `load_metric("bleurt", "bleurt-large-512")`.
-            See the `datasets` docs for more info: https://mirror-hf.co/docs/datasets/v2.1.0/en/loading#load-configurations
+            See the `datasets` docs for more info: https://hf-mirror.com/docs/datasets/v2.1.0/en/loading#load-configurations
         metric_args (`Dict[str, Any]`, *optional*):
             The arguments passed during `Metric.compute()`. Example for `bleu`: max_order: 4
         verified (`bool`, *optional*):
-            Indicates whether the metrics originate from Hugging Face's [evaluation service](https://mirror-hf.co/spaces/autoevaluate/model-evaluator) or not. Automatically computed by Hugging Face, do not set.
+            Indicates whether the metrics originate from Hugging Face's [evaluation service](https://hf-mirror.com/spaces/autoevaluate/model-evaluator) or not. Automatically computed by Hugging Face, do not set.
         verify_token (`str`, *optional*):
-            A JSON Web Token that is used to verify whether the metrics originate from Hugging Face's [evaluation service](https://mirror-hf.co/spaces/autoevaluate/model-evaluator) or not.
+            A JSON Web Token that is used to verify whether the metrics originate from Hugging Face's [evaluation service](https://hf-mirror.com/spaces/autoevaluate/model-evaluator) or not.
         source_name (`str`, *optional*):
             The name of the source of the evaluation result. Example: "Open LLM Leaderboard".
         source_url (`str`, *optional*):
-            The URL of the source of the evaluation result. Example: "https://mirror-hf.co/spaces/open-llm-leaderboard/open_llm_leaderboard".
+            The URL of the source of the evaluation result. Example: "https://hf-mirror.com/spaces/open-llm-leaderboard/open_llm_leaderboard".
     """
 
     # Required
@@ -89,7 +89,7 @@ class EvalResult:
     # The name of the dataset configuration used in `load_dataset()`.
     # Example: fr in `load_dataset("common_voice", "fr")`.
     # See the `datasets` docs for more info:
-    # https://mirror-hf.co/docs/datasets/package_reference/loading_methods#datasets.load_dataset.name
+    # https://hf-mirror.com/docs/datasets/package_reference/loading_methods#datasets.load_dataset.name
     dataset_config: Optional[str] = None
 
     # The split used in `load_dataset()`.
@@ -110,17 +110,17 @@ class EvalResult:
 
     # The name of the metric configuration used in `load_metric()`.
     # Example: bleurt-large-512 in `load_metric("bleurt", "bleurt-large-512")`.
-    # See the `datasets` docs for more info: https://mirror-hf.co/docs/datasets/v2.1.0/en/loading#load-configurations
+    # See the `datasets` docs for more info: https://hf-mirror.com/docs/datasets/v2.1.0/en/loading#load-configurations
     metric_config: Optional[str] = None
 
     # The arguments passed during `Metric.compute()`.
     # Example for `bleu`: max_order: 4
     metric_args: Optional[Dict[str, Any]] = None
 
-    # Indicates whether the metrics originate from Hugging Face's [evaluation service](https://mirror-hf.co/spaces/autoevaluate/model-evaluator) or not. Automatically computed by Hugging Face, do not set.
+    # Indicates whether the metrics originate from Hugging Face's [evaluation service](https://hf-mirror.com/spaces/autoevaluate/model-evaluator) or not. Automatically computed by Hugging Face, do not set.
     verified: Optional[bool] = None
 
-    # A JSON Web Token that is used to verify whether the metrics originate from Hugging Face's [evaluation service](https://mirror-hf.co/spaces/autoevaluate/model-evaluator) or not.
+    # A JSON Web Token that is used to verify whether the metrics originate from Hugging Face's [evaluation service](https://hf-mirror.com/spaces/autoevaluate/model-evaluator) or not.
     verify_token: Optional[str] = None
 
     # The name of the source of the evaluation result.
@@ -128,7 +128,7 @@ class EvalResult:
     source_name: Optional[str] = None
 
     # The URL of the source of the evaluation result.
-    # Example: https://mirror-hf.co/spaces/open-llm-leaderboard/open_llm_leaderboard
+    # Example: https://hf-mirror.com/spaces/open-llm-leaderboard/open_llm_leaderboard
     source_url: Optional[str] = None
 
     @property
@@ -268,7 +268,7 @@ class ModelCardData(CardData):
             Defaults to None.
         license (`str`, *optional*):
             License of this model. Example: apache-2.0 or any license from
-            https://mirror-hf.co/docs/hub/repositories-licenses. Defaults to None.
+            https://hf-mirror.com/docs/hub/repositories-licenses. Defaults to None.
         license_name (`str`, *optional*):
             Name of the license of this model. Defaults to None. To be used in conjunction with `license_link`.
             Common licenses (Apache-2.0, MIT, CC-BY-SA-4.0) do not need a name. In that case, use `license` instead.
@@ -380,7 +380,7 @@ class DatasetCardData(CardData):
             639-3 code (two/three letters), or a special value like "code", "multilingual".
         license (`Union[str, List[str]]`, *optional*):
             License(s) of this dataset. Example: apache-2.0 or any license from
-            https://mirror-hf.co/docs/hub/repositories-licenses.
+            https://hf-mirror.com/docs/hub/repositories-licenses.
         annotations_creators (`Union[str, List[str]]`, *optional*):
             How the annotations for the dataset were created.
             Options are: 'found', 'crowdsourced', 'expert-generated', 'machine-generated', 'no-annotation', 'other'.
@@ -454,7 +454,7 @@ class DatasetCardData(CardData):
 class SpaceCardData(CardData):
     """Space Card Metadata that is used by Hugging Face Hub when included at the top of your README.md
 
-    To get an exhaustive reference of Spaces configuration, please visit https://mirror-hf.co/docs/hub/spaces-config-reference#spaces-configuration-reference.
+    To get an exhaustive reference of Spaces configuration, please visit https://hf-mirror.com/docs/hub/spaces-config-reference#spaces-configuration-reference.
 
     Args:
         title (`str`, *optional*)
@@ -472,7 +472,7 @@ class SpaceCardData(CardData):
             Port on which your application is running. Used only if sdk is `docker`.
         license (`str`, *optional*)
             License of this model. Example: apache-2.0 or any license from
-            https://mirror-hf.co/docs/hub/repositories-licenses.
+            https://hf-mirror.com/docs/hub/repositories-licenses.
         duplicated_from (`str`, *optional*)
             ID of the original Space if this is a duplicated Space.
         models (List[`str`], *optional*)

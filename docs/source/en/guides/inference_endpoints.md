@@ -1,14 +1,14 @@
 # Inference Endpoints
 
-Inference Endpoints provides a secure production solution to easily deploy any `transformers`, `sentence-transformers`, and `diffusers` models on a dedicated and autoscaling infrastructure managed by Hugging Face. An Inference Endpoint is built from a model from the [Hub](https://mirror-hf.co/models).
-In this guide, we will learn how to programmatically manage Inference Endpoints with `huggingface_hub`. For more information about the Inference Endpoints product itself, check out its [official documentation](https://mirror-hf.co/docs/inference-endpoints/index).
+Inference Endpoints provides a secure production solution to easily deploy any `transformers`, `sentence-transformers`, and `diffusers` models on a dedicated and autoscaling infrastructure managed by Hugging Face. An Inference Endpoint is built from a model from the [Hub](https://hf-mirror.com/models).
+In this guide, we will learn how to programmatically manage Inference Endpoints with `huggingface_hub`. For more information about the Inference Endpoints product itself, check out its [official documentation](https://hf-mirror.com/docs/inference-endpoints/index).
 
-This guide assumes `huggingface_hub` is correctly installed and that your machine is logged in. Check out the [Quick Start guide](https://mirror-hf.co/docs/huggingface_hub/quick-start#quickstart) if that's not the case yet. The minimal version supporting Inference Endpoints API is `v0.19.0`.
+This guide assumes `huggingface_hub` is correctly installed and that your machine is logged in. Check out the [Quick Start guide](https://hf-mirror.com/docs/huggingface_hub/quick-start#quickstart) if that's not the case yet. The minimal version supporting Inference Endpoints API is `v0.19.0`.
 
 
 <Tip>
 
-**New:** it is now possible to deploy an Inference Endpoint from the [HF model catalog](https://endpoints.mirror-hf.co/catalog) with a simple API call. The catalog is a carefully curated list of models that can be deployed with optimized settings. You don't need to configure anything, we take all the heavy stuff on us! All models and settings are guaranteed to have been tested to provide best cost/performance balance.  [`create_inference_endpoint_from_catalog`] works the same as [`create_inference_endpoint`], with much less parameters to pass. You can use [`list_inference_catalog`] to programmatically retrieve the catalog.
+**New:** it is now possible to deploy an Inference Endpoint from the [HF model catalog](https://endpoints.hf-mirror.com/catalog) with a simple API call. The catalog is a carefully curated list of models that can be deployed with optimized settings. You don't need to configure anything, we take all the heavy stuff on us! All models and settings are guaranteed to have been tested to provide best cost/performance balance.  [`create_inference_endpoint_from_catalog`] works the same as [`create_inference_endpoint`], with much less parameters to pass. You can use [`list_inference_catalog`] to programmatically retrieve the catalog.
 
 Note that this is still an experimental feature. Let us know what you think if you use it!
 
@@ -36,7 +36,7 @@ The first step is to create an Inference Endpoint using [`create_inference_endpo
 ... )
 ```
 
-In this example, we created a `protected` Inference Endpoint named `"my-endpoint-name"`, to serve [gpt2](https://mirror-hf.co/gpt2) for `text-generation`. A `protected` Inference Endpoint means your token is required to access the API. We also need to provide additional information to configure the hardware requirements, such as vendor, region, accelerator, instance type, and size. You can check out the list of available resources [here](https://api.endpoints.huggingface.cloud/#/v2%3A%3Aprovider/list_vendors). Alternatively, you can create an Inference Endpoint manually using the [Web interface](https://ui.endpoints.mirror-hf.co/new) for convenience. Refer to this [guide](https://mirror-hf.co/docs/inference-endpoints/guides/advanced) for details on advanced settings and their usage.
+In this example, we created a `protected` Inference Endpoint named `"my-endpoint-name"`, to serve [gpt2](https://hf-mirror.com/gpt2) for `text-generation`. A `protected` Inference Endpoint means your token is required to access the API. We also need to provide additional information to configure the hardware requirements, such as vendor, region, accelerator, instance type, and size. You can check out the list of available resources [here](https://api.endpoints.huggingface.cloud/#/v2%3A%3Aprovider/list_vendors). Alternatively, you can create an Inference Endpoint manually using the [Web interface](https://ui.endpoints.hf-mirror.com/new) for convenience. Refer to this [guide](https://hf-mirror.com/docs/inference-endpoints/guides/advanced) for details on advanced settings and their usage.
 
 The value returned by [`create_inference_endpoint`] is an [`InferenceEndpoint`] object:
 
@@ -47,9 +47,9 @@ InferenceEndpoint(name='my-endpoint-name', namespace='Wauplin', repository='gpt2
 
 It's a dataclass that holds information about the endpoint. You can access important attributes such as `name`, `repository`, `status`, `task`, `created_at`, `updated_at`, etc. If you need it, you can also access the raw response from the server with `endpoint.raw`.
 
-Once your Inference Endpoint is created, you can find it on your [personal dashboard](https://ui.endpoints.mirror-hf.co/).
+Once your Inference Endpoint is created, you can find it on your [personal dashboard](https://ui.endpoints.hf-mirror.com/).
 
-![](https://mirror-hf.co/datasets/huggingface/documentation-images/resolve/main/huggingface_hub/inference_endpoints_created.png)
+![](https://hf-mirror.com/datasets/huggingface/documentation-images/resolve/main/huggingface_hub/inference_endpoints_created.png)
 
 #### Using a custom image
 

@@ -56,4 +56,4 @@ All structures are built and returned by [`scan_cache_dir`] and are immutable.
 
 ### CorruptedCacheException
 
-[[autodoc]] huggingface_hub.CorruptedCacheException
+[[autodoc]] huggingface_hub.corruptedCacheException

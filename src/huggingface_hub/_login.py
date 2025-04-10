@@ -96,7 +96,7 @@ def login(
 
     Args:
         token (`str`, *optional*):
-            User access token to generate from https://mirror-hf.co/settings/token.
+            User access token to generate from https://hf-mirror.com/settings/token.
         add_to_git_credential (`bool`, defaults to `False`):
             If `True`, token will be set as git credential. If no git credential helper
             is configured, a warning will be displayed to the user. If `token` is `None`,
@@ -280,7 +280,7 @@ def interpreter_login(*, new_session: bool = True, write_permission: bool = Fals
         logger.info("    Setting a new token will erase the existing one.")
 
     logger.info(
-        "    To log in, `huggingface_hub` requires a token generated from https://mirror-hf.co/settings/tokens ."
+        "    To log in, `huggingface_hub` requires a token generated from https://hf-mirror.com/settings/tokens ."
     )
     if os.name == "nt":
         logger.info("Token can be pasted using 'Right-Click'.")
@@ -295,15 +295,15 @@ def interpreter_login(*, new_session: bool = True, write_permission: bool = Fals
 ###
 
 NOTEBOOK_LOGIN_PASSWORD_HTML = """<center> <img
-src=https://mirror-hf.co/front/assets/huggingface_logo-noborder.svg
+src=https://hf-mirror.com/front/assets/huggingface_logo-noborder.svg
 alt='Hugging Face'> <br> Immediately click login after typing your password or
 it might be stored in plain text in this notebook file. </center>"""
 
 
 NOTEBOOK_LOGIN_TOKEN_HTML_START = """<center> <img
-src=https://mirror-hf.co/front/assets/huggingface_logo-noborder.svg
+src=https://hf-mirror.com/front/assets/huggingface_logo-noborder.svg
 alt='Hugging Face'> <br> Copy a token from <a
-href="https://mirror-hf.co/settings/tokens" target="_blank">your Hugging Face
+href="https://hf-mirror.com/settings/tokens" target="_blank">your Hugging Face
 tokens page</a> and paste it below. <br> Immediately click login after copying
 your token or it might be stored in plain text in this notebook file. </center>"""
 

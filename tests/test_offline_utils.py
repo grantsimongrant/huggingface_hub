@@ -15,22 +15,22 @@ from .testing_utils import (
 def test_offline_with_timeout():
     with offline(OfflineSimulationMode.CONNECTION_TIMES_OUT):
         with pytest.raises(RequestWouldHangIndefinitelyError):
-            requests.request("GET", "https://mirror-hf.co")
+            requests.request("GET", "https://hf-mirror.com")
         with pytest.raises(requests.exceptions.ConnectTimeout):
-            requests.request("GET", "https://mirror-hf.co", timeout=1.0)
+            requests.request("GET", "https://hf-mirror.com", timeout=1.0)
         with pytest.raises(requests.exceptions.ConnectTimeout):
-            http_get("https://mirror-hf.co", BytesIO())
+            http_get("https://hf-mirror.com", BytesIO())
 
 
 def test_offline_with_connection_error():
     with offline(OfflineSimulationMode.CONNECTION_FAILS):
         with pytest.raises(requests.exceptions.ConnectionError):
-            requests.request("GET", "https://mirror-hf.co")
+            requests.request("GET", "https://hf-mirror.com")
         with pytest.raises(requests.exceptions.ConnectionError):
-            http_get("https://mirror-hf.co", BytesIO())
+            http_get("https://hf-mirror.com", BytesIO())
 
 
 def test_offline_with_datasets_offline_mode_enabled():
     with offline(OfflineSimulationMode.HF_HUB_OFFLINE_SET_TO_1):
         with pytest.raises(ConnectionError):
-            http_get("https://mirror-hf.co", BytesIO())
+            http_get("https://hf-mirror.com", BytesIO())

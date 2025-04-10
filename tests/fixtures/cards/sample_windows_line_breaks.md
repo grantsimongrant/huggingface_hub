@@ -1,7 +1,7 @@
 ---
 license: mit
 language: eo
-thumbnail: https://mirror-hf.co/blog/assets/01_how-to-train/EsperBERTo-thumbnail-v2.png
+thumbnail: https://hf-mirror.com/blog/assets/01_how-to-train/EsperBERTo-thumbnail-v2.png
 widget:
 - text: "Jen la komenco de bela <mask>."
 - text: "Uno du <mask>"
